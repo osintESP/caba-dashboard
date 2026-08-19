@@ -1,0 +1,52 @@
+[
+  {
+    "id_norma": 995469,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Decreto N° 31",
+    "sumario": "Cita a Sesión Especial de la Legislatura para el día 3 de septiembre de 2026",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250083",
+    "tipo": "Decreto",
+    "organismo": "Legislatura de la Ciudad de Buenos Aires"
+  },
+  {
+    "id_norma": 995369,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Resolución N° 487/SA/26",
+    "sumario": "Aprueba pliegos y llama a Licitación Pública N° 16/26 para la contratación de soporte y consultoría para las plataformas Nutanix y Veritas",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250084",
+    "tipo": "Resolución",
+    "organismo": "Legislatura de la Ciudad de Buenos Aires"
+  },
+  {
+    "id_norma": 995357,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Disposición N° 38/DGCYC/26",
+    "sumario": "Establece la fecha y hora de apertura de la Licitación Pública N° 16/26 para la contratación de soporte y consultoría para las plataformas Nutanix y Veritas",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250085",
+    "tipo": "Disposición",
+    "organismo": "Legislatura de la Ciudad de Buenos Aires"
+  },
+  {
+    "id_norma": 995498,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Resolución N° 58/COPIDIS/26",
+    "sumario": "Crea el programa Feria Talento Emprendedor",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250086",
+    "tipo": "Resolución",
+    "organismo": "Vicejefatura de Gobierno"
+  },
+  {
+    "id_norma": 993644,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Licitación Obra Pública / Prórroga N° 94/DGTALMMI/25",
+    "sumario": "Ingeniería, construcción y equipamiento línea de Subterráneo F",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250485",
+    "tipo": "Licitación Obra Pública",
+    "organismo": "Ministerio de Movilidad e Infraestructura"
+  }
+]
