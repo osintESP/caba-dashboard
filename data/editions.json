@@ -1,0 +1,12 @@
+[
+  {
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250825",
+    "separata": [{"nombre": null, "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250826"}],
+    "first_collected_at": "2026-08-19T20:50:28+00:00",
+    "last_collected_at": "2026-08-19T20:54:30+00:00",
+    "total_normas": 476,
+    "schema_source": 2
+  }
+]
