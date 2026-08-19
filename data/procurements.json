@@ -1,0 +1,46 @@
+[
+  {
+    "id_norma": 995369,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Resolución N° 487/SA/26",
+    "sumario": "Aprueba pliegos y llama a Licitación Pública N° 16/26 para soporte y consultoría de plataformas Nutanix y Veritas",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250084",
+    "organismo": "Legislatura de la Ciudad de Buenos Aires",
+    "tipo": "Resolución",
+    "categoria": "tecnologia"
+  },
+  {
+    "id_norma": 995357,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Disposición N° 38/DGCYC/26",
+    "sumario": "Establece fecha y hora de apertura de la Licitación Pública N° 16/26 para soporte y consultoría de plataformas Nutanix y Veritas",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250085",
+    "organismo": "Legislatura de la Ciudad de Buenos Aires",
+    "tipo": "Disposición",
+    "categoria": "tecnologia"
+  },
+  {
+    "id_norma": 993644,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Licitación Obra Pública / Prórroga N° 94/DGTALMMI/25",
+    "sumario": "Ingeniería, construcción y equipamiento línea de Subterráneo F",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250485",
+    "organismo": "Ministerio de Movilidad e Infraestructura",
+    "tipo": "Licitación Obra Pública",
+    "categoria": "obra_infraestructura"
+  },
+  {
+    "id_norma": 993723,
+    "numero_boletin": 7433,
+    "fecha_publicacion": "19/08/2026",
+    "nombre": "Contratación Directa / Llamado N° 922/HGACD/26",
+    "sumario": "Llama a Contratación Directa Nº 416-0922-CDI26 para el mantenimiento de termociclador",
+    "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250461",
+    "organismo": "Ministerio de Salud",
+    "tipo": "Contratación Directa",
+    "categoria": "salud"
+  }
+]
