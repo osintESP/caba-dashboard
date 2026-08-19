@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Curador CABA — Dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">INTELIGENCIA PÚBLICA · CABA</div>
+      <h1>Curador de Noticias — CABA</h1>
+      <p>Dashboard ejecutivo de normativa, contrataciones y seguimiento.</p>
+    </div>
+    <div class="status-wrap">
+      <span id="data-status" class="status status-loading">Cargando datos</span>
+      <span id="updated-at" class="muted"></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="notice"><strong>Demo v1.</strong> KPIs basados en el dataset completo; los exploradores muestran una muestra representativa mientras se habilita la sincronización completa.</section>
+
+    <section class="hero-grid">
+      <article class="metric-card featured"><span class="metric-label">Boletín vigente</span><strong id="metric-bulletin">—</strong><span id="metric-bulletin-date" class="metric-foot">—</span></article>
+      <article class="metric-card"><span class="metric-label">Normas acumuladas</span><strong id="metric-norms">—</strong><span class="metric-foot">dataset histórico</span></article>
+      <article class="metric-card"><span class="metric-label">Contrataciones</span><strong id="metric-procurements">—</strong><span class="metric-foot">clasificación depurada</span></article>
+      <article class="metric-card"><span class="metric-label">Ediciones</span><strong id="metric-editions">—</strong><span class="metric-foot">histórico disponible</span></article>
+    </section>
+
+    <section class="panel filters-panel">
+      <div class="panel-head"><div><span class="eyebrow">EXPLORADOR</span><h2>Filtrar actividad</h2></div><button id="clear-filters" class="button ghost" type="button">Limpiar filtros</button></div>
+      <div class="filters-grid">
+        <label>Buscar<input id="filter-search" type="search" placeholder="Nutanix, Línea F, Salud…" /></label>
+        <label>Organismo<select id="filter-org"><option value="">Todos</option></select></label>
+        <label>Tipo<select id="filter-type"><option value="">Todos</option></select></label>
+        <label>Categoría contratación<select id="filter-category"><option value="">Todas</option></select></label>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <article class="panel"><div class="panel-head"><div><span class="eyebrow">CONTRATACIONES</span><h2>Distribución por categoría</h2></div><span id="procurement-total" class="badge">—</span></div><div id="category-bars" class="bar-list"></div></article>
+      <article class="panel"><div class="panel-head"><div><span class="eyebrow">ORGANISMOS</span><h2>Mayor actividad en la muestra</h2></div></div><div id="org-ranking" class="ranking"></div></article>
+    </section>
+
+    <section class="panel"><div class="panel-head"><div><span class="eyebrow">NORMATIVA</span><h2>Normas destacadas</h2></div><span id="norm-result-count" class="badge">—</span></div><div id="norm-list" class="record-list"></div></section>
+    <section class="panel"><div class="panel-head"><div><span class="eyebrow">CONTRATACIONES</span><h2>Procesos destacados</h2></div><span id="proc-result-count" class="badge">—</span></div><div id="procurement-list" class="record-list"></div></section>
+  </main>
+
+  <footer class="footer"><span>Curador CABA · Demo v1</span><span>Fuente: API oficial del Boletín CABA → collector → Data Model</span></footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
