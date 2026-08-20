@@ -1,0 +1,104 @@
+name: Refresh Curador CABA official data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'runtime/**'
+      - '.github/workflows/refresh-official-data.yml'
+  schedule:
+    # 11:00, 11:30, 12:00, 12:30 y 12:55 ART, lunes a viernes.
+    - cron: '0,30 14-15 * * 1-5'
+    - cron: '55 15 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: caba-dashboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r runtime/requirements.txt
+
+      - name: Collect official CABA bulletin
+        run: python runtime/collector.py
+
+      - name: Update historical dashboard model
+        run: python runtime/data_model.py
+
+      - name: Build technology and cybersecurity intelligence
+        run: python runtime/procurement_intelligence.py
+
+      - name: Refresh official Buenos Aires Compras metadata
+        run: python runtime/bac_catalog_collector.py
+
+      - name: Validate mandatory outputs
+        run: |
+          test -s data/stats.json
+          test -s data/editions.json
+          test -s data/norms.json
+          test -s data/procurements.json
+          test -s data/procurement_intelligence.json
+          test -s data/bac_catalog.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ('stats.json','editions.json','norms.json','procurements.json','procurement_intelligence.json','bac_catalog.json'):
+              json.loads((Path('data')/name).read_text(encoding='utf-8'))
+          intel=json.loads(Path('data/procurement_intelligence.json').read_text(encoding='utf-8'))
+          bac=json.loads(Path('data/bac_catalog.json').read_text(encoding='utf-8'))
+          assert isinstance(intel.get('summary'),dict)
+          assert bac.get('source',{}).get('owner')=='Gobierno de la Ciudad Autónoma de Buenos Aires'
+          print('RUNTIME_DATA_QUALITY=OK')
+          PY
+
+      - name: Build public sync manifest
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          stats=json.loads(Path('data/stats.json').read_text(encoding='utf-8'))
+          editions=json.loads(Path('data/editions.json').read_text(encoding='utf-8'))
+          latest=max(editions,key=lambda x:int(x.get('numero_boletin') or 0)) if editions else {}
+          manifest={
+            'schema_version':1,
+            'public_synced_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),
+            'latest_bulletin':latest.get('numero_boletin'),
+            'latest_bulletin_date':latest.get('fecha_publicacion'),
+            'dataset_generated_at':stats.get('generated_at'),
+            'source_scope':'official_gcba_only',
+            'runtime':'github_actions_public_nonprod'
+          }
+          Path('data/sync_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(manifest,ensure_ascii=False))
+          PY
+
+      - name: Persist refreshed public datasets
+        run: |
+          git config user.name 'caba-dashboard[bot]'
+          git config user.email 'caba-dashboard@users.noreply.github.com'
+          git add data/stats.json data/editions.json data/norms.json data/procurements.json data/procurement_intelligence.json data/bac_catalog.json data/sync_manifest.json
+          if git diff --cached --quiet; then
+            echo 'No dashboard data changes.'
+          else
+            git commit -m 'Refresh Curador CABA official dashboard data'
+            git push
+          fi
