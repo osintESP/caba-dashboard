@@ -8,12 +8,16 @@ on:
       - 'runtime/**'
       - '.github/workflows/refresh-official-data.yml'
   schedule:
-    # 11:00, 11:30, 12:00, 12:30 y 12:55 ART, lunes a viernes.
-    - cron: '0,30 14-15 * * 1-5'
+    # Ventana automática amplia, lunes a viernes.
+    # 11:00-16:30 UTC = 08:00-13:30 ART, cada 30 minutos.
+    - cron: '0,30 11-16 * * 1-5'
+    # Control adicional próximo al cierre operativo del Curador.
     - cron: '55 15 * * 1-5'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: caba-dashboard-refresh
@@ -22,7 +26,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -102,3 +106,22 @@ jobs:
             git commit -m 'Refresh Curador CABA official dashboard data'
             git push
           fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload refreshed site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy refreshed dashboard to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
