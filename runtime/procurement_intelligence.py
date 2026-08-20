@@ -1,0 +1,12 @@
+import json,re
+from pathlib import Path
+from collections import Counter
+BASE=Path(__file__).resolve().parent.parent; DATA=BASE/'data'; SRC=DATA/'procurements.json'; OUT=DATA/'procurement_intelligence.json'
+RULES={'ciberseguridad':[r'ciberseguridad',r'protecci[oó]n de datos',r'seguridad cloud',r'privacidad',r'gobierno de la informaci[oó]n',r'riesgo tecnol[oó]gico',r'\bsiem\b',r'\bsoc\b',r'firewall',r'antivirus',r'\bedr\b',r'\bxdr\b',r'\biam\b',r'identidad'],'cloud':[r'\bcloud\b',r'nube',r'azure',r'\baws\b',r'google cloud'],'backup_y_recuperacion':[r'backup',r'respaldo',r'veritas',r'recuperaci[oó]n',r'disaster recovery'],'infraestructura':[r'nutanix',r'servidor',r'storage',r'almacenamiento',r'hiperconverg',r'virtualiz'],'software':[r'software',r'plataforma',r'portal',r'aplicaci[oó]n',r'licencia',r'sistema'],'datos':[r'datos abiertos',r'base de datos',r'analytics',r'anal[ií]tica',r'data warehouse',r'\betl\b'],'telecomunicaciones':[r'telecomunic',r'redes?',r'conectividad',r'wifi',r'internet',r'fibra [oó]ptica'],'soporte_y_mantenimiento':[r'soporte',r'mantenimiento',r'consultor[ií]a',r'servicio t[eé]cnico']}
+VENDORS=['Microsoft','Oracle','Nutanix','Veritas','Cisco','VMware','Fortinet','Palo Alto','AWS','Azure','Google Cloud','IBM','Red Hat','Dell','HPE']
+def main():
+ rows=json.loads(SRC.read_text(encoding='utf-8')); enriched=[]; tc=Counter(); vc=Counter()
+ for row in rows:
+  text=' '.join(str(row.get(k) or '') for k in ('nombre','sumario','organismo','tipo','categoria')); low=text.lower(); tags=[tag for tag,patterns in RULES.items() if any(re.search(p,low,re.I) for p in patterns)]; vendors=[v for v in VENDORS if v.lower() in low]; out=dict(row); out['intelligence_tags']=tags; out['technology_vendors_mentioned']=vendors; out['is_technology_related']=bool(tags) or row.get('categoria')=='tecnologia'; out['is_cybersecurity_related']='ciberseguridad' in tags; enriched.append(out); tc.update(tags); vc.update(vendors)
+ payload={'schema_version':1,'source':'procurements.json','records':enriched,'summary':{'total_procurements':len(enriched),'technology_related':sum(1 for x in enriched if x['is_technology_related']),'cybersecurity_related':sum(1 for x in enriched if x['is_cybersecurity_related']),'tag_counts':dict(tc.most_common()),'vendor_mentions':dict(vc.most_common())}}; OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(payload['summary'],ensure_ascii=False))
+if __name__=='__main__':main()
