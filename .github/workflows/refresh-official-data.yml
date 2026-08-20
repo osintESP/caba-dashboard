@@ -8,10 +8,9 @@ on:
       - 'runtime/**'
       - '.github/workflows/refresh-official-data.yml'
   schedule:
-    # Ventana automática amplia, lunes a viernes.
-    # 11:00-16:30 UTC = 08:00-13:30 ART, cada 30 minutos.
+    # 11:00-16:30 UTC = 08:00-13:30 ART, lunes a viernes, cada 30 minutos.
     - cron: '0,30 11-16 * * 1-5'
-    # Control adicional próximo al cierre operativo del Curador.
+    # Control adicional a las 12:55 ART.
     - cron: '55 15 * * 1-5'
 
 permissions:
@@ -50,9 +49,6 @@ jobs:
       - name: Build technology and cybersecurity intelligence
         run: python runtime/procurement_intelligence.py
 
-      - name: Refresh official Buenos Aires Compras metadata
-        run: python runtime/bac_catalog_collector.py
-
       - name: Validate mandatory outputs
         run: |
           test -s data/stats.json
@@ -60,16 +56,13 @@ jobs:
           test -s data/norms.json
           test -s data/procurements.json
           test -s data/procurement_intelligence.json
-          test -s data/bac_catalog.json
           python - <<'PY'
           import json
           from pathlib import Path
-          for name in ('stats.json','editions.json','norms.json','procurements.json','procurement_intelligence.json','bac_catalog.json'):
+          for name in ('stats.json','editions.json','norms.json','procurements.json','procurement_intelligence.json'):
               json.loads((Path('data')/name).read_text(encoding='utf-8'))
           intel=json.loads(Path('data/procurement_intelligence.json').read_text(encoding='utf-8'))
-          bac=json.loads(Path('data/bac_catalog.json').read_text(encoding='utf-8'))
           assert isinstance(intel.get('summary'),dict)
-          assert bac.get('source',{}).get('owner')=='Gobierno de la Ciudad Autónoma de Buenos Aires'
           print('RUNTIME_DATA_QUALITY=OK')
           PY
 
@@ -88,7 +81,7 @@ jobs:
             'latest_bulletin':latest.get('numero_boletin'),
             'latest_bulletin_date':latest.get('fecha_publicacion'),
             'dataset_generated_at':stats.get('generated_at'),
-            'source_scope':'official_gcba_only',
+            'source_scope':'official_gcba_bulletin_only',
             'runtime':'github_actions_public_nonprod'
           }
           Path('data/sync_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -99,7 +92,7 @@ jobs:
         run: |
           git config user.name 'caba-dashboard[bot]'
           git config user.email 'caba-dashboard@users.noreply.github.com'
-          git add data/stats.json data/editions.json data/norms.json data/procurements.json data/procurement_intelligence.json data/bac_catalog.json data/sync_manifest.json
+          git add data/stats.json data/editions.json data/norms.json data/procurements.json data/procurement_intelligence.json data/sync_manifest.json
           if git diff --cached --quiet; then
             echo 'No dashboard data changes.'
           else
