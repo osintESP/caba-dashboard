@@ -10,16 +10,19 @@
 <body>
   <header class="topbar">
     <div><div class="eyebrow">INTELIGENCIA PÚBLICA · CABA</div><h1>Curador CABA Intelligence</h1><p>Observatorio ejecutivo del Boletín Oficial, contrataciones y actividad tecnológica de la Ciudad.</p></div>
-    <div class="status-wrap"><span id="data-status" class="status status-loading">Cargando datos</span><span id="updated-at" class="muted"></span></div>
+    <div class="status-wrap">
+      <span id="data-status" class="status status-loading">Cargando datos</span>
+      <span id="dashboard-sync-at" class="muted"></span>
+    </div>
   </header>
   <main class="container">
     <section id="sync-notice" class="notice"><strong>Dashboard v1 mejorada.</strong> La capa pública consume únicamente datasets sanitizados derivados de fuentes oficiales GCBA.</section>
 
     <section class="hero-grid">
-      <article class="metric-card featured"><span class="metric-label">Boletín vigente</span><strong id="metric-bulletin">—</strong><span id="metric-bulletin-date" class="metric-foot">—</span></article>
+      <article class="metric-card featured"><span class="metric-label">Último Boletín publicado</span><strong id="metric-bulletin">—</strong><span id="metric-bulletin-date" class="metric-foot">—</span></article>
       <article class="metric-card"><span class="metric-label">Normas acumuladas</span><strong id="metric-norms">—</strong><span class="metric-foot">dataset histórico</span></article>
       <article class="metric-card"><span class="metric-label">Contrataciones</span><strong id="metric-procurements">—</strong><span class="metric-foot">clasificación depurada</span></article>
-      <article class="metric-card"><span class="metric-label">Ediciones</span><strong id="metric-editions">—</strong><span class="metric-foot">histórico disponible</span></article>
+      <article class="metric-card"><span class="metric-label">Ediciones</span><strong id="metric-editions">—</strong><span id="data-generated-at" class="metric-foot">histórico disponible</span></article>
     </section>
 
     <section class="two-col">
