@@ -38,7 +38,7 @@
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -66,7 +66,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -80,7 +80,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -136,7 +136,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -206,7 +206,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -220,7 +220,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -234,7 +234,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -248,7 +248,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -262,7 +262,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -276,7 +276,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -318,7 +318,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1144,7 +1144,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1186,7 +1186,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1214,7 +1214,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1228,7 +1228,7 @@
     "tipo": "Disposición",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1284,7 +1284,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1298,7 +1298,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1312,7 +1312,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1326,7 +1326,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1340,7 +1340,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1354,7 +1354,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1368,7 +1368,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1382,7 +1382,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1396,7 +1396,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1424,7 +1424,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1438,7 +1438,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1452,7 +1452,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1466,7 +1466,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1480,7 +1480,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1494,7 +1494,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1508,7 +1508,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1522,7 +1522,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1536,7 +1536,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1550,7 +1550,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1578,7 +1578,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1592,7 +1592,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1606,7 +1606,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1620,7 +1620,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1648,7 +1648,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1662,7 +1662,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1690,7 +1690,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1718,7 +1718,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1802,7 +1802,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1816,7 +1816,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1844,7 +1844,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1872,7 +1872,7 @@
     "tipo": "Resolución",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1900,7 +1900,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1914,7 +1914,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1942,7 +1942,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1956,7 +1956,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1984,7 +1984,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -1998,7 +1998,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2012,7 +2012,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2054,7 +2054,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2068,7 +2068,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2082,7 +2082,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2096,7 +2096,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2110,7 +2110,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2138,7 +2138,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2152,7 +2152,7 @@
     "tipo": "Resolución Interna",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2166,7 +2166,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2180,7 +2180,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2208,7 +2208,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2222,7 +2222,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2236,7 +2236,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2250,7 +2250,7 @@
     "tipo": "Resolución Interna",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2292,7 +2292,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2320,7 +2320,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2334,7 +2334,7 @@
     "tipo": "Acta",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2348,7 +2348,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2376,7 +2376,7 @@
     "tipo": "Contratación Directa",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2390,7 +2390,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2418,7 +2418,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2432,7 +2432,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2446,7 +2446,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2502,7 +2502,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2530,7 +2530,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2544,7 +2544,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2558,7 +2558,7 @@
     "tipo": "Disposición",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2572,7 +2572,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2600,7 +2600,7 @@
     "tipo": "Contratación Menor",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2684,7 +2684,7 @@
     "tipo": "Acta",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2698,7 +2698,7 @@
     "tipo": "Acta",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2712,7 +2712,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2726,7 +2726,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2740,7 +2740,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2754,7 +2754,7 @@
     "tipo": "Disposición",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2768,7 +2768,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2782,7 +2782,7 @@
     "tipo": "Resolución",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2796,7 +2796,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2810,7 +2810,7 @@
     "tipo": "Contratación Menor",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2824,7 +2824,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2838,7 +2838,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2852,7 +2852,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2866,7 +2866,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2880,7 +2880,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2894,7 +2894,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2908,7 +2908,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2922,7 +2922,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2936,7 +2936,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2950,7 +2950,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2964,7 +2964,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2978,7 +2978,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -2992,7 +2992,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3006,7 +3006,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3020,7 +3020,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3034,7 +3034,7 @@
     "tipo": "Resolución",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3048,7 +3048,7 @@
     "tipo": "Contratación Menor",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3062,7 +3062,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3076,7 +3076,7 @@
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3090,7 +3090,7 @@
     "tipo": "Acta",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3104,7 +3104,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3118,7 +3118,7 @@
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3132,7 +3132,7 @@
     "tipo": "Contratación Menor",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3146,7 +3146,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3160,7 +3160,7 @@
     "tipo": "Carpeta",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3174,7 +3174,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3188,7 +3188,7 @@
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3202,7 +3202,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3216,7 +3216,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3230,7 +3230,7 @@
     "tipo": "Licitación Pública para concesión por expediente",
     "categoria": "obra_infraestructura",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3244,7 +3244,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3258,7 +3258,7 @@
     "tipo": "Licitación Pública",
     "categoria": "salud",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3272,7 +3272,7 @@
     "tipo": "Contratación Directa",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   },
   {
@@ -3286,7 +3286,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T14:40:25+00:00",
+    "last_seen_at": "2026-08-21T15:38:19+00:00",
     "estado": "detectada"
   }
 ]
