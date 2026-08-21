@@ -48,6 +48,7 @@ def belongs(n,b):
  for item in bs:
   if isinstance(item,(list,tuple)) and item and str(item[0])==str(b):return True
   if isinstance(item,dict) and str(item.get('numero',item.get('numero_boletin','')))==str(b):return True
+  if isinstance(item,(str,int)) and str(item)==str(b):return True
  return False
 
 def resolve_url(n,date):
