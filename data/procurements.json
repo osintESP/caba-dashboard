@@ -9,6 +9,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "253/HGACD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -23,6 +24,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "256/HGACD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -37,8 +39,9 @@
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
+    "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -51,6 +54,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Directa",
     "categoria": "salud",
+    "proceso_id": "922/HGACD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -65,8 +69,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1291/HGACD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -79,8 +84,9 @@
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "1196/DGGDA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -93,6 +99,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1221/HGADS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -107,6 +114,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1222/HGADS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -121,6 +129,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "441/DGAHGNRG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -135,8 +144,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1305/HGNRG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -149,6 +159,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "97/HRRMF/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -163,6 +174,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "96/HRRMF/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -177,6 +189,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1115/HGACD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -191,6 +204,7 @@
     "organismo": "Consejo de la Magistratura",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "31/DGCYC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -204,9 +218,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255690",
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -218,9 +233,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255691",
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -232,9 +248,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255689",
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -246,9 +263,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255692",
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -260,9 +278,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255693",
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -274,9 +293,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255694",
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -289,6 +309,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "46/TPRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -303,6 +324,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2736/TPRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -317,8 +339,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1126/HOI/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -331,6 +354,7 @@
     "organismo": "Legislatura de la Ciudad de Buenos Aires",
     "tipo": "Disposición",
     "categoria": "tecnologia",
+    "proceso_id": "38/DGCYC/26",
     "first_seen_at": null,
     "last_seen_at": null,
     "estado": "detectada"
@@ -345,6 +369,7 @@
     "organismo": "Legislatura de la Ciudad de Buenos Aires",
     "tipo": "Resolución",
     "categoria": "tecnologia",
+    "proceso_id": "487/SA/26",
     "first_seen_at": null,
     "last_seen_at": null,
     "estado": "detectada"
@@ -359,6 +384,7 @@
     "organismo": "Secretaría de Gobierno y Vínculo Ciudadano",
     "tipo": "Resolución Comunal",
     "categoria": "otros",
+    "proceso_id": "995503",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -373,6 +399,7 @@
     "organismo": "Secretaría de Gobierno y Vínculo Ciudadano",
     "tipo": "Resolución Comunal",
     "categoria": "otros",
+    "proceso_id": "995505",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -387,6 +414,7 @@
     "organismo": "Secretaría de Gobierno y Vínculo Ciudadano",
     "tipo": "Resolución Comunal",
     "categoria": "otros",
+    "proceso_id": "995506",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -401,6 +429,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "166/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -415,6 +444,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1099/HGAIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -429,6 +459,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "159/DGAHGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -443,6 +474,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "89/HGACG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -457,6 +489,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "160/DGAHGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -471,6 +504,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "200/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -485,6 +519,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "181/HGAIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -499,6 +534,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "289/DGAHGAIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -513,6 +549,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "201/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -527,6 +564,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "159/HGAP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -541,6 +579,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Directa",
     "categoria": "salud",
+    "proceso_id": "916/HGARM/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -555,6 +594,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "284/DGAHGAIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -569,6 +609,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "24/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -583,6 +624,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "25/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -597,6 +639,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "23/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -611,6 +654,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "167/HGNPE/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -625,6 +669,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "65/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -639,6 +684,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2209/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -653,6 +699,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "281/HGACA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -667,6 +714,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2776/HGACA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -681,6 +729,7 @@
     "organismo": "Ministerio Público Tutelar",
     "tipo": "Disposición",
     "categoria": "otros",
+    "proceso_id": "392/SGCA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -695,6 +744,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Directa",
     "categoria": "obra_infraestructura",
+    "proceso_id": "730/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -709,6 +759,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "906/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -723,6 +774,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "282/HGACA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -737,6 +789,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1090/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -751,6 +804,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "202/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -765,6 +819,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "203/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -779,6 +834,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "384/HGAPP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -793,6 +849,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1228/HGAP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -807,6 +864,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2666/HGADS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -821,6 +879,7 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Resolución",
     "categoria": "otros",
+    "proceso_id": "121/SSFC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -835,6 +894,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "189/IRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -849,6 +909,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1338/IRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -863,6 +924,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "obra_infraestructura",
+    "proceso_id": "2832/HGACA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -877,6 +939,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "260/HGADS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -891,6 +954,7 @@
     "organismo": "Secretaría de Gobierno y Vínculo Ciudadano",
     "tipo": "Contratación Menor",
     "categoria": "otros",
+    "proceso_id": "2603/DGTALSECGVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -905,6 +969,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "428/DGAHGAJAF/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -919,6 +984,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "382/DGAHGAJAF/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -933,6 +999,7 @@
     "organismo": "Legislatura de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "995806",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -947,6 +1014,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Resolución",
     "categoria": "salud",
+    "proceso_id": "15/FACOEP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -961,6 +1029,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "160/HGAP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -975,6 +1044,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1329/HGAP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -989,6 +1059,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "186/DGAHGAIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1003,6 +1074,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "341/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1017,6 +1089,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "249/DGAHGAIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1031,6 +1104,7 @@
     "organismo": "Auditoría General de la Ciudad de Buenos Aires",
     "tipo": "Disposición",
     "categoria": "otros",
+    "proceso_id": "121/DGADMIN/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1045,6 +1119,7 @@
     "organismo": "Ministerio de Justicia",
     "tipo": "Resolución",
     "categoria": "otros",
+    "proceso_id": "312/AGC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1059,6 +1134,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "208/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1073,6 +1149,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "209/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1087,6 +1164,7 @@
     "organismo": "Auditoría General de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "7/DGADMIN/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1101,6 +1179,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "210/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1115,6 +1194,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "211/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1129,6 +1209,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "212/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1143,8 +1224,9 @@
     "organismo": "Consejo de la Magistratura",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "29/DGCYC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1157,6 +1239,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1165/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1171,6 +1254,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1325/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1185,8 +1269,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "259/HGADS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1199,6 +1284,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1314/HBR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1213,8 +1299,9 @@
     "organismo": "Legislatura de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "16/DGCYC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1227,8 +1314,9 @@
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Disposición",
     "categoria": "otros",
+    "proceso_id": "54/DGIASINF/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1241,6 +1329,7 @@
     "organismo": "Consejo de la Magistratura",
     "tipo": "Resolución",
     "categoria": "otros",
+    "proceso_id": "538/SAGYP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1255,6 +1344,7 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "123/IRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1269,6 +1359,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1252/IRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1283,8 +1374,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1152/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1297,8 +1389,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "343/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1311,8 +1404,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1153/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1325,8 +1419,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1150/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1339,8 +1434,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "344/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1353,8 +1449,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "345/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1367,8 +1464,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "346/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1381,8 +1479,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1151/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1395,8 +1494,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "168/HGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1409,6 +1509,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1121/HGNPE/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1423,8 +1524,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "168/HGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1437,8 +1539,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "160/DGAHGAP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1451,8 +1554,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "448/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1465,8 +1569,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1320/HGNRG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1479,8 +1584,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "447/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1493,8 +1599,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1311/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1507,8 +1614,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "450/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1521,8 +1629,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "452/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1535,8 +1644,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "154/DGAHGAP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1549,8 +1659,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "204/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1563,6 +1674,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2826/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1577,8 +1689,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "340/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1591,8 +1704,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "170/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1605,8 +1719,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "455/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1619,8 +1734,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1301/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1633,6 +1749,7 @@
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
+    "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1647,8 +1764,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "66/HNJTB/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1661,8 +1779,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "169/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1675,6 +1794,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1119/HGNPE/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1689,8 +1809,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "205/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1703,6 +1824,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2810/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1717,8 +1839,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "55/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1731,6 +1854,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2813/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1745,6 +1869,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2438/HSL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1759,6 +1884,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2819/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1773,6 +1899,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2835/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1787,6 +1914,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2398/TPRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1801,8 +1929,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "154/HGACG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1815,8 +1944,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "206/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1829,6 +1959,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2693/HGACG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1843,8 +1974,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "54/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1857,6 +1989,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2378/HSL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1871,8 +2004,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Resolución",
     "categoria": "salud",
+    "proceso_id": "521/SSASS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1885,6 +2019,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2828/HGAT/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1899,8 +2034,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "56/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1913,8 +2049,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "171/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1927,6 +2064,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Directa",
     "categoria": "obra_infraestructura",
+    "proceso_id": "868/HSL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1941,8 +2079,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "351/DGAHGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1955,8 +2094,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2467/HGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1969,6 +2109,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2005/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -1983,8 +2124,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "160/HRRMF/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -1997,8 +2139,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "181/DGAHGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2011,8 +2154,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "53/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2025,6 +2169,7 @@
     "organismo": "Ministerio Público Tutelar",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "6/UOA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2039,6 +2184,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2374/HSL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2053,8 +2199,9 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "1243/DGTALMDHYHGC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2067,8 +2214,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "449/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2081,8 +2229,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "446/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2095,8 +2244,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1322/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2109,8 +2259,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1323/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2123,6 +2274,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2436/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2137,8 +2289,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "39/HO/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2151,8 +2304,9 @@
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Resolución Interna",
     "categoria": "tecnologia",
+    "proceso_id": "123/DPCABA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2165,8 +2319,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2859/HO/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2179,8 +2334,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "154/DGAHGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2193,6 +2349,7 @@
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Contratación Menor",
     "categoria": "tecnologia",
+    "proceso_id": "18/DPCABA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2207,8 +2364,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1148/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2221,8 +2379,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "191/IRPS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2235,8 +2394,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "92/HQ/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2249,8 +2409,9 @@
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Resolución Interna",
     "categoria": "otros",
+    "proceso_id": "124/DPCABA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2263,6 +2424,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2599/HGATA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2277,6 +2439,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2077/HOPL/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2291,8 +2454,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1359/IRPS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2305,6 +2469,7 @@
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Contratación Menor",
     "categoria": "otros",
+    "proceso_id": "11/DPCABA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2319,8 +2484,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "183/DGAHGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2333,8 +2499,9 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Acta",
     "categoria": "otros",
+    "proceso_id": "9284/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2347,8 +2514,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "158/DGAHGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2361,6 +2529,7 @@
     "organismo": "Consejo de los Derechos de Niñas, Niños y Adolescentes",
     "tipo": "Licitación Pública",
     "categoria": "alimentos",
+    "proceso_id": "966/DGLTACDN/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2375,8 +2544,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Directa",
     "categoria": "salud",
+    "proceso_id": "873/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2389,8 +2559,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2035/HQ/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2403,6 +2574,7 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "35/IVC/25",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2417,8 +2589,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "90/HQ/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2431,8 +2604,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "173/DGAHBR/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2445,8 +2619,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "1986/HQ/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2459,6 +2634,7 @@
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Contratación Menor",
     "categoria": "otros",
+    "proceso_id": "1266/SECITD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2473,6 +2649,7 @@
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "949/DGIASINF/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2487,6 +2664,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1058/HIFJM/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2501,8 +2679,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "40/HQ/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2515,6 +2694,7 @@
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Disposición",
     "categoria": "otros",
+    "proceso_id": "82/AGIP/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2529,8 +2709,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "284/HGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2543,8 +2724,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2883/HGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2557,8 +2739,9 @@
     "organismo": "Ministerio de Salud-",
     "tipo": "Disposición",
     "categoria": "salud",
+    "proceso_id": "172/DGAHBR/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2570,9 +2753,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255349",
     "organismo": "Ministerio de Seguridad",
     "tipo": "Resolución",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "245/SSGA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2585,6 +2769,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2628/TPRPS/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2599,8 +2784,9 @@
     "organismo": "Ministerio de Cultura",
     "tipo": "Contratación Menor",
     "categoria": "tecnologia",
+    "proceso_id": "2587/CCR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2613,6 +2799,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1153/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2627,6 +2814,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1152/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2641,6 +2829,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1150/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2655,6 +2844,7 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1151/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2669,6 +2859,7 @@
     "organismo": "Ministerio Público Fiscal",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "14/OAF/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -2683,8 +2874,9 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Acta",
     "categoria": "otros",
+    "proceso_id": "9287/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2697,8 +2889,9 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Acta",
     "categoria": "otros",
+    "proceso_id": "9285/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2710,9 +2903,10 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255643",
     "organismo": "Ministerio de Seguridad",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
+    "proceso_id": "1248/DGAYCON/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2725,8 +2919,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "962/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2739,8 +2934,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "961/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2753,8 +2949,9 @@
     "organismo": "Legislatura de la Ciudad de Buenos Aires",
     "tipo": "Disposición",
     "categoria": "otros",
+    "proceso_id": "40/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2767,8 +2964,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2871/HMIRS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2781,8 +2979,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Resolución",
     "categoria": "salud",
+    "proceso_id": "3439/MSGC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2795,8 +2994,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1036/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2809,8 +3009,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "obra_infraestructura",
+    "proceso_id": "2867/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2823,8 +3024,9 @@
     "organismo": "Legislatura de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "16/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2837,8 +3039,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1330/HGARM/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2851,8 +3054,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1102/HGACD/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2865,8 +3069,9 @@
     "organismo": "Ministerio de Educación",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "1133/DGPARE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2879,8 +3084,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1198/HMOMC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2893,8 +3099,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1237/HMOMC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2907,8 +3114,9 @@
     "organismo": "Instituto Universitario de Seguridad",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "1/IUS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2921,8 +3129,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1192/HGACD/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2935,8 +3144,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2793/HBU/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2949,8 +3159,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2549/HGACG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2963,8 +3174,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1209/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2977,8 +3189,9 @@
     "organismo": "Consejo de la Magistratura",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "26/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -2991,8 +3204,9 @@
     "organismo": "Consejo de la Magistratura",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "27/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3005,8 +3219,9 @@
     "organismo": "Consejo de la Magistratura",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "28/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3019,8 +3234,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "1313/HGACG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3033,8 +3249,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Resolución",
     "categoria": "salud",
+    "proceso_id": "527/SSASS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3047,8 +3264,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "obra_infraestructura",
+    "proceso_id": "2861/IZLP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3061,8 +3279,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1352/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3075,8 +3294,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
+    "proceso_id": "33/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3089,8 +3309,9 @@
     "organismo": "Ministerio de Desarrollo Humano y Hábitat",
     "tipo": "Acta",
     "categoria": "obra_infraestructura",
+    "proceso_id": "9290/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3103,8 +3324,9 @@
     "organismo": "Ministerio de Educación",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "1185/DGPARE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3117,8 +3339,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
+    "proceso_id": "33/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3131,8 +3354,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
     "categoria": "salud",
+    "proceso_id": "2840/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3145,8 +3369,9 @@
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "674/DGIASINF/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3159,8 +3384,9 @@
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Carpeta",
     "categoria": "otros",
+    "proceso_id": "25338/BCOCIUDAD/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3173,8 +3399,9 @@
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
+    "proceso_id": "1078/AGIP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3187,8 +3414,9 @@
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Licitación Obra Pública",
     "categoria": "obra_infraestructura",
+    "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3201,8 +3429,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "1273/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3215,8 +3444,9 @@
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "2/DPCABA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3229,8 +3459,9 @@
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Licitación Pública para concesión por expediente",
     "categoria": "obra_infraestructura",
+    "proceso_id": "5997895/DGCOYP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3243,8 +3474,9 @@
     "organismo": "Auditoría General de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "3/CEO/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3257,8 +3489,9 @@
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
     "categoria": "salud",
+    "proceso_id": "523/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3271,8 +3504,9 @@
     "organismo": "Ministerio de Justicia",
     "tipo": "Contratación Directa",
     "categoria": "otros",
+    "proceso_id": "747/DGGAP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   },
   {
@@ -3285,8 +3519,9 @@
     "organismo": "Ministerio de Hacienda y Finanzas  -  Lotería de la Ciudad de Buenos Aires S.A.U.",
     "tipo": "Licitación Pública",
     "categoria": "otros",
+    "proceso_id": "3/LOTBA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-21T16:39:50+00:00",
+    "last_seen_at": "2026-08-21T23:24:30+00:00",
     "estado": "detectada"
   }
 ]
