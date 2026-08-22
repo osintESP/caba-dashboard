@@ -6,7 +6,7 @@
     "nombre": "Disposición N° 253/HGACD/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 416-1239-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252962",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "253/HGACD/26",
@@ -21,7 +21,7 @@
     "nombre": "Disposición N° 256/HGACD/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 416-1244-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252963",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "256/HGACD/26",
@@ -41,7 +41,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -71,7 +71,7 @@
     "categoria": "salud",
     "proceso_id": "1291/HGACD/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -86,7 +86,7 @@
     "categoria": "tecnologia",
     "proceso_id": "1196/DGGDA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -126,7 +126,7 @@
     "nombre": "Disposición N° 441/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 420-1305-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252972",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "441/DGAHGNRG/26",
@@ -146,7 +146,7 @@
     "categoria": "salud",
     "proceso_id": "1305/HGNRG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -156,7 +156,7 @@
     "nombre": "Disposición N° 97/HRRMF/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 419-2453-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252943",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "97/HRRMF/26",
@@ -171,7 +171,7 @@
     "nombre": "Disposición N° 96/HRRMF/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 419-2640-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252942",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "96/HRRMF/26",
@@ -221,7 +221,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -236,7 +236,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -251,7 +251,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -266,7 +266,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -281,7 +281,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -296,7 +296,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -341,7 +341,7 @@
     "categoria": "salud",
     "proceso_id": "1126/HOI/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -426,7 +426,7 @@
     "nombre": "Disposición N° 166/HGATA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 410-2801-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252949",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "166/HGATA/26",
@@ -456,7 +456,7 @@
     "nombre": "Disposición N° 159/DGAHGAT/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 438-2428-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252945",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "159/DGAHGAT/26",
@@ -471,7 +471,7 @@
     "nombre": "Disposición N° 89/HGACG/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 455-2583-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252941",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "89/HGACG/26",
@@ -486,7 +486,7 @@
     "nombre": "Disposición N° 160/DGAHGAT/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 438-2420-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252948",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "160/DGAHGAT/26",
@@ -501,7 +501,7 @@
     "nombre": "Disposición N° 200/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2803-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252952",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "200/HGAT/26",
@@ -531,7 +531,7 @@
     "nombre": "Disposición N° 289/DGAHGAIP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 427-2258-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252968",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "289/DGAHGAIP/26",
@@ -546,7 +546,7 @@
     "nombre": "Disposición N° 201/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2788-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252953",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "201/HGAT/26",
@@ -561,7 +561,7 @@
     "nombre": "Disposición N° 159/HGAP/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 425-2817-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252946",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "159/HGAP/26",
@@ -591,7 +591,7 @@
     "nombre": "Disposición N° 284/DGAHGAIP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 427-2410-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252967",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "284/DGAHGAIP/26",
@@ -606,7 +606,7 @@
     "nombre": "Disposición N° 24/HOPL/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 421-2077-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252939",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "24/HOPL/26",
@@ -621,7 +621,7 @@
     "nombre": "Disposición N° 25/HOPL/26",
     "sumario": "Aprueba y adjudica la Licitación Pública N° 421-1090-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252940",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "25/HOPL/26",
@@ -636,7 +636,7 @@
     "nombre": "Disposición N° 23/HOPL/26",
     "sumario": "Aprueba y adjudica la Licitación Pública N° 421-0906-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252938",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "23/HOPL/26",
@@ -651,7 +651,7 @@
     "nombre": "Disposición N° 167/HGNPE/26",
     "sumario": "Deja sin efecto Contratación Menor N° 417-2662-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252950",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "167/HGNPE/26",
@@ -696,7 +696,7 @@
     "nombre": "Disposición N° 281/HGACA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 412-2776-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252965",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "281/HGACA/26",
@@ -771,7 +771,7 @@
     "nombre": "Disposición N° 282/HGACA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 412-2832-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252966",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "282/HGACA/26",
@@ -801,7 +801,7 @@
     "nombre": "Disposición N° 202/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2755-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252954",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "202/HGAT/26",
@@ -816,7 +816,7 @@
     "nombre": "Disposición N° 203/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2635-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252955",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "203/HGAT/26",
@@ -831,7 +831,7 @@
     "nombre": "Disposición N° 384/HGAPP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 426-2545-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252970",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "384/HGAPP/26",
@@ -936,7 +936,7 @@
     "nombre": "Disposición N° 260/HGADS/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 434-2666-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252964",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "260/HGADS/26",
@@ -966,7 +966,7 @@
     "nombre": "Disposición N° 428/DGAHGAJAF/26",
     "sumario": "Aprueba y adjudica la Contratación Directa N° 418-0870-CDI26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252971",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "428/DGAHGAJAF/26",
@@ -981,7 +981,7 @@
     "nombre": "Disposición N° 382/DGAHGAJAF/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 418-2336-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252969",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "382/DGAHGAJAF/26",
@@ -1026,7 +1026,7 @@
     "nombre": "Disposición N° 160/HGAP/26",
     "sumario": "Aprueba pliegos y llama a Licitación Publica N° 425-1329-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252947",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "160/HGAP/26",
@@ -1056,7 +1056,7 @@
     "nombre": "Disposición N° 186/DGAHGAIP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 427-1056-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252951",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "186/DGAHGAIP/26",
@@ -1086,7 +1086,7 @@
     "nombre": "Disposición N° 249/DGAHGAIP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 427-1753-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252961",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "249/DGAHGAIP/26",
@@ -1131,7 +1131,7 @@
     "nombre": "Disposición N° 208/HBR/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 431-1314-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252956",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "208/HBR/26",
@@ -1146,7 +1146,7 @@
     "nombre": "Disposición N° 209/HBR/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 431-1325-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252957",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "209/HBR/26",
@@ -1176,7 +1176,7 @@
     "nombre": "Disposición N° 210/HBR/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 431-1165-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252958",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "210/HBR/26",
@@ -1191,7 +1191,7 @@
     "nombre": "Disposición N° 211/HBR/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 431-2763-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252959",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "211/HBR/26",
@@ -1206,7 +1206,7 @@
     "nombre": "Disposición N° 212/HBR/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 431-2483-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252960",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "212/HBR/26",
@@ -1226,7 +1226,7 @@
     "categoria": "tecnologia",
     "proceso_id": "29/DGCYC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1266,12 +1266,12 @@
     "nombre": "Disposición N° 259/HGADS/26",
     "sumario": "Anula la Licitación Publica N° 434-0940-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255536",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "259/HGADS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1301,7 +1301,7 @@
     "categoria": "tecnologia",
     "proceso_id": "16/DGCYC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1316,7 +1316,7 @@
     "categoria": "otros",
     "proceso_id": "54/DGIASINF/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1341,7 +1341,7 @@
     "nombre": "Disposición N° 123/IRPS/26",
     "sumario": "Deja sin efecto la Licitación Pública N° 446-1252-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252944",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "123/IRPS/26",
@@ -1376,7 +1376,7 @@
     "categoria": "salud",
     "proceso_id": "1152/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1391,7 +1391,7 @@
     "categoria": "salud",
     "proceso_id": "343/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1406,7 +1406,7 @@
     "categoria": "salud",
     "proceso_id": "1153/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1421,7 +1421,7 @@
     "categoria": "salud",
     "proceso_id": "1150/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1436,7 +1436,7 @@
     "categoria": "salud",
     "proceso_id": "344/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1451,7 +1451,7 @@
     "categoria": "salud",
     "proceso_id": "345/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1466,7 +1466,7 @@
     "categoria": "salud",
     "proceso_id": "346/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1481,7 +1481,7 @@
     "categoria": "salud",
     "proceso_id": "1151/DGACSA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1491,12 +1491,12 @@
     "nombre": "Disposición N° 168/HGNPE/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 417-2824-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255524",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "168/HGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1526,7 +1526,7 @@
     "categoria": "salud",
     "proceso_id": "168/HGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1536,12 +1536,12 @@
     "nombre": "Disposición N° 160/DGAHGAP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 425-2302-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255523",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "160/DGAHGAP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1551,12 +1551,12 @@
     "nombre": "Disposición N° 448/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 420-1320-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255541",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "448/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1571,7 +1571,7 @@
     "categoria": "salud",
     "proceso_id": "1320/HGNRG/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1581,12 +1581,12 @@
     "nombre": "Disposición N° 447/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 420-1311-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255540",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "447/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1601,7 +1601,7 @@
     "categoria": "salud",
     "proceso_id": "1311/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1611,12 +1611,12 @@
     "nombre": "Disposición N° 450/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 420-2834-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255543",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "450/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1626,12 +1626,12 @@
     "nombre": "Disposición N° 452/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 420-2774-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255544",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "452/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1641,12 +1641,12 @@
     "nombre": "Disposición N° 154/DGAHGAP/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 425-2148-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255521",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "154/DGAHGAP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1656,12 +1656,12 @@
     "nombre": "Disposición N° 204/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2826-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255532",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "204/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1691,7 +1691,7 @@
     "categoria": "salud",
     "proceso_id": "340/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1701,12 +1701,12 @@
     "nombre": "Disposición N° 170/HGATA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 410-2819-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255526",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "170/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1716,12 +1716,12 @@
     "nombre": "Disposición N° 455/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 420-1301-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255545",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "455/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1736,7 +1736,7 @@
     "categoria": "salud",
     "proceso_id": "1301/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1761,12 +1761,12 @@
     "nombre": "Disposición N° 66/HNJTB/26",
     "sumario": "Aprueba pliegos y llama a Contratación Directa N° 413-0958-CDI26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255517",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "66/HNJTB/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1776,12 +1776,12 @@
     "nombre": "Disposición N° 169/HGATA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 410-2813-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255525",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "169/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1806,12 +1806,12 @@
     "nombre": "Disposición N° 205/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2810-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255533",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "205/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1836,12 +1836,12 @@
     "nombre": "Disposición N° 55/HSL/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 433-2438-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255515",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "55/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1931,7 +1931,7 @@
     "categoria": "salud",
     "proceso_id": "154/HGACG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1941,12 +1941,12 @@
     "nombre": "Disposición N° 206/HGAT/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 438-2828-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255534",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "206/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -1971,12 +1971,12 @@
     "nombre": "Disposición N° 54/HSL/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 433-2378-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255514",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "54/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2006,7 +2006,7 @@
     "categoria": "salud",
     "proceso_id": "521/SSASS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2031,12 +2031,12 @@
     "nombre": "Disposición N° 56/HSL/26",
     "sumario": "Aprueba y adjudica la Contratación Directa N° 433-0868-CDI26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255516",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "56/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2046,12 +2046,12 @@
     "nombre": "Disposición N° 171/HGATA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 410-2835-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255527",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "171/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2076,12 +2076,12 @@
     "nombre": "Disposición N° 351/DGAHGACA/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 412-2467-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255538",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "351/DGAHGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2096,7 +2096,7 @@
     "categoria": "salud",
     "proceso_id": "2467/HGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2126,7 +2126,7 @@
     "categoria": "salud",
     "proceso_id": "160/HRRMF/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2136,12 +2136,12 @@
     "nombre": "Disposición N° 181/DGAHGNPE/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 417-2659-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255530",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "181/DGAHGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2151,12 +2151,12 @@
     "nombre": "Disposición N° 53/HSL/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 433-2374-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255513",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "53/HSL/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2201,7 +2201,7 @@
     "categoria": "otros",
     "proceso_id": "1243/DGTALMDHYHGC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2211,12 +2211,12 @@
     "nombre": "Disposición N° 449/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 420-1322-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255542",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "449/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2226,12 +2226,12 @@
     "nombre": "Disposición N° 446/DGAHGNRG/26",
     "sumario": "Aprueba pliegos y llama a Licitación Pública N° 420-1323-LPU26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255539",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "446/DGAHGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2246,7 +2246,7 @@
     "categoria": "salud",
     "proceso_id": "1322/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2261,7 +2261,7 @@
     "categoria": "salud",
     "proceso_id": "1323/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2291,7 +2291,7 @@
     "categoria": "salud",
     "proceso_id": "39/HO/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2306,7 +2306,7 @@
     "categoria": "tecnologia",
     "proceso_id": "123/DPCABA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2321,7 +2321,7 @@
     "categoria": "salud",
     "proceso_id": "2859/HO/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2331,12 +2331,12 @@
     "nombre": "Disposición N° 154/DGAHGATA/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 410-2533-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255520",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "154/DGAHGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2366,7 +2366,7 @@
     "categoria": "salud",
     "proceso_id": "1148/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2381,7 +2381,7 @@
     "categoria": "salud",
     "proceso_id": "191/IRPS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2391,12 +2391,12 @@
     "nombre": "Disposición N° 92/HQ/26",
     "sumario": "Aprueba pliegos y autoriza el llamado a Contratación Directa N° 8618-0847-CDI26 para contratación de la Renovación de la Suscripción a la Editorial La Ley - año 2026",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255519",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "92/HQ/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2411,7 +2411,7 @@
     "categoria": "otros",
     "proceso_id": "124/DPCABA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2456,7 +2456,7 @@
     "categoria": "salud",
     "proceso_id": "1359/IRPS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2481,12 +2481,12 @@
     "nombre": "Disposición N° 183/DGAHGNPE/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 417-2707-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255531",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "183/DGAHGNPE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2501,7 +2501,7 @@
     "categoria": "otros",
     "proceso_id": "9284/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2511,12 +2511,12 @@
     "nombre": "Disposición N° 158/DGAHGAT/26",
     "sumario": "Aprueba y adjudica la Contratación Directa N° 438-0891-CDI26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255522",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "158/DGAHGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2546,7 +2546,7 @@
     "categoria": "salud",
     "proceso_id": "873/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2561,7 +2561,7 @@
     "categoria": "salud",
     "proceso_id": "2035/HQ/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2586,12 +2586,12 @@
     "nombre": "Disposición N° 90/HQ/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 428-1986-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255518",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "90/HQ/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2601,12 +2601,12 @@
     "nombre": "Disposición N° 173/DGAHBR/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 431-2572-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255529",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "173/DGAHBR/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2621,7 +2621,7 @@
     "categoria": "salud",
     "proceso_id": "1986/HQ/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2681,7 +2681,7 @@
     "categoria": "salud",
     "proceso_id": "40/HQ/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2706,12 +2706,12 @@
     "nombre": "Disposición N° 284/HGACA/26",
     "sumario": "Aprueba pliegos y llama a Contratación Menor N° 412-2883-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255537",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "284/HGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2726,7 +2726,7 @@
     "categoria": "salud",
     "proceso_id": "2883/HGACA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2736,12 +2736,12 @@
     "nombre": "Disposición N° 172/DGAHBR/26",
     "sumario": "Aprueba y adjudica la Contratación Menor N° 431-2216-CME26",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255528",
-    "organismo": "Ministerio de Salud-",
+    "organismo": "Ministerio de Salud",
     "tipo": "Disposición",
     "categoria": "salud",
     "proceso_id": "172/DGAHBR/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2756,7 +2756,7 @@
     "categoria": "otros",
     "proceso_id": "245/SSGA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2786,7 +2786,7 @@
     "categoria": "tecnologia",
     "proceso_id": "2587/CCR/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2876,7 +2876,7 @@
     "categoria": "otros",
     "proceso_id": "9287/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2891,7 +2891,7 @@
     "categoria": "otros",
     "proceso_id": "9285/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2906,7 +2906,7 @@
     "categoria": "otros",
     "proceso_id": "1248/DGAYCON/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2921,7 +2921,7 @@
     "categoria": "salud",
     "proceso_id": "962/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2936,7 +2936,7 @@
     "categoria": "salud",
     "proceso_id": "961/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2951,7 +2951,7 @@
     "categoria": "otros",
     "proceso_id": "40/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2966,7 +2966,7 @@
     "categoria": "salud",
     "proceso_id": "2871/HMIRS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2981,7 +2981,7 @@
     "categoria": "salud",
     "proceso_id": "3439/MSGC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -2996,7 +2996,7 @@
     "categoria": "salud",
     "proceso_id": "1036/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3011,7 +3011,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "2867/HGAT/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3026,7 +3026,7 @@
     "categoria": "tecnologia",
     "proceso_id": "16/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3041,7 +3041,7 @@
     "categoria": "salud",
     "proceso_id": "1330/HGARM/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3056,7 +3056,7 @@
     "categoria": "salud",
     "proceso_id": "1102/HGACD/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3071,7 +3071,7 @@
     "categoria": "otros",
     "proceso_id": "1133/DGPARE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3086,7 +3086,7 @@
     "categoria": "salud",
     "proceso_id": "1198/HMOMC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3101,7 +3101,7 @@
     "categoria": "salud",
     "proceso_id": "1237/HMOMC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3116,7 +3116,7 @@
     "categoria": "otros",
     "proceso_id": "1/IUS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3131,7 +3131,7 @@
     "categoria": "salud",
     "proceso_id": "1192/HGACD/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3146,7 +3146,7 @@
     "categoria": "salud",
     "proceso_id": "2793/HBU/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3161,7 +3161,7 @@
     "categoria": "salud",
     "proceso_id": "2549/HGACG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3176,7 +3176,7 @@
     "categoria": "salud",
     "proceso_id": "1209/HGNRG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3191,7 +3191,7 @@
     "categoria": "otros",
     "proceso_id": "26/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3206,7 +3206,7 @@
     "categoria": "otros",
     "proceso_id": "27/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3221,7 +3221,7 @@
     "categoria": "otros",
     "proceso_id": "28/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3236,7 +3236,7 @@
     "categoria": "salud",
     "proceso_id": "1313/HGACG/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3251,7 +3251,7 @@
     "categoria": "salud",
     "proceso_id": "527/SSASS/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3266,7 +3266,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "2861/IZLP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3281,7 +3281,7 @@
     "categoria": "salud",
     "proceso_id": "1352/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3296,7 +3296,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "33/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3311,7 +3311,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "9290/IVC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3326,7 +3326,7 @@
     "categoria": "otros",
     "proceso_id": "1185/DGPARE/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3341,7 +3341,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "33/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3356,7 +3356,7 @@
     "categoria": "salud",
     "proceso_id": "2840/HGATA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3371,7 +3371,7 @@
     "categoria": "otros",
     "proceso_id": "674/DGIASINF/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3386,7 +3386,7 @@
     "categoria": "otros",
     "proceso_id": "25338/BCOCIUDAD/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3401,7 +3401,7 @@
     "categoria": "tecnologia",
     "proceso_id": "1078/AGIP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3416,7 +3416,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3431,7 +3431,7 @@
     "categoria": "salud",
     "proceso_id": "1273/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3446,7 +3446,7 @@
     "categoria": "otros",
     "proceso_id": "2/DPCABA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3461,7 +3461,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "5997895/DGCOYP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3476,7 +3476,7 @@
     "categoria": "otros",
     "proceso_id": "3/CEO/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3491,7 +3491,7 @@
     "categoria": "salud",
     "proceso_id": "523/DGACSA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3506,7 +3506,7 @@
     "categoria": "otros",
     "proceso_id": "747/DGGAP/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   },
   {
@@ -3516,12 +3516,12 @@
     "nombre": "Licitación Pública / Preadjudicación  N° 3/LOTBA/26",
     "sumario": "Servicio de Creación de Contenidos para Publicidad, Propaganda y Difusión",
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255642",
-    "organismo": "Ministerio de Hacienda y Finanzas  -  Lotería de la Ciudad de Buenos Aires S.A.U.",
+    "organismo": "Ministerio de Hacienda y Finanzas - Lotería de la Ciudad de Buenos Aires S.A.U.",
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "3/LOTBA/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-22T01:09:11+00:00",
+    "last_seen_at": "2026-08-22T01:18:26+00:00",
     "estado": "detectada"
   }
 ]
