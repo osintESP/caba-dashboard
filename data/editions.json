@@ -1,5 +1,150 @@
 [
   {
+    "numero_boletin": 7423,
+    "fecha_publicacion": "05/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5228086",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5228087"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:33:03+00:00",
+    "last_collected_at": "2026-08-22T13:33:03+00:00",
+    "total_normas": 388,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7424,
+    "fecha_publicacion": "06/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5230576",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5230577"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:33:37+00:00",
+    "last_collected_at": "2026-08-22T13:33:37+00:00",
+    "total_normas": 464,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7425,
+    "fecha_publicacion": "07/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5232881",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5232882"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:34:10+00:00",
+    "last_collected_at": "2026-08-22T13:34:10+00:00",
+    "total_normas": 421,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7426,
+    "fecha_publicacion": "10/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5235043",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5235044"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:34:42+00:00",
+    "last_collected_at": "2026-08-22T13:34:42+00:00",
+    "total_normas": 425,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7427,
+    "fecha_publicacion": "11/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5237181",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5237182"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:35:14+00:00",
+    "last_collected_at": "2026-08-22T13:35:14+00:00",
+    "total_normas": 398,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7428,
+    "fecha_publicacion": "12/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5239461",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5239462"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:35:46+00:00",
+    "last_collected_at": "2026-08-22T13:35:46+00:00",
+    "total_normas": 390,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7429,
+    "fecha_publicacion": "13/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241657",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241658"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:36:20+00:00",
+    "last_collected_at": "2026-08-22T13:36:20+00:00",
+    "total_normas": 395,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7430,
+    "fecha_publicacion": "14/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5244350",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5244351"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:36:52+00:00",
+    "last_collected_at": "2026-08-22T13:36:52+00:00",
+    "total_normas": 418,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7431,
+    "fecha_publicacion": "18/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5247241",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248783"
+      }
+    ],
+    "first_collected_at": "2026-08-22T13:37:25+00:00",
+    "last_collected_at": "2026-08-22T13:37:25+00:00",
+    "total_normas": 469,
+    "schema_source": 2
+  },
+  {
+    "numero_boletin": 7432,
+    "fecha_publicacion": "18/08/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248767",
+    "separata": [],
+    "first_collected_at": "2026-08-22T13:37:56+00:00",
+    "last_collected_at": "2026-08-22T13:37:56+00:00",
+    "total_normas": 179,
+    "schema_source": 2
+  },
+  {
     "numero_boletin": 7433,
     "fecha_publicacion": "19/08/2026",
     "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5250825",
