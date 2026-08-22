@@ -38,6 +38,37 @@ class MergeNormTest(unittest.TestCase):
         self.assertEqual(merged['rutas_recuperacion'], ['obtenerBoletin_true', 'obtenerResultado'])
 
 
+class CleanOrganismoTest(unittest.TestCase):
+    """Bug real visto en producción: 'Ministerio de Salud' y 'Ministerio de Salud-'
+    contaban como organismos distintos en el ranking por venir de la API del Boletín
+    con basura de formato (guion/espacio colgante)."""
+
+    def test_strips_trailing_hyphen(self):
+        self.assertEqual(data_model.clean_organismo('Ministerio de Salud-'), 'Ministerio de Salud')
+
+    def test_leaves_clean_value_unchanged(self):
+        self.assertEqual(data_model.clean_organismo('Ministerio de Salud'), 'Ministerio de Salud')
+
+    def test_does_not_touch_legitimate_internal_hyphen(self):
+        # Un organismo compuesto real (dos ministerios listados juntos) no debe fusionarse.
+        value = 'Ministerio de Hacienda y Finanzas - Ministerio de Salud'
+        self.assertEqual(data_model.clean_organismo(value), value)
+
+    def test_collapses_internal_whitespace_and_trailing_space(self):
+        self.assertEqual(data_model.clean_organismo('Ministerio  de   Salud  '), 'Ministerio de Salud')
+
+    def test_none_and_empty_passthrough(self):
+        self.assertIsNone(data_model.clean_organismo(None))
+        self.assertIsNone(data_model.clean_organismo(''))
+
+
+class MergeNormAppliesCleanOrganismoTest(unittest.TestCase):
+    def test_merge_norm_normalizes_organismo(self):
+        merged = data_model.merge_norm({}, {'id_norma': 1, 'organismo': 'Ministerio de Salud-'},
+                                        num=100, b={}, collected='2026-08-21T00:00:00')
+        self.assertEqual(merged['organismo'], 'Ministerio de Salud')
+
+
 class CategoryTest(unittest.TestCase):
     """Bug: 'redes' como palabra suelta clasificaba como tecnología cualquier
     mención a redes eléctricas/hídricas."""

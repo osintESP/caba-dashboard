@@ -33,12 +33,20 @@ def proceso_id(n):
 def pick(old,new,key):
  v=new.get(key)
  return v if v not in (None,'',[],{}) else old.get(key)
+def clean_organismo(name):
+ # La API del Boletín a veces devuelve el mismo organismo con basura de formato
+ # (guiones/espacios colgantes, ej. "Ministerio de Salud-"), que sin normalizar
+ # aparece como una entidad distinta en los rankings por organismo.
+ if not name: return None
+ name=re.sub(r'\s+',' ',name).strip()
+ name=re.sub(r'[\s\-]+$','',name).strip()
+ return name or None
 def merge_norm(old,n,num,b,collected):
  return {**old,
   'id_norma':n.get('id_norma'),'numero_boletin':num,'fecha_publicacion':b.get('fecha_publicacion'),
   'nombre':pick(old,n,'nombre'),'sumario':pick(old,n,'sumario'),'url_norma':pick(old,n,'url_norma'),
   'anexos':pick(old,n,'anexos') or [],'tipo':pick(old,n,'tipo'),'subtipo':pick(old,n,'subtipo'),
-  'seccion':pick(old,n,'seccion'),'organismo':pick(old,n,'organismo'),'ruta_arbol':pick(old,n,'ruta_arbol') or [],
+  'seccion':pick(old,n,'seccion'),'organismo':clean_organismo(pick(old,n,'organismo')),'ruta_arbol':pick(old,n,'ruta_arbol') or [],
   'rutas_recuperacion':sorted(set(old.get('rutas_recuperacion') or [])|set(n.get('rutas_recuperacion') or [])),
   'first_seen_at':old.get('first_seen_at') or collected,'last_seen_at':collected}
 def main():
@@ -46,7 +54,12 @@ def main():
  if not isinstance(latest,dict): raise SystemExit('latest missing')
  b=latest.get('boletin') or {}; num=b.get('numero') or latest.get('numero_objetivo'); collected=latest.get('collected_at') or now()
  editions=read(DATA/'editions.json',[]); by={str(x.get('numero_boletin')):x for x in editions if x.get('numero_boletin') is not None}; old=by.get(str(num),{}); by[str(num)]={**old,'numero_boletin':num,'fecha_publicacion':b.get('fecha_publicacion'),'url_boletin':b.get('url_boletin'),'separata':b.get('separata') or [],'first_collected_at':old.get('first_collected_at') or collected,'last_collected_at':collected,'total_normas':latest.get('TOTAL_API'),'schema_source':latest.get('schema_version')}; editions=sorted(by.values(),key=lambda x:int(x.get('numero_boletin') or 0)); write(DATA/'editions.json',editions)
- existing=read(DATA/'norms.json',[]); idx={str(x.get('id_norma')):x for x in existing if x.get('id_norma') is not None}
+ existing=read(DATA/'norms.json',[])
+ # Auto-cura organismos ya guardados con basura de formato (ver clean_organismo): las
+ # normas viejas no se vuelven a scrapear, así que sin esto quedarían sucias para siempre.
+ for x in existing:
+  if x.get('organismo'): x['organismo']=clean_organismo(x['organismo'])
+ idx={str(x.get('id_norma')):x for x in existing if x.get('id_norma') is not None}
  for n in latest.get('normas') or []:
   i=n.get('id_norma')
   if i is None: continue
