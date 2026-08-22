@@ -64,7 +64,14 @@ jobs:
           else
             git commit -m 'Refresh Buenos Aires Compras (BAC) dataset'
             git fetch origin master
-            git rebase origin/master
+            # data/bac_catalog.json y bac_sync_state.json son regenerados completos en
+            # cada corrida (no ediciones incrementales): ante un conflicto de rebase,
+            # siempre gana la versión recién generada por esta corrida, nunca la previa.
+            if ! git rebase origin/master; then
+              git checkout --theirs data/bac_catalog.json data/bac_sync_state.json
+              git add data/bac_catalog.json data/bac_sync_state.json
+              git rebase --continue
+            fi
             git push
           fi
 

@@ -98,6 +98,12 @@ jobs:
           else
             git commit -m 'Refresh Curador CABA official dashboard data'
             git fetch origin master
+            # A diferencia de bac_catalog.json (regenerado completo desde cero en cada
+            # corrida), estos JSON se calculan por MERGE incremental contra el archivo
+            # existente (ver data_model.py) — si hubiera un conflicto de rebase acá,
+            # NO tomar automáticamente ninguno de los dos lados: nuestra versión fue
+            # calculada sobre una base ya desactualizada y podría pisar una edición
+            # que el otro commit haya agregado. Se deja fallar para revisión manual.
             git rebase origin/master
             git push
           fi
