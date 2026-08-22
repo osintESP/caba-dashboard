@@ -97,6 +97,8 @@ jobs:
             echo 'No dashboard data changes.'
           else
             git commit -m 'Refresh Curador CABA official dashboard data'
+            git fetch origin master
+            git rebase origin/master
             git push
           fi
 

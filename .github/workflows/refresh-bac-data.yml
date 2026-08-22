@@ -1,0 +1,88 @@
+name: Refresh Buenos Aires Compras data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'runtime/bac_catalog_collector.py'
+      - '.github/workflows/refresh-bac-data.yml'
+  schedule:
+    # 06:00 UTC = 03:00 ART, fuera de la ventana 11-16 UTC del refresh de 30 min del Boletín.
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: caba-dashboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r runtime/requirements.txt
+
+      - name: Collect Buenos Aires Compras (BAC) dataset
+        run: python runtime/bac_catalog_collector.py
+
+      - name: Validate mandatory outputs
+        run: |
+          test -s data/bac_catalog.json
+          test -s data/bac_sync_state.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          bac = json.loads(Path('data/bac_catalog.json').read_text(encoding='utf-8'))
+          assert 'status' in bac and 'vendor_ranking' in bac and 'audit_signals' in bac
+          json.loads(Path('data/bac_sync_state.json').read_text(encoding='utf-8'))
+          print('BAC_DATA_QUALITY=OK')
+          PY
+
+      - name: Persist refreshed BAC dataset
+        run: |
+          git config user.name 'caba-dashboard[bot]'
+          git config user.email 'caba-dashboard@users.noreply.github.com'
+          git add data/bac_catalog.json data/bac_sync_state.json
+          if git diff --cached --quiet; then
+            echo 'No BAC data changes.'
+          else
+            git commit -m 'Refresh Buenos Aires Compras (BAC) dataset'
+            git fetch origin master
+            git rebase origin/master
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload refreshed site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy refreshed dashboard to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
