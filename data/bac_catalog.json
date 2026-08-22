@@ -1,0 +1,271 @@
+{
+  "schema_version": 2,
+  "collected_at": "2026-08-22T00:11:21+00:00",
+  "source": {
+    "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
+    "api": "https://data.buenosaires.gob.ar/api/3/action",
+    "dataset": "buenos-aires-compras",
+    "standard": "OCDS 1.1"
+  },
+  "dataset": {
+    "id": "4cc16b16-cb04-47a4-a7dc-ffb354d0dcb1",
+    "title": "Buenos Aires Compras",
+    "metadata_modified": "2026-06-01T18:43:49.834241",
+    "license_id": "CC-BY-2.5-AR",
+    "organization": "Ministerio de Hacienda y Finanzas"
+  },
+  "resource": {
+    "id": "2a3d077c-71b6-4ba7-8924-f3e38cf1b8fc",
+    "name": "Buenos Aires Compras",
+    "format": "JSON",
+    "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-economia-y-finanzas/buenos-aires-compras/bac_anual.json",
+    "last_modified": "2023-01-13T17:41:29.592138"
+  },
+  "coverage": {
+    "releases_processed": 23298,
+    "date_from": "2022-01-03T08:00:00-03:00",
+    "date_to": "2022-06-08T17:00:00-03:00",
+    "note": "Ventana de cobertura de bac_anual.json no confirmada oficialmente por el publicador; inferida del rango real de fechas de los releases procesados."
+  },
+  "summary": {
+    "total_awarded_ars": 17920523116.65,
+    "tech_awarded_ars": 2147572053.28,
+    "tech_share_pct": 11.98,
+    "awards_counted": 13736,
+    "vendors_counted": 542,
+    "currencies": {
+      "ARS": 13736,
+      "USD": 97,
+      "EUR": 2
+    }
+  },
+  "vendor_ranking": [
+    {
+      "name": "Agustin Asaad",
+      "amount_ars": 3131518500.0,
+      "tech_amount_ars": 0,
+      "awards": 12
+    },
+    {
+      "name": "TRANS INDUSTRIAS ELECTRONICAS S.A",
+      "amount_ars": 811677200.0,
+      "tech_amount_ars": 806464600.0,
+      "awards": 8
+    },
+    {
+      "name": "Laboratorios Jayor SRL",
+      "amount_ars": 602200000.0,
+      "tech_amount_ars": 0,
+      "awards": 12
+    },
+    {
+      "name": "MEDI SISTEM S.R.L.",
+      "amount_ars": 575982078.48,
+      "tech_amount_ars": 172333.0,
+      "awards": 736
+    },
+    {
+      "name": "FRANCISCO OSVALDO DIAZ S.A.",
+      "amount_ars": 527955740.64,
+      "tech_amount_ars": 0,
+      "awards": 12
+    },
+    {
+      "name": "DROGUERIA ARTIGAS S.A.",
+      "amount_ars": 443761820.4,
+      "tech_amount_ars": 0,
+      "awards": 386
+    },
+    {
+      "name": "BIODIAGNOSTICO S.A.",
+      "amount_ars": 419380903.8,
+      "tech_amount_ars": 0,
+      "awards": 360
+    },
+    {
+      "name": "BIOARS S.A.",
+      "amount_ars": 413485885.62,
+      "tech_amount_ars": 0,
+      "awards": 56
+    },
+    {
+      "name": "DATCO S.A.",
+      "amount_ars": 401934000.0,
+      "tech_amount_ars": 401934000.0,
+      "awards": 6
+    },
+    {
+      "name": "FNET SYSTEM S.R.L.",
+      "amount_ars": 345284208.0,
+      "tech_amount_ars": 0,
+      "awards": 3
+    },
+    {
+      "name": "AP Supplier Group SA",
+      "amount_ars": 294365108.0,
+      "tech_amount_ars": 294365108.0,
+      "awards": 164
+    },
+    {
+      "name": "ESCALUM INVESTMENT SA",
+      "amount_ars": 243648000.0,
+      "tech_amount_ars": 0,
+      "awards": 2
+    },
+    {
+      "name": "TECNOLAB S.A.",
+      "amount_ars": 239347990.02,
+      "tech_amount_ars": 0,
+      "awards": 132
+    },
+    {
+      "name": "MSD ARGENTINA SRL",
+      "amount_ars": 235408405.68,
+      "tech_amount_ars": 0,
+      "awards": 12
+    },
+    {
+      "name": "Keko S.A.",
+      "amount_ars": 217959172.0,
+      "tech_amount_ars": 14480904.0,
+      "awards": 8
+    },
+    {
+      "name": "PAPELERA PERGAMINO S.A.I.C.A.",
+      "amount_ars": 217299600.0,
+      "tech_amount_ars": 0,
+      "awards": 54
+    },
+    {
+      "name": "ROFINA S.A.I.C.F.",
+      "amount_ars": 193988018.99,
+      "tech_amount_ars": 0,
+      "awards": 48
+    },
+    {
+      "name": "FRESENIUS KABI S.A.",
+      "amount_ars": 193668354.18,
+      "tech_amount_ars": 0,
+      "awards": 168
+    },
+    {
+      "name": "QUIMICA EROVNE S.A.",
+      "amount_ars": 168093042.8,
+      "tech_amount_ars": 0,
+      "awards": 382
+    },
+    {
+      "name": "VIAJES APOLO S.R.L",
+      "amount_ars": 160500000.0,
+      "tech_amount_ars": 0,
+      "awards": 63
+    }
+  ],
+  "audit_signals": {
+    "method_breakdown_ars": {
+      "open": 2007115486.3,
+      "direct": 140456566.98
+    },
+    "direct_or_limited_share_pct": 6.54,
+    "non_competitive_open_tenders": {
+      "count": 278,
+      "amount_ars": 1914970693.5,
+      "share_pct_of_tech": 89.17,
+      "note": "Procesos formalmente públicos (procurementMethod=open) que BAC marca como sin competencia real (competitive=false), en compras de tecnología. BAC no publica numberOfTenderers/tenderers; esta es la única señal de competencia real que expone el propio publicador."
+    },
+    "vendor_concentration_by_organismo": [
+      {
+        "organismo": "HTAL. JUAN A. FERNANDEZ",
+        "top_vendor": "GENETRICS S.A.",
+        "top_vendor_amount_ars": 3552000.0,
+        "organismo_tech_amount_ars": 3552000,
+        "top_vendor_share_pct": 100.0,
+        "vendors_count": 1,
+        "high_concentration": true
+      },
+      {
+        "organismo": "HTAL. JOSE M.RAMOS MEJIA",
+        "top_vendor": "GENETRICS S.A.",
+        "top_vendor_amount_ars": 6979000.0,
+        "organismo_tech_amount_ars": 6979000,
+        "top_vendor_share_pct": 100.0,
+        "vendors_count": 1,
+        "high_concentration": true
+      },
+      {
+        "organismo": "Ente De Turismo",
+        "top_vendor": "AP Supplier Group SA",
+        "top_vendor_amount_ars": 1370600.0,
+        "organismo_tech_amount_ars": 1370600,
+        "top_vendor_share_pct": 100.0,
+        "vendors_count": 1,
+        "high_concentration": true
+      },
+      {
+        "organismo": "DIR.GRAL.DE COMPRAS Y CONTRATACIONES",
+        "top_vendor": "EXO SA",
+        "top_vendor_amount_ars": 87065872.0,
+        "organismo_tech_amount_ars": 92144792.8,
+        "top_vendor_share_pct": 94.49,
+        "vendors_count": 3,
+        "high_concentration": true
+      },
+      {
+        "organismo": "ENTE AUTARQUICO TEATRO COLON",
+        "top_vendor": "AKSEC SRL",
+        "top_vendor_amount_ars": 6929520.0,
+        "organismo_tech_amount_ars": 7365120,
+        "top_vendor_share_pct": 94.09,
+        "vendors_count": 2,
+        "high_concentration": true
+      },
+      {
+        "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+        "top_vendor": "Prominente S.A",
+        "top_vendor_amount_ars": 76302000.0,
+        "organismo_tech_amount_ars": 90782904,
+        "top_vendor_share_pct": 84.05,
+        "vendors_count": 2,
+        "high_concentration": true
+      },
+      {
+        "organismo": "MINISTERIO DE CULTURA",
+        "top_vendor": "Twins Music S.R.L",
+        "top_vendor_amount_ars": 30656328.0,
+        "organismo_tech_amount_ars": 39320328,
+        "top_vendor_share_pct": 77.97,
+        "vendors_count": 3,
+        "high_concentration": true
+      },
+      {
+        "organismo": "HTAL. JOSE M. PENNA",
+        "top_vendor": "GENETRICS S.A.",
+        "top_vendor_amount_ars": 11736000.0,
+        "organismo_tech_amount_ars": 15452856.52,
+        "top_vendor_share_pct": 75.95,
+        "vendors_count": 5,
+        "high_concentration": true
+      },
+      {
+        "organismo": "DIRECCION GENERAL DE ESTADISTICAS Y CENSOS",
+        "top_vendor": "DCE SA",
+        "top_vendor_amount_ars": 8640000.0,
+        "organismo_tech_amount_ars": 13750756.98,
+        "top_vendor_share_pct": 62.83,
+        "vendors_count": 3,
+        "high_concentration": true
+      },
+      {
+        "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+        "top_vendor": "TRANS INDUSTRIAS ELECTRONICAS S.A",
+        "top_vendor_amount_ars": 806464600.0,
+        "organismo_tech_amount_ars": 1876396932.98,
+        "top_vendor_share_pct": 42.98,
+        "vendors_count": 9,
+        "high_concentration": false
+      }
+    ]
+  },
+  "status": "ok",
+  "generated_by": "bac_catalog_collector.py"
+}
