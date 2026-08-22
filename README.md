@@ -26,7 +26,9 @@ index.html + app.js + styles.css
         fetch() de los JSON de data/, todo el filtrado/render es client-side
 ```
 
-`runtime/bac_catalog_collector.py` consume por separado el catálogo oficial de **Buenos Aires Compras (BAC)** — un dataset OCDS real (`data.buenosaires.gob.ar/dataset/buenos-aires-compras`, resource `bac_anual.json`) con adjudicaciones, montos y proveedores. Corre en su propio workflow diario (`refresh-bac-data.yml`), no en el de 30 min, porque el archivo pesa ~85MB y la fuente se actualiza con una cadencia de días/semanas, no minutos. Genera `data/bac_catalog.json` con un ranking de proveedores por monto adjudicado y un bloque `audit_signals` pensado para auditoría de compras de tecnología (ver más abajo).
+`runtime/bac_catalog_collector.py` consume por separado el catálogo oficial de **Buenos Aires Compras (BAC)** — un dataset OCDS real (`data.buenosaires.gob.ar/dataset/buenos-aires-compras`, resource `bac_anual.csv`, OCDS aplanado) con adjudicaciones, montos y proveedores. Corre en su propio workflow diario (`refresh-bac-data.yml`), no en el de 30 min, porque el archivo pesa ~55MB y la fuente se actualiza con una cadencia de días/semanas, no minutos. Genera `data/bac_catalog.json` con un ranking de proveedores por monto adjudicado y un bloque `audit_signals` pensado para auditoría de compras de tecnología (ver más abajo).
+
+**Por qué CSV y no el JSON homónimo**: el mismo `package_show` también expone `bac_anual.json` (mismo dataset, formato OCDS release package sin aplanar). Se descartó porque, verificado contra el CDN real, **ese JSON sólo contiene datos de enero-junio 2022** — se re-sube periódicamente (mismo `Last-Modified` que el CSV) pero su contenido nunca avanza. El CSV sí tiene datos reales con ~2-3 meses de atraso respecto a la fecha actual. Limitación del CSV a cambio: al ser OCDS *aplanado*, sólo trae el índice `0` de cada array (`awards/0/...`, `parties/0/...`) — si un award tuviera más de un proveedor (co-adjudicación), sólo se ve el primero.
 
 ## Datos (`data/`)
 
@@ -39,11 +41,11 @@ index.html + app.js + styles.css
 | `stats.json` | Métricas agregadas que consume el panel principal del dashboard | — |
 | `sync_manifest.json` | Metadata de la última sincronización pública (para el badge de estado) | — |
 | `bac_catalog.json` | Adjudicaciones reales de Buenos Aires Compras (OCDS): ranking de proveedores por monto y señales de auditoría en tecnología | — |
-| `bac_sync_state.json` | ETag/Last-Modified del recurso BAC en la última corrida, para no re-descargar ~85MB si no cambió | — |
+| `bac_sync_state.json` | ETag/Last-Modified del recurso BAC en la última corrida, para no re-descargar ~55MB si no cambió | — |
 
 **Auditoría de compras de tecnología (`bac_catalog.json.audit_signals`):** el objetivo del dashboard es facilitar auditoría, no sólo mostrar métricas. BAC no publica `numberOfTenderers`/`tenderers` (confirmado: 0 ocurrencias en todo el dataset), así que la única señal de competencia real que expone el propio publicador es el booleano `tender.competitive`. Sobre eso se calculan tres señales, todas acotadas a contrataciones clasificadas como tecnología:
 - `direct_or_limited_share_pct`: % del monto adjudicado por contratación directa/limitada en vez de licitación pública.
-- `non_competitive_open_tenders`: licitaciones formalmente públicas (`procurementMethod=open`) que BAC marca como sin competencia real (`competitive=false`) — en la corrida de referencia esto fue el **89% del monto adjudicado en tecnología**, la señal más fuerte encontrada hasta ahora.
+- `non_competitive_open_tenders`: licitaciones formalmente públicas (`procurementMethod=open`) que BAC marca como sin competencia real (`competitive=false`) — en la corrida de referencia esto fue el **54% del monto adjudicado en tecnología**, la señal más fuerte encontrada hasta ahora.
 - `vendor_concentration_by_organismo`: organismos donde un solo proveedor se lleva ≥60% de su gasto en tecnología (con un piso de $1M para no marcar compras únicas chicas como "concentración").
 
 Ninguna de estas señales prueba irregularidad por sí sola — son disparadores para que un auditor priorice qué expediente revisar primero, no un veredicto.
@@ -53,7 +55,7 @@ Ninguna de estas señales prueba irregularidad por sí sola — son disparadores
 ## Automatización (GitHub Actions)
 
 - **`refresh-official-data.yml`**: corre cada 30 min en horario hábil (11:00–16:30 UTC / 08:00–13:30 ART, lunes a viernes) más una corrida extra a las 12:55 ART. Ejecuta el pipeline del Boletín, valida que los JSON de salida sean válidos, commitea los cambios con el bot `caba-dashboard[bot]` y dispara el deploy a Pages. También se puede disparar manualmente (`workflow_dispatch`) o al tocar algo en `runtime/`.
-- **`refresh-bac-data.yml`**: corre 1 vez por día a las 06:00 UTC (03:00 ART, fuera de la ventana del refresh de 30 min). Descarga y parsea `bac_anual.json` sólo si cambió (chequeo condicional por ETag/Last-Modified), y hace commit+deploy igual que el workflow del Boletín. Ambos workflows comparten el mismo `concurrency.group` (`caba-dashboard-refresh`) para que nunca corran en paralelo y se pisen el push a `master`; además, los dos hacen `git fetch && git rebase` antes de pushear como defensa adicional.
+- **`refresh-bac-data.yml`**: corre 1 vez por día a las 06:00 UTC (03:00 ART, fuera de la ventana del refresh de 30 min). Descarga y parsea `bac_anual.csv` sólo si cambió (chequeo condicional por ETag/Last-Modified), y hace commit+deploy igual que el workflow del Boletín. Ambos workflows comparten el mismo `concurrency.group` (`caba-dashboard-refresh`) para que nunca corran en paralelo y se pisen el push a `master`; además, los dos hacen `git fetch && git rebase` antes de pushear como defensa adicional (en `refresh-bac-data.yml` un conflicto de rebase se resuelve automáticamente a favor de la corrida actual, porque `bac_catalog.json` siempre es una regeneración completa, no un merge incremental).
 - **`pages.yml`**: deploya el contenido del repo a GitHub Pages en cada push a `master`.
 
 ## Desarrollo local
@@ -68,7 +70,7 @@ pip install -r runtime/requirements.txt
 python runtime/collector.py               # pega contra la API oficial, genera runtime/output/latest.json
 python runtime/data_model.py              # actualiza data/editions.json, norms.json, procurements.json, stats.json
 python runtime/procurement_intelligence.py  # genera data/procurement_intelligence.json
-python runtime/bac_catalog_collector.py     # descarga y parsea BAC (~85MB), genera data/bac_catalog.json
+python runtime/bac_catalog_collector.py     # descarga y parsea BAC (~55MB), genera data/bac_catalog.json
 ```
 
 ```bash
@@ -92,6 +94,7 @@ Cubren las funciones puras del pipeline (`isproc`, `category`, `proceso_id`, `me
 - Todo el estado vive en JSON commiteados a git (patrón "git como base de datos"); funciona para el volumen actual pero es el primer punto a rediseñar si esto se migra a un runtime propio (ej. Cloud Run Jobs + Cloud SQL/Firestore en GCP).
 - La clasificación por categoría/tema es rule-based (regex sobre texto libre) — precisa pero no perfecta; ver `runtime/data_model.py` (`category`) y `runtime/procurement_intelligence.py` (`RULES`) antes de confiar ciegamente en los conteos por rubro.
 - Sin tests para `collector.py` más allá de `belongs()` (el resto depende de la forma real de la respuesta de la API oficial, no reproducible sin fixtures grabadas).
-- **La cobertura real de `bac_anual.json` observada en la primera corrida fue enero-junio 2022**, no el año en curso — la ficha del dataset no garantiza una ventana fija ("trimestral" según CKAN, "cada 15 días" según documentación histórica de BAC_OCDS). `bac_catalog.json.coverage` expone el rango real de fechas procesado en cada corrida; no asumir que son datos del año actual sin chequearlo ahí.
+- **`bac_anual.csv` tiene ~2-3 meses de atraso respecto a la fecha actual** (no es en tiempo real; la ficha del dataset no garantiza una cadencia fija — "trimestral" según CKAN, "cada 15 días" según documentación histórica de BAC_OCDS). `bac_catalog.json.coverage` expone el rango real de fechas procesado en cada corrida; no asumir que son datos del día sin chequearlo ahí.
 - Las señales de auditoría (`audit_signals`) son heurísticas con umbrales documentados pero arbitrarios (`CONCENTRATION_MIN_AMOUNT`, `CONCENTRATION_HIGH_PCT` en `bac_catalog_collector.py`) — son disparadores para revisión manual, no una conclusión de irregularidad.
-- El cruce Boletín↔BAC (ej. matchear `proceso_id` del Boletín contra `tender.id`/`ocid` de BAC para detectar licitaciones publicadas que nunca aparecen adjudicadas, o viceversa) todavía no está implementado — es la mejora de mayor valor de auditoría pendiente, señalada pero no construida en esta iteración.
+- El cruce Boletín↔BAC (ej. matchear `proceso_id` del Boletín contra `tender/id`/`ocid` de BAC para detectar licitaciones publicadas que nunca aparecen adjudicadas, o viceversa) todavía no está implementado — es la mejora de mayor valor de auditoría pendiente. No es trivial: el Boletín identifica organismos por sigla (ej. `IVC`) en el número de proceso, BAC usa un código numérico (ej. `416`) — hace falta un mapeo sigla↔código antes de poder cruzar 1:1.
+- **Se investigó y se descartó, por ahora, un radar de aperturas en tiempo real** scrapeando `buenosairescompras.gob.ar/ListarAperturaUltimos30Dias.aspx` (el sitio transaccional, no el portal de datos abiertos). Es una página ASP.NET WebForms con sesión/token anti-CSRF; se intentó reproducir con `requests` puro replicando fielmente una request real capturada del navegador (mismo HAR: headers, Referer, Origin, orden de campos, CSRF token) y siguió fallando con un redirect de sesión inválida. Investigación de soluciones de terceros confirmó que **no es viable sin un navegador real**: los únicos scrapers de terceros que funcionan hoy contra esta página usan Selenium/Puppeteer (ej. `ignaciokairuz/Boletin_Oficial_AI`, activo), y otro repo (`odia/buenosairescompras`) documenta en su código el mismo síntoma ("required as browsing directly seems to fail"). Ni siquiera un producto comercial de terceros construido específicamente para BAC (Apify `licitaciones-feed`) logró datos más frescos que el propio CSV oficial. Si se retoma, requiere agregar un navegador headless al pipeline (Chromium en el runner de GitHub Actions), no una extensión del `requests` actual.

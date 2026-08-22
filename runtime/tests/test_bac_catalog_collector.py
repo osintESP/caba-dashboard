@@ -185,10 +185,11 @@ class UnchangedDetectionTest(unittest.TestCase):
 
 
 class FindResourceTest(unittest.TestCase):
-    def test_matches_bac_anual_json_among_decoys(self):
+    def test_matches_bac_anual_csv_among_decoys(self):
         # El nombre visible en CKAN no identifica el archivo de forma confiable
-        # (el JSON real se llama "Buenos Aires Compras" en 'name'); el match real
-        # depende de la URL, no del 'name'.
+        # (el CSV real se llama "Buenos Aires Compras - Anual" en 'name'); el match real
+        # depende de la URL, no del 'name'. Se prefiere el CSV al JSON homónimo: verificado
+        # contra el CDN real que bac_anual.json sólo tiene datos de 2022 (obsoleto).
         result = {'resources': [
             {'id': '1', 'name': 'Buenos Aires Compras General', 'format': 'CSV',
              'url': 'https://cdn/.../bac.csv'},
@@ -200,11 +201,91 @@ class FindResourceTest(unittest.TestCase):
              'url': 'https://cdn/.../Metadata_OCDS.xlsx'},
         ]}
         res = bcc.find_resource(result)
-        self.assertEqual(res['id'], '3')
+        self.assertEqual(res['id'], '2')
 
     def test_no_match_returns_none(self):
         result = {'resources': [{'id': '1', 'name': 'bac.csv', 'format': 'CSV', 'url': 'https://cdn/.../bac.csv'}]}
         self.assertIsNone(bcc.find_resource(result))
+
+
+class ToFloatToBoolTest(unittest.TestCase):
+    def test_to_float_valid(self):
+        self.assertEqual(bcc._to_float('1234.5'), 1234.5)
+
+    def test_to_float_empty_or_none(self):
+        self.assertIsNone(bcc._to_float(''))
+        self.assertIsNone(bcc._to_float(None))
+
+    def test_to_float_invalid(self):
+        self.assertIsNone(bcc._to_float('no-es-un-numero'))
+
+    def test_to_bool(self):
+        self.assertTrue(bcc._to_bool('True'))
+        self.assertFalse(bcc._to_bool('False'))
+        self.assertIsNone(bcc._to_bool(''))
+        self.assertIsNone(bcc._to_bool(None))
+
+
+class CsvRowToReleaseTest(unittest.TestCase):
+    def _row(self, **overrides):
+        row = {
+            'date': '2026-05-07T16:00:00-03:00',
+            'tender/title': 'Adquisición de licencias de software',
+            'tender/description': '',
+            'tender/mainProcurementCategory': 'goods',
+            'tender/procuringEntity/name': 'Ministerio de Salud',
+            'tender/procurementMethod': 'open',
+            'tender/competitive': 'False',
+            'parties/0/id': 'CABA-UE-416',
+            'parties/0/name': 'Ministerio de Salud',
+            'awards/0/status': 'active',
+            'awards/0/value/amount': '150000.5',
+            'awards/0/value/currency': 'ARS',
+            'awards/0/suppliers/0/id': '30-1-2',
+            'awards/0/suppliers/0/name': 'Vendor SRL',
+        }
+        row.update(overrides)
+        return row
+
+    def test_full_row_maps_correctly(self):
+        rel = bcc.csv_row_to_release(self._row())
+        self.assertEqual(rel['date'], '2026-05-07T16:00:00-03:00')
+        self.assertEqual(rel['tender']['title'], 'Adquisición de licencias de software')
+        self.assertEqual(rel['tender']['procuringEntity']['name'], 'Ministerio de Salud')
+        self.assertIs(rel['tender']['competitive'], False)
+        self.assertEqual(rel['awards'][0]['value'], {'amount': 150000.5, 'currency': 'ARS'})
+        self.assertEqual(rel['awards'][0]['suppliers'], [{'id': '30-1-2', 'name': 'Vendor SRL'}])
+        self.assertEqual(rel['parties'], [{'id': 'CABA-UE-416', 'name': 'Ministerio de Salud'}])
+
+    def test_row_without_award_amount(self):
+        rel = bcc.csv_row_to_release(self._row(**{'awards/0/value/amount': ''}))
+        self.assertIsNone(rel['awards'][0]['value'])
+
+    def test_row_with_unrecognized_competitive_value(self):
+        rel = bcc.csv_row_to_release(self._row(**{'tender/competitive': ''}))
+        self.assertIsNone(rel['tender']['competitive'])
+
+    def test_row_feeds_process_releases_without_crashing(self):
+        rel = bcc.csv_row_to_release(self._row())
+        stats = bcc.process_releases([rel])
+        self.assertEqual(stats['awards_counted'], 1)
+        self.assertIn('Vendor SRL', stats['vendor_totals'])
+
+
+class ParseCsvReleasesTest(unittest.TestCase):
+    def test_parses_valid_csv(self):
+        csv_text = (
+            'date,tender/title,tender/procuringEntity/name,awards/0/value/amount,'
+            'awards/0/value/currency,awards/0/status,awards/0/suppliers/0/name\r\n'
+            '2026-05-07T16:00:00-03:00,Compra de notebooks,Org A,100000,ARS,active,Vendor X\r\n'
+        )
+        releases = bcc.parse_csv_releases(csv_text)
+        self.assertEqual(len(releases), 1)
+        self.assertEqual(releases[0]['tender']['title'], 'Compra de notebooks')
+
+    def test_missing_expected_columns_raises(self):
+        with self.assertRaises(RuntimeError):
+            bcc.parse_csv_releases('col_a,col_b\r\n1,2\r\n')
 
 
 if __name__ == '__main__':

@@ -1,4 +1,4 @@
-import json, re, unicodedata
+import csv, io, json, re, unicodedata
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -61,10 +61,13 @@ def fetch_package():
 
 def find_resource(result):
     # El nombre visible en CKAN ("Buenos Aires Compras") no identifica el archivo de forma
-    # confiable; el filename real (bac_anual.json) está en la URL del recurso, no en 'name'.
+    # confiable; el filename real (bac_anual.csv) está en la URL del recurso, no en 'name'.
+    # Se usa el CSV y no el JSON homónimo: se verificó contra el CDN real que bac_anual.json
+    # sólo contiene datos de 2022 (obsoleto, nunca actualiza su contenido pese a resubirse),
+    # mientras que bac_anual.csv tiene datos reales con ~2-3 meses de atraso.
     candidates = [res for res in (result.get('resources') or [])
-                  if (res.get('url') or '').lower().endswith('bac_anual.json')
-                  and (res.get('format') or '').lower() == 'json']
+                  if (res.get('url') or '').lower().endswith('bac_anual.csv')
+                  and (res.get('format') or '').lower() == 'csv']
     if not candidates:
         return None
     candidates.sort(key=lambda r: r.get('last_modified') or '', reverse=True)
@@ -94,7 +97,55 @@ def unchanged(prev_state, url, fp):
 def download(url):
     r = requests.get(url, timeout=180)
     r.raise_for_status()
-    return r.json()
+    r.encoding = 'utf-8'
+    return r.text
+
+
+def _to_float(v):
+    try:
+        return float(v) if v not in (None, '') else None
+    except ValueError:
+        return None
+
+
+def _to_bool(v):
+    return {'True': True, 'False': False}.get(v)
+
+
+def csv_row_to_release(row):
+    # bac_anual.csv es OCDS aplanado: sólo trae el índice 0 de cada array (awards/0/...,
+    # parties/0/...) — si un award tuviera más de un proveedor (co-adjudicación), acá sólo
+    # se ve el primero. Limitación real del formato, documentada también en el README.
+    amount = _to_float(row.get('awards/0/value/amount'))
+    supplier_name = row.get('awards/0/suppliers/0/name') or None
+    supplier_id = row.get('awards/0/suppliers/0/id') or None
+    party_id = row.get('parties/0/id') or None
+    return {
+        'date': row.get('date') or None,
+        'tender': {
+            'title': row.get('tender/title'),
+            'description': row.get('tender/description'),
+            'mainProcurementCategory': row.get('tender/mainProcurementCategory'),
+            'procuringEntity': {'name': row.get('tender/procuringEntity/name')},
+            'procurementMethod': row.get('tender/procurementMethod') or None,
+            'competitive': _to_bool(row.get('tender/competitive')),
+        },
+        'parties': ([{'id': party_id, 'name': row.get('parties/0/name')}] if party_id else []),
+        'awards': [{
+            'status': row.get('awards/0/status') or None,
+            'value': ({'amount': amount, 'currency': row.get('awards/0/value/currency') or 'ARS'}
+                      if amount is not None else None),
+            'suppliers': ([{'id': supplier_id, 'name': supplier_name}]
+                          if (supplier_id or supplier_name) else []),
+        }],
+    }
+
+
+def parse_csv_releases(csv_text):
+    reader = csv.DictReader(io.StringIO(csv_text))
+    if not reader.fieldnames or 'date' not in reader.fieldnames or 'tender/title' not in reader.fieldnames:
+        raise RuntimeError('el CSV de BAC no tiene las columnas esperadas (schema inesperado)')
+    return [csv_row_to_release(row) for row in reader]
 
 
 def index_parties(release):
@@ -254,7 +305,7 @@ def build_output(result, resource, stats, status, releases_count):
         'collected_at': now(),
         'source': {'owner': 'Gobierno de la Ciudad Autónoma de Buenos Aires',
                    'api': 'https://data.buenosaires.gob.ar/api/3/action',
-                   'dataset': PACKAGE, 'standard': 'OCDS 1.1'},
+                   'dataset': PACKAGE, 'standard': 'OCDS 1.1 (flattened CSV)'},
         'dataset': ({'id': result.get('id'), 'title': result.get('title'),
                      'metadata_modified': result.get('metadata_modified'),
                      'license_id': result.get('license_id'),
@@ -266,8 +317,9 @@ def build_output(result, resource, stats, status, releases_count):
         'coverage': {
             'releases_processed': releases_count,
             'date_from': stats.get('date_from'), 'date_to': stats.get('date_to'),
-            'note': ('Ventana de cobertura de bac_anual.json no confirmada oficialmente por el '
-                     'publicador; inferida del rango real de fechas de los releases procesados.'),
+            'note': ('Ventana de cobertura de bac_anual.csv no confirmada oficialmente por el '
+                     'publicador; inferida del rango real de fechas de los releases procesados. '
+                     'La fuente suele tener ~2-3 meses de atraso respecto a la fecha actual.'),
         },
         'summary': {
             'total_awarded_ars': round(stats.get('total_ars', 0), 2),
@@ -305,8 +357,9 @@ def main():
         return
 
     try:
-        payload = download(url)
-    except (requests.RequestException, json.JSONDecodeError) as e:
+        csv_text = download(url)
+        releases = parse_csv_releases(csv_text)
+    except (requests.RequestException, RuntimeError, csv.Error) as e:
         write(STATE, {**prev_state, 'url': url, 'checked_at': now(),
                        'status': 'download_error', 'error': str(e)})
         if not OUT.exists():
@@ -314,14 +367,6 @@ def main():
         print(json.dumps({'status': 'download_error', 'error': str(e)}))
         return
 
-    if payload.get('version') != '1.1' or 'releases' not in payload:
-        write(STATE, {**prev_state, 'url': url, 'checked_at': now(), 'status': 'schema_unexpected'})
-        if not OUT.exists():
-            write(OUT, build_output(result, resource, process_releases([]), 'schema_unexpected', 0))
-        print(json.dumps({'status': 'schema_unexpected'}))
-        return
-
-    releases = payload.get('releases') or []
     stats = process_releases(releases)
     out = build_output(result, resource, stats, 'ok', len(releases))
     write(OUT, out)
