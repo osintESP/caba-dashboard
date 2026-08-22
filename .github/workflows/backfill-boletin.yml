@@ -1,0 +1,129 @@
+name: Backfill historical Boletín data
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: 'Número de boletín donde empezar (inclusive)'
+        required: false
+        default: '7275'
+      end:
+        description: 'Número de boletín donde terminar (inclusive). Vacío = justo antes de la edición más antigua ya capturada.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: caba-dashboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    # Estimado real (no teórico): ~30-50s por edición medido en una corrida de prueba
+    # de 3 ediciones. Para las ~158 del rango completo eso son 1.5-2.5hs — muy por
+    # encima de los 12 min del refresh diario. Margen amplio a propósito.
+    timeout-minutes: 240
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r runtime/requirements.txt
+
+      - name: Backfill historical Boletín editions
+        env:
+          BACKFILL_START: ${{ inputs.start }}
+          BACKFILL_END: ${{ inputs.end }}
+        run: python runtime/backfill_boletin.py
+
+      - name: Build technology and cybersecurity intelligence
+        run: python runtime/procurement_intelligence.py
+
+      - name: Validate mandatory outputs
+        run: |
+          test -s data/stats.json
+          test -s data/editions.json
+          test -s data/norms.json
+          test -s data/procurements.json
+          test -s data/procurement_intelligence.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ('stats.json','editions.json','norms.json','procurements.json','procurement_intelligence.json'):
+              json.loads((Path('data')/name).read_text(encoding='utf-8'))
+          intel=json.loads(Path('data/procurement_intelligence.json').read_text(encoding='utf-8'))
+          assert isinstance(intel.get('summary'),dict)
+          print('BACKFILL_DATA_QUALITY=OK')
+          PY
+
+      - name: Build public sync manifest
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          stats=json.loads(Path('data/stats.json').read_text(encoding='utf-8'))
+          editions=json.loads(Path('data/editions.json').read_text(encoding='utf-8'))
+          latest=max(editions,key=lambda x:int(x.get('numero_boletin') or 0)) if editions else {}
+          manifest={
+            'schema_version':1,
+            'public_synced_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),
+            'latest_bulletin':latest.get('numero_boletin'),
+            'latest_bulletin_date':latest.get('fecha_publicacion'),
+            'dataset_generated_at':stats.get('generated_at'),
+            'source_scope':'official_gcba_bulletin_only',
+            'runtime':'github_actions_public_nonprod'
+          }
+          Path('data/sync_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(manifest,ensure_ascii=False))
+          PY
+
+      - name: Persist backfilled datasets
+        run: |
+          git config user.name 'caba-dashboard[bot]'
+          git config user.email 'caba-dashboard@users.noreply.github.com'
+          git add data/stats.json data/editions.json data/norms.json data/procurements.json data/procurement_intelligence.json data/sync_manifest.json
+          if git diff --cached --quiet; then
+            echo 'No hay ediciones nuevas para agregar.'
+          else
+            git commit -m 'Backfill historical Boletín Oficial data'
+            git fetch origin master
+            # Igual criterio que refresh-official-data.yml: norms.json/editions.json se
+            # arman por merge incremental, no por regeneración completa. Ante un
+            # conflicto real, se prefiere fallar para revisión manual antes que
+            # arriesgar perder una edición que otro workflow haya agregado mientras
+            # corría este backfill (que puede tardar horas).
+            git rebase origin/master
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload backfilled site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: backfill
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy backfilled dashboard to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

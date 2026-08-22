@@ -64,10 +64,16 @@ def norm(trail,n,b,date):
  ident=n.get('id_norma',n.get('id')); txt=' '.join(str(n.get(k,'')) for k in ('nombre','sumario','nombre_tipo','nombre_subtipo','archivo_norma'))
  return {'id_norma':ident,'nombre':n.get('nombre') or n.get('archivo_norma'),'sumario':n.get('sumario'),'url_norma':resolve_url(n,date),'anexos':n.get('anexos') or n.get('link_anexo') or [],'tipo':n.get('nombre_tipo') or (trail[-2] if len(trail)>=2 else None),'subtipo':n.get('nombre_subtipo'),'seccion':n.get('nombre_seccion'),'organismo':n.get('nombre_reparticion') or (trail[-1] if trail else None),'ruta_arbol':list(trail),'numero_boletin':b,'candidato_licitacion_transversal':bool(LIC_RE.search(txt))}
 
-def main():
- OUT.mkdir(parents=True,exist_ok=True); s=client(); live=request(s,'GET','/obtenerBoletin/0/false')
- if not live.get('ok') or not isinstance(live.get('data'),dict) or not live['data'].get('numero'): raise SystemExit('live bulletin identification failed')
- header=live['data']; b=int(header['numero']); date=header.get('fecha_publicacion'); loaded=request(s,'GET',f'/obtenerBoletin/{b}/true'); sections=request(s,'GET',f'/obtenerSeccionesBoletin/{b}'); sources=[]
+def fetch_header(s,b):
+ # b=0 es un alias especial de la API para "la edición vigente hoy"; cualquier otro
+ # número trae la cabecera de esa edición específica (verificado contra la API real,
+ # usado tanto por el pipeline diario como por el backfill histórico).
+ r=request(s,'GET',f'/obtenerBoletin/{b}/false')
+ if not r.get('ok') or not isinstance(r.get('data'),dict) or not r['data'].get('numero'):return None
+ return r['data']
+
+def fetch_bulletin(s,header):
+ b=int(header['numero']); date=header.get('fecha_publicacion'); loaded=request(s,'GET',f'/obtenerBoletin/{b}/true'); sections=request(s,'GET',f'/obtenerSeccionesBoletin/{b}'); sources=[]
  if loaded.get('ok'):sources.append(('obtenerBoletin_true',loaded.get('data')))
  secdata=sections.get('data') if sections.get('ok') else []
  if isinstance(secdata,dict):secdata=secdata.get('secciones',secdata.get('data',[]))
@@ -92,6 +98,11 @@ def main():
    routes.setdefault(key,[]).append(source)
  for k,x in unique.items():x['rutas_recuperacion']=sorted(set(routes[k]))
  norms=list(unique.values()); types=Counter((x.get('tipo') or 'SIN_TIPO') for x in norms); orgs=Counter((x.get('organismo') or 'SIN_ORGANISMO') for x in norms)
- report={'schema_version':2,'collected_at':now_iso(),'boletin':header,'numero_objetivo':b,'TOTAL_API':len(norms),'distribucion_tipo':dict(types),'distribucion_organismo':dict(orgs),'normas':norms}
- (OUT/'latest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps({'numero':b,'TOTAL_API':len(norms)},ensure_ascii=False))
+ return {'schema_version':2,'collected_at':now_iso(),'boletin':header,'numero_objetivo':b,'TOTAL_API':len(norms),'distribucion_tipo':dict(types),'distribucion_organismo':dict(orgs),'normas':norms}
+
+def main():
+ OUT.mkdir(parents=True,exist_ok=True); s=client(); header=fetch_header(s,0)
+ if not header: raise SystemExit('live bulletin identification failed')
+ report=fetch_bulletin(s,header)
+ (OUT/'latest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps({'numero':report['numero_objetivo'],'TOTAL_API':report['TOTAL_API']},ensure_ascii=False))
 if __name__=='__main__':main()
