@@ -289,7 +289,9 @@ def build_audit_signals(stats):
                      'BAC no publica numberOfTenderers/tenderers; esta es la única señal de '
                      'competencia real que expone el propio publicador.'),
         },
-        'vendor_concentration_by_organismo': concentration[:20],
+        # Sin tope: el frontend necesita poder buscar CUALQUIER organismo del ranking
+        # del Boletín acá (cruce por nombre), no sólo los de mayor concentración.
+        'vendor_concentration_by_organismo': concentration,
     }
 
 

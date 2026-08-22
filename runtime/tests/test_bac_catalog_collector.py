@@ -157,6 +157,17 @@ class AuditSignalsTest(unittest.TestCase):
         organismos = [c['organismo'] for c in signals['vendor_concentration_by_organismo']]
         self.assertNotIn('Organismo Chico', organismos)
 
+    def test_no_cap_on_qualifying_organismos(self):
+        # El frontend necesita poder buscar cualquier organismo del ranking del Boletín
+        # acá (cruce por nombre), no sólo los primeros N por concentración.
+        releases = [
+            _tech_release(f'2026-01-{i:02d}T00:00:00-03:00', f'Organismo {i}', 'direct', False, 2_000_000, f'Vendor {i}')
+            for i in range(1, 26)
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        self.assertEqual(len(signals['vendor_concentration_by_organismo']), 25)
+
 
 class UnchangedDetectionTest(unittest.TestCase):
     def test_matches_on_etag(self):
