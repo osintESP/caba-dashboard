@@ -17,7 +17,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 4
+COLLECTOR_VERSION = 5
 
 # "redes" en sentido genérico (eléctricas, de agua, viales, etc.) NO es tecnología;
 # sólo cuenta si está calificada como red de datos/informática (mismo criterio que
@@ -440,6 +440,16 @@ def build_output(result, resource, stats, status, releases_count):
         'tech_amount_ars': round(stats['vendor_tech_totals'].get(name, 0), 2),
         'awards': stats['vendor_awards'].get(name, 0),
     } for name, amount in ranking]
+    # El ranking general (arriba) ordena por monto TOTAL adjudicado, sin importar rubro: los
+    # proveedores más grandes de BAC son medicamentos/alimentos/insumos hospitalarios, no
+    # tecnología, así que el top-20 general puede no tener NINGÚN proveedor con gasto en
+    # tecnología (confirmado en producción). El dashboard audita tecnología específicamente,
+    # así que se expone un ranking separado ordenado por vendor_tech_totals para ese propósito.
+    tech_ranking = sorted(stats['vendor_tech_totals'].items(), key=lambda kv: kv[1], reverse=True)[:TOP_N_VENDORS]
+    vendor_ranking_tech = [{
+        'name': name, 'amount_ars': round(amount, 2),
+        'awards': stats['vendor_awards'].get(name, 0),
+    } for name, amount in tech_ranking]
     return {
         'schema_version': 2,
         'collected_at': now(),
@@ -471,6 +481,7 @@ def build_output(result, resource, stats, status, releases_count):
             'currencies': stats.get('currencies', {}),
         },
         'vendor_ranking': vendor_ranking,
+        'vendor_ranking_tech': vendor_ranking_tech,
         'audit_signals': build_audit_signals(stats),
         'status': status,
         'generated_by': 'bac_catalog_collector.py',

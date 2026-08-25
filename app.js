@@ -39,7 +39,7 @@ function renderBAC(data){
     ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
     ${audit.repeat_winner_across_organismos?.note?`<div class="bac-note">${esc(audit.repeat_winner_across_organismos.note)}</div>`:''}
   `;
-  if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
+  if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking_tech||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
   if(concEl){
     const rows=[...concentration].sort((a,b)=>(b.organismo_tech_amount_ars||0)-(a.organismo_tech_amount_ars||0)).map(c=>{
       const label=`${c.high_concentration?'⚠ ':''}${c.top_vendor_share_pct}% en "${c.top_vendor}"`;

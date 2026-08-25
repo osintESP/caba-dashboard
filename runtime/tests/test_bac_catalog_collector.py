@@ -119,6 +119,45 @@ def _tech_release(date, organismo, method, competitive, amount, vendor):
     }
 
 
+class VendorRankingTechTest(unittest.TestCase):
+    """Bug real visto en producción: el ranking general (vendor_ranking, ordenado por monto
+    TOTAL) no tenía NINGÚN proveedor con gasto en tecnología en su top-20 -los proveedores
+    más grandes de BAC son medicamentos/alimentos-, así que el panel "Top proveedores" del
+    dashboard (que audita tecnología específicamente) mostraba puro ruido no-tech."""
+
+    def test_tech_ranking_excludes_vendors_with_zero_tech_spend(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio X', 'open', True, 100, 'Vendor Tech'),
+            {  # proveedor enorme pero sin ninguna compra de tecnología
+                'date': '2026-01-02T00:00:00-03:00',
+                'tender': {'title': 'Compra de medicamentos', 'procuringEntity': {'name': 'Hospital Y'}},
+                'parties': [], 'awards': [_award(999_999_999, suppliers=[{'id': 'V2', 'name': 'Droguería Grande'}])],
+            },
+        ]
+        stats = bcc.process_releases(releases)
+        out = bcc.build_output(None, None, stats, 'ok', len(releases))
+        tech_names = [v['name'] for v in out['vendor_ranking_tech']]
+        general_names = [v['name'] for v in out['vendor_ranking']]
+        self.assertIn('Vendor Tech', tech_names)
+        self.assertNotIn('Droguería Grande', tech_names)
+        # el ranking general sigue existiendo, con el proveedor grande como #1 (no se rompe nada)
+        self.assertEqual(general_names[0], 'Droguería Grande')
+
+    def test_tech_ranking_sorted_by_tech_amount_not_total_amount(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio X', 'open', True, 1_000, 'Vendor Chico Tech'),
+            {
+                'date': '2026-01-02T00:00:00-03:00',
+                'tender': {'title': 'Compra de medicamentos', 'procuringEntity': {'name': 'Hospital Y'}},
+                'parties': [], 'awards': [_award(500_000, suppliers=[{'id': 'V2', 'name': 'Droguería Mediana'}])],
+            },
+        ]
+        stats = bcc.process_releases(releases)
+        out = bcc.build_output(None, None, stats, 'ok', len(releases))
+        self.assertEqual(out['vendor_ranking_tech'][0]['name'], 'Vendor Chico Tech')
+        self.assertEqual(out['vendor_ranking'][0]['name'], 'Droguería Mediana')
+
+
 class AuditSignalsTest(unittest.TestCase):
     """BAC no publica numberOfTenderers/tenderers (confirmado contra el dataset real:
     0 ocurrencias en 23.298 releases) -> 'competitive' es la única señal de competencia
