@@ -17,7 +17,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 3
+COLLECTOR_VERSION = 4
 
 # "redes" en sentido genérico (eléctricas, de agua, viales, etc.) NO es tecnología;
 # sólo cuenta si está calificada como red de datos/informática (mismo criterio que
@@ -239,6 +239,7 @@ def process_releases(releases):
     tech_noncompetitive_open = {'count': 0, 'amount': 0.0}
     org_vendor_tech, org_tech_totals = {}, {}
     direct_awards_by_pair = {}
+    direct_awards_by_vendor = {}
     for rel in releases:
         rel_date = rel.get('date')
         if rel_date:
@@ -292,6 +293,8 @@ def process_releases(releases):
                     for name in names:
                         direct_awards_by_pair.setdefault((organismo, name), []).append(
                             {'date': parsed_date, 'amount': share})
+                        direct_awards_by_vendor.setdefault(name, []).append(
+                            {'organismo': organismo, 'date': parsed_date, 'amount': share})
     return {
         'vendor_totals': vendor_totals, 'vendor_tech_totals': vendor_tech_totals,
         'vendor_awards': vendor_awards, 'total_ars': total_ars, 'tech_ars': tech_ars,
@@ -299,7 +302,7 @@ def process_releases(releases):
         'date_from': date_from, 'date_to': date_to,
         'tech_method_amounts': tech_method_amounts, 'tech_noncompetitive_open': tech_noncompetitive_open,
         'org_vendor_tech': org_vendor_tech, 'org_tech_totals': org_tech_totals,
-        'direct_awards_by_pair': direct_awards_by_pair,
+        'direct_awards_by_pair': direct_awards_by_pair, 'direct_awards_by_vendor': direct_awards_by_vendor,
     }
 
 
@@ -319,6 +322,17 @@ CONCENTRATION_HIGH_PCT = 60
 FRACTIONATION_MIN_AWARDS = 3
 FRACTIONATION_WINDOW_DAYS = 90
 
+# - REPEAT_WINNER_MIN_ORGANISMOS / REPEAT_WINNER_WINDOW_DAYS: complementa la señal anterior
+#   mirando la otra dimensión — no "mismo organismo, mismo proveedor, muchas veces", sino
+#   "mismo proveedor, muchos organismos distintos, en poco tiempo", acotado a adjudicaciones
+#   directas/limitadas (sin competencia formal). Un proveedor legítimo puede ganar en muchos
+#   organismos por capacidad real; el patrón de auditoría clásico es la concentración de
+#   adjudicaciones NO competitivas en múltiples compradores distintos en una ventana corta
+#   — posible proveedor recurrente/capturado a nivel ciudad, no detectable mirando un solo
+#   organismo a la vez (a diferencia de vendor_concentration_by_organismo).
+REPEAT_WINNER_MIN_ORGANISMOS = 3
+REPEAT_WINNER_WINDOW_DAYS = 90
+
 
 def build_fractionation_flags(direct_awards_by_pair):
     flags = []
@@ -331,6 +345,27 @@ def build_fractionation_flags(direct_awards_by_pair):
             continue
         flags.append({
             'organismo': organismo, 'vendor': vendor,
+            'awards_count': len(awards),
+            'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
+            'date_from': min(dates).isoformat(), 'date_to': max(dates).isoformat(),
+            'window_days': span_days,
+        })
+    flags.sort(key=lambda f: f['total_amount_ars'], reverse=True)
+    return flags
+
+
+def build_repeat_winner_flags(direct_awards_by_vendor):
+    flags = []
+    for vendor, awards in direct_awards_by_vendor.items():
+        organismos = sorted({a['organismo'] for a in awards})
+        dates = [a['date'] for a in awards if a['date']]
+        if len(organismos) < REPEAT_WINNER_MIN_ORGANISMOS or len(dates) < REPEAT_WINNER_MIN_ORGANISMOS:
+            continue
+        span_days = (max(dates) - min(dates)).days
+        if span_days > REPEAT_WINNER_WINDOW_DAYS:
+            continue
+        flags.append({
+            'vendor': vendor, 'organismos_count': len(organismos), 'organismos': organismos,
             'awards_count': len(awards),
             'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
             'date_from': min(dates).isoformat(), 'date_to': max(dates).isoformat(),
@@ -385,6 +420,15 @@ def build_audit_signals(stats):
                      f'{FRACTIONATION_WINDOW_DAYS} días, en compras de tecnología. No implica que '
                      'se haya superado un umbral legal específico (ese dato no está en el '
                      'dataset) — es un disparador para revisión manual de posible fraccionamiento.'),
+        },
+        'repeat_winner_across_organismos': {
+            'vendors': build_repeat_winner_flags(stats.get('direct_awards_by_vendor', {})),
+            'note': (f'Proveedor con adjudicaciones directas o de contratación limitada en '
+                     f'{REPEAT_WINNER_MIN_ORGANISMOS} o más organismos distintos en un lapso de '
+                     f'hasta {REPEAT_WINNER_WINDOW_DAYS} días, en compras de tecnología. Un '
+                     'proveedor legítimo puede ganar en múltiples organismos por capacidad real '
+                     '— esto no prueba irregularidad, es un disparador para revisar si hay un '
+                     'proveedor recurrente/potencialmente favorecido a nivel ciudad.'),
         },
     }
 

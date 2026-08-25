@@ -218,6 +218,69 @@ class FractionationTest(unittest.TestCase):
         self.assertNotIn('Ministerio U', organismos)
 
 
+class RepeatWinnerTest(unittest.TestCase):
+    """Señal nueva: mismo proveedor con adjudicaciones directas/limitadas en varios
+    organismos distintos en poco tiempo — complementa possible_fractionation mirando
+    la otra dimensión (mismo proveedor, muchos compradores, en vez de mismo comprador)."""
+
+    def test_flags_vendor_winning_across_multiple_organismos_within_window(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio A', 'direct', False, 200_000, 'Vendor Ubicuo'),
+            _tech_release('2026-01-15T00:00:00-03:00', 'Ministerio B', 'direct', False, 300_000, 'Vendor Ubicuo'),
+            _tech_release('2026-02-01T00:00:00-03:00', 'Ministerio C', 'limited', False, 400_000, 'Vendor Ubicuo'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        flags = signals['repeat_winner_across_organismos']['vendors']
+        row = next(f for f in flags if f['vendor'] == 'Vendor Ubicuo')
+        self.assertEqual(row['organismos_count'], 3)
+        self.assertEqual(row['organismos'], ['Ministerio A', 'Ministerio B', 'Ministerio C'])
+        self.assertAlmostEqual(row['total_amount_ars'], 900_000)
+
+    def test_does_not_flag_below_minimum_organismo_count(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio A', 'direct', False, 200_000, 'Vendor Chico'),
+            _tech_release('2026-01-15T00:00:00-03:00', 'Ministerio B', 'direct', False, 300_000, 'Vendor Chico'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        vendors = [f['vendor'] for f in signals['repeat_winner_across_organismos']['vendors']]
+        self.assertNotIn('Vendor Chico', vendors)
+
+    def test_repeated_organismo_does_not_count_twice(self):
+        # 3 adjudicaciones pero sólo 2 organismos distintos -> no debe alcanzar el mínimo.
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio A', 'direct', False, 200_000, 'Vendor Repetido'),
+            _tech_release('2026-01-10T00:00:00-03:00', 'Ministerio A', 'direct', False, 200_000, 'Vendor Repetido'),
+            _tech_release('2026-01-20T00:00:00-03:00', 'Ministerio B', 'direct', False, 200_000, 'Vendor Repetido'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        vendors = [f['vendor'] for f in signals['repeat_winner_across_organismos']['vendors']]
+        self.assertNotIn('Vendor Repetido', vendors)
+
+    def test_does_not_flag_awards_spread_beyond_window(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio A', 'direct', False, 200_000, 'Vendor Lento'),
+            _tech_release('2026-04-01T00:00:00-03:00', 'Ministerio B', 'direct', False, 200_000, 'Vendor Lento'),
+            _tech_release('2026-08-01T00:00:00-03:00', 'Ministerio C', 'direct', False, 200_000, 'Vendor Lento'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        vendors = [f['vendor'] for f in signals['repeat_winner_across_organismos']['vendors']]
+        self.assertNotIn('Vendor Lento', vendors)
+
+    def test_open_method_awards_are_not_counted(self):
+        releases = [
+            _tech_release(f'2026-01-{i:02d}T00:00:00-03:00', f'Ministerio {i}', 'open', True, 200_000, 'Vendor Abierto')
+            for i in range(1, 4)
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        vendors = [f['vendor'] for f in signals['repeat_winner_across_organismos']['vendors']]
+        self.assertNotIn('Vendor Abierto', vendors)
+
+
 class UnchangedDetectionTest(unittest.TestCase):
     def test_matches_on_etag(self):
         prev = {'url': 'https://cdn/x.json', 'etag': 'abc', 'collector_version': bcc.COLLECTOR_VERSION}

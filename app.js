@@ -19,7 +19,7 @@ function renderMetrics(){const latest=[...state.editions].sort((a,b)=>Number(b.n
 function renderIntelligence(){const s=state.intelligence?.summary;if(!s){$('intel-status').textContent='sin sincronizar';$('metric-tech').textContent='—';$('metric-cyber').textContent='—';$('intel-tags').innerHTML='<div class="empty">La capa Intelligence todavía no fue publicada en el repositorio público.</div>';return}$('intel-status').textContent='activo';$('metric-tech').textContent=fmt.format(s.technology_related||0);$('metric-cyber').textContent=fmt.format(s.cybersecurity_related||0);const rows=Object.entries(s.tag_counts||{}).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('intel-tags').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin etiquetas tecnológicas.</div>'}
 function renderRankRows(container,rows){container.innerHTML=rows.map(([name,value,badge],i)=>`<div class="rank-row"><span class="rank-index">${i+1}</span><span class="rank-name">${esc(name)}${badge||''}</span><span class="rank-value">${value}</span></div>`).join('')||'<div class="empty">Sin resultados.</div>'}
 function renderBAC(data){
-  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation');
+  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner');
   const panel=statusEl?.closest('.panel')||statusEl?.parentElement;
   if(!data){if(panel)panel.style.display='none';return}
   if(panel)panel.style.display='';
@@ -37,6 +37,7 @@ function renderBAC(data){
     ${nco.note?`<div class="bac-note">${esc(nco.note)}</div>`:''}
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
     ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
+    ${audit.repeat_winner_across_organismos?.note?`<div class="bac-note">${esc(audit.repeat_winner_across_organismos.note)}</div>`:''}
   `;
   if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
   if(concEl){
@@ -51,6 +52,14 @@ function renderBAC(data){
     const flags=audit.possible_fractionation?.awards||[];
     const rows=flags.map(f=>[`${f.organismo} · ${f.vendor}`,fmtCurrency.format(f.total_amount_ars||0),` <span class="badge audit-flag">${f.awards_count} adjudicaciones en ${f.window_days}d</span>`]);
     renderRankRows(fracEl,rows);
+  }
+  if(repeatEl){
+    const flags=audit.repeat_winner_across_organismos?.vendors||[];
+    const rows=flags.map(f=>{
+      const title=`Organismos: ${f.organismos.join(', ')}`;
+      return[f.vendor,fmtCurrency.format(f.total_amount_ars||0),` <span class="badge audit-flag" title="${attr(title)}">${f.organismos_count} organismos en ${f.window_days}d</span>`];
+    });
+    renderRankRows(repeatEl,rows);
   }
 }
 function renderSyncNotice(){const missing=[];if(!state.intelligence)missing.push('Intelligence');if(!state.sync)missing.push('registro de sincronización');if(missing.length){$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Datos base operativos. Pendiente de sincronización pública: ${esc(missing.join(' + '))}.`}else{const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Boletín e Intelligence sincronizados.${bulletin}`}}
