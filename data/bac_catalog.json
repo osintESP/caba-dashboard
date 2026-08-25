@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-08-25T18:19:02+00:00",
+  "collected_at": "2026-08-25T19:32:45+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -158,6 +158,98 @@
       "amount_ars": 671101821.47,
       "tech_amount_ars": 0,
       "awards": 61
+    }
+  ],
+  "vendor_ranking_tech": [
+    {
+      "name": "Mariana Irene Albornoz",
+      "amount_ars": 492952851.55,
+      "awards": 1
+    },
+    {
+      "name": "ATIX S.A.",
+      "amount_ars": 178300000.0,
+      "awards": 1
+    },
+    {
+      "name": "MBC DESARROLLOS SOCIEDAD DE RESPONSABILIDAD LIMITADA ",
+      "amount_ars": 105000000.0,
+      "awards": 2
+    },
+    {
+      "name": "AKSEC SRL",
+      "amount_ars": 30120000.0,
+      "awards": 1
+    },
+    {
+      "name": "ATRIX S.A.",
+      "amount_ars": 24120000.0,
+      "awards": 1
+    },
+    {
+      "name": "SERVICIOS GLOBALES DE INFORMATICA S.A.",
+      "amount_ars": 23836620.0,
+      "awards": 1
+    },
+    {
+      "name": "CAISEN S.R.L.",
+      "amount_ars": 18600000.0,
+      "awards": 1
+    },
+    {
+      "name": "TECNOIMAGEN S.A.",
+      "amount_ars": 11860793.75,
+      "awards": 14
+    },
+    {
+      "name": "Twins Music S.R.L",
+      "amount_ars": 7800000.0,
+      "awards": 1
+    },
+    {
+      "name": "TELEFONICA MOVILES ARGENTINA S.A.",
+      "amount_ars": 7550400.0,
+      "awards": 1
+    },
+    {
+      "name": "INEGHO SRL",
+      "amount_ars": 4898000.0,
+      "awards": 4
+    },
+    {
+      "name": "AP Supplier Group SA",
+      "amount_ars": 3859000.0,
+      "awards": 5
+    },
+    {
+      "name": "EXO SA",
+      "amount_ars": 3262453.43,
+      "awards": 3
+    },
+    {
+      "name": "INFORMATICA PALMAR SRL",
+      "amount_ars": 2798000.0,
+      "awards": 14
+    },
+    {
+      "name": "Facundo Adrian Ortiz Guerreiro",
+      "amount_ars": 295000.0,
+      "awards": 6
+    },
+    {
+      "name": "BEATRIZ DECRISTO",
+      "amount_ars": 80000.0,
+      "awards": 77
+    },
+    {
+      "name": "Laurence Javier Druscovich",
+      "amount_ars": 5300.0,
+      "awards": 22
+    },
+    {
+      "name": "ALL FLASH SRL",
+      "amount_ars": 2884.23,
+      "awards": 1
     }
   ],
   "audit_signals": {
