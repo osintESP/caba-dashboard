@@ -95,7 +95,8 @@ function renderLists(){
   $('norms-load-more').style.display=nr.length>nshow.length?'':'none';
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
-function renderAll(){renderMetrics();renderIntelligence();renderBAC(state.bac);renderAperturas();renderSyncNotice();renderBars();renderOrgRanking();renderLists()}
+function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
+function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('aperturas',renderAperturas);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
