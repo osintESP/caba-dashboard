@@ -19,23 +19,33 @@ function renderMetrics(){const latest=[...state.editions].sort((a,b)=>Number(b.n
 function renderIntelligence(){const s=state.intelligence?.summary;if(!s){$('intel-status').textContent='sin sincronizar';$('metric-tech').textContent='—';$('metric-cyber').textContent='—';$('intel-tags').innerHTML='<div class="empty">La capa Intelligence todavía no fue publicada en el repositorio público.</div>';return}$('intel-status').textContent='activo';$('metric-tech').textContent=fmt.format(s.technology_related||0);$('metric-cyber').textContent=fmt.format(s.cybersecurity_related||0);const rows=Object.entries(s.tag_counts||{}).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('intel-tags').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin etiquetas tecnológicas.</div>'}
 function renderRankRows(container,rows){container.innerHTML=rows.map(([name,value,badge],i)=>`<div class="rank-row"><span class="rank-index">${i+1}</span><span class="rank-name">${esc(name)}${badge||''}</span><span class="rank-value">${value}</span></div>`).join('')||'<div class="empty">Sin resultados.</div>'}
 function renderBAC(data){
-  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking');
+  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration');
   const panel=statusEl?.closest('.panel')||statusEl?.parentElement;
   if(!data){if(panel)panel.style.display='none';return}
   if(panel)panel.style.display='';
   const okStates=['ok','unchanged'];
   statusEl.textContent=okStates.includes(data.status)?'activo':(data.status==='resource_not_found'||data.status==='download_error'||data.status==='schema_unexpected')?'error':'pendiente';
   const s=data.summary||{},audit=data.audit_signals||{},cov=data.coverage||{},nco=audit.non_competitive_open_tenders||{};
-  const highConc=(audit.vendor_concentration_by_organismo||[]).filter(c=>c.high_concentration).length;
+  const concentration=audit.vendor_concentration_by_organismo||[];
+  const highConc=concentration.filter(c=>c.high_concentration).length;
   summaryEl.innerHTML=`
     <div>Dataset actualizado: ${esc(data.dataset?.metadata_modified||data.collected_at||'—')}</div>
     <div>Cobertura de releases procesados: ${esc(cov.date_from||'—')} a ${esc(cov.date_to||'—')} (${fmt.format(cov.releases_processed||0)} releases — ver nota de cobertura)</div>
     <div>Monto total adjudicado: ${fmtCurrency.format(s.total_awarded_ars||0)} · en tecnología: ${fmtCurrency.format(s.tech_awarded_ars||0)} (${s.tech_share_pct||0}%)</div>
     <div>Contratación directa/limitada en tecnología: ${audit.direct_or_limited_share_pct||0}% del monto</div>
     <div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} procesos, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
+    ${nco.note?`<div class="bac-note">${esc(nco.note)}</div>`:''}
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
   `;
   if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
+  if(concEl){
+    const rows=[...concentration].sort((a,b)=>(b.organismo_tech_amount_ars||0)-(a.organismo_tech_amount_ars||0)).map(c=>{
+      const label=`${c.high_concentration?'⚠ ':''}${c.top_vendor_share_pct}% en "${c.top_vendor}"`;
+      const badge=` <span class="badge${c.high_concentration?' audit-flag':''}">${esc(label)}</span>`;
+      return[c.organismo,fmtCurrency.format(c.organismo_tech_amount_ars||0),badge];
+    });
+    renderRankRows(concEl,rows);
+  }
 }
 function renderSyncNotice(){const missing=[];if(!state.intelligence)missing.push('Intelligence');if(!state.sync)missing.push('registro de sincronización');if(missing.length){$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Datos base operativos. Pendiente de sincronización pública: ${esc(missing.join(' + '))}.`}else{const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Boletín e Intelligence sincronizados.${bulletin}`}}
 function renderBars(){const rowsSource=filteredProcurements();const seen=new Set(),uniqueRows=[];for(const x of rowsSource){const pid=x.proceso_id||x.id_norma;if(seen.has(pid))continue;seen.add(pid);uniqueRows.push(x)}const counts={};for(const x of uniqueRows)counts[x.categoria||'otros']=(counts[x.categoria||'otros']||0)+1;const rows=Object.entries(counts).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('procurement-total').textContent=fmt.format(uniqueRows.length);$('category-bars').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin resultados.</div>'}
