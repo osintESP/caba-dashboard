@@ -79,10 +79,14 @@ function renderAperturas(){
     return;
   }
   if(statusEl)statusEl.textContent=data.status==='ok'?'activo':'error';
-  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART`:'';
-  const recientes=data.aperturas_recientes||[],proximas=data.aperturas_proximas||[];
-  if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas registradas en los últimos 30 días.</div>';
-  if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas publicadas.</div>';
+  const recientesAll=data.aperturas_recientes||[],proximasAll=data.aperturas_proximas||[];
+  // El dashboard audita contrataciones de TECNOLOGÍA, no toda la actividad de BAC — se
+  // filtra acá (mismo criterio que audit_signals en bac_catalog.json), mostrando el total
+  // sin filtrar sólo como contexto de cobertura, no como listado.
+  const recientes=recientesAll.filter(a=>a.is_technology),proximas=proximasAll.filter(a=>a.is_technology);
+  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART · ${recientesAll.length+proximasAll.length} aperturas totales, ${recientes.length+proximas.length} de tecnología`:'';
+  if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas de tecnología en los últimos 30 días.</div>';
+  if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas de tecnología publicadas.</div>';
 }
 function procesoGroupHtml(group){const[main,...related]=group;const mainHtml=recordHtml(main,true);if(!related.length)return `<div class="process-group">${mainHtml}</div>`;const relatedHtml=related.map(r=>recordHtml(r,true)).join('');return `<div class="process-group">${mainHtml}<details class="related-acts"><summary>${related.length} acto${related.length===1?'':'s'} relacionado${related.length===1?'':'s'} (circulares, prórroga, etc.)</summary>${relatedHtml}</details></div>`}
 function renderLists(){

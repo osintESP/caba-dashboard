@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, re
+import json, re, sys
 from datetime import datetime, timezone
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bac_catalog_collector import classify_technology  # noqa: E402 — mismo clasificador que bac_catalog.json, no duplicar reglas
 
 BASE = Path(__file__).resolve().parent.parent
 OUT = BASE / 'data' / 'bac_aperturas.json'
@@ -65,6 +68,11 @@ def parse_row(cells):
     row['unidad_ejecutora_codigo'] = codigo
     row['organismo'] = organismo
     row['fecha_apertura'] = parse_fecha_apertura(fecha_raw)
+    # El objeto del dashboard es auditar contrataciones de TECNOLOGÍA, no todas las compras
+    # de la Ciudad (la mayoría de las aperturas son insumos médicos, obra, etc.). Se guarda
+    # el flag acá en vez de descartar la fila, para no perder el conteo total como contexto
+    # (mismo criterio que bac_catalog_collector.py con is_tech); el frontend filtra sobre esto.
+    row['is_technology'] = classify_technology({'title': row.get('nombre_proceso')})
     return row
 
 

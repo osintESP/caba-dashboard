@@ -57,6 +57,21 @@ class ParseRowTest(unittest.TestCase):
         self.assertNotIn('unidad_ejecutora_raw', row)
         self.assertNotIn('fecha_apertura_raw', row)
 
+    def test_non_technology_purchase_is_flagged_false(self):
+        # El dashboard audita contrataciones de TECNOLOGÍA, no todas las compras de la
+        # Ciudad — la mayoría de las aperturas reales son insumos médicos/obra/etc.
+        cells = ['420-0998-CDI26', 'ADQUISICIÓN DE CATETER DOBLE J', 'Contratación Directa',
+                 '25/08/2026 10:30 Hrs.', 'En Apertura', '420 - HTAL. RICARDO GUTIERREZ']
+        row = bas.parse_row(cells)
+        self.assertFalse(row['is_technology'])
+
+    def test_technology_purchase_is_flagged_true(self):
+        cells = ['2624-0843-CDI26', 'Adquisición de licencias de software y notebooks',
+                 'Contratación Directa', '25/08/2026 11:00 Hrs.', 'En Apertura',
+                 '2624 - INSTITUTO DE ESTADISTICAS Y CENSOS']
+        row = bas.parse_row(cells)
+        self.assertTrue(row['is_technology'])
+
 
 if __name__ == '__main__':
     unittest.main()
