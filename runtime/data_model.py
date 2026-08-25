@@ -12,6 +12,15 @@ PROCESS_RE=re.compile(r'n[°º]\s*(\d+/[a-z]+/\d+)',re.I)
 # Frases específicas de redes de TI: evita que "redes" en sentido genérico (redes eléctricas,
 # redes de agua, etc.) se clasifique como tecnología.
 TECH_NETWORK=('redes de datos','redes informáticas','redes informaticas','red de datos','redes inalámbricas','redes inalambricas','red wifi','fibra óptica','fibra optica')
+# "sistema" es demasiado genérico como palabra suelta: mismo tipo de falso positivo que
+# 'redes', confirmado contra datos reales (Ministerio de Salud: "sistema de catéteres",
+# "sistema de monitoreo... de temperatura"; alarmas edilicias, detección de incendios,
+# arcos detectores de metales) — ninguno es tecnología. Se excluyen explícitamente en vez
+# de exigir una frase calificada, porque "sistema" solo sí es un indicio válido en la
+# mayoría de los casos reales restantes (sistema de liquidación, de gestión, etc.).
+SISTEMA_EXCLUDE=(r'sistemas?\s+de\s+cat[eé]teres?',r'sistemas?\s+de\s+alarmas?',r'sistemas?\s+de\s+detecci[oó]n.*incendios?',r'sistemas?\s+de\s+monitoreo.*temperatura',r'arcos?\s+detectores?\s+de\s+metales?')
+_SISTEMA_EXCLUDE_RE=[re.compile(p) for p in SISTEMA_EXCLUDE]
+def _sistema_excluded(t): return any(rx.search(t) for rx in _SISTEMA_EXCLUDE_RE)
 def read(p,d): return json.loads(p.read_text(encoding='utf-8')) if p.exists() else d
 def write(p,v): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')
 def now(): return datetime.now(timezone.utc).isoformat(timespec='seconds')
@@ -25,7 +34,8 @@ def isproc(n):
 def _has(t,words): return any(re.search(r'\b'+re.escape(w),t) for w in words)
 def category(n):
  t=txt(n).lower()
- if _has(t,('software','saas','nutanix','veritas','sistema','plataforma','telecom','ciberseg','digital','datos','informática','informatica','tecnolog','servidor','storage','backup','cctv','control de acceso','identidad','licencia de software')): return 'tecnologia'
+ if _has(t,('software','saas','nutanix','veritas','plataforma','telecom','ciberseg','digital','datos','informática','informatica','tecnolog','servidor','storage','backup','cctv','control de acceso','identidad','licencia de software')): return 'tecnologia'
+ if _has(t,('sistema',)) and not _sistema_excluded(t): return 'tecnologia'
  if _has(t,TECH_NETWORK): return 'tecnologia'
  if _has(t,('obra','constru','reparaci','mantenimiento edilicio','pavimento','edificio','infraestructura','instalación eléctrica','instalacion electrica')): return 'obra_infraestructura'
  if _has(t,('medic','hospital','salud','insumo','nitrógeno','nitrogeno','reactivo','prótesis','protesis','equipamiento médico','equipamiento medico')): return 'salud'

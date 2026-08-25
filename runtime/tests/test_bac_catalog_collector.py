@@ -356,6 +356,93 @@ class CsvRowToReleaseTest(unittest.TestCase):
         self.assertIn('Vendor SRL', stats['vendor_totals'])
 
 
+def _bac_row(id_, award_id, item_id, amount, roles, name):
+    return {
+        'id': id_, 'date': '2026-02-04T13:00:00-03:00',
+        'tender/title': 'Compra de equipamiento', 'tender/procuringEntity/name': 'Organismo X',
+        'awards/0/id': award_id, 'awards/0/items/0/id': item_id, 'awards/0/status': 'active',
+        'awards/0/value/amount': amount, 'awards/0/value/currency': 'ARS',
+        'awards/0/suppliers/0/name': 'Proveedor Y', 'awards/0/suppliers/0/id': 'S1',
+        'parties/0/name': name, 'parties/0/id': 'P1', 'parties/0/roles': roles,
+    }
+
+
+class DedupeCsvRowsTest(unittest.TestCase):
+    """bac_anual.csv NO es una fila = una adjudicación: BAC emite una fila por cada
+    combinación (renglón/ítem real, parte asociada). Confirmado contra el CSV real
+    completo (24.911 filas -> 14.937 grupos reales, 0 inconsistencias de monto dentro
+    de cada grupo con la clave usada acá) — estos fixtures replican los 3 patrones
+    reales encontrados: duplicado simple comprador/proveedor, sub-ítems agrupados bajo
+    un mismo renglón, y una orden de convenio marco con muchos organismos habilitados."""
+
+    def test_simple_buyer_supplier_duplicate_collapses_to_one(self):
+        # Caso real: Museo de Arte Moderno + AP Supplier Group SA, ítem único
+        # duplicado en 2 filas (comprador + proveedor), mismo monto en ambas.
+        rows = [
+            _bac_row('9625-0248-CME26-1-0', '9625-0248-CME26', '13.01.002.0001.28-0',
+                     '247000.0', 'buyer;procuringEntity', 'Museo de Arte Moderno'),
+            _bac_row('9625-0248-CME26-1-1', '9625-0248-CME26', '13.01.002.0001.28-0',
+                     '247000.0', 'supplier', 'Proveedor Y'),
+        ]
+        deduped = bcc.dedupe_csv_rows(rows)
+        self.assertEqual(len(deduped), 1)
+
+    def test_multiple_real_items_under_one_award_are_not_merged(self):
+        # Caso real: mismo award/renglón nominal, pero 2 ítems reales distintos
+        # (item_id difiere), cada uno con sus propias filas de comprador/proveedor/
+        # ente contratante -> deben quedar como 2 grupos, no colapsar a 1.
+        rows = [
+            _bac_row('101-0066-LPU26-16-0', '101-0066-LPU26', '03.01.009.0001.1-0',
+                     '104025600.0', 'supplier', 'Proveedor Y'),
+            _bac_row('101-0066-LPU26-16-1', '101-0066-LPU26', '03.01.009.0001.1-0',
+                     '104025600.0', 'procuringEntity', 'Organismo X'),
+            _bac_row('101-0066-LPU26-16-2', '101-0066-LPU26', '03.01.009.0001.1-0',
+                     '104025600.0', 'buyer', 'Organismo X'),
+            _bac_row('101-0066-LPU26-16-3', '101-0066-LPU26', '03.01.009.0001.1-1',
+                     '104025600.0', 'supplier', 'Proveedor Y'),
+            _bac_row('101-0066-LPU26-16-4', '101-0066-LPU26', '03.01.009.0001.1-1',
+                     '104025600.0', 'procuringEntity', 'Organismo X'),
+            _bac_row('101-0066-LPU26-16-5', '101-0066-LPU26', '03.01.009.0001.1-1',
+                     '104025600.0', 'buyer', 'Organismo X'),
+        ]
+        deduped = bcc.dedupe_csv_rows(rows)
+        self.assertEqual(len(deduped), 2)
+
+    def test_framework_agreement_many_eligible_buyers_collapses_to_one(self):
+        # Caso real: convenio marco con ~250 organismos habilitados listados como
+        # 'parties/0' individuales, mismo award/ítem/monto en todas las filas.
+        rows = [
+            _bac_row(f'623-2113-LPU25-17-{i}', '623-2113-LPU25', '03.02.001.0082.6-0',
+                     '162000.0', 'buyer', f'Organismo {i}')
+            for i in range(20)
+        ]
+        deduped = bcc.dedupe_csv_rows(rows)
+        self.assertEqual(len(deduped), 1)
+
+    def test_rows_without_a_parseable_id_are_never_merged_together(self):
+        rows = [
+            _bac_row('', 'AwardA', 'ItemA', '1000', 'supplier', 'X'),
+            _bac_row('', 'AwardA', 'ItemA', '1000', 'buyer', 'Y'),
+        ]
+        deduped = bcc.dedupe_csv_rows(rows)
+        self.assertEqual(len(deduped), 2)
+
+    def test_end_to_end_total_amount_not_doubled_after_parse(self):
+        csv_text = (
+            'id,date,tender/title,tender/procuringEntity/name,awards/0/id,'
+            'awards/0/items/0/id,awards/0/status,awards/0/value/amount,'
+            'awards/0/value/currency,awards/0/suppliers/0/name,awards/0/suppliers/0/id\r\n'
+            '9625-1-0,2026-02-04T13:00:00-03:00,Compra de PCs,Museo X,9625,ITEM1,active,'
+            '247000.0,ARS,Vendor Y,S1\r\n'
+            '9625-1-1,2026-02-04T13:00:00-03:00,Compra de PCs,Museo X,9625,ITEM1,active,'
+            '247000.0,ARS,Vendor Y,S1\r\n'
+        )
+        releases = bcc.parse_csv_releases(csv_text)
+        self.assertEqual(len(releases), 1)
+        stats = bcc.process_releases(releases)
+        self.assertAlmostEqual(stats['total_ars'], 247000.0)
+
+
 class ParseCsvReleasesTest(unittest.TestCase):
     def test_parses_valid_csv(self):
         csv_text = (

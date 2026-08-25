@@ -36,6 +36,7 @@ function renderBAC(data){
     <div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} procesos, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
     ${nco.note?`<div class="bac-note">${esc(nco.note)}</div>`:''}
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
+    ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
   `;
   if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
   if(concEl){

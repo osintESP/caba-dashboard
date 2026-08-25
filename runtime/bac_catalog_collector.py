@@ -17,7 +17,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 2
+COLLECTOR_VERSION = 3
 
 # "redes" en sentido genérico (eléctricas, de agua, viales, etc.) NO es tecnología;
 # sólo cuenta si está calificada como red de datos/informática (mismo criterio que
@@ -156,11 +156,40 @@ def csv_row_to_release(row):
     }
 
 
+def dedupe_csv_rows(rows):
+    # bac_anual.csv NO es una fila = una adjudicación: BAC emite una fila por cada combinación
+    # de (renglón/ítem real, parte asociada -comprador/ente contratante/proveedor-). Verificado
+    # contra el CSV real completo (no es teórico): sumar awards/0/value/amount fila por fila
+    # infla el total ~2.1x. El propio campo 'id' de la fila codifica esa estructura como
+    # "{tender_id}-{renglón}-{parte}"; agrupando por (id sin el último segmento, ítem real vía
+    # awards/0/items/0/id) se obtienen grupos con monto 100% consistente en todo el dataset real
+    # (0 inconsistencias en 14.937 grupos derivados de 24.911 filas) — esa es la clave usada acá.
+    #
+    # Ambigüedad residual conocida, no resuelta: en órdenes de compra de convenio marco con
+    # decenas/cientos de organismos habilitados a comprar del mismo catálogo (mismo monto
+    # repetido en todas las filas), esta clave puede seguir sub-dividiendo por variantes del
+    # ítem sin que podamos confirmar contra la fuente aplanada si cada una es una compra real
+    # distinta o sólo una habilitación de catálogo -award.csv existe pero usa un esquema de
+    # ocid completamente distinto, no cruza contra bac_anual.csv-. Ver README, limitaciones
+    # conocidas. Este dedup es una mejora validada sobre no deduplicar nada (que es 100%
+    # incorrecto, no una aproximación con error conocido), no una reconciliación perfecta.
+    seen = {}
+    for idx, row in enumerate(rows):
+        rid = row.get('id') or ''
+        parts = rid.split('-')
+        n_prefix = '-'.join(parts[:-1]) if len(parts) > 1 else rid
+        key = (n_prefix or f'__row_{idx}__', row.get('awards/0/items/0/id'))
+        if key not in seen:
+            seen[key] = row
+    return list(seen.values())
+
+
 def parse_csv_releases(csv_text):
     reader = csv.DictReader(io.StringIO(csv_text))
     if not reader.fieldnames or 'date' not in reader.fieldnames or 'tender/title' not in reader.fieldnames:
         raise RuntimeError('el CSV de BAC no tiene las columnas esperadas (schema inesperado)')
-    return [csv_row_to_release(row) for row in reader]
+    rows = dedupe_csv_rows(reader)
+    return [csv_row_to_release(row) for row in rows]
 
 
 def index_parties(release):

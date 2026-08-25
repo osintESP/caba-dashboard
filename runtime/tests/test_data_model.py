@@ -105,6 +105,26 @@ class CategoryTest(unittest.TestCase):
         n = {'nombre': 'Licitación', 'sumario': 'Servicio de procesamiento de datos y analítica'}
         self.assertEqual(data_model.category(n), 'tecnologia')
 
+    def test_bare_sistema_excludes_known_non_it_collocations(self):
+        # Hallazgos reales (Ministerio de Salud y otros organismos, ~12% del bucket
+        # 'tecnologia' antes del fix): 'sistema' solo, sin exigir calificación IT,
+        # clasificaba como tecnología compras que no lo son.
+        cases = [
+            'Adquisición de sistema de Catéteres percutáneos y Cartucho hemoabsorbedor de citoquinas',
+            'Mantenimiento del Sistema de Monitoreo, Registro y Alarma de Temperatura',
+            'Sistemas de Alarmas de Línea Residencial/Comercial',
+            'Adquisición de sistemas de arcos detectores de metales, scanner',
+            'Servicio de sistema de detección y extinción de incendios',
+        ]
+        for sumario in cases:
+            with self.subTest(sumario=sumario):
+                n = {'nombre': 'Licitación', 'sumario': sumario}
+                self.assertNotEqual(data_model.category(n), 'tecnologia')
+
+    def test_bare_sistema_still_matches_when_not_excluded(self):
+        n = {'nombre': 'Licitación', 'sumario': 'Actualización del Sistema de Liquidación de Haberes'}
+        self.assertEqual(data_model.category(n), 'tecnologia')
+
     def test_tecnolog_stem_still_matches_without_right_boundary(self):
         # El fix sólo exige borde a la izquierda: 'tecnolog' debe seguir matcheando
         # 'tecnología' (raíz + sufijo, sin borde de palabra a la derecha).
