@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-08-22T01:10:21+00:00",
+  "collected_at": "2026-08-25T16:56:46+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -272,7 +272,39 @@
         "vendors_count": 2,
         "high_concentration": true
       }
-    ]
+    ],
+    "possible_fractionation": {
+      "awards": [
+        {
+          "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
+          "vendor": "AP Supplier Group SA",
+          "awards_count": 6,
+          "total_amount_ars": 7718000.0,
+          "date_from": "2026-02-04",
+          "date_to": "2026-02-04",
+          "window_days": 0
+        },
+        {
+          "organismo": "MINISTERIO DE EDUCACION",
+          "vendor": "EXO SA",
+          "awards_count": 4,
+          "total_amount_ars": 6524906.86,
+          "date_from": "2026-03-27",
+          "date_to": "2026-03-27",
+          "window_days": 0
+        },
+        {
+          "organismo": "HTAL. BERNARDINO RIVADAVIA",
+          "vendor": "Facundo Adrian Ortiz Guerreiro",
+          "awards_count": 4,
+          "total_amount_ars": 590000.0,
+          "date_from": "2026-01-12",
+          "date_to": "2026-01-12",
+          "window_days": 0
+        }
+      ],
+      "note": "Organismo + proveedor con 3 o más adjudicaciones directas o de contratación limitada en un lapso de hasta 90 días, en compras de tecnología. No implica que se haya superado un umbral legal específico (ese dato no está en el dataset) — es un disparador para revisión manual de posible fraccionamiento."
+    }
   },
   "status": "ok",
   "generated_by": "bac_catalog_collector.py"
