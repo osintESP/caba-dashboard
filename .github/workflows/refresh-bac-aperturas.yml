@@ -1,0 +1,98 @@
+name: Refresh Buenos Aires Compras (BAC) aperturas en tiempo real
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'runtime/bac_aperturas_scraper.py'
+      - '.github/workflows/refresh-bac-aperturas.yml'
+  schedule:
+    # Mismo horario que refresh-official-data.yml (11:00-16:30 UTC = 08:00-13:30 ART,
+    # lunes a viernes, cada 30 min): las aperturas de BAC ocurren en horario administrativo,
+    # no tiene sentido scrapear fuera de esa ventana.
+    - cron: '0,30 11-16 * * 1-5'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: caba-dashboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r runtime/requirements.txt
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
+
+      - name: Scrape BAC aperturas (sitio transaccional, navegación real por click)
+        run: python runtime/bac_aperturas_scraper.py
+
+      - name: Validate mandatory outputs
+        run: |
+          test -s data/bac_aperturas.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d = json.loads(Path('data/bac_aperturas.json').read_text(encoding='utf-8'))
+          assert 'status' in d and 'aperturas_recientes' in d and 'aperturas_proximas' in d
+          print('BAC_APERTURAS_QUALITY=OK')
+          PY
+
+      - name: Persist refreshed aperturas dataset
+        run: |
+          git config user.name 'caba-dashboard[bot]'
+          git config user.email 'caba-dashboard@users.noreply.github.com'
+          git add data/bac_aperturas.json
+          if git diff --cached --quiet; then
+            echo 'No aperturas data changes.'
+          else
+            git commit -m 'Refresh Buenos Aires Compras (BAC) aperturas en tiempo real'
+            git fetch origin master
+            # data/bac_aperturas.json es una regeneración completa en cada corrida (no un
+            # merge incremental), igual que bac_catalog.json: ante un conflicto de rebase,
+            # siempre gana la versión recién scrapeada por esta corrida.
+            if ! git rebase origin/master; then
+              git checkout --theirs data/bac_aperturas.json
+              git add data/bac_aperturas.json
+              GIT_EDITOR=true git rebase --continue
+            fi
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload refreshed site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy refreshed dashboard to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

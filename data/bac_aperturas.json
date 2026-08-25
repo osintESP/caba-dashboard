@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-08-25T19:00:05+00:00",
+  "source": "https://www.buenosairescompras.gob.ar/",
+  "status": "ok",
+  "aperturas_recientes": [
+    {
+      "numero_proceso": "416-2754-CME26",
+      "nombre_proceso": "CONECTOR,JERINGA HIPODERMICA,PEDIDO N° 42071-HEMODINAMIA-ABASTECIMIENTO 1 AÑO-CONTRATACION MENOR-",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
+      "fecha_apertura": "2026-08-25T15:00:00-03:00"
+    },
+    {
+      "numero_proceso": "9625-2870-CME26",
+      "nombre_proceso": "Servicio de mantenimiento correctivo y preventivo del sistema de detección y extinción de incendio",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "9625",
+      "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
+      "fecha_apertura": "2026-08-25T13:00:00-03:00"
+    },
+    {
+      "numero_proceso": "420-0915-CDI26",
+      "nombre_proceso": "Nutrición parenteral, dextrosa, selenio acido y otros",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "En Evaluacion",
+      "unidad_ejecutora_codigo": "420",
+      "organismo": "HTAL. RICARDO GUTIERREZ",
+      "fecha_apertura": "2026-08-25T11:00:00-03:00"
+    },
+    {
+      "numero_proceso": "2624-0843-CDI26",
+      "nombre_proceso": "Diseño, desarrollo e implementación de un sistema integral para consolidación de domicilios.",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "2624",
+      "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
+      "fecha_apertura": "2026-08-25T11:00:00-03:00"
+    },
+    {
+      "numero_proceso": "420-2834-CME26",
+      "nombre_proceso": "Adquisición de placa para reconstrucción mandibular",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Disponible Para Adjudicar",
+      "unidad_ejecutora_codigo": "420",
+      "organismo": "HTAL. RICARDO GUTIERREZ",
+      "fecha_apertura": "2026-08-25T11:00:00-03:00"
+    },
+    {
+      "numero_proceso": "420-0998-CDI26",
+      "nombre_proceso": "ADQUISICIÓN DE CATETER DOBLE J",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "420",
+      "organismo": "HTAL. RICARDO GUTIERREZ",
+      "fecha_apertura": "2026-08-25T10:30:00-03:00"
+    },
+    {
+      "numero_proceso": "430-1297-LPU26",
+      "nombre_proceso": "VIROLOGIA (BIOLOGIA MOLECULAR) - LABORATORIO CENTRAL",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Evaluacion",
+      "unidad_ejecutora_codigo": "430",
+      "organismo": "HTAL. JOSE M.RAMOS MEJIA",
+      "fecha_apertura": "2026-08-25T10:00:00-03:00"
+    },
+    {
+      "numero_proceso": "455-2768-CME26",
+      "nombre_proceso": "Servicio de Reparación Integral de Holter",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Evaluacion",
+      "unidad_ejecutora_codigo": "455",
+      "organismo": "CAI CECILIA GRIERSON",
+      "fecha_apertura": "2026-08-25T10:00:00-03:00"
+    },
+    {
+      "numero_proceso": "441-2751-CME26",
+      "nombre_proceso": "Servicio de Mantenimiento de Equipamiento de Hemoterapia",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Evaluacion",
+      "unidad_ejecutora_codigo": "441",
+      "organismo": "HTAL. ABEL ZUBIZARRETA",
+      "fecha_apertura": "2026-08-25T10:00:00-03:00"
+    },
+    {
+      "numero_proceso": "410-0960-CDI26",
+      "nombre_proceso": "PED 397- Servicio de Reparacion Integral de Microscopios (Lab. Central)",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "410",
+      "organismo": "HTAL.TEODORO ALVAREZ",
+      "fecha_apertura": "2026-08-25T10:00:00-03:00"
+    },
+    {
+      "numero_proceso": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...",
+      "nombre_proceso": "1",
+      "tipo_proceso": "2",
+      "estado": "4",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "5",
+      "fecha_apertura": null
+    },
+    {
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    }
+  ],
+  "aperturas_proximas": [
+    {
+      "numero_proceso": "418-2863-CME26",
+      "nombre_proceso": "HEMODINAMIA-SERV. REP. CAMA ENTERPRISE-6 MESES",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2026-08-26T07:00:00-03:00"
+    },
+    {
+      "numero_proceso": "445-2861-CME26",
+      "nombre_proceso": "Reparacion equipo de laboratorio",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "445",
+      "organismo": "INSTITUTO PASTEUR",
+      "fecha_apertura": "2026-08-26T08:00:00-03:00"
+    },
+    {
+      "numero_proceso": "418-2876-CME26",
+      "nombre_proceso": "MONITOREO NEUROFISIOLOGICO Y ASPIRADOR ULTRASONICO PARA LOS PTES. PEREZ, LUCIANO Y PEREZ HUGO",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2026-08-26T08:00:00-03:00"
+    },
+    {
+      "numero_proceso": "418-1300-LPU26",
+      "nombre_proceso": "LABORATORIO. ADQ. DE REACTIVOS P/DETERMINACIONES HORMONALES (SEMESTRAL)",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2026-08-26T08:00:00-03:00"
+    },
+    {
+      "numero_proceso": "412-2883-CME26",
+      "nombre_proceso": "ALQUILER SHAVER Y NEURONAVEGADOR",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "412",
+      "organismo": "HTAL. COSME ARGERICH",
+      "fecha_apertura": "2026-08-26T08:00:00-03:00"
+    },
+    {
+      "numero_proceso": "438-0997-CDI26",
+      "nombre_proceso": "PROLONGADOR MACRO",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "438",
+      "organismo": "HTAL. ENRIQUE TORNU",
+      "fecha_apertura": "2026-08-26T08:30:00-03:00"
+    },
+    {
+      "numero_proceso": "419-2868-CME26",
+      "nombre_proceso": "RENOVACION ALQUILER CONCENTRADOR A.M. PACIENTE MIRANDA DANIEL RAMON DNI 22.269.266 2° LLAMADO",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "419",
+      "organismo": "HTAL. MARIA FERRER",
+      "fecha_apertura": "2026-08-26T09:00:00-03:00"
+    },
+    {
+      "numero_proceso": "440-2866-CME26",
+      "nombre_proceso": "MEDIOS DE CULTIVO(AGAR)",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "440",
+      "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
+      "fecha_apertura": "2026-08-26T09:00:00-03:00"
+    },
+    {
+      "numero_proceso": "440-2709-CME26",
+      "nombre_proceso": "COMPRESOR DE AIRE",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "440",
+      "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
+      "fecha_apertura": "2026-08-26T09:00:00-03:00"
+    },
+    {
+      "numero_proceso": "436-2736-CME26",
+      "nombre_proceso": "ADQUISICIÓN DE UNA GUILLOTINA ELÉCTRICA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "436",
+      "organismo": "TALLERES PROTEGIDOS DE REHAB.PSIQUIAT.",
+      "fecha_apertura": "2026-08-26T09:00:00-03:00"
+    },
+    {
+      "numero_proceso": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...",
+      "nombre_proceso": "1",
+      "tipo_proceso": "2",
+      "estado": "4",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "5",
+      "fecha_apertura": null
+    },
+    {
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null};
+const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null};
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-AR');
 const fmtCurrency=new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
@@ -7,7 +7,7 @@ let normsPage=1,procPage=1;
 const dtf=new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'short',timeStyle:'medium'});
 async function fetchJson(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 async function fetchOptional(path){try{return await fetchJson(path)}catch(e){console.warn(`optional dataset unavailable: ${path}`,e);return null}}
-async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
+async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
 function fillSelect(el,values){for(const v of values){const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o)}}
 function populateFilters(){fillSelect($('filter-org'),[...new Set(state.norms.map(x=>x.organismo).filter(Boolean))].sort());fillSelect($('filter-type'),[...new Set(state.norms.map(x=>x.tipo).filter(Boolean))].sort());fillSelect($('filter-category'),[...new Set(state.procurements.map(x=>x.categoria).filter(Boolean))].sort())}
 function filteredNorms(){const q=$('filter-search').value.trim().toLowerCase(),org=$('filter-org').value,type=$('filter-type').value;return state.norms.filter(n=>{const hay=`${n.nombre||''} ${n.sumario||''} ${n.organismo||''} ${n.tipo||''}`.toLowerCase();return(!q||hay.includes(q))&&(!org||n.organismo===org)&&(!type||n.tipo===type)})}
@@ -69,6 +69,21 @@ function orgAuditBadge(organismo,idx){const c=idx.get(normalizeOrgName(organismo
 function renderOrgRanking(){const counts={};for(const x of filteredNorms()){const k=x.organismo||'Sin organismo';counts[k]=(counts[k]||0)+1}const idx=bacOrgIndex();const rows=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([name,value])=>[name,value,orgAuditBadge(name,idx)]);renderRankRows($('org-ranking'),rows)}
 function safeHref(u){return typeof u==='string'&&/^https?:\/\//i.test(u)?u:null}
 function recordHtml(n,proc){const pills=[n.organismo,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);if(proc&&n.categoria)pills.unshift(`<span class="meta-pill category">${esc(n.categoria.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}</h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}
+function aperturaRecordHtml(a){const pills=[a.organismo,a.tipo_proceso,a.estado,a.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const fecha=a.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):'—';return `<article class="record"><div><h3 class="record-title">${esc(a.nombre_proceso||a.numero_proceso||'Proceso sin nombre')}</h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Apertura: ${esc(fecha)} ART</p></div></article>`}
+function renderAperturas(){
+  const data=state.aperturas,statusEl=$('aperturas-status'),recEl=$('aperturas-recientes-list'),proxEl=$('aperturas-proximas-list'),syncEl=$('aperturas-sync');
+  if(!data){
+    if(statusEl)statusEl.textContent='sin sincronizar';
+    if(recEl)recEl.innerHTML='<div class="empty">Radar de aperturas en tiempo real todavía no fue publicado.</div>';
+    if(proxEl)proxEl.innerHTML='<div class="empty">Radar de aperturas en tiempo real todavía no fue publicado.</div>';
+    return;
+  }
+  if(statusEl)statusEl.textContent=data.status==='ok'?'activo':'error';
+  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART`:'';
+  const recientes=data.aperturas_recientes||[],proximas=data.aperturas_proximas||[];
+  if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas registradas en los últimos 30 días.</div>';
+  if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas publicadas.</div>';
+}
 function procesoGroupHtml(group){const[main,...related]=group;const mainHtml=recordHtml(main,true);if(!related.length)return `<div class="process-group">${mainHtml}</div>`;const relatedHtml=related.map(r=>recordHtml(r,true)).join('');return `<div class="process-group">${mainHtml}<details class="related-acts"><summary>${related.length} acto${related.length===1?'':'s'} relacionado${related.length===1?'':'s'} (circulares, prórroga, etc.)</summary>${relatedHtml}</details></div>`}
 function renderLists(){
   const nr=filteredNorms(),prGroups=groupByProceso(filteredProcurements());
@@ -80,7 +95,7 @@ function renderLists(){
   $('norms-load-more').style.display=nr.length>nshow.length?'':'none';
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
-function renderAll(){renderMetrics();renderIntelligence();renderBAC(state.bac);renderSyncNotice();renderBars();renderOrgRanking();renderLists()}
+function renderAll(){renderMetrics();renderIntelligence();renderBAC(state.bac);renderAperturas();renderSyncNotice();renderBars();renderOrgRanking();renderLists()}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
