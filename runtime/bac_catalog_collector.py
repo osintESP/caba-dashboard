@@ -13,6 +13,12 @@ PACKAGE = 'buenos-aires-compras'
 TOP_N_VENDORS = 20
 ACTIVE_STATUSES = (None, '', 'active')
 
+# Subir en cada cambio a la lógica de parseo/señales (csv_row_to_release, process_releases,
+# build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
+# un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
+# fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
+COLLECTOR_VERSION = 2
+
 # "redes" en sentido genérico (eléctricas, de agua, viales, etc.) NO es tecnología;
 # sólo cuenta si está calificada como red de datos/informática (mismo criterio que
 # ya se aplicó en runtime/data_model.py para evitar el falso positivo "redes eléctricas").
@@ -86,6 +92,8 @@ def head_fingerprint(url):
 
 def unchanged(prev_state, url, fp):
     if not prev_state or fp is None or prev_state.get('url') != url:
+        return False
+    if prev_state.get('collector_version') != COLLECTOR_VERSION:
         return False
     for key in ('etag', 'last_modified', 'content_length'):
         prev_v, new_v = prev_state.get(key), fp.get(key)
@@ -444,7 +452,8 @@ def main():
     stats = process_releases(releases)
     out = build_output(result, resource, stats, 'ok', len(releases))
     write(OUT, out)
-    write(STATE, {**(fp or {}), 'url': url, 'checked_at': now(), 'downloaded_at': now(), 'status': 'ok'})
+    write(STATE, {**(fp or {}), 'url': url, 'checked_at': now(), 'downloaded_at': now(), 'status': 'ok',
+                  'collector_version': COLLECTOR_VERSION})
     print(json.dumps({'status': 'ok', 'releases': len(releases),
                        'vendors': len(stats['vendor_totals']), 'awards': stats['awards_counted']},
                       ensure_ascii=False))

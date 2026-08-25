@@ -220,9 +220,22 @@ class FractionationTest(unittest.TestCase):
 
 class UnchangedDetectionTest(unittest.TestCase):
     def test_matches_on_etag(self):
-        prev = {'url': 'https://cdn/x.json', 'etag': 'abc'}
+        prev = {'url': 'https://cdn/x.json', 'etag': 'abc', 'collector_version': bcc.COLLECTOR_VERSION}
         fp = {'etag': 'abc', 'last_modified': None, 'content_length': None}
         self.assertTrue(bcc.unchanged(prev, 'https://cdn/x.json', fp))
+
+    def test_stale_collector_version_forces_reprocess_even_with_matching_etag(self):
+        # Bug: la fuente (bac_anual.csv) sólo cambia cada 2-3 meses -> sin este chequeo,
+        # un fix al collector quedaba "mudo" hasta que la fuente externa decidiera cambiar,
+        # en vez de aplicarse en la próxima corrida tras el deploy del fix.
+        prev = {'url': 'https://cdn/x.json', 'etag': 'abc', 'collector_version': bcc.COLLECTOR_VERSION - 1}
+        fp = {'etag': 'abc', 'last_modified': None, 'content_length': None}
+        self.assertFalse(bcc.unchanged(prev, 'https://cdn/x.json', fp))
+
+    def test_missing_collector_version_in_prev_state_forces_reprocess(self):
+        prev = {'url': 'https://cdn/x.json', 'etag': 'abc'}
+        fp = {'etag': 'abc', 'last_modified': None, 'content_length': None}
+        self.assertFalse(bcc.unchanged(prev, 'https://cdn/x.json', fp))
 
     def test_different_etag_means_changed(self):
         prev = {'url': 'https://cdn/x.json', 'etag': 'abc'}
