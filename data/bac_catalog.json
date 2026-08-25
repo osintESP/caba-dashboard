@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-08-25T16:56:46+00:00",
+  "collected_at": "2026-08-25T17:25:50+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -22,153 +22,153 @@
     "last_modified": "2023-01-13T17:41:29.592138"
   },
   "coverage": {
-    "releases_processed": 24911,
+    "releases_processed": 14937,
     "date_from": "2026-01-02T09:00:00-03:00",
     "date_to": "2026-05-29T16:00:00-03:00",
     "note": "Ventana de cobertura de bac_anual.csv no confirmada oficialmente por el publicador; inferida del rango real de fechas de los releases procesados. La fuente suele tener ~2-3 meses de atraso respecto a la fecha actual."
   },
   "summary": {
-    "total_awarded_ars": 145045877273.58,
-    "tech_awarded_ars": 1830682605.92,
-    "tech_share_pct": 1.26,
-    "awards_counted": 17371,
+    "total_awarded_ars": 69192590372.13,
+    "tech_awarded_ars": 915341302.96,
+    "tech_share_pct": 1.32,
+    "awards_counted": 7525,
     "vendors_counted": 554,
     "currencies": {
-      "ARS": 17371,
-      "USD": 78
+      "ARS": 7525,
+      "USD": 38
     }
   },
   "vendor_ranking": [
     {
       "name": "MEDI SISTEM S.R.L.",
-      "amount_ars": 11499845262.0,
+      "amount_ars": 5749922631.0,
       "tech_amount_ars": 0,
-      "awards": 940
+      "awards": 470
     },
     {
       "name": "DROGUERIA ARTIGAS S.A.",
-      "amount_ars": 10220725958.56,
+      "amount_ars": 5110362979.28,
       "tech_amount_ars": 0,
-      "awards": 834
+      "awards": 417
     },
     {
       "name": "FRIGORIFICO ONETO Y CIA. SAIC",
-      "amount_ars": 9940800000.0,
+      "amount_ars": 4970400000.0,
       "tech_amount_ars": 0,
-      "awards": 8
+      "awards": 4
     },
     {
       "name": "G Y C COMUNICACIONES S.A.",
-      "amount_ars": 7307508000.0,
-      "tech_amount_ars": 0,
-      "awards": 6
-    },
-    {
-      "name": "TECNOLAB S.A.",
-      "amount_ars": 3049882817.02,
-      "tech_amount_ars": 0,
-      "awards": 154
-    },
-    {
-      "name": "BIODIAGNOSTICO S.A.",
-      "amount_ars": 3022550072.34,
-      "tech_amount_ars": 0,
-      "awards": 550
-    },
-    {
-      "name": "CAVEGO S.A.",
-      "amount_ars": 3012353724.94,
+      "amount_ars": 2435836000.0,
       "tech_amount_ars": 0,
       "awards": 2
     },
     {
-      "name": "BIOSYSTEMS S.A.",
-      "amount_ars": 2978176546.88,
+      "name": "TECNOLAB S.A.",
+      "amount_ars": 1524941408.51,
       "tech_amount_ars": 0,
-      "awards": 132
+      "awards": 77
+    },
+    {
+      "name": "BIODIAGNOSTICO S.A.",
+      "amount_ars": 1511275036.17,
+      "tech_amount_ars": 0,
+      "awards": 275
+    },
+    {
+      "name": "CAVEGO S.A.",
+      "amount_ars": 1506176862.47,
+      "tech_amount_ars": 0,
+      "awards": 1
+    },
+    {
+      "name": "BIOSYSTEMS S.A.",
+      "amount_ars": 1489088273.44,
+      "tech_amount_ars": 0,
+      "awards": 66
     },
     {
       "name": "ORL MED S.A.",
-      "amount_ars": 2975280368.0,
+      "amount_ars": 1487640184.0,
       "tech_amount_ars": 0,
-      "awards": 98
+      "awards": 49
     },
     {
       "name": "ROFINA S.A.I.C.F.",
-      "amount_ars": 2197479959.4,
+      "amount_ars": 1098739979.7,
       "tech_amount_ars": 0,
-      "awards": 12
+      "awards": 6
     },
     {
       "name": "DROFAST S.R.L.",
-      "amount_ars": 2120553500.0,
+      "amount_ars": 1060276750.0,
       "tech_amount_ars": 0,
-      "awards": 284
+      "awards": 142
     },
     {
       "name": "BIOMÉRIEUX ARGENTINA SA",
-      "amount_ars": 2110919932.88,
+      "amount_ars": 1055459966.44,
       "tech_amount_ars": 0,
-      "awards": 80
-    },
-    {
-      "name": "JOSÉ RAFAEL FIDANZA",
-      "amount_ars": 1873288800.0,
-      "tech_amount_ars": 0,
-      "awards": 39
-    },
-    {
-      "name": "JUAN CARLOS SAVINO",
-      "amount_ars": 1843483432.0,
-      "tech_amount_ars": 0,
-      "awards": 2025
+      "awards": 40
     },
     {
       "name": "BECTON DICKINSON ARGENTINA SRL",
-      "amount_ars": 1679520340.7,
+      "amount_ars": 839760170.35,
       "tech_amount_ars": 0,
-      "awards": 82
+      "awards": 41
     },
     {
       "name": "BERNARDO LEW E HIJOS SOCIEDAD DE RESPONSABILIDAD LIMITADA",
-      "amount_ars": 1640735474.24,
+      "amount_ars": 820367737.12,
       "tech_amount_ars": 0,
-      "awards": 116
+      "awards": 58
     },
     {
       "name": "DROGUERIA LIBERTAD S.A.",
-      "amount_ars": 1607414000.0,
+      "amount_ars": 803707000.0,
       "tech_amount_ars": 0,
-      "awards": 38
+      "awards": 19
     },
     {
       "name": "QUIMICA EROVNE S.A.",
-      "amount_ars": 1425895390.0,
+      "amount_ars": 712947695.0,
       "tech_amount_ars": 0,
-      "awards": 258
+      "awards": 129
     },
     {
       "name": "BARRACA ACHER ARGENTINA S.R.L.",
-      "amount_ars": 1396557556.0,
+      "amount_ars": 698278778.0,
       "tech_amount_ars": 0,
-      "awards": 176
+      "awards": 88
     },
     {
       "name": "FELSAN SRL",
-      "amount_ars": 1372214847.06,
+      "amount_ars": 686107423.53,
       "tech_amount_ars": 0,
-      "awards": 362
+      "awards": 181
+    },
+    {
+      "name": "BINIT S.R.L.",
+      "amount_ars": 673500000.0,
+      "tech_amount_ars": 0,
+      "awards": 3
+    },
+    {
+      "name": "FRESENIUS KABI S.A.",
+      "amount_ars": 671101821.47,
+      "tech_amount_ars": 0,
+      "awards": 61
     }
   ],
   "audit_signals": {
     "method_breakdown_ars": {
-      "direct": 834975134.36,
-      "open": 995707471.56
+      "direct": 417487567.18,
+      "open": 497853735.78
     },
     "direct_or_limited_share_pct": 45.61,
     "non_competitive_open_tenders": {
-      "count": 6,
-      "amount_ars": 995707471.56,
+      "count": 3,
+      "amount_ars": 497853735.78,
       "share_pct_of_tech": 54.39,
       "note": "Procesos formalmente públicos (procurementMethod=open) que BAC marca como sin competencia real (competitive=false), en compras de tecnología. BAC no publica numberOfTenderers/tenderers; esta es la única señal de competencia real que expone el propio publicador."
     },
@@ -176,8 +176,8 @@
       {
         "organismo": "HTAL. RICARDO GUTIERREZ",
         "top_vendor": "INEGHO SRL",
-        "top_vendor_amount_ars": 9796000.0,
-        "organismo_tech_amount_ars": 9796000.0,
+        "top_vendor_amount_ars": 4898000.0,
+        "organismo_tech_amount_ars": 4898000.0,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -185,8 +185,8 @@
       {
         "organismo": "HTAL. PARMENIO PIÑERO",
         "top_vendor": "TECNOIMAGEN S.A.",
-        "top_vendor_amount_ars": 23721587.5,
-        "organismo_tech_amount_ars": 23721587.5,
+        "top_vendor_amount_ars": 11860793.75,
+        "organismo_tech_amount_ars": 11860793.75,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -194,8 +194,8 @@
       {
         "organismo": "MINISTERIO DE CULTURA",
         "top_vendor": "Twins Music S.R.L",
-        "top_vendor_amount_ars": 15600000.0,
-        "organismo_tech_amount_ars": 15600000.0,
+        "top_vendor_amount_ars": 7800000.0,
+        "organismo_tech_amount_ars": 7800000.0,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -203,8 +203,8 @@
       {
         "organismo": "D.G. UNIDAD INFORMATICA DE ADMIN. FIN",
         "top_vendor": "ATRIX S.A.",
-        "top_vendor_amount_ars": 48240000.0,
-        "organismo_tech_amount_ars": 48240000.0,
+        "top_vendor_amount_ars": 24120000.0,
+        "organismo_tech_amount_ars": 24120000.0,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -212,8 +212,8 @@
       {
         "organismo": "PROCURACION GENERAL DE LA CIUDAD",
         "top_vendor": "MBC DESARROLLOS SOCIEDAD DE RESPONSABILIDAD LIMITADA ",
-        "top_vendor_amount_ars": 210000000.0,
-        "organismo_tech_amount_ars": 210000000.0,
+        "top_vendor_amount_ars": 105000000.0,
+        "organismo_tech_amount_ars": 105000000.0,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -221,8 +221,8 @@
       {
         "organismo": "VICEJEFATURA DE GOBIERNO",
         "top_vendor": "Mariana Irene Albornoz",
-        "top_vendor_amount_ars": 985905703.1,
-        "organismo_tech_amount_ars": 985905703.1,
+        "top_vendor_amount_ars": 492952851.55,
+        "organismo_tech_amount_ars": 492952851.55,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -230,8 +230,8 @@
       {
         "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
         "top_vendor": "AP Supplier Group SA",
-        "top_vendor_amount_ars": 7718000.0,
-        "organismo_tech_amount_ars": 7718000.0,
+        "top_vendor_amount_ars": 3859000.0,
+        "organismo_tech_amount_ars": 3859000.0,
         "top_vendor_share_pct": 100.0,
         "vendors_count": 1,
         "high_concentration": true
@@ -239,8 +239,8 @@
       {
         "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
         "top_vendor": "ATIX S.A.",
-        "top_vendor_amount_ars": 356600000.0,
-        "organismo_tech_amount_ars": 404273240.0,
+        "top_vendor_amount_ars": 178300000.0,
+        "organismo_tech_amount_ars": 202136620.0,
         "top_vendor_share_pct": 88.21,
         "vendors_count": 2,
         "high_concentration": true
@@ -248,8 +248,8 @@
       {
         "organismo": "HTAL. BERNARDINO RIVADAVIA",
         "top_vendor": "INFORMATICA PALMAR SRL",
-        "top_vendor_amount_ars": 5596000.0,
-        "organismo_tech_amount_ars": 6356600.0,
+        "top_vendor_amount_ars": 2798000.0,
+        "organismo_tech_amount_ars": 3178300.0,
         "top_vendor_share_pct": 88.03,
         "vendors_count": 4,
         "high_concentration": true
@@ -257,8 +257,8 @@
       {
         "organismo": "MINISTERIO DE EDUCACION",
         "top_vendor": "CAISEN S.R.L.",
-        "top_vendor_amount_ars": 37200000.0,
-        "organismo_tech_amount_ars": 43724906.86,
+        "top_vendor_amount_ars": 18600000.0,
+        "organismo_tech_amount_ars": 21862453.43,
         "top_vendor_share_pct": 85.08,
         "vendors_count": 2,
         "high_concentration": true
@@ -266,8 +266,8 @@
       {
         "organismo": "ENTE AUTARQUICO TEATRO COLON",
         "top_vendor": "AKSEC SRL",
-        "top_vendor_amount_ars": 60240000.0,
-        "organismo_tech_amount_ars": 75340800.0,
+        "top_vendor_amount_ars": 30120000.0,
+        "organismo_tech_amount_ars": 37670400.0,
         "top_vendor_share_pct": 79.96,
         "vendors_count": 2,
         "high_concentration": true
@@ -278,28 +278,10 @@
         {
           "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
           "vendor": "AP Supplier Group SA",
-          "awards_count": 6,
-          "total_amount_ars": 7718000.0,
+          "awards_count": 3,
+          "total_amount_ars": 3859000.0,
           "date_from": "2026-02-04",
           "date_to": "2026-02-04",
-          "window_days": 0
-        },
-        {
-          "organismo": "MINISTERIO DE EDUCACION",
-          "vendor": "EXO SA",
-          "awards_count": 4,
-          "total_amount_ars": 6524906.86,
-          "date_from": "2026-03-27",
-          "date_to": "2026-03-27",
-          "window_days": 0
-        },
-        {
-          "organismo": "HTAL. BERNARDINO RIVADAVIA",
-          "vendor": "Facundo Adrian Ortiz Guerreiro",
-          "awards_count": 4,
-          "total_amount_ars": 590000.0,
-          "date_from": "2026-01-12",
-          "date_to": "2026-01-12",
           "window_days": 0
         }
       ],
