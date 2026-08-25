@@ -109,7 +109,14 @@ def _to_float(v):
 
 
 def _to_bool(v):
-    return {'True': True, 'False': False}.get(v)
+    if v is None:
+        return None
+    s = str(v).strip().lower()
+    if s in ('true', '1', 'yes', 'si', 'sí'):
+        return True
+    if s in ('false', '0', 'no'):
+        return False
+    return None
 
 
 def csv_row_to_release(row):
@@ -178,6 +185,13 @@ def classify_technology(tender):
     return any(rx.search(text) for rx in _TECH_INCLUDE_RE)
 
 
+def _parse_date(s):
+    try:
+        return datetime.fromisoformat(s[:10]).date() if s else None
+    except ValueError:
+        return None
+
+
 def process_releases(releases):
     vendor_totals, vendor_tech_totals, vendor_awards = {}, {}, {}
     total_ars = tech_ars = 0.0
@@ -187,6 +201,7 @@ def process_releases(releases):
     tech_method_amounts = {}
     tech_noncompetitive_open = {'count': 0, 'amount': 0.0}
     org_vendor_tech, org_tech_totals = {}, {}
+    direct_awards_by_pair = {}
     for rel in releases:
         rel_date = rel.get('date')
         if rel_date:
@@ -235,6 +250,11 @@ def process_releases(releases):
                 bucket = org_vendor_tech.setdefault(organismo, {})
                 for name in names:
                     bucket[name] = bucket.get(name, 0) + share
+                if method in ('direct', 'limited'):
+                    parsed_date = _parse_date(rel_date)
+                    for name in names:
+                        direct_awards_by_pair.setdefault((organismo, name), []).append(
+                            {'date': parsed_date, 'amount': share})
     return {
         'vendor_totals': vendor_totals, 'vendor_tech_totals': vendor_tech_totals,
         'vendor_awards': vendor_awards, 'total_ars': total_ars, 'tech_ars': tech_ars,
@@ -242,6 +262,7 @@ def process_releases(releases):
         'date_from': date_from, 'date_to': date_to,
         'tech_method_amounts': tech_method_amounts, 'tech_noncompetitive_open': tech_noncompetitive_open,
         'org_vendor_tech': org_vendor_tech, 'org_tech_totals': org_tech_totals,
+        'direct_awards_by_pair': direct_awards_by_pair,
     }
 
 
@@ -252,6 +273,34 @@ def process_releases(releases):
 #   ranking; no implica irregularidad por sí solo, es un disparador para revisión manual.
 CONCENTRATION_MIN_AMOUNT = 1_000_000
 CONCENTRATION_HIGH_PCT = 60
+
+# - FRACTIONATION_MIN_AWARDS / FRACTIONATION_WINDOW_DAYS: no conocemos el umbral legal
+#   exacto de contratación directa/menor de CABA desde este dataset, así que en vez de
+#   inventar un monto, la señal marca un patrón de REPETICIÓN (varias adjudicaciones
+#   directas/limitadas al mismo proveedor por el mismo organismo, agrupadas en una ventana
+#   corta) — disparador de revisión manual de posible fraccionamiento, no una acusación.
+FRACTIONATION_MIN_AWARDS = 3
+FRACTIONATION_WINDOW_DAYS = 90
+
+
+def build_fractionation_flags(direct_awards_by_pair):
+    flags = []
+    for (organismo, vendor), awards in direct_awards_by_pair.items():
+        dates = [a['date'] for a in awards if a['date']]
+        if len(awards) < FRACTIONATION_MIN_AWARDS or len(dates) < FRACTIONATION_MIN_AWARDS:
+            continue
+        span_days = (max(dates) - min(dates)).days
+        if span_days > FRACTIONATION_WINDOW_DAYS:
+            continue
+        flags.append({
+            'organismo': organismo, 'vendor': vendor,
+            'awards_count': len(awards),
+            'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
+            'date_from': min(dates).isoformat(), 'date_to': max(dates).isoformat(),
+            'window_days': span_days,
+        })
+    flags.sort(key=lambda f: f['total_amount_ars'], reverse=True)
+    return flags
 
 
 def build_audit_signals(stats):
@@ -292,6 +341,14 @@ def build_audit_signals(stats):
         # Sin tope: el frontend necesita poder buscar CUALQUIER organismo del ranking
         # del Boletín acá (cruce por nombre), no sólo los de mayor concentración.
         'vendor_concentration_by_organismo': concentration,
+        'possible_fractionation': {
+            'awards': build_fractionation_flags(stats.get('direct_awards_by_pair', {})),
+            'note': (f'Organismo + proveedor con {FRACTIONATION_MIN_AWARDS} o más adjudicaciones '
+                     f'directas o de contratación limitada en un lapso de hasta '
+                     f'{FRACTIONATION_WINDOW_DAYS} días, en compras de tecnología. No implica que '
+                     'se haya superado un umbral legal específico (ese dato no está en el '
+                     'dataset) — es un disparador para revisión manual de posible fraccionamiento.'),
+        },
     }
 
 
@@ -339,6 +396,23 @@ def build_output(result, resource, stats, status, releases_count):
     }
 
 
+def _mark_stale(result, resource, status, error=None):
+    # Si ya existe un bac_catalog.json de una corrida exitosa previa, sólo se actualiza su
+    # 'status' (y se agrega el error) sin tocar vendor_ranking/audit_signals: sirve el último
+    # dato bueno conocido, pero el status deja de mentir si las fallas se repiten corrida
+    # tras corrida (antes quedaba congelado en 'ok' para siempre porque sólo se escribía
+    # OUT cuando el archivo no existía todavía).
+    existing = read(OUT)
+    if existing:
+        existing['status'] = status
+        existing['last_check_status_at'] = now()
+        if error:
+            existing['last_error'] = error
+        write(OUT, existing)
+    elif not OUT.exists():
+        write(OUT, build_output(result, resource, process_releases([]), status, 0))
+
+
 def main():
     prev_state = read(STATE, {}) or {}
     result = fetch_package()
@@ -346,8 +420,7 @@ def main():
 
     if not resource:
         write(STATE, {**prev_state, 'checked_at': now(), 'status': 'resource_not_found'})
-        if not OUT.exists():
-            write(OUT, build_output(result, None, process_releases([]), 'resource_not_found', 0))
+        _mark_stale(result, None, 'resource_not_found')
         print(json.dumps({'status': 'resource_not_found'}))
         return
 
@@ -364,8 +437,7 @@ def main():
     except (requests.RequestException, RuntimeError, csv.Error) as e:
         write(STATE, {**prev_state, 'url': url, 'checked_at': now(),
                        'status': 'download_error', 'error': str(e)})
-        if not OUT.exists():
-            write(OUT, build_output(result, resource, process_releases([]), 'download_error', 0))
+        _mark_stale(result, resource, 'download_error', str(e))
         print(json.dumps({'status': 'download_error', 'error': str(e)}))
         return
 

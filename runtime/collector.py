@@ -37,7 +37,12 @@ def is_norm_record(n):
 
 def walk(node,trail=()):
  if isinstance(node,dict):
-  if is_norm_record(node): yield trail,node
+  if is_norm_record(node):
+   # No seguir recursando dentro de un registro de norma ya identificado: sus propios
+   # campos anidados (ej. anexos) ya se capturan directo en norm(), y volver a recorrerlos
+   # acá puede hacer que un anexo con forma similar a una norma se emita como norma fantasma.
+   yield trail,node
+   return
   for k,v in node.items(): yield from walk(v,trail+(str(k),))
  elif isinstance(node,list):
   for v in node: yield from walk(v,trail)
@@ -51,17 +56,27 @@ def belongs(n,b):
   if isinstance(item,(str,int)) and str(item)==str(b):return True
  return False
 
+def _is_http_url(u):
+ return isinstance(u,str) and u.startswith(('http://','https://'))
+
 def resolve_url(n,date):
- if n.get('url_norma'):return n['url_norma']
+ # Validar esquema http(s) en las tres ramas, no sólo en la última: un valor no-http en
+ # url_norma o link_documento_normas terminaría en un href renderizado tal cual en el frontend.
+ direct=n.get('url_norma')
+ if _is_http_url(direct):return direct
  links=n.get('link_documento_normas')
  if isinstance(links,list) and date:
   for item in links:
-   if isinstance(item,(list,tuple)) and len(item)>=2 and str(item[0])==date and item[1]:return item[1]
+   if isinstance(item,(list,tuple)) and len(item)>=2 and str(item[0])==date and _is_http_url(item[1]):return item[1]
  raw=n.get('link_documento_norma')
- return raw if isinstance(raw,str) and raw.startswith('http') else None
+ return raw if _is_http_url(raw) else None
 
 def norm(trail,n,b,date):
- ident=n.get('id_norma',n.get('id')); txt=' '.join(str(n.get(k,'')) for k in ('nombre','sumario','nombre_tipo','nombre_subtipo','archivo_norma'))
+ # .get('id_norma', n.get('id')) sólo usa el default cuando la clave 'id_norma' está
+ # ausente; si está presente pero es None (dato inconsistente de la API), .get() devuelve
+ # None sin caer al fallback 'id'. Hacer el fallback explícito para no perder el identificador.
+ ident=n.get('id_norma'); ident=ident if ident is not None else n.get('id')
+ txt=' '.join(str(n.get(k,'')) for k in ('nombre','sumario','nombre_tipo','nombre_subtipo','archivo_norma'))
  return {'id_norma':ident,'nombre':n.get('nombre') or n.get('archivo_norma'),'sumario':n.get('sumario'),'url_norma':resolve_url(n,date),'anexos':n.get('anexos') or n.get('link_anexo') or [],'tipo':n.get('nombre_tipo') or (trail[-2] if len(trail)>=2 else None),'subtipo':n.get('nombre_subtipo'),'seccion':n.get('nombre_seccion'),'organismo':n.get('nombre_reparticion') or (trail[-1] if trail else None),'ruta_arbol':list(trail),'numero_boletin':b,'candidato_licitacion_transversal':bool(LIC_RE.search(txt))}
 
 def fetch_header(s,b):

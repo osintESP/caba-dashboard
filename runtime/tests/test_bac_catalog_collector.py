@@ -169,6 +169,55 @@ class AuditSignalsTest(unittest.TestCase):
         self.assertEqual(len(signals['vendor_concentration_by_organismo']), 25)
 
 
+class FractionationTest(unittest.TestCase):
+    """Señal nueva: organismo+proveedor con varias adjudicaciones directas/limitadas
+    repetidas en una ventana corta, como disparador de revisión de fraccionamiento."""
+
+    def test_flags_repeated_direct_awards_within_window(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio Z', 'direct', False, 300_000, 'Vendor Repetido'),
+            _tech_release('2026-01-20T00:00:00-03:00', 'Ministerio Z', 'direct', False, 300_000, 'Vendor Repetido'),
+            _tech_release('2026-02-10T00:00:00-03:00', 'Ministerio Z', 'limited', False, 300_000, 'Vendor Repetido'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        flags = signals['possible_fractionation']['awards']
+        row = next(f for f in flags if f['organismo'] == 'Ministerio Z' and f['vendor'] == 'Vendor Repetido')
+        self.assertEqual(row['awards_count'], 3)
+        self.assertAlmostEqual(row['total_amount_ars'], 900_000)
+
+    def test_does_not_flag_below_minimum_award_count(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio W', 'direct', False, 300_000, 'Vendor Unico'),
+            _tech_release('2026-01-10T00:00:00-03:00', 'Ministerio W', 'direct', False, 300_000, 'Vendor Unico'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [f['organismo'] for f in signals['possible_fractionation']['awards']]
+        self.assertNotIn('Ministerio W', organismos)
+
+    def test_does_not_flag_awards_spread_beyond_window(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio V', 'direct', False, 300_000, 'Vendor Lento'),
+            _tech_release('2026-04-01T00:00:00-03:00', 'Ministerio V', 'direct', False, 300_000, 'Vendor Lento'),
+            _tech_release('2026-08-01T00:00:00-03:00', 'Ministerio V', 'direct', False, 300_000, 'Vendor Lento'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [f['organismo'] for f in signals['possible_fractionation']['awards']]
+        self.assertNotIn('Ministerio V', organismos)
+
+    def test_open_method_awards_are_not_counted(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio U', 'open', True, 300_000, 'Vendor Abierto')
+            for _ in range(3)
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [f['organismo'] for f in signals['possible_fractionation']['awards']]
+        self.assertNotIn('Ministerio U', organismos)
+
+
 class UnchangedDetectionTest(unittest.TestCase):
     def test_matches_on_etag(self):
         prev = {'url': 'https://cdn/x.json', 'etag': 'abc'}
@@ -236,6 +285,17 @@ class ToFloatToBoolTest(unittest.TestCase):
         self.assertIsNone(bcc._to_bool(''))
         self.assertIsNone(bcc._to_bool(None))
 
+    def test_to_bool_recognizes_other_common_casings(self):
+        # Bug: sólo reconocía las cadenas exactas 'True'/'False'; cualquier otra
+        # convención de casing/valor (ej. si BAC cambia a lowercase o a '1'/'0') se
+        # perdía en silencio como None sin ningún error visible.
+        self.assertTrue(bcc._to_bool('true'))
+        self.assertTrue(bcc._to_bool('TRUE'))
+        self.assertTrue(bcc._to_bool('1'))
+        self.assertFalse(bcc._to_bool('false'))
+        self.assertFalse(bcc._to_bool('0'))
+        self.assertIsNone(bcc._to_bool('unknown'))
+
 
 class CsvRowToReleaseTest(unittest.TestCase):
     def _row(self, **overrides):
@@ -297,6 +357,36 @@ class ParseCsvReleasesTest(unittest.TestCase):
     def test_missing_expected_columns_raises(self):
         with self.assertRaises(RuntimeError):
             bcc.parse_csv_releases('col_a,col_b\r\n1,2\r\n')
+
+
+class MarkStaleTest(unittest.TestCase):
+    """Bug: si ya existía un bac_catalog.json de una corrida OK previa, una falla
+    posterior (resource_not_found/download_error) nunca actualizaba su 'status' -
+    quedaba congelado en 'ok' para siempre aunque el pipeline siguiera fallando."""
+
+    def setUp(self):
+        import tempfile
+        self._tmpdir = tempfile.TemporaryDirectory()
+        self._orig_out = bcc.OUT
+        bcc.OUT = Path(self._tmpdir.name) / 'bac_catalog.json'
+
+    def tearDown(self):
+        bcc.OUT = self._orig_out
+        self._tmpdir.cleanup()
+
+    def test_existing_ok_output_status_flips_on_later_failure(self):
+        bcc.write(bcc.OUT, {'status': 'ok', 'vendor_ranking': [{'name': 'Vendor A'}], 'audit_signals': {}})
+        bcc._mark_stale(None, None, 'download_error', 'boom')
+        updated = bcc.read(bcc.OUT)
+        self.assertEqual(updated['status'], 'download_error')
+        self.assertEqual(updated['last_error'], 'boom')
+        # el último dato bueno conocido se conserva, no se pisa con datos vacíos
+        self.assertEqual(updated['vendor_ranking'], [{'name': 'Vendor A'}])
+
+    def test_creates_placeholder_when_no_prior_output_exists(self):
+        bcc._mark_stale(None, None, 'resource_not_found')
+        created = bcc.read(bcc.OUT)
+        self.assertEqual(created['status'], 'resource_not_found')
 
 
 if __name__ == '__main__':

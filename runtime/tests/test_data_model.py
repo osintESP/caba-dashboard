@@ -68,6 +68,14 @@ class MergeNormAppliesCleanOrganismoTest(unittest.TestCase):
                                         num=100, b={}, collected='2026-08-21T00:00:00')
         self.assertEqual(merged['organismo'], 'Ministerio de Salud')
 
+    def test_garbage_organismo_falls_back_to_old_instead_of_erasing(self):
+        # pick() ve "-" como no-vacío y lo elige sobre el valor viejo; sin el fix, clean_organismo
+        # lo reduce a None DESPUÉS de que pick() ya decidió, y el organismo válido se pierde.
+        old = {'id_norma': 1, 'organismo': 'Ministerio de Salud'}
+        new = {'id_norma': 1, 'organismo': '-'}
+        merged = data_model.merge_norm(old, new, num=100, b={}, collected='2026-08-21T00:00:00')
+        self.assertEqual(merged['organismo'], 'Ministerio de Salud')
+
 
 class CategoryTest(unittest.TestCase):
     """Bug: 'redes' como palabra suelta clasificaba como tecnología cualquier
@@ -84,6 +92,23 @@ class CategoryTest(unittest.TestCase):
 
     def test_generic_tech_keyword_still_matches(self):
         n = {'nombre': 'Licitación', 'sumario': 'Adquisición de licencias de software y servidores'}
+        self.assertEqual(data_model.category(n), 'tecnologia')
+
+    def test_datos_inside_mandatos_is_not_a_false_positive(self):
+        # Bug real: 'datos' en category() era un substring check sin borde de palabra,
+        # así que "mandatos" (delegación de facultades, común en el Boletín) clasificaba
+        # falsamente como tecnología.
+        n = {'nombre': 'Decreto', 'sumario': 'Delega facultades y mandatos conferidos por la ley vigente'}
+        self.assertNotEqual(data_model.category(n), 'tecnologia')
+
+    def test_datos_as_real_word_still_matches(self):
+        n = {'nombre': 'Licitación', 'sumario': 'Servicio de procesamiento de datos y analítica'}
+        self.assertEqual(data_model.category(n), 'tecnologia')
+
+    def test_tecnolog_stem_still_matches_without_right_boundary(self):
+        # El fix sólo exige borde a la izquierda: 'tecnolog' debe seguir matcheando
+        # 'tecnología' (raíz + sufijo, sin borde de palabra a la derecha).
+        n = {'nombre': 'Resolución', 'sumario': 'Servicio integral de tecnología para el organismo'}
         self.assertEqual(data_model.category(n), 'tecnologia')
 
 
@@ -114,6 +139,21 @@ class ProcesoIdTest(unittest.TestCase):
         distinct = {p['proceso_id'] for p in procs}
         self.assertEqual(len(procs), 3)
         self.assertEqual(len(distinct), 2)
+
+
+class IdSortKeyTest(unittest.TestCase):
+    """Bug: sorted(key=str(id_norma)) ordena lexicográficamente, así que '999999' termina
+    antes que '1000000' — con id_norma acercándose a 7 dígitos esto ya no es hipotético."""
+
+    def test_numeric_ids_sort_numerically_not_lexicographically(self):
+        ids = ['1000000', '999999', '2']
+        ordered = sorted(ids, key=data_model._id_sort_key)
+        self.assertEqual(ordered, ['2', '999999', '1000000'])
+
+    def test_non_numeric_id_does_not_crash_and_sorts_after_numeric(self):
+        keys = [data_model._id_sort_key(v) for v in (5, None, 'abc')]
+        ordered = sorted(keys)
+        self.assertEqual(ordered[0], (0, 5))
 
 
 if __name__ == '__main__':

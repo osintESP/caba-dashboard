@@ -70,7 +70,10 @@ jobs:
             if ! git rebase origin/master; then
               git checkout --theirs data/bac_catalog.json data/bac_sync_state.json
               git add data/bac_catalog.json data/bac_sync_state.json
-              git rebase --continue
+              # GIT_EDITOR=true evita que --continue intente abrir un editor interactivo
+              # para el mensaje de commit: en el runner de CI no hay TTY, así que sin esto
+              # el rebase queda colgado/falla en vez de reutilizar el mensaje original.
+              GIT_EDITOR=true git rebase --continue
             fi
             git push
           fi

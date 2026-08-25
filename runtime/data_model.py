@@ -19,14 +19,21 @@ def txt(n): return ' '.join(str(n.get(k,'')) for k in ('nombre','sumario','tipo'
 def isproc(n):
  t=txt(n); lt=str(n.get('tipo','')).lower(); ls=str(n.get('seccion','')).lower(); formal=any(x in lt or x in ls for x in ('licitación','licitacion','contratación directa','contratacion directa','contratación menor','contratacion menor','obra pública','obra publica','concesión','concesion','compra directa','concurso de precios'))
  return formal or (not NEG.search(t) and bool(POS.search(t)))
+# Sólo exige borde de palabra a la izquierda (no a la derecha, para no romper coincidencias
+# de raíz como 'tecnolog' -> 'tecnología'/'tecnológico'): evita falsos positivos de substring
+# como 'datos' dentro de 'mandatos', mismo tipo de bug ya corregido para 'redes' en otros lados.
+def _has(t,words): return any(re.search(r'\b'+re.escape(w),t) for w in words)
 def category(n):
  t=txt(n).lower()
- if any(x in t for x in ('software','saas','nutanix','veritas','sistema','plataforma','telecom','ciberseg','digital','datos','informática','informatica','tecnolog','servidor','storage','backup','cctv','control de acceso','identidad','licencia de software')): return 'tecnologia'
- if any(x in t for x in TECH_NETWORK): return 'tecnologia'
- if any(x in t for x in ('obra','constru','reparaci','mantenimiento edilicio','pavimento','edificio','infraestructura','instalación eléctrica','instalacion electrica')): return 'obra_infraestructura'
- if any(x in t for x in ('medic','hospital','salud','insumo','nitrógeno','nitrogeno','reactivo','prótesis','protesis','equipamiento médico','equipamiento medico')): return 'salud'
- if any(x in t for x in ('alimento','comida','catering','víveres','viveres')): return 'alimentos'
+ if _has(t,('software','saas','nutanix','veritas','sistema','plataforma','telecom','ciberseg','digital','datos','informática','informatica','tecnolog','servidor','storage','backup','cctv','control de acceso','identidad','licencia de software')): return 'tecnologia'
+ if _has(t,TECH_NETWORK): return 'tecnologia'
+ if _has(t,('obra','constru','reparaci','mantenimiento edilicio','pavimento','edificio','infraestructura','instalación eléctrica','instalacion electrica')): return 'obra_infraestructura'
+ if _has(t,('medic','hospital','salud','insumo','nitrógeno','nitrogeno','reactivo','prótesis','protesis','equipamiento médico','equipamiento medico')): return 'salud'
+ if _has(t,('alimento','comida','catering','víveres','viveres')): return 'alimentos'
  return 'otros'
+def _id_sort_key(v):
+ try:return(0,int(v))
+ except(TypeError,ValueError):return(1,str(v))
 def proceso_id(n):
  m=PROCESS_RE.search(n.get('nombre') or '')
  return m.group(1).upper() if m else str(n.get('id_norma'))
@@ -42,11 +49,15 @@ def clean_organismo(name):
  name=re.sub(r'[\s\-]+$','',name).strip()
  return name or None
 def merge_norm(old,n,num,b,collected):
+ # clean_organismo se aplica ANTES de pick(): si no, un valor basura no vacío en el nuevo
+ # fetch (ej. "-") pasa el chequeo de pick() por no ser falsy, y clean_organismo lo reduce
+ # a None después, borrando silenciosamente un organismo válido que ya teníamos guardado.
+ organismo=clean_organismo(n.get('organismo')) or old.get('organismo')
  return {**old,
   'id_norma':n.get('id_norma'),'numero_boletin':num,'fecha_publicacion':b.get('fecha_publicacion'),
   'nombre':pick(old,n,'nombre'),'sumario':pick(old,n,'sumario'),'url_norma':pick(old,n,'url_norma'),
   'anexos':pick(old,n,'anexos') or [],'tipo':pick(old,n,'tipo'),'subtipo':pick(old,n,'subtipo'),
-  'seccion':pick(old,n,'seccion'),'organismo':clean_organismo(pick(old,n,'organismo')),'ruta_arbol':pick(old,n,'ruta_arbol') or [],
+  'seccion':pick(old,n,'seccion'),'organismo':organismo,'ruta_arbol':pick(old,n,'ruta_arbol') or [],
   'rutas_recuperacion':sorted(set(old.get('rutas_recuperacion') or [])|set(n.get('rutas_recuperacion') or [])),
   'first_seen_at':old.get('first_seen_at') or collected,'last_seen_at':collected}
 def main():
@@ -64,7 +75,9 @@ def main():
   i=n.get('id_norma')
   if i is None: continue
   idx[str(i)]=merge_norm(idx.get(str(i),{}),n,num,b,collected)
- norms=sorted(idx.values(),key=lambda x:str(x.get('id_norma'))); write(DATA/'norms.json',norms)
+ # Orden numérico, no lexicográfico como string (con id_norma acercándose a 7 dígitos,
+ # un sort de string ya empieza a intercalar mal, ej. '999999' antes que '1000000').
+ norms=sorted(idx.values(),key=lambda x:_id_sort_key(x.get('id_norma'))); write(DATA/'norms.json',norms)
  procs=[]
  for n in norms:
   if isproc(n): procs.append({'id_norma':n.get('id_norma'),'numero_boletin':n.get('numero_boletin'),'fecha_publicacion':n.get('fecha_publicacion'),'nombre':n.get('nombre'),'sumario':n.get('sumario'),'url_norma':n.get('url_norma'),'organismo':n.get('organismo'),'tipo':n.get('tipo'),'categoria':category(n),'proceso_id':proceso_id(n),'first_seen_at':n.get('first_seen_at'),'last_seen_at':n.get('last_seen_at'),'estado':'detectada'})
