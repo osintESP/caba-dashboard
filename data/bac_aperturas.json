@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-08-26T13:05:02+00:00",
+  "collected_at": "2026-08-26T14:20:55+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -78,7 +78,7 @@
       "numero_proceso": "8056-1245-LPU26",
       "nombre_proceso": "Renovación del servicio de mantenimiento integral de centrales telefónicas autónomas y equipamiento",
       "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "8056",
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "fecha_apertura": "2026-08-26T11:00:00-03:00",
@@ -88,7 +88,7 @@
       "numero_proceso": "435-1241-LPU26",
       "nombre_proceso": "ADQUISICION DE REACTIVOS PARA LABORATORIO ENDOCRINOLOGIA CON EQUIPAMIENTO EN CALIDAD DE PRESTAMO",
       "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "435",
       "organismo": "HTAL. RAMON SARDA",
       "fecha_apertura": "2026-08-26T11:00:00-03:00",
@@ -98,7 +98,7 @@
       "numero_proceso": "420-0927-CDI26",
       "nombre_proceso": "Adq. de insumos varios",
       "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "420",
       "organismo": "HTAL. RICARDO GUTIERREZ",
       "fecha_apertura": "2026-08-26T11:00:00-03:00",
@@ -126,56 +126,6 @@
     }
   ],
   "aperturas_proximas": [
-    {
-      "numero_proceso": "441-1000-CDI26",
-      "nombre_proceso": "Adquisicion de Complejo Protrombinico",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "441",
-      "organismo": "HTAL. ABEL ZUBIZARRETA",
-      "fecha_apertura": "2026-08-26T10:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "431-1165-LPU26",
-      "nombre_proceso": "ADQUISICION DE MICROSCOPIO BINOCULAR-SERVICIO DE LABORATORIO",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "431",
-      "organismo": "HTAL. BERNARDINO RIVADAVIA",
-      "fecha_apertura": "2026-08-26T10:30:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "8056-1245-LPU26",
-      "nombre_proceso": "Renovación del servicio de mantenimiento integral de centrales telefónicas autónomas y equipamiento",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-08-26T11:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "435-1241-LPU26",
-      "nombre_proceso": "ADQUISICION DE REACTIVOS PARA LABORATORIO ENDOCRINOLOGIA CON EQUIPAMIENTO EN CALIDAD DE PRESTAMO",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "435",
-      "organismo": "HTAL. RAMON SARDA",
-      "fecha_apertura": "2026-08-26T11:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "420-0927-CDI26",
-      "nombre_proceso": "Adq. de insumos varios",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "420",
-      "organismo": "HTAL. RICARDO GUTIERREZ",
-      "fecha_apertura": "2026-08-26T11:00:00-03:00",
-      "is_technology": false
-    },
     {
       "numero_proceso": "401-0899-LPU26",
       "nombre_proceso": "Servicio de Mantenimiento Preventivo y Correctivo de Tomógrafos Marca Toshiba y Canon",
@@ -224,6 +174,56 @@
       "unidad_ejecutora_codigo": "416",
       "organismo": "HTAL. CARLOS G. DURAND",
       "fecha_apertura": "2026-08-26T15:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "416-0922-CDI26",
+      "nombre_proceso": "MANTENIMIENTO DE TERMOCICLADOR CDI X EXCLUSIVIDAD INVITROGEN ARG-PED N°41973-INMEDIATO-LABORATORIO C",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
+      "fecha_apertura": "2026-08-26T15:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "416-1291-LPU26",
+      "nombre_proceso": "Kit De Reactivos Para Determinación De Anticuerpos Específicos-Pedido 42013-Abastecimiento 12 Meses",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
+      "fecha_apertura": "2026-08-26T15:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "542-2890-CME26",
+      "nombre_proceso": "SERVICIO DE REPARACIÓN DE EQUIPOS DE SONIDO Y LUCES DEL CTBA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "542",
+      "organismo": "DIR. GRAL COMPLEJO TEATRAL CIUDAD DE BUENOS AIRES",
+      "fecha_apertura": "2026-08-27T08:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "414-1198-LPU26",
+      "nombre_proceso": "ADQUISICION ASPIRADOR-COAGULADOR CON CABLE DE ALTA FRECUENCIA",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "414",
+      "organismo": "HTAL. MARIA CURIE",
+      "fecha_apertura": "2026-08-27T08:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "438-2826-CME26",
+      "nombre_proceso": "EQUIPO CPAP + MASCARAS",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "438",
+      "organismo": "HTAL. ENRIQUE TORNU",
+      "fecha_apertura": "2026-08-27T08:30:00-03:00",
       "is_technology": false
     },
     {
