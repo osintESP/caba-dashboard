@@ -5261,7 +5261,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -9161,7 +9161,7 @@
     "categoria": "tecnologia",
     "proceso_id": "1196/DGGDA/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -11516,7 +11516,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -11546,7 +11546,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -11621,7 +11621,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -12146,7 +12146,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -12161,7 +12161,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -12206,7 +12206,7 @@
     "categoria": "otros",
     "proceso_id": "14/IVC/26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -14876,7 +14876,7 @@
     "categoria": "salud",
     "proceso_id": "1337/HGACD/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -15986,7 +15986,7 @@
     "categoria": "tecnologia",
     "proceso_id": "16/DGCYC/26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -16001,7 +16001,7 @@
     "categoria": "salud",
     "proceso_id": "100/HRRMF/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -16781,7 +16781,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "15/IVC/26",
     "first_seen_at": "2026-08-24T13:57:46+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -17681,7 +17681,7 @@
     "categoria": "otros",
     "proceso_id": "55/OBSBA/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -17756,7 +17756,7 @@
     "categoria": "salud",
     "proceso_id": "451/DGAHGNRG/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -17771,7 +17771,7 @@
     "categoria": "salud",
     "proceso_id": "2546/HGNRG/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -17966,7 +17966,7 @@
     "categoria": "salud",
     "proceso_id": "1331/HGARM/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -17996,7 +17996,7 @@
     "categoria": "salud",
     "proceso_id": "1298/HGARM/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18236,7 +18236,7 @@
     "categoria": "otros",
     "proceso_id": "248/SSGA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18386,7 +18386,7 @@
     "categoria": "salud",
     "proceso_id": "175/HGATA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18476,7 +18476,7 @@
     "categoria": "salud",
     "proceso_id": "173/HGNPE/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18491,7 +18491,7 @@
     "categoria": "salud",
     "proceso_id": "157/DGAHGATA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18581,7 +18581,7 @@
     "categoria": "salud",
     "proceso_id": "294/DGAHGAIP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18596,7 +18596,7 @@
     "categoria": "otros",
     "proceso_id": "30/IVC/25",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18611,7 +18611,7 @@
     "categoria": "salud",
     "proceso_id": "361/DGAHGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18626,7 +18626,7 @@
     "categoria": "salud",
     "proceso_id": "946/HGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18641,7 +18641,7 @@
     "categoria": "otros",
     "proceso_id": "9300/IVC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18656,7 +18656,7 @@
     "categoria": "salud",
     "proceso_id": "288/HGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18671,7 +18671,7 @@
     "categoria": "salud",
     "proceso_id": "539/SSASS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18686,7 +18686,7 @@
     "categoria": "salud",
     "proceso_id": "360/DGAHGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18701,7 +18701,7 @@
     "categoria": "salud",
     "proceso_id": "174/HGNPE/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18716,7 +18716,7 @@
     "categoria": "salud",
     "proceso_id": "540/SSASS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18746,7 +18746,7 @@
     "categoria": "salud",
     "proceso_id": "129/DGAHGAP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18761,7 +18761,7 @@
     "categoria": "otros",
     "proceso_id": "9298/IVC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18791,7 +18791,7 @@
     "categoria": "otros",
     "proceso_id": "312/MDHYHGC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18806,7 +18806,7 @@
     "categoria": "salud",
     "proceso_id": "131/DGAHGAP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18821,7 +18821,7 @@
     "categoria": "otros",
     "proceso_id": "623/DGA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18851,7 +18851,7 @@
     "categoria": "otros",
     "proceso_id": "57/DGINSO/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18896,7 +18896,7 @@
     "categoria": "otros",
     "proceso_id": "1230/MDHYHGC/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18941,7 +18941,7 @@
     "categoria": "salud",
     "proceso_id": "2936/HGACA/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -18956,7 +18956,7 @@
     "categoria": "salud",
     "proceso_id": "464/DGAHGNRG/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19001,7 +19001,7 @@
     "categoria": "salud",
     "proceso_id": "292/HGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19016,7 +19016,7 @@
     "categoria": "salud",
     "proceso_id": "2944/HGACA/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19076,7 +19076,7 @@
     "categoria": "salud",
     "proceso_id": "40/HO/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19091,7 +19091,7 @@
     "categoria": "salud",
     "proceso_id": "1376/HO/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19106,7 +19106,7 @@
     "categoria": "salud",
     "proceso_id": "294/HGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19121,7 +19121,7 @@
     "categoria": "salud",
     "proceso_id": "1369/HGACA/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19181,7 +19181,7 @@
     "categoria": "salud",
     "proceso_id": "1017/HGACA/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19211,7 +19211,7 @@
     "categoria": "salud",
     "proceso_id": "197/IRPS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19226,7 +19226,7 @@
     "categoria": "salud",
     "proceso_id": "1378/IRPS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19241,7 +19241,7 @@
     "categoria": "salud",
     "proceso_id": "257/DGAHGADS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19256,7 +19256,7 @@
     "categoria": "tecnologia",
     "proceso_id": "328/DGPARE/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19271,7 +19271,7 @@
     "categoria": "otros",
     "proceso_id": "120/CCR/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19286,7 +19286,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "2364/CCR/26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19316,7 +19316,7 @@
     "categoria": "otros",
     "proceso_id": "27/SCA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19346,7 +19346,7 @@
     "categoria": "otros",
     "proceso_id": "2/IUS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19376,7 +19376,7 @@
     "categoria": "otros",
     "proceso_id": "38007454/DGCEME/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19391,7 +19391,7 @@
     "categoria": "tecnologia",
     "proceso_id": "11/LOTBA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19406,7 +19406,7 @@
     "categoria": "salud",
     "proceso_id": "1234/HBR/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19421,7 +19421,7 @@
     "categoria": "otros",
     "proceso_id": "51/OAF/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19436,7 +19436,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "94/DGTALMMI/25",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19451,7 +19451,7 @@
     "categoria": "otros",
     "proceso_id": "38006337/DGCEME/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19466,7 +19466,7 @@
     "categoria": "otros",
     "proceso_id": "38004905/DGCEME/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19481,7 +19481,7 @@
     "categoria": "tecnologia",
     "proceso_id": "913/IZLP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19496,7 +19496,7 @@
     "categoria": "salud",
     "proceso_id": "2613/HBU/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19511,7 +19511,7 @@
     "categoria": "salud",
     "proceso_id": "1247/DGTALAVJG/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19526,7 +19526,7 @@
     "categoria": "salud",
     "proceso_id": "1362/HGAJAF/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19541,7 +19541,7 @@
     "categoria": "salud",
     "proceso_id": "1363/HGAJAF/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19556,7 +19556,7 @@
     "categoria": "otros",
     "proceso_id": "1251/DGCOYP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19571,7 +19571,7 @@
     "categoria": "tecnologia",
     "proceso_id": "552/SAGYP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19586,7 +19586,7 @@
     "categoria": "otros",
     "proceso_id": "1012/LOTBA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19601,7 +19601,7 @@
     "categoria": "salud",
     "proceso_id": "1206/HGACA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19616,7 +19616,7 @@
     "categoria": "tecnologia",
     "proceso_id": "22/SAGYP/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19631,7 +19631,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "3/DGCRIN/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19646,7 +19646,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "250/DGPARE/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19661,7 +19661,7 @@
     "categoria": "salud",
     "proceso_id": "2569/HBU/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19676,7 +19676,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "1752/DGPARE/25",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19691,7 +19691,7 @@
     "categoria": "salud",
     "proceso_id": "546/SSASS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19706,7 +19706,7 @@
     "categoria": "salud",
     "proceso_id": "547/SSASS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19721,7 +19721,7 @@
     "categoria": "salud",
     "proceso_id": "2933/HGACG/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19736,7 +19736,7 @@
     "categoria": "salud",
     "proceso_id": "937/IRPS/25",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19751,7 +19751,7 @@
     "categoria": "salud",
     "proceso_id": "1292/IRPS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19766,7 +19766,7 @@
     "categoria": "salud",
     "proceso_id": "1285/HIFJM/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19781,7 +19781,7 @@
     "categoria": "tecnologia",
     "proceso_id": "784/SECDU/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19796,7 +19796,7 @@
     "categoria": "salud",
     "proceso_id": "899/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19811,7 +19811,7 @@
     "categoria": "salud",
     "proceso_id": "436/HGADS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19826,7 +19826,7 @@
     "categoria": "salud",
     "proceso_id": "360/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19841,7 +19841,7 @@
     "categoria": "salud",
     "proceso_id": "899/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19856,7 +19856,7 @@
     "categoria": "salud",
     "proceso_id": "38/SADIUS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19871,7 +19871,7 @@
     "categoria": "salud",
     "proceso_id": "3/IUS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19886,7 +19886,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "2927/DGTALMMI/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19901,7 +19901,7 @@
     "categoria": "salud",
     "proceso_id": "3495/MSGC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19916,7 +19916,7 @@
     "categoria": "salud",
     "proceso_id": "3496/MSGC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19931,7 +19931,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "52/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19946,7 +19946,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "53/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19961,7 +19961,7 @@
     "categoria": "otros",
     "proceso_id": "53/OAF/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19976,7 +19976,7 @@
     "categoria": "otros",
     "proceso_id": "16/SGA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -19991,7 +19991,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "54/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -20006,7 +20006,7 @@
     "categoria": "salud",
     "proceso_id": "3497/MSGC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -20021,7 +20021,7 @@
     "categoria": "salud",
     "proceso_id": "555/SSASS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -20036,7 +20036,7 @@
     "categoria": "salud",
     "proceso_id": "3498/MSGC/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -20051,7 +20051,7 @@
     "categoria": "salud",
     "proceso_id": "556/SSASS/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   },
   {
@@ -20066,7 +20066,7 @@
     "categoria": "obra_infraestructura",
     "proceso_id": "55/DGACSA/26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-08-26T14:13:24+00:00",
+    "last_seen_at": "2026-08-26T16:01:54+00:00",
     "estado": "detectada"
   }
 ]
