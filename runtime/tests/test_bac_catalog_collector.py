@@ -36,6 +36,25 @@ RELEASES = [
 ]
 
 
+class BacTenderIdTest(unittest.TestCase):
+    """El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso propio
+    de BAC (ej. '416-1192-LPU26-16-0' -> proceso '416-1192-LPU26'), mismo esquema que
+    numero_proceso en bac_aperturas.json y que el sumario del Boletín cita como texto libre."""
+
+    def test_extracts_leading_tender_id_dropping_renglon_and_parte(self):
+        self.assertEqual(bcc.bac_tender_id('416-1192-LPU26-16-0'), '416-1192-LPU26')
+
+    def test_uppercases_result(self):
+        self.assertEqual(bcc.bac_tender_id('416-1192-lpu26-1-0'), '416-1192-LPU26')
+
+    def test_returns_none_for_malformed_id(self):
+        self.assertIsNone(bcc.bac_tender_id('not-an-id'))
+
+    def test_returns_none_for_empty_or_none(self):
+        self.assertIsNone(bcc.bac_tender_id(''))
+        self.assertIsNone(bcc.bac_tender_id(None))
+
+
 class ClassifyTechnologyTest(unittest.TestCase):
     def test_true_positive_software(self):
         self.assertTrue(bcc.classify_technology(RELEASES[0]['tender']))
@@ -206,6 +225,52 @@ class AuditSignalsTest(unittest.TestCase):
         stats = bcc.process_releases(releases)
         signals = bcc.build_audit_signals(stats)
         self.assertEqual(len(signals['vendor_concentration_by_organismo']), 25)
+
+
+def _tech_release_with_tender_id(tender_id, date, organismo, method, competitive, amount, vendor):
+    rel = _tech_release(date, organismo, method, competitive, amount, vendor)
+    rel['tender']['id'] = tender_id
+    return rel
+
+
+class TenderIndexTest(unittest.TestCase):
+    """Clave de cruce por EXPEDIENTE (no por organismo) entre el Boletín y BAC: el mismo
+    número de proceso de BAC (ej. '416-1192-LPU26') puede aparecer en varios releases -uno
+    por renglón real de la licitación-, así que el índice debe agregarlos bajo una sola
+    entrada, no perderlos como filas sueltas."""
+
+    def test_aggregates_multiple_renglones_of_the_same_tender(self):
+        releases = [
+            _tech_release_with_tender_id('416-1192-LPU26', '2026-01-01T00:00:00-03:00',
+                                          'Ministerio X', 'open', True, 100_000, 'Vendor A'),
+            _tech_release_with_tender_id('416-1192-LPU26', '2026-01-01T00:00:00-03:00',
+                                          'Ministerio X', 'open', True, 50_000, 'Vendor B'),
+        ]
+        stats = bcc.process_releases(releases)
+        index = bcc.build_tender_index(stats)
+        self.assertIn('416-1192-LPU26', index)
+        entry = index['416-1192-LPU26']
+        self.assertAlmostEqual(entry['amount_ars'], 150_000)
+        self.assertEqual(entry['awards_count'], 2)
+        self.assertEqual(entry['suppliers'], ['Vendor A', 'Vendor B'])
+        self.assertEqual(entry['organismo'], 'Ministerio X')
+
+    def test_non_tech_tenders_are_excluded(self):
+        release = {
+            'date': '2026-01-01T00:00:00-03:00',
+            'tender': {'id': '999-0001-LPU26', 'title': 'Ampliación de redes eléctricas',
+                       'procuringEntity': {'name': 'Ministerio Y'}, 'procurementMethod': 'open',
+                       'competitive': True},
+            'parties': [], 'awards': [_award(1_000_000, suppliers=[{'id': 'V', 'name': 'Vendor Y'}])],
+        }
+        stats = bcc.process_releases([release])
+        index = bcc.build_tender_index(stats)
+        self.assertNotIn('999-0001-LPU26', index)
+
+    def test_releases_without_a_tender_id_are_not_indexed(self):
+        stats = bcc.process_releases(RELEASES)  # fixture releases have no 'id' set
+        index = bcc.build_tender_index(stats)
+        self.assertEqual(index, {})
 
 
 class FractionationTest(unittest.TestCase):
@@ -415,6 +480,7 @@ class ToFloatToBoolTest(unittest.TestCase):
 class CsvRowToReleaseTest(unittest.TestCase):
     def _row(self, **overrides):
         row = {
+            'id': '416-1192-LPU26-1-0',
             'date': '2026-05-07T16:00:00-03:00',
             'tender/title': 'Adquisición de licencias de software',
             'tender/description': '',
@@ -436,6 +502,7 @@ class CsvRowToReleaseTest(unittest.TestCase):
     def test_full_row_maps_correctly(self):
         rel = bcc.csv_row_to_release(self._row())
         self.assertEqual(rel['date'], '2026-05-07T16:00:00-03:00')
+        self.assertEqual(rel['tender']['id'], '416-1192-LPU26')
         self.assertEqual(rel['tender']['title'], 'Adquisición de licencias de software')
         self.assertEqual(rel['tender']['procuringEntity']['name'], 'Ministerio de Salud')
         self.assertIs(rel['tender']['competitive'], False)

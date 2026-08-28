@@ -9,6 +9,14 @@ NEG=re.compile(r'contrataci[oó]n de personal|contrata (?:como|a )|jefes?/as? y/
 # Identifica el proceso administrativo (ej. "14/IVC/26") citado en el nombre de la norma,
 # para poder agrupar circulares/prórrogas/llamados que refieren a la misma licitación.
 PROCESS_RE=re.compile(r'n[°º]\s*(\d+/[a-z]+/\d+)',re.I)
+# El Boletín identifica el proceso por sigla+año (arriba); BAC lo identifica con su propio
+# esquema (código de organismo + secuencial + tipo+año, ej. "416-1192-LPU26" en bac_anual.csv
+# y en bac_aperturas.json). Son numeraciones independientes -no hay mapeo sigla<->código-, pero
+# el sumario del Boletín suele citar el número de proceso de BAC como texto libre además de la
+# sigla (confirmado contra datos reales: ~70% de procurements.json trae este patrón en
+# nombre+sumario). Cuando aparece, es una clave de cruce por EXPEDIENTE, más precisa que el
+# cruce actual por nombre de organismo (ver bacOrgIndex en app.js).
+BAC_TENDER_RE=re.compile(r'\b(\d{3,4}-\d{3,4}-[a-z]{2,4}\d{2})\b',re.I)
 # Frases específicas de redes de TI: evita que "redes" en sentido genérico (redes eléctricas,
 # redes de agua, etc.) se clasifique como tecnología.
 TECH_NETWORK=('redes de datos','redes informáticas','redes informaticas','red de datos','redes inalámbricas','redes inalambricas','red wifi','fibra óptica','fibra optica')
@@ -47,6 +55,9 @@ def _id_sort_key(v):
 def proceso_id(n):
  m=PROCESS_RE.search(n.get('nombre') or '')
  return m.group(1).upper() if m else str(n.get('id_norma'))
+def bac_tender_id(n):
+ m=BAC_TENDER_RE.search(' '.join(filter(None,(n.get('nombre'),n.get('sumario')))))
+ return m.group(1).upper() if m else None
 def pick(old,new,key):
  v=new.get(key)
  return v if v not in (None,'',[],{}) else old.get(key)
@@ -90,7 +101,7 @@ def main():
  norms=sorted(idx.values(),key=lambda x:_id_sort_key(x.get('id_norma'))); write(DATA/'norms.json',norms)
  procs=[]
  for n in norms:
-  if isproc(n): procs.append({'id_norma':n.get('id_norma'),'numero_boletin':n.get('numero_boletin'),'fecha_publicacion':n.get('fecha_publicacion'),'nombre':n.get('nombre'),'sumario':n.get('sumario'),'url_norma':n.get('url_norma'),'organismo':n.get('organismo'),'tipo':n.get('tipo'),'categoria':category(n),'proceso_id':proceso_id(n),'first_seen_at':n.get('first_seen_at'),'last_seen_at':n.get('last_seen_at'),'estado':'detectada'})
+  if isproc(n): procs.append({'id_norma':n.get('id_norma'),'numero_boletin':n.get('numero_boletin'),'fecha_publicacion':n.get('fecha_publicacion'),'nombre':n.get('nombre'),'sumario':n.get('sumario'),'url_norma':n.get('url_norma'),'organismo':n.get('organismo'),'tipo':n.get('tipo'),'categoria':category(n),'proceso_id':proceso_id(n),'bac_tender_id':bac_tender_id(n),'first_seen_at':n.get('first_seen_at'),'last_seen_at':n.get('last_seen_at'),'estado':'detectada'})
  write(DATA/'procurements.json',procs)
  # Varios actos (llamado, circulares, prórroga) pueden referirse al mismo proceso de
  # licitación: las métricas de "contrataciones" cuentan procesos únicos, no actos.

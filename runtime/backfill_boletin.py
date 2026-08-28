@@ -6,7 +6,7 @@ import json, os, time
 from pathlib import Path
 
 from collector import client, fetch_header, fetch_bulletin
-from data_model import DATA, read, write, now, merge_norm, isproc, category, proceso_id
+from data_model import DATA, read, write, now, merge_norm, isproc, category, proceso_id, bac_tender_id
 
 DEFAULT_START = 7275  # 02/01/2026 — coincide con el inicio de cobertura real de BAC
 PACE_SECONDS = float(os.getenv('BACKFILL_PACE_SECONDS', '0.4'))
@@ -81,7 +81,8 @@ def main():
                 'fecha_publicacion': n.get('fecha_publicacion'), 'nombre': n.get('nombre'),
                 'sumario': n.get('sumario'), 'url_norma': n.get('url_norma'),
                 'organismo': n.get('organismo'), 'tipo': n.get('tipo'), 'categoria': category(n),
-                'proceso_id': proceso_id(n), 'first_seen_at': n.get('first_seen_at'),
+                'proceso_id': proceso_id(n), 'bac_tender_id': bac_tender_id(n),
+                'first_seen_at': n.get('first_seen_at'),
                 'last_seen_at': n.get('last_seen_at'), 'estado': 'detectada',
             })
     write(DATA / 'procurements.json', procs)

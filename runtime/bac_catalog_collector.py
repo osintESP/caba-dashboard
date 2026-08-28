@@ -17,7 +17,15 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 5
+COLLECTOR_VERSION = 6
+
+# El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
+# (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
+# dedupe_csv_rows). Es el MISMO esquema que numero_proceso en bac_aperturas.json y que, en
+# texto libre, cita el sumario del Boletín además de la sigla/expediente (ver bac_tender_id en
+# data_model.py) — es la clave de cruce por EXPEDIENTE pendiente en el README, más precisa que
+# el cruce actual sólo por nombre de organismo.
+BAC_TENDER_ID_RE = re.compile(r'^(\d{3,4}-\d{3,4}-[a-z]{2,4}\d{2})', re.I)
 
 # "redes" en sentido genérico (eléctricas, de agua, viales, etc.) NO es tecnología;
 # sólo cuenta si está calificada como red de datos/informática (mismo criterio que
@@ -127,6 +135,11 @@ def _to_bool(v):
     return None
 
 
+def bac_tender_id(row_id):
+    m = BAC_TENDER_ID_RE.match(row_id or '')
+    return m.group(1).upper() if m else None
+
+
 def csv_row_to_release(row):
     # bac_anual.csv es OCDS aplanado: sólo trae el índice 0 de cada array (awards/0/...,
     # parties/0/...) — si un award tuviera más de un proveedor (co-adjudicación), acá sólo
@@ -138,6 +151,7 @@ def csv_row_to_release(row):
     return {
         'date': row.get('date') or None,
         'tender': {
+            'id': bac_tender_id(row.get('id')),
             'title': row.get('tender/title'),
             'description': row.get('tender/description'),
             'mainProcurementCategory': row.get('tender/mainProcurementCategory'),
@@ -240,6 +254,7 @@ def process_releases(releases):
     org_vendor_tech, org_tech_totals = {}, {}
     direct_awards_by_pair = {}
     direct_awards_by_vendor = {}
+    tech_tenders_by_id = {}
     for rel in releases:
         rel_date = rel.get('date')
         if rel_date:
@@ -295,6 +310,15 @@ def process_releases(releases):
                             {'date': parsed_date, 'amount': share})
                         direct_awards_by_vendor.setdefault(name, []).append(
                             {'organismo': organismo, 'date': parsed_date, 'amount': share})
+                tender_id = tender.get('id')
+                if tender_id:
+                    entry = tech_tenders_by_id.setdefault(tender_id, {
+                        'organismo': organismo, 'method': method, 'competitive': competitive,
+                        'amount_ars': 0.0, 'awards_count': 0, 'suppliers': set(),
+                    })
+                    entry['amount_ars'] += amount
+                    entry['awards_count'] += 1
+                    entry['suppliers'].update(names)
     return {
         'vendor_totals': vendor_totals, 'vendor_tech_totals': vendor_tech_totals,
         'vendor_awards': vendor_awards, 'total_ars': total_ars, 'tech_ars': tech_ars,
@@ -303,6 +327,7 @@ def process_releases(releases):
         'tech_method_amounts': tech_method_amounts, 'tech_noncompetitive_open': tech_noncompetitive_open,
         'org_vendor_tech': org_vendor_tech, 'org_tech_totals': org_tech_totals,
         'direct_awards_by_pair': direct_awards_by_pair, 'direct_awards_by_vendor': direct_awards_by_vendor,
+        'tech_tenders_by_id': tech_tenders_by_id,
     }
 
 
@@ -433,6 +458,20 @@ def build_audit_signals(stats):
     }
 
 
+def build_tender_index(stats):
+    # Índice por proceso (no por organismo): la clave es el número de proceso propio de BAC
+    # (ej. "416-1192-LPU26"), el mismo esquema que numero_proceso en bac_aperturas.json y que
+    # el sumario del Boletín suele citar como texto libre (ver bac_tender_id en data_model.py).
+    # Acotado a tecnología, igual criterio que el resto de audit_signals, para no listar los
+    # ~15.000 procesos del dataset completo. Es la clave de cruce por EXPEDIENTE que faltaba
+    # -antes sólo existía el cruce por nombre de organismo (bacOrgIndex en app.js)-.
+    return {tender_id: {
+        'organismo': entry['organismo'], 'method': entry['method'], 'competitive': entry['competitive'],
+        'amount_ars': round(entry['amount_ars'], 2), 'awards_count': entry['awards_count'],
+        'suppliers': sorted(entry['suppliers']),
+    } for tender_id, entry in stats.get('tech_tenders_by_id', {}).items()}
+
+
 def build_output(result, resource, stats, status, releases_count):
     ranking = sorted(stats['vendor_totals'].items(), key=lambda kv: kv[1], reverse=True)[:TOP_N_VENDORS]
     vendor_ranking = [{
@@ -451,7 +490,7 @@ def build_output(result, resource, stats, status, releases_count):
         'awards': stats['vendor_awards'].get(name, 0),
     } for name, amount in tech_ranking]
     return {
-        'schema_version': 2,
+        'schema_version': 3,
         'collected_at': now(),
         'source': {'owner': 'Gobierno de la Ciudad Autónoma de Buenos Aires',
                    'api': 'https://data.buenosaires.gob.ar/api/3/action',
@@ -483,6 +522,7 @@ def build_output(result, resource, stats, status, releases_count):
         'vendor_ranking': vendor_ranking,
         'vendor_ranking_tech': vendor_ranking_tech,
         'audit_signals': build_audit_signals(stats),
+        'tender_index': build_tender_index(stats),
         'status': status,
         'generated_by': 'bac_catalog_collector.py',
     }
