@@ -161,6 +161,33 @@ class ProcesoIdTest(unittest.TestCase):
         self.assertEqual(len(distinct), 2)
 
 
+class BacTenderIdTest(unittest.TestCase):
+    """El sumario del Boletín suele citar el número de proceso propio de BAC (mismo esquema
+    que numero_proceso en bac_aperturas.json) además de la sigla/expediente — es la clave de
+    cruce por EXPEDIENTE, más precisa que el cruce actual sólo por nombre de organismo."""
+
+    def test_extracts_id_from_sumario(self):
+        n = {'nombre': 'Licitación Obra Pública / Llamado  N° 33/DGACSA/26',
+             'sumario': 'Llama a Licitación Obra Pública 401-0033-LPU26 para la Remodelación...'}
+        self.assertEqual(data_model.bac_tender_id(n), '401-0033-LPU26')
+
+    def test_extracts_id_from_nombre_when_absent_in_sumario(self):
+        n = {'nombre': 'Adjudicación 416-1192-LPU26', 'sumario': 'Servicio de limpieza'}
+        self.assertEqual(data_model.bac_tender_id(n), '416-1192-LPU26')
+
+    def test_returns_none_when_no_bac_style_id_present(self):
+        n = {'nombre': 'Licitación Pública / Llamado  N° 14/IVC/26',
+             'sumario': 'Servicio Integral de Redes Eléctricas'}
+        self.assertIsNone(data_model.bac_tender_id(n))
+
+    def test_uppercases_result(self):
+        n = {'nombre': '', 'sumario': 'proceso 416-1192-lpu26'}
+        self.assertEqual(data_model.bac_tender_id(n), '416-1192-LPU26')
+
+    def test_missing_fields_do_not_crash(self):
+        self.assertIsNone(data_model.bac_tender_id({}))
+
+
 class IdSortKeyTest(unittest.TestCase):
     """Bug: sorted(key=str(id_norma)) ordena lexicográficamente, así que '999999' termina
     antes que '1000000' — con id_norma acercándose a 7 dígitos esto ya no es hipotético."""
