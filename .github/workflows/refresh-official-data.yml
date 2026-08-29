@@ -8,8 +8,11 @@ on:
       - 'runtime/**'
       - '.github/workflows/refresh-official-data.yml'
   schedule:
-    # 11:00-16:30 UTC = 08:00-13:30 ART, lunes a viernes, cada 30 minutos.
-    - cron: '0,30 11-16 * * 1-5'
+    # 11:00-16:00 UTC = 08:00-13:00 ART, lunes a viernes, cada 1 hora (antes cada 30 min:
+    # GitHub empezó a demorar/descartar los disparos de `schedule` en cron de alta frecuencia
+    # -- ver commit que introdujo este cambio -- así que se bajó la cadencia en vez de pelear
+    # contra el scheduler).
+    - cron: '0 11-16 * * 1-5'
     # Control adicional a las 12:55 ART.
     - cron: '55 15 * * 1-5'
 

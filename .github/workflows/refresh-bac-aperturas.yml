@@ -8,10 +8,12 @@ on:
       - 'runtime/bac_aperturas_scraper.py'
       - '.github/workflows/refresh-bac-aperturas.yml'
   schedule:
-    # Mismo horario que refresh-official-data.yml (11:00-16:30 UTC = 08:00-13:30 ART,
-    # lunes a viernes, cada 30 min): las aperturas de BAC ocurren en horario administrativo,
-    # no tiene sentido scrapear fuera de esa ventana.
-    - cron: '0,30 11-16 * * 1-5'
+    # Mismo horario que refresh-official-data.yml (11:00-16:00 UTC = 08:00-13:00 ART,
+    # lunes a viernes, cada 1 hora -- antes cada 30 min, bajado por el mismo motivo: GitHub
+    # empezó a demorar/descartar disparos de `schedule` en cron de alta frecuencia):
+    # las aperturas de BAC ocurren en horario administrativo, no tiene sentido scrapear
+    # fuera de esa ventana.
+    - cron: '0 11-16 * * 1-5'
 
 permissions:
   contents: write
