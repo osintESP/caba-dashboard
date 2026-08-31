@@ -75,6 +75,8 @@ function renderBAC(data){
       return[f.title||f.tender_id,f.organismo||'—',` <span class="badge audit-flag" title="${attr(f.tender_id||'')}">${esc(statusLabel)}</span>`];
     });
     renderRankRows(failedEl,rows);
+    const failedCountEl=$('novedad-failed-count');
+    if(failedCountEl)failedCountEl.textContent=`${fmt.format(flags.length)} detectado${flags.length===1?'':'s'}`;
   }
 }
 function renderSyncNotice(){const missing=[];if(!state.intelligence)missing.push('Intelligence');if(!state.sync)missing.push('registro de sincronización');if(missing.length){$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Datos base operativos. Pendiente de sincronización pública: ${esc(missing.join(' + '))}.`}else{const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Boletín e Intelligence sincronizados.${bulletin}`}}
@@ -119,6 +121,8 @@ function renderNormativeImpact(){
   const bySigla=Object.entries(s.by_sigla||{}).map(([k,v])=>`${k}: ${v}`).join(' · ');
   if(summaryEl)summaryEl.innerHTML=`<div>${fmt.format(s.total_flagged||0)} normas de unidades de sistemas/transformación digital detectadas (${esc(bySigla||'—')})</div>${data.note?`<div class="bac-note">${esc(data.note)}</div>`:''}`;
   if(listEl)listEl.innerHTML=norms.length?norms.slice(0,25).map(normativeImpactRecordHtml).join(''):'<div class="empty">Sin normas detectadas.</div>';
+  const normativeCountEl=$('novedad-normative-count');
+  if(normativeCountEl)normativeCountEl.textContent=`${fmt.format(norms.length)} detectada${norms.length===1?'':'s'}`;
 }
 function procesoGroupHtml(group){const[main,...related]=group;
   // El acto principal (normalmente el "Llamado") no siempre es el que cita el número de
