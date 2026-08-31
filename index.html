@@ -18,6 +18,14 @@
   <main class="container">
     <section id="sync-notice" class="notice"><strong>Dashboard v1 mejorada.</strong> La capa pública consume únicamente datasets sanitizados derivados de fuentes oficiales GCBA.</section>
 
+    <section class="panel">
+      <div class="panel-head"><div><span class="eyebrow">NOVEDADES</span><h2>Qué se agregó</h2></div></div>
+      <div class="record-list">
+        <article class="record"><div><h3 class="record-title">Pliegos caídos o fracasados (tecnología)</h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">Nueva señal en el panel "Buenos Aires Compras" que detecta licitaciones de tecnología declaradas desiertas, fracasadas o dejadas sin efecto antes de adjudicarse (<code>tender.status</code> cancelled/unsuccessful). No implica irregularidad, pero suele forzar una re-licitación y trabar la operación del área usuaria.</p></div></article>
+        <article class="record"><div><h3 class="record-title">Impacto normativo en sistemas</h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Nueva sección "Impacto normativo en sistemas" que cruza automáticamente las normas de Jefatura de Gabinete de Ministros dictadas por unidades de sistemas/transformación digital de la Ciudad (Secretaría de Innovación y Transformación Digital, Agencia de Sistemas de Información y direcciones asociadas), como disparador de revisión de posibles cambios en circuitos digitales (GDE, ciberseguridad, interoperabilidad).</p></div></article>
+      </div>
+    </section>
+
     <section class="hero-grid">
       <article class="metric-card featured"><span class="metric-label">Último Boletín publicado</span><strong id="metric-bulletin">—</strong><span id="metric-bulletin-date" class="metric-foot">—</span></article>
       <article class="metric-card"><span class="metric-label">Normas acumuladas</span><strong id="metric-norms">—</strong><span class="metric-foot">dataset histórico</span></article>
@@ -45,6 +53,8 @@
       <div id="bac-fractionation" class="ranking"></div>
       <div class="subhead">Proveedor recurrente en múltiples organismos (mayor a menor monto)</div>
       <div id="bac-repeat-winner" class="ranking"></div>
+      <div class="subhead">Pliegos caídos o fracasados (tecnología)</div>
+      <div id="bac-failed-tenders" class="ranking"></div>
     </section>
 
     <section class="two-col">
@@ -61,6 +71,8 @@
     <section class="two-col"><article class="panel"><div class="panel-head"><div><span class="eyebrow">CONTRATACIONES</span><h2>Distribución por categoría</h2></div><span id="procurement-total" class="badge">—</span></div><div id="category-bars" class="bar-list"></div></article><article class="panel"><div class="panel-head"><div><span class="eyebrow">ORGANISMOS</span><h2>Mayor actividad</h2></div></div><div id="org-ranking" class="ranking"></div></article></section>
 
     <section class="panel filters-panel"><div class="panel-head"><div><span class="eyebrow">EXPLORADOR</span><h2>Filtrar actividad</h2></div><button id="clear-filters" class="button ghost" type="button">Limpiar filtros</button></div><div class="filters-grid"><label>Buscar<input id="filter-search" type="search" placeholder="Ciberseguridad, Línea F, Salud…" /></label><label>Organismo<select id="filter-org"><option value="">Todos</option></select></label><label>Tipo<select id="filter-type"><option value="">Todos</option></select></label><label>Categoría contratación<select id="filter-category"><option value="">Todas</option></select></label></div></section>
+
+    <section class="panel"><div class="panel-head"><div><span class="eyebrow">NORMATIVA</span><h2>Impacto normativo en sistemas</h2></div><span id="normative-impact-status" class="badge">pendiente</span></div><div id="normative-impact-summary" class="empty">Esperando sincronización.</div><div id="normative-impact-list" class="record-list"></div></section>
 
     <section class="panel"><div class="panel-head"><div><span class="eyebrow">CONTRATACIONES</span><h2>Procesos</h2></div><span id="proc-result-count" class="badge">—</span></div><div id="procurement-list" class="record-list"></div><button id="procs-load-more" class="button ghost" type="button" style="display:none">Cargar más</button></section>
     <section class="panel"><div class="panel-head"><div><span class="eyebrow">NORMATIVA</span><h2>Normas</h2></div><span id="norm-result-count" class="badge">—</span></div><div id="norm-list" class="record-list"></div><button id="norms-load-more" class="button ghost" type="button" style="display:none">Cargar más</button></section>

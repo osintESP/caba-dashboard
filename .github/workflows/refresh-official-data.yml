@@ -52,6 +52,9 @@ jobs:
       - name: Build technology and cybersecurity intelligence
         run: python runtime/procurement_intelligence.py
 
+      - name: Build normative impact watch (systems/digital transformation units)
+        run: python runtime/normative_impact.py
+
       - name: Validate mandatory outputs
         run: |
           test -s data/stats.json
@@ -59,13 +62,16 @@ jobs:
           test -s data/norms.json
           test -s data/procurements.json
           test -s data/procurement_intelligence.json
+          test -s data/normative_impact.json
           python - <<'PY'
           import json
           from pathlib import Path
-          for name in ('stats.json','editions.json','norms.json','procurements.json','procurement_intelligence.json'):
+          for name in ('stats.json','editions.json','norms.json','procurements.json','procurement_intelligence.json','normative_impact.json'):
               json.loads((Path('data')/name).read_text(encoding='utf-8'))
           intel=json.loads(Path('data/procurement_intelligence.json').read_text(encoding='utf-8'))
           assert isinstance(intel.get('summary'),dict)
+          impact=json.loads(Path('data/normative_impact.json').read_text(encoding='utf-8'))
+          assert isinstance(impact.get('summary'),dict)
           print('RUNTIME_DATA_QUALITY=OK')
           PY
 
@@ -95,7 +101,7 @@ jobs:
         run: |
           git config user.name 'caba-dashboard[bot]'
           git config user.email 'caba-dashboard@users.noreply.github.com'
-          git add data/stats.json data/editions.json data/norms.json data/procurements.json data/procurement_intelligence.json data/sync_manifest.json
+          git add data/stats.json data/editions.json data/norms.json data/procurements.json data/procurement_intelligence.json data/normative_impact.json data/sync_manifest.json
           if git diff --cached --quiet; then
             echo 'No dashboard data changes.'
           else

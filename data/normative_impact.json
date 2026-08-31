@@ -1,0 +1,573 @@
+{
+  "schema_version": 1,
+  "source": "norms.json",
+  "note": "Normas de Jefatura de Gabinete de Ministros publicadas por unidades de sistemas o transformación digital de la Ciudad (Secretaría de Innovación y Transformación Digital / Agencia de Sistemas de Información y direcciones asociadas), identificadas por la sigla embebida en el número de acto. Es una señal de que la norma PUEDE afectar circuitos digitales (GDE, TAD, ciberseguridad, interoperabilidad, sistemas) — no confirma el impacto real ni identifica qué procedimiento puntual modifica, porque sólo se analiza título y sumario del Boletín, no el cuerpo completo de la resolución (considerandos/articulado). Es un disparador para revisión manual, no una conclusión automática.",
+  "siglas_monitoreadas": [
+    "ASINF",
+    "DGGEDOC",
+    "DGIASINF",
+    "DGISIS",
+    "DGTALINF",
+    "SECITD"
+  ],
+  "summary": {
+    "total_flagged": 48,
+    "by_sigla": {
+      "DGIASINF": 15,
+      "DGISIS": 10,
+      "ASINF": 8,
+      "SECITD": 8,
+      "DGTALINF": 6,
+      "DGGEDOC": 1
+    },
+    "by_topic": {
+      "plataforma_o_sistema": 8
+    }
+  },
+  "norms": [
+    {
+      "id_norma": 997984,
+      "numero_boletin": 7440,
+      "fecha_publicacion": "28/08/2026",
+      "nombre": "Licitación Pública / Prórroga  N° 1278/DGISIS/26",
+      "sumario": "Prorroga la fecha de apertura de la Licitación Pública N° 8056-1278-LPU26 para la Renovación de Licencias y servicios de soporte y mantenimiento.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268487"
+    },
+    {
+      "id_norma": 997981,
+      "numero_boletin": 7440,
+      "fecha_publicacion": "28/08/2026",
+      "nombre": "Disposición N° 29/DGISIS/26",
+      "sumario": "Prorroga la fecha de apertura de la Licitación Pública N° 8056-1278-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268234"
+    },
+    {
+      "id_norma": 997821,
+      "numero_boletin": 7440,
+      "fecha_publicacion": "28/08/2026",
+      "nombre": "Disposición N° 60/DGIASINF/26",
+      "sumario": "Prorroga la Orden de Compra N° 8056-9346-OC25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268235"
+    },
+    {
+      "id_norma": 997788,
+      "numero_boletin": 7440,
+      "fecha_publicacion": "28/08/2026",
+      "nombre": "Resolución N° 156/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Ramiro Reibaldi",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268149"
+    },
+    {
+      "id_norma": 997787,
+      "numero_boletin": 7440,
+      "fecha_publicacion": "28/08/2026",
+      "nombre": "Resolución N° 155/ASINF/26",
+      "sumario": "Acepta la renuncia como Director General de la Dirección General de Infraestructura del Organismo Fuera de Nivel Agencia de Sistemas de Información presentada por Federico Tuffano",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268148"
+    },
+    {
+      "id_norma": 997460,
+      "numero_boletin": 7439,
+      "fecha_publicacion": "27/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1074/DGIASINF/26",
+      "sumario": "Mantenimiento preventivo y correctivo de la plataforma de Networking SDN Datacenter y Equipamiento Critico de Internet",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5266046"
+    },
+    {
+      "id_norma": 997309,
+      "numero_boletin": 7438,
+      "fecha_publicacion": "26/08/2026",
+      "nombre": "Disposición N° 28/DGISIS/26",
+      "sumario": "Aprueba la Cuarta Actualización de Precios de la Orden de Compra N° 8056-0311-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5263071"
+    },
+    {
+      "id_norma": 997017,
+      "numero_boletin": 7436,
+      "fecha_publicacion": "24/08/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1125/DGIASINF/26",
+      "sumario": "Preadjudica la Licitación Pública N° 8056-1125-LPU26 para la Renovación de los Servicios de Mantenimiento y Consultoría para los Sistemas SAP-BASIS.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5257906"
+    },
+    {
+      "id_norma": 996687,
+      "numero_boletin": 7435,
+      "fecha_publicacion": "21/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 674/DGIASINF/26",
+      "sumario": "Adjudica la Licitación Pública N° 8056-0674-LPU26 para la Provisión e instalación de puestos de tensión  cableado estructurado en categoría 6 y 6° y pasivos.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255637"
+    },
+    {
+      "id_norma": 996309,
+      "numero_boletin": 7437,
+      "fecha_publicacion": "25/08/2026",
+      "nombre": "Disposición N° 57/DGIASINF/26",
+      "sumario": "Dar de baja bienes inventariadoa",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5260185"
+    },
+    {
+      "id_norma": 996287,
+      "numero_boletin": 7434,
+      "fecha_publicacion": "20/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 949/DGIASINF/26",
+      "sumario": "Adjudica la Licitación pública N° 2051-0949-LPU26 para el Servicio de Mantenimiento y Readecuación de la Pista de Atletismo del Parque Chacabuco.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5253046"
+    },
+    {
+      "id_norma": 996280,
+      "numero_boletin": 7434,
+      "fecha_publicacion": "20/08/2026",
+      "nombre": "Contratación Menor / Adjudicación  N° 1266/SECITD/26",
+      "sumario": "Adquisición de Escritorios regulables para puestos de trabajo",
+      "tipo": "Contratación Menor",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5253047"
+    },
+    {
+      "id_norma": 996021,
+      "numero_boletin": 7435,
+      "fecha_publicacion": "21/08/2026",
+      "nombre": "Disposición N° 93/DGTALINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255444"
+    },
+    {
+      "id_norma": 995997,
+      "numero_boletin": 7435,
+      "fecha_publicacion": "21/08/2026",
+      "nombre": "Disposición N° 56/DGIASINF/26",
+      "sumario": "Aprueba la Novena Actualización de Precios de la Orden de Compra N° 8056-0106-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255443"
+    },
+    {
+      "id_norma": 995994,
+      "numero_boletin": 7435,
+      "fecha_publicacion": "21/08/2026",
+      "nombre": "Disposición N° 55/DGIASINF/26",
+      "sumario": "Aprueba la Cuarta Actualización de Precios de la Orden de Compra N° 8056-0200-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255442"
+    },
+    {
+      "id_norma": 995993,
+      "numero_boletin": 7435,
+      "fecha_publicacion": "21/08/2026",
+      "nombre": "Disposición N° 54/DGIASINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-0674-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255441"
+    },
+    {
+      "id_norma": 995504,
+      "numero_boletin": 7434,
+      "fecha_publicacion": "20/08/2026",
+      "nombre": "Resolución N° 4/SECITD/26",
+      "sumario": "Aprueba el Alta del trámite Ampliación de Rubro para Puestos de diarios revistas y/o afines para el expendio y/o venta de bebidas no alcohólicas y/o servicio de cafetería",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252860"
+    },
+    {
+      "id_norma": 995502,
+      "numero_boletin": 7434,
+      "fecha_publicacion": "20/08/2026",
+      "nombre": "Resolución N° 3/SECITD/26",
+      "sumario": "Aprueba el Alta del trámite Capacidad Constructiva Adicional para proyectos emisores catalogados en el Inventario Único de Trámites (IUT)",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252859"
+    },
+    {
+      "id_norma": 995501,
+      "numero_boletin": 7434,
+      "fecha_publicacion": "20/08/2026",
+      "nombre": "Resolución N° 2/SECITD/26",
+      "sumario": "Aprueba el Alta del trámite Capacidad Constructiva Adicional por Promoción de Espacios Verdes en el Inventario Único de Trámites (IUT)",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252858"
+    },
+    {
+      "id_norma": 995446,
+      "numero_boletin": 7432,
+      "fecha_publicacion": "18/08/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1137/DGIASINF/26",
+      "sumario": "Preadjudica la Licitación Pública N° 8056-1137-LPU26 para la Provisión, Instalación y Soporte de Switches de Core y Red Datacenter.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248630"
+    },
+    {
+      "id_norma": 995339,
+      "numero_boletin": 7432,
+      "fecha_publicacion": "18/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 915/DGISIS/26",
+      "sumario": "Soporte técnico especializado y mantenimiento evolutivo y correctivo de la plataforma y los aplicativos CRM Oro del GCABA",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248631"
+    },
+    {
+      "id_norma": 994717,
+      "numero_boletin": 7431,
+      "fecha_publicacion": "18/08/2026",
+      "nombre": "Resolución N° 150/ASINF/26",
+      "sumario": "Designa y ratifica a responsables de la administración y rendición de fondos de caja chica común y gastos de movilidad",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5246585"
+    },
+    {
+      "id_norma": 994663,
+      "numero_boletin": 7430,
+      "fecha_publicacion": "14/08/2026",
+      "nombre": "Disposición N° 90/DGTALINF/26",
+      "sumario": "Reconoce suplemento por tareas nocturnas del mes de julio de 2026",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5243840"
+    },
+    {
+      "id_norma": 994635,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Resolución N° 99/SECITD/26",
+      "sumario": "Modifica la integración de la Comisión Evaluadora de Ofertas en el marco de la Contratación Menor N° 2051-1266-CME26",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241093"
+    },
+    {
+      "id_norma": 994495,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Disposición N° 4/DGGEDOC/26",
+      "sumario": "Autoriza el procedimiento de Prórroga N° 2051-0339-PRO26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGGEDOC",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238992"
+    },
+    {
+      "id_norma": 994485,
+      "numero_boletin": 7430,
+      "fecha_publicacion": "14/08/2026",
+      "nombre": "Disposición N° 53/DGIASINF/26",
+      "sumario": "Incrementar la Orden de Compra N° 8056-0106-OCA26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5243839"
+    },
+    {
+      "id_norma": 994405,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Resolución N° 149/ASINF/26",
+      "sumario": "Aprueba el Acta Acuerdo de la Primera a la Tercera Redeterminación Definitiva de Precios de la Licitación Pública N° 8056-1588-LPU19",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241092"
+    },
+    {
+      "id_norma": 994402,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Resolución N° 148/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Nelson Ezequiel Timoteo Aranda",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241091"
+    },
+    {
+      "id_norma": 994401,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Resolución N° 147/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a César Damián Widman",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241090"
+    },
+    {
+      "id_norma": 994395,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1278/DGISIS/26",
+      "sumario": "Llama a Licitación Pública N° 8056-1278-LPU26 para la Renovación de la suscripción anual de paquete de licencias y servicios de soporte y mantenimiento correctivo y evolutivo de la plataforma Automation Anywhere.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5239180"
+    },
+    {
+      "id_norma": 994329,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Disposición N° 26/DGISIS/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1278-LPU26 para la Renovación de la suscripción anual de paquete de licencias y servicios de soporte y mantenimiento correctivo y evolutivo de la plataforma Automation Anywhere",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238995"
+    },
+    {
+      "id_norma": 994280,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1245/DGIASINF/26",
+      "sumario": "Llama a Licitación Pública N° 8056-1245-LPU26 para la Renovación del servicio de mantenimiento integral de centrales telefónicas autónomas y equipamiento de comunicaciones IP.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241374"
+    },
+    {
+      "id_norma": 994245,
+      "numero_boletin": 7427,
+      "fecha_publicacion": "11/08/2026",
+      "nombre": "Resolución N° 129/SECITD/26",
+      "sumario": "Crea el Comité de Ética ad hoc, integrado por miembros expertos de reconocida trayectoria, a fin de que intervenga, en el marco de sus competencias, en todas las etapas que correspondan del proyecto denominado “Sandbox Autonomy – Vehículos Autónomos”.",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236627"
+    },
+    {
+      "id_norma": 994232,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Disposición N° 52/DGIASINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1074-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241204"
+    },
+    {
+      "id_norma": 994230,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Disposición N° 51/DGIASINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1245-LPU26 para la Renovación del servicio de mantenimiento integral de centrales telefónicas autónomas y equipamiento de comunicaciones IP",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238996"
+    },
+    {
+      "id_norma": 994227,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Disposición N° 50/DGIASINF/26",
+      "sumario": "Prorroga la Orden de Compra N° 8056-14010-OC25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241203"
+    },
+    {
+      "id_norma": 994221,
+      "numero_boletin": 7429,
+      "fecha_publicacion": "13/08/2026",
+      "nombre": "Disposición N° 88/DGTALINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241205"
+    },
+    {
+      "id_norma": 994135,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Disposición N° 25/DGISIS/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-0915-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238994"
+    },
+    {
+      "id_norma": 994123,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Resolución N° 146/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Agustina Moreno",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238891"
+    },
+    {
+      "id_norma": 994076,
+      "numero_boletin": 7427,
+      "fecha_publicacion": "11/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 587/DGTALINF/26",
+      "sumario": "Adjudica la Licitación Pública N° 8056-0587-LPU26 para la Suscripción de Licencias con soporte técnico y Servicio de Consultoría Oracle Field Service Cloud (OFSC).",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236930"
+    },
+    {
+      "id_norma": 993963,
+      "numero_boletin": 7426,
+      "fecha_publicacion": "10/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 661/SECITD/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública de Etapa Única 2051-0661-LPU26 - Plataforma de IA Conversacional y Síntesis de Voz de Alta Fidelidad Modalidad Saas.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "SECITD",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234767"
+    },
+    {
+      "id_norma": 993962,
+      "numero_boletin": 7426,
+      "fecha_publicacion": "10/08/2026",
+      "nombre": "Resolución N° 130/SECITD/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública de Etapa Única 2051-0661-LPU26 - Plataforma de IA Conversacional y Síntesis de Voz de Alta Fidelidad Modalidad Saas.",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234442"
+    },
+    {
+      "id_norma": 993945,
+      "numero_boletin": 7428,
+      "fecha_publicacion": "12/08/2026",
+      "nombre": "Disposición N° 87/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-0587-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238997"
+    },
+    {
+      "id_norma": 993403,
+      "numero_boletin": 7426,
+      "fecha_publicacion": "10/08/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1188/DGISIS/26",
+      "sumario": "Llama a Licitación Pública N° 8056-1188-LPU26 para el Servicios de mantenimiento correctivo y evolutivo de las soluciones tecnológicas implementadas sobre Plataforma SAP.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234766"
+    },
+    {
+      "id_norma": 993402,
+      "numero_boletin": 7424,
+      "fecha_publicacion": "06/08/2026",
+      "nombre": "Disposición N° 24/DGISIS/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1188-LPU26 para los Servicios de mantenimiento correctivo y evolutivo de las soluciones tecnológicas implementadas sobre Plataforma SAP para el GCABA",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5230103"
+    },
+    {
+      "id_norma": 993400,
+      "numero_boletin": 7426,
+      "fecha_publicacion": "10/08/2026",
+      "nombre": "Disposición N° 23/DGISIS/26",
+      "sumario": "Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0529-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234579"
+    },
+    {
+      "id_norma": 992763,
+      "numero_boletin": 7424,
+      "fecha_publicacion": "06/08/2026",
+      "nombre": "Resolución N° 144/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Danelkis Maciel Sanabria Linares",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5229945"
+    },
+    {
+      "id_norma": 992463,
+      "numero_boletin": 7423,
+      "fecha_publicacion": "05/08/2026",
+      "nombre": "Disposición N° 85/DGTALINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5227624"
+    }
+  ]
+}

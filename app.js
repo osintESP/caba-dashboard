@@ -1,4 +1,4 @@
-const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null};
+const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null,normativeImpact:null};
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-AR');
 const fmtCurrency=new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
@@ -7,7 +7,7 @@ let normsPage=1,procPage=1;
 const dtf=new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'short',timeStyle:'medium'});
 async function fetchJson(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 async function fetchOptional(path){try{return await fetchJson(path)}catch(e){console.warn(`optional dataset unavailable: ${path}`,e);return null}}
-async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
+async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
 function fillSelect(el,values){for(const v of values){const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o)}}
 function populateFilters(){fillSelect($('filter-org'),[...new Set(state.norms.map(x=>x.organismo).filter(Boolean))].sort());fillSelect($('filter-type'),[...new Set(state.norms.map(x=>x.tipo).filter(Boolean))].sort());fillSelect($('filter-category'),[...new Set(state.procurements.map(x=>x.categoria).filter(Boolean))].sort())}
 function filteredNorms(){const q=$('filter-search').value.trim().toLowerCase(),org=$('filter-org').value,type=$('filter-type').value;return state.norms.filter(n=>{const hay=`${n.nombre||''} ${n.sumario||''} ${n.organismo||''} ${n.tipo||''}`.toLowerCase();return(!q||hay.includes(q))&&(!org||n.organismo===org)&&(!type||n.tipo===type)}).sort((a,b)=>(Number(b.id_norma)||0)-(Number(a.id_norma)||0))}
@@ -25,7 +25,7 @@ function renderMetrics(){const latest=[...state.editions].sort((a,b)=>Number(b.n
 function renderIntelligence(){const s=state.intelligence?.summary;if(!s){$('intel-status').textContent='sin sincronizar';$('metric-tech').textContent='—';$('metric-cyber').textContent='—';$('intel-tags').innerHTML='<div class="empty">La capa Intelligence todavía no fue publicada en el repositorio público.</div>';return}$('intel-status').textContent='activo';$('metric-tech').textContent=fmt.format(s.technology_related||0);$('metric-cyber').textContent=fmt.format(s.cybersecurity_related||0);const rows=Object.entries(s.tag_counts||{}).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('intel-tags').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin etiquetas tecnológicas.</div>'}
 function renderRankRows(container,rows){container.innerHTML=rows.map(([name,value,badge],i)=>`<div class="rank-row"><span class="rank-index">${i+1}</span><span class="rank-name">${esc(name)}${badge||''}</span><span class="rank-value">${value}</span></div>`).join('')||'<div class="empty">Sin resultados.</div>'}
 function renderBAC(data){
-  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner');
+  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner'),failedEl=$('bac-failed-tenders');
   const panel=statusEl?.closest('.panel')||statusEl?.parentElement;
   if(!data){if(panel)panel.style.display='none';return}
   if(panel)panel.style.display='';
@@ -44,6 +44,7 @@ function renderBAC(data){
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
     ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
     ${audit.repeat_winner_across_organismos?.note?`<div class="bac-note">${esc(audit.repeat_winner_across_organismos.note)}</div>`:''}
+    ${audit.failed_or_cancelled_tenders?.note?`<div class="bac-note">${esc(audit.failed_or_cancelled_tenders.note)}</div>`:''}
   `;
   if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking_tech||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
   if(concEl){
@@ -66,6 +67,14 @@ function renderBAC(data){
       return[f.vendor,fmtCurrency.format(f.total_amount_ars||0),` <span class="badge audit-flag" title="${attr(title)}">${f.organismos_count} organismos en ${f.window_days}d</span>`];
     });
     renderRankRows(repeatEl,rows);
+  }
+  if(failedEl){
+    const flags=audit.failed_or_cancelled_tenders?.tenders||[];
+    const rows=flags.map(f=>{
+      const statusLabel=f.status==='cancelled'?'Cancelada':'Fracasada';
+      return[f.title||f.tender_id,f.organismo||'—',` <span class="badge audit-flag" title="${attr(f.tender_id||'')}">${esc(statusLabel)}</span>`];
+    });
+    renderRankRows(failedEl,rows);
   }
 }
 function renderSyncNotice(){const missing=[];if(!state.intelligence)missing.push('Intelligence');if(!state.sync)missing.push('registro de sincronización');if(missing.length){$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Datos base operativos. Pendiente de sincronización pública: ${esc(missing.join(' + '))}.`}else{const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Boletín e Intelligence sincronizados.${bulletin}`}}
@@ -101,6 +110,16 @@ function renderAperturas(){
   if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas de tecnología en los últimos 30 días.</div>';
   if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas de tecnología publicadas.</div>';
 }
+function normativeImpactRecordHtml(n){const pills=[n.sigla_unidad,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const topicPills=(n.topics||[]).map(t=>`<span class="meta-pill category">${esc(t.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}</h3><div class="record-meta">${topicPills.join('')}${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}
+function renderNormativeImpact(){
+  const data=state.normativeImpact,statusEl=$('normative-impact-status'),summaryEl=$('normative-impact-summary'),listEl=$('normative-impact-list');
+  if(!data){if(statusEl)statusEl.textContent='sin sincronizar';if(summaryEl)summaryEl.innerHTML='<div class="empty">Impacto normativo en sistemas todavía no fue publicado.</div>';if(listEl)listEl.innerHTML='';return}
+  if(statusEl)statusEl.textContent='activo';
+  const norms=data.norms||[],s=data.summary||{};
+  const bySigla=Object.entries(s.by_sigla||{}).map(([k,v])=>`${k}: ${v}`).join(' · ');
+  if(summaryEl)summaryEl.innerHTML=`<div>${fmt.format(s.total_flagged||0)} normas de unidades de sistemas/transformación digital detectadas (${esc(bySigla||'—')})</div>${data.note?`<div class="bac-note">${esc(data.note)}</div>`:''}`;
+  if(listEl)listEl.innerHTML=norms.length?norms.slice(0,25).map(normativeImpactRecordHtml).join(''):'<div class="empty">Sin normas detectadas.</div>';
+}
 function procesoGroupHtml(group){const[main,...related]=group;
   // El acto principal (normalmente el "Llamado") no siempre es el que cita el número de
   // proceso de BAC en su sumario -a veces sólo una circular/prórroga lo hace-, así que se
@@ -118,7 +137,7 @@ function renderLists(){
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('aperturas',renderAperturas);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
+function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
