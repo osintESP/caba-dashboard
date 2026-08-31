@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 48,
+    "total_flagged": 53,
     "by_sigla": {
-      "DGIASINF": 15,
-      "DGISIS": 10,
+      "DGIASINF": 19,
+      "DGISIS": 11,
       "ASINF": 8,
       "SECITD": 8,
       "DGTALINF": 6,
@@ -25,6 +25,61 @@
     }
   },
   "norms": [
+    {
+      "id_norma": 998515,
+      "numero_boletin": 7441,
+      "fecha_publicacion": "31/08/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1137/DGIASINF/26",
+      "sumario": "Provisión, Instalación y Soporte de Switches de Core y Red Datacenter",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270897"
+    },
+    {
+      "id_norma": 998477,
+      "numero_boletin": 7441,
+      "fecha_publicacion": "31/08/2026",
+      "nombre": "Disposición N° 63/DGIASINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1288-LPU26 la Provisión de un servicio de acceso dinámico a internet",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270716"
+    },
+    {
+      "id_norma": 998473,
+      "numero_boletin": 7441,
+      "fecha_publicacion": "31/08/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1288/DGIASINF/26",
+      "sumario": "Provisión de un servicio de acceso dinámico a internet para dependencias del Gobierno de la Ciudad Autónoma de Buenos Aires",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270895"
+    },
+    {
+      "id_norma": 998228,
+      "numero_boletin": 7441,
+      "fecha_publicacion": "31/08/2026",
+      "nombre": "Disposición N° 30/DGISIS/26",
+      "sumario": "Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0524-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270714"
+    },
+    {
+      "id_norma": 998227,
+      "numero_boletin": 7441,
+      "fecha_publicacion": "31/08/2026",
+      "nombre": "Disposición N° 61/DGIASINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1137-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGIASINF",
+      "topics": [],
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270715"
+    },
     {
       "id_norma": 997984,
       "numero_boletin": 7440,

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "collected_at": "2026-08-28T01:30:18+00:00",
+  "collected_at": "2026-08-31T18:55:54+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -382,6 +382,35 @@
     "repeat_winner_across_organismos": {
       "vendors": [],
       "note": "Proveedor con adjudicaciones directas o de contratación limitada en 3 o más organismos distintos en un lapso de hasta 90 días, en compras de tecnología. Un proveedor legítimo puede ganar en múltiples organismos por capacidad real — esto no prueba irregularidad, es un disparador para revisar si hay un proveedor recurrente/potencialmente favorecido a nivel ciudad."
+    },
+    "failed_or_cancelled_tenders": {
+      "tenders": [
+        {
+          "tender_id": "432-1198-CME26",
+          "organismo": "HTAL. MANUEL ROCCA",
+          "method": "direct",
+          "status": "cancelled",
+          "title": "ACTUALIZACIÓN DE SOFTWARE PARA FONOAUDIOLOGÍA",
+          "date": "2026-05-06T12:00:00-03:00"
+        },
+        {
+          "tender_id": "426-0113-CDI26",
+          "organismo": "HTAL. PARMENIO PIÑERO",
+          "method": "direct",
+          "status": "cancelled",
+          "title": "SERVICIO DE ACTUALIZACION DE SOFTWARE PARA ECOGRAFO (CARDIOLOGIA)",
+          "date": "2026-02-24T10:00:00-03:00"
+        },
+        {
+          "tender_id": "3201-0396-CME26",
+          "organismo": "Ente de Turismo",
+          "method": "direct",
+          "status": "cancelled",
+          "title": "Adquisición Licencias Adobe",
+          "date": "2026-02-23T08:00:00-03:00"
+        }
+      ],
+      "note": "Licitaciones/contrataciones de tecnología que BAC marca con tender.status \"cancelled\" o \"unsuccessful\" (declaradas desiertas, fracasadas o dejadas sin efecto antes de adjudicarse). No implica irregularidad -una licitación puede caer por motivos operativos legítimos (sin oferentes, oferta técnica no admisible, etc.)- pero suele forzar una re-licitación y trabar la operación del área usuaria; es un disparador para entender la causa, no una conclusión."
     }
   },
   "tender_index": {
