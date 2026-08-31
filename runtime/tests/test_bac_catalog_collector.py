@@ -385,59 +385,6 @@ class RepeatWinnerTest(unittest.TestCase):
         self.assertNotIn('Vendor Abierto', vendors)
 
 
-def _failed_tech_release(tender_id, date, organismo, method, status,
-                          title='Adquisición de licencias de software'):
-    return {
-        'date': date,
-        'tender': {'id': tender_id, 'title': title, 'procuringEntity': {'name': organismo},
-                   'procurementMethod': method, 'competitive': None, 'status': status},
-        'parties': [], 'awards': [],
-    }
-
-
-class FailedTendersTest(unittest.TestCase):
-    """Señal nueva: licitaciones de tecnología que BAC marca cancelled/unsuccessful -no
-    llegan a tener ningún award con monto válido (verificado contra el CSV real: los 943
-    'cancelled' y 140 'unsuccessful' del dataset no tienen awards/0/value/amount), así que
-    sin captura aparte del loop de awards quedarían invisibles para el resto del pipeline."""
-
-    def test_flags_cancelled_tech_tender(self):
-        releases = [_failed_tech_release('416-0001-CME26', '2026-02-23T00:00:00-03:00',
-                                          'Ente de Turismo', 'direct', 'cancelled',
-                                          title='Adquisición de licencias de software Adobe')]
-        stats = bcc.process_releases(releases)
-        signals = bcc.build_audit_signals(stats)
-        flags = signals['failed_or_cancelled_tenders']['tenders']
-        row = next(f for f in flags if f['tender_id'] == '416-0001-CME26')
-        self.assertEqual(row['organismo'], 'Ente de Turismo')
-        self.assertEqual(row['status'], 'cancelled')
-        self.assertEqual(row['title'], 'Adquisición de licencias de software Adobe')
-
-    def test_active_tender_not_flagged(self):
-        releases = [_tech_release('2026-01-01T00:00:00-03:00', 'Ministerio X', 'open', True, 100, 'Vendor A')]
-        stats = bcc.process_releases(releases)
-        signals = bcc.build_audit_signals(stats)
-        self.assertEqual(signals['failed_or_cancelled_tenders']['tenders'], [])
-
-    def test_non_tech_failed_tender_excluded(self):
-        releases = [_failed_tech_release('999-0001-CME26', '2026-02-01T00:00:00-03:00',
-                                          'Ministerio Y', 'direct', 'unsuccessful',
-                                          title='Ampliación de redes eléctricas')]
-        stats = bcc.process_releases(releases)
-        signals = bcc.build_audit_signals(stats)
-        self.assertEqual(signals['failed_or_cancelled_tenders']['tenders'], [])
-
-    def test_sorted_by_date_descending(self):
-        releases = [
-            _failed_tech_release('A-1', '2026-01-01T00:00:00-03:00', 'Org A', 'direct', 'cancelled'),
-            _failed_tech_release('A-2', '2026-03-01T00:00:00-03:00', 'Org B', 'direct', 'unsuccessful'),
-        ]
-        stats = bcc.process_releases(releases)
-        signals = bcc.build_audit_signals(stats)
-        ids = [f['tender_id'] for f in signals['failed_or_cancelled_tenders']['tenders']]
-        self.assertEqual(ids, ['A-2', 'A-1'])
-
-
 class UnchangedDetectionTest(unittest.TestCase):
     def test_matches_on_etag(self):
         prev = {'url': 'https://cdn/x.json', 'etag': 'abc', 'collector_version': bcc.COLLECTOR_VERSION}
@@ -570,14 +517,6 @@ class CsvRowToReleaseTest(unittest.TestCase):
     def test_row_with_unrecognized_competitive_value(self):
         rel = bcc.csv_row_to_release(self._row(**{'tender/competitive': ''}))
         self.assertIsNone(rel['tender']['competitive'])
-
-    def test_tender_status_is_mapped(self):
-        rel = bcc.csv_row_to_release(self._row(**{'tender/status': 'cancelled'}))
-        self.assertEqual(rel['tender']['status'], 'cancelled')
-
-    def test_missing_tender_status_is_none(self):
-        rel = bcc.csv_row_to_release(self._row())
-        self.assertIsNone(rel['tender']['status'])
 
     def test_row_feeds_process_releases_without_crashing(self):
         rel = bcc.csv_row_to_release(self._row())

@@ -6,6 +6,7 @@ on:
     branches: [master]
     paths:
       - 'runtime/bac_aperturas_scraper.py'
+      - 'runtime/bac_pliegos_caidos_scraper.py'
       - '.github/workflows/refresh-bac-aperturas.yml'
   schedule:
     # Mismo horario que refresh-official-data.yml (11:00-16:00 UTC = 08:00-13:00 ART,
@@ -48,33 +49,39 @@ jobs:
       - name: Scrape BAC aperturas (sitio transaccional, navegación real por click)
         run: python runtime/bac_aperturas_scraper.py
 
+      - name: Scrape BAC pliegos caídos/dejados sin efecto (tecnología, en vivo)
+        run: python runtime/bac_pliegos_caidos_scraper.py
+
       - name: Validate mandatory outputs
         run: |
           test -s data/bac_aperturas.json
+          test -s data/bac_pliegos_caidos.json
           python - <<'PY'
           import json
           from pathlib import Path
           d = json.loads(Path('data/bac_aperturas.json').read_text(encoding='utf-8'))
           assert 'status' in d and 'aperturas_recientes' in d and 'aperturas_proximas' in d
+          p = json.loads(Path('data/bac_pliegos_caidos.json').read_text(encoding='utf-8'))
+          assert 'status' in p and 'pliegos' in p
           print('BAC_APERTURAS_QUALITY=OK')
           PY
 
-      - name: Persist refreshed aperturas dataset
+      - name: Persist refreshed aperturas/pliegos caídos datasets
         run: |
           git config user.name 'caba-dashboard[bot]'
           git config user.email 'caba-dashboard@users.noreply.github.com'
-          git add data/bac_aperturas.json
+          git add data/bac_aperturas.json data/bac_pliegos_caidos.json
           if git diff --cached --quiet; then
-            echo 'No aperturas data changes.'
+            echo 'No aperturas/pliegos caídos data changes.'
           else
-            git commit -m 'Refresh Buenos Aires Compras (BAC) aperturas en tiempo real'
+            git commit -m 'Refresh Buenos Aires Compras (BAC) aperturas y pliegos caídos en tiempo real'
             git fetch origin master
-            # data/bac_aperturas.json es una regeneración completa en cada corrida (no un
-            # merge incremental), igual que bac_catalog.json: ante un conflicto de rebase,
-            # siempre gana la versión recién scrapeada por esta corrida.
+            # Ambos JSON son una regeneración completa en cada corrida (no un merge
+            # incremental), igual que bac_catalog.json: ante un conflicto de rebase, siempre
+            # gana la versión recién scrapeada por esta corrida.
             if ! git rebase origin/master; then
-              git checkout --theirs data/bac_aperturas.json
-              git add data/bac_aperturas.json
+              git checkout --theirs data/bac_aperturas.json data/bac_pliegos_caidos.json
+              git add data/bac_aperturas.json data/bac_pliegos_caidos.json
               GIT_EDITOR=true git rebase --continue
             fi
             git push

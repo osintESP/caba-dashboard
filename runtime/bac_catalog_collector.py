@@ -17,14 +17,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 7
-
-# tender/status de OCDS (verificado contra el CSV real: 'complete'=18957, 'active'=4798,
-# 'cancelled'=943, 'unsuccessful'=140, vacío=73 sobre 24.911 filas). Una licitación
-# cancelled/unsuccessful típicamente NO tiene ningún award con monto válido (943+140
-# filas confirmadas sin awards/0/value/amount), así que queda invisible para el resto del
-# pipeline (que sólo agrega vía el loop de awards) si no se la captura aparte.
-FAILED_TENDER_STATUSES = ('cancelled', 'unsuccessful')
+COLLECTOR_VERSION = 8
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -165,7 +158,6 @@ def csv_row_to_release(row):
             'procuringEntity': {'name': row.get('tender/procuringEntity/name')},
             'procurementMethod': row.get('tender/procurementMethod') or None,
             'competitive': _to_bool(row.get('tender/competitive')),
-            'status': row.get('tender/status') or None,
         },
         'parties': ([{'id': party_id, 'name': row.get('parties/0/name')}] if party_id else []),
         'awards': [{
@@ -263,7 +255,6 @@ def process_releases(releases):
     direct_awards_by_pair = {}
     direct_awards_by_vendor = {}
     tech_tenders_by_id = {}
-    failed_tech_tenders_by_id = {}
     for rel in releases:
         rel_date = rel.get('date')
         if rel_date:
@@ -279,16 +270,7 @@ def process_releases(releases):
         method = tender.get('procurementMethod')
         competitive = tender.get('competitive')
         organismo = ((tender.get('procuringEntity') or {}).get('name') or '').strip() or 'Organismo sin identificar'
-        # Se captura ANTES/aparte del loop de awards: un tender cancelled/unsuccessful no
-        # tiene award con monto válido (ver nota en FAILED_TENDER_STATUSES), así que si esto
-        # dependiera del loop de abajo, quedaría siempre invisible.
-        tender_status = tender.get('status')
         tender_id = tender.get('id')
-        if is_tech and tender_id and tender_status in FAILED_TENDER_STATUSES and tender_id not in failed_tech_tenders_by_id:
-            failed_tech_tenders_by_id[tender_id] = {
-                'organismo': organismo, 'method': method, 'status': tender_status,
-                'title': tender.get('title'), 'date': rel_date,
-            }
         for award in rel.get('awards') or []:
             status = award.get('status')
             if status not in ACTIVE_STATUSES:
@@ -345,7 +327,7 @@ def process_releases(releases):
         'tech_method_amounts': tech_method_amounts, 'tech_noncompetitive_open': tech_noncompetitive_open,
         'org_vendor_tech': org_vendor_tech, 'org_tech_totals': org_tech_totals,
         'direct_awards_by_pair': direct_awards_by_pair, 'direct_awards_by_vendor': direct_awards_by_vendor,
-        'tech_tenders_by_id': tech_tenders_by_id, 'failed_tech_tenders_by_id': failed_tech_tenders_by_id,
+        'tech_tenders_by_id': tech_tenders_by_id,
     }
 
 
@@ -418,12 +400,6 @@ def build_repeat_winner_flags(direct_awards_by_vendor):
     return flags
 
 
-def build_failed_tenders_flags(failed_by_id):
-    flags = [{'tender_id': tid, **entry} for tid, entry in failed_by_id.items()]
-    flags.sort(key=lambda f: f['date'] or '', reverse=True)
-    return flags
-
-
 def build_audit_signals(stats):
     tech_ars = stats.get('tech_ars', 0) or 0
     method_amounts = stats.get('tech_method_amounts', {})
@@ -478,16 +454,6 @@ def build_audit_signals(stats):
                      'proveedor legítimo puede ganar en múltiples organismos por capacidad real '
                      '— esto no prueba irregularidad, es un disparador para revisar si hay un '
                      'proveedor recurrente/potencialmente favorecido a nivel ciudad.'),
-        },
-        'failed_or_cancelled_tenders': {
-            'tenders': build_failed_tenders_flags(stats.get('failed_tech_tenders_by_id', {})),
-            'note': ('Licitaciones/contrataciones de tecnología que BAC marca con '
-                     'tender.status "cancelled" o "unsuccessful" (declaradas desiertas, '
-                     'fracasadas o dejadas sin efecto antes de adjudicarse). No implica '
-                     'irregularidad -una licitación puede caer por motivos operativos '
-                     'legítimos (sin oferentes, oferta técnica no admisible, etc.)- pero '
-                     'suele forzar una re-licitación y trabar la operación del área usuaria; '
-                     'es un disparador para entender la causa, no una conclusión.'),
         },
     }
 

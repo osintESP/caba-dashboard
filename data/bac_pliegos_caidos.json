@@ -1,0 +1,1394 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-08-31T20:53:42+00:00",
+  "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
+  "estados_monitoreados": [
+    "Desierto",
+    "Dejado Sin Efecto"
+  ],
+  "rubro_filtro": "Informática",
+  "note": "Pliegos de tecnología (rubro \"Informática\", filtrado del lado del servidor por BAC) declarados Desierto o Dejado Sin Efecto, scrapeados en vivo del sitio transaccional de Buenos Aires Compras -no del export masivo trimestral (bac_anual.csv), que puede tener varios meses de atraso-. No implica irregularidad: un pliego puede caer por motivos operativos legítimos, pero suele forzar una re-licitación y trabar la operación del área usuaria.",
+  "status": "ok",
+  "pliegos": [
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "541-2119-CME26",
+      "nombre_proceso": "SERVICIO DE MANTENIMIENTO Y ACTUALIZACION DE PROCESOS DEL SISTEMA DE MANIPULACION Y ALMACENAMIENTO",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2026-08-04T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2624-0364-CDI26",
+      "nombre_proceso": "Diseño, desarrollo e implementación de un sistema integral para consolidación de domicilios.",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2624",
+      "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
+      "fecha_apertura": "2026-04-23T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "3201-0396-CME26",
+      "nombre_proceso": "Adquisición Licencias Adobe",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "3201",
+      "organismo": "Ente de Turismo",
+      "fecha_apertura": "2026-02-26T15:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "412-3637-CME25",
+      "nombre_proceso": "SERVICIO DE ACTUALIZACION DE LICENCIA - PACS",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "412",
+      "organismo": "HTAL. COSME ARGERICH",
+      "fecha_apertura": "2025-11-06T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "410-3416-CME25",
+      "nombre_proceso": "PED. 327 ADQUISICION DE INSUMO (TARJETA DE MEMORIA SD P/ HOLTER) PARA SERVICIO DE CARDIOLOGIA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "410",
+      "organismo": "HTAL.TEODORO ALVAREZ",
+      "fecha_apertura": "2025-10-21T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "3125-1377-LPU25",
+      "nombre_proceso": "Servicio de Control y Monitoreo del Transporte Público en la CABA",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "3125",
+      "organismo": "Ministerio de Movilidad e Infraestructura",
+      "fecha_apertura": "2025-10-09T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "412-3001-CME25",
+      "nombre_proceso": "Servicio de Instalación y Soporte Software para Unidad de Medicina Nuclear - HGACA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "412",
+      "organismo": "HTAL. COSME ARGERICH",
+      "fecha_apertura": "2025-09-24T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2624-2404-CME25",
+      "nombre_proceso": "Servicio de Capacitación en Operación y pilotaje para Drone (VANT) DJI Matrice 30T.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2624",
+      "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
+      "fecha_apertura": "2025-08-07T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "259-1221-LPU25",
+      "nombre_proceso": "SERVICIO DE PLATAFORMA DE IA EN CAPACITACIÓN",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "259",
+      "organismo": "Unidad de Asuntos Políticos",
+      "fecha_apertura": "2025-08-06T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "418-2097-CME25",
+      "nombre_proceso": "LABORATORIO - ACTUALIZACION SOFTWARE - ANUAL",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2025-07-29T07:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1047-LPU25",
+      "nombre_proceso": "Adquisicion de Software Fotogramétrico",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "3125",
+      "organismo": "Ministerio de Movilidad e Infraestructura",
+      "fecha_apertura": "2025-07-17T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2624-2032-CME25",
+      "nombre_proceso": "Servicio de capacitación en operación y pilotaje para Drone.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2624",
+      "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
+      "fecha_apertura": "2025-07-08T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2624-1868-CME25",
+      "nombre_proceso": "Servicio de capacitación en operación y pilotaje para Drone.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2624",
+      "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
+      "fecha_apertura": "2025-07-01T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "418-0742-CDI25",
+      "nombre_proceso": "INFORMATICA - DISCO RIGIDO PARA SERVIDOR",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2025-05-22T07:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-0516-LPU25",
+      "nombre_proceso": "Adquisicion de VUELO FOTOGRAMETRICO 2025",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2025-04-22T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "3181-0360-CDI25",
+      "nombre_proceso": "Servicio de Desarrollo de Mejoras en la plataforma de “Acta Digital”",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "3181",
+      "organismo": "Agencia Gubernamental de Control",
+      "fecha_apertura": "2025-04-11T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "431-0466-CME25",
+      "nombre_proceso": "SERVICIO DE REPARACION INTEGRAL DE IMPRESORAS-DEPARTAMENTO DE INFORMATICA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "431",
+      "organismo": "HTAL. BERNARDINO RIVADAVIA",
+      "fecha_apertura": "2025-03-13T10:30:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "3202-2235-LPU24",
+      "nombre_proceso": "renovación paquete de licencias, actualizaciones y garantia de la infraestructura de firewall",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "3202",
+      "organismo": "Ministerio de Seguridad",
+      "fecha_apertura": "2025-02-24T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-4266-CME24",
+      "nombre_proceso": "ADQUISICION DE GAFAS 3D FOTOGRAMETRICAS",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2024-12-13T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "440-4103-CME24",
+      "nombre_proceso": "SERVICIO DE REPARACION INTEGRAL DE PC",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "440",
+      "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
+      "fecha_apertura": "2024-12-06T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "417-2120-CDI24",
+      "nombre_proceso": "Adquisición de Insumos Descartables perteneciente a División Farmacia",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "417",
+      "organismo": "HTAL. PEDRO DE ELIZALDE",
+      "fecha_apertura": "2024-11-08T08:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-0495-CDI24",
+      "nombre_proceso": "Servicio de noticias internacionales por internet",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2024-04-22T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "7211-3157-CME23",
+      "nombre_proceso": "Adquisición de radiotransmisores",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "7211",
+      "organismo": "UPE ECOPARQUE INTERACTIVO DE LA CABA",
+      "fecha_apertura": "2023-09-26T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1061-LPU23",
+      "nombre_proceso": "renovación del mantenimiento de licencias para la solución de backup Veeam con soporte y consultoría",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2023-08-03T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "541-2135-CME23",
+      "nombre_proceso": "Cambio de cabezal y unidad selectora de tinta, ajuste, calibración y testeos de Plotter Epson Sure C",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2023-07-25T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "8618-0852-LPU23",
+      "nombre_proceso": "Adquisición de Impresoras multifunción con insumos",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2023-06-13T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "416-1481-CME23",
+      "nombre_proceso": "Reparación De Impresora -Pedido 38429 - Abastecimiento Inmediato",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
+      "fecha_apertura": "2023-05-18T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "410-1375-CME23",
+      "nombre_proceso": "P167-Discos compacto para el servicio Tomógrafo.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "410",
+      "organismo": "HTAL.TEODORO ALVAREZ",
+      "fecha_apertura": "2023-05-10T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "416-1222-CME23",
+      "nombre_proceso": "Reparación De Impresora -Pedido 38429 - Abastecimiento Inmediato",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
+      "fecha_apertura": "2023-05-08T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "412-0850-CME23",
+      "nombre_proceso": "MANTENIMIENTO DE PACS RAYOS",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "412",
+      "organismo": "HTAL. COSME ARGERICH",
+      "fecha_apertura": "2023-04-05T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-0346-CDI23",
+      "nombre_proceso": "Serv.implementacion software para validación de identidad a través del reconocimiento biométrico",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2023-03-31T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "7192-0090-CME23",
+      "nombre_proceso": "Servicios profesionales para la adquisición de plataforma informática",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2023-01-23T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-4079-CME22",
+      "nombre_proceso": "Servicio de Consultoría para el Diseño, Implementación e Infraestructura para Boti-Estaciones",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2023-01-12T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-1918-CDI22",
+      "nombre_proceso": "Mantenimiento y soporte del Sistema ArchiBa",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2023-01-04T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1531-LPU22",
+      "nombre_proceso": "Servicio de Conversaciones Asistidas y Mantenimiento Evolutivo del ecosistema de activos Chatbot BA",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2022-11-07T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "512-2353-CME22",
+      "nombre_proceso": "Licencias de utilización e implementación del software ASTOR PIAZZOLLA para Gestión Académica.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "512",
+      "organismo": "DIR. GRAL DE ENSENANZA ARTISTICA",
+      "fecha_apertura": "2022-08-12T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "414-0916-LPU22",
+      "nombre_proceso": "ADQUISICION DE TINTA PARA FOTOCODUPLICADORA RICOH PRIPORT INK DX 2430 NEGRA",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "414",
+      "organismo": "HTAL. MARIA CURIE",
+      "fecha_apertura": "2022-07-05T08:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2180-1728-CME22",
+      "nombre_proceso": "Provisión e instalación de equipamiento para el armado de una sala de videoconferencia",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "2180 – MINISTERIO DE GOBIERNO",
+      "fecha_apertura": "2022-07-01T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "112-1487-CME22",
+      "nombre_proceso": "S/ Servicio de Hosting",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "112",
+      "organismo": "CONSEJO DE LOS DERECHOS DE LAS NIÑAS, NIÑOS Y ADOLESCENTES",
+      "fecha_apertura": "2022-06-21T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "428-0565-LPU22",
+      "nombre_proceso": "Reparación Impresora Xerox",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "428",
+      "organismo": "HTAL. DE QUEMADOS",
+      "fecha_apertura": "2022-06-10T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-0270-LPU22",
+      "nombre_proceso": "Servicio de envío de SMS, en sus variantes transacción y difusión, y envío de correos electrónicos",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2022-05-05T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-0025-LPU22",
+      "nombre_proceso": "Serv. de Diseño, Provisión, Implementación y Mant. del Sistema de Emisión de Licencias de Conducir.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2022-03-07T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1185-CDI21",
+      "nombre_proceso": "Adquisición de licencias 1tempo con su correspondiente servicio de soporte técnico.",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2021-10-07T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-1280-LPU21",
+      "nombre_proceso": "Servicio de desarrollo de software para la realización de una plataforma integral normativa",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2021-09-30T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "413-2670-CME21",
+      "nombre_proceso": "impresoras etiqueteadoras de transferencia térmica",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "413",
+      "organismo": "HTAL. JOSE T. BORDA",
+      "fecha_apertura": "2021-09-27T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "413-2513-CME21",
+      "nombre_proceso": "IMPRESORAS ETIQUETEADORAS DE TRANSFERENCIA TERMICA P/LABORATORIO",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "413",
+      "organismo": "HTAL. JOSE T. BORDA",
+      "fecha_apertura": "2021-09-16T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "434-1949-CME21",
+      "nombre_proceso": "Servicio de recuperación de datos informáticos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "434",
+      "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
+      "fecha_apertura": "2021-09-13T13:30:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "435-2047-CME21",
+      "nombre_proceso": "ADQUISICION DE SOFTWARE PARA EL SERVICIO DE NEONATOLOGIA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "435",
+      "organismo": "HTAL. RAMON SARDA",
+      "fecha_apertura": "2021-08-23T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "415-1111-LPU21",
+      "nombre_proceso": "Bienes de capital",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "415",
+      "organismo": "HTAL. ODONTOLOGICO JOSE DUEÑAS",
+      "fecha_apertura": "2021-08-13T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1057-LPU21",
+      "nombre_proceso": "Serv. Implementación de Software para Validación de Identidad a través del Reconocimiento Biométrico",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2021-08-06T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1028-LPU21",
+      "nombre_proceso": "SERV. DE CONS. PARA DESARROLLO DE METODOLOGIAS PARA GESTION DE PROYECTOS DE INNOVACION DE ADMIN.PUB.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2021-07-27T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "7192-0349-CME21",
+      "nombre_proceso": "Servicio de dos (2) plotters",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2021-03-05T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "7192-0017-CME21",
+      "nombre_proceso": "Servicio de dos (2) plotters",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2021-01-15T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1678-CDI20",
+      "nombre_proceso": "Servicio de Consultoría en Enriquecimiento de Datos",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2020-11-26T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "418-1664-CDI20",
+      "nombre_proceso": "Sala de reahabilitación Intensiva post Covid-19. Insumos vs para su funcionamiento. 418-6066-SG20",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2020-11-26T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "413-2407-CME20",
+      "nombre_proceso": "provision de computadoras",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "413",
+      "organismo": "HTAL. JOSE T. BORDA",
+      "fecha_apertura": "2020-10-29T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1088-LPU20",
+      "nombre_proceso": "Soporte y extensión de garantía del equipamiento DELL",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2020-10-27T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "413-2265-CME20",
+      "nombre_proceso": "PROVISIÓN DE COMPUTADORAS",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "413",
+      "organismo": "HTAL. JOSE T. BORDA",
+      "fecha_apertura": "2020-10-14T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0514-LPU20",
+      "nombre_proceso": "Contratación de un servicio de puesta en marcha y mantenimiento de una red de comunicaciones físicas",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2020-08-03T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "401-0511-CDI20",
+      "nombre_proceso": "Adq. de Impresoras térmicas de pulseras para identificación de pacientes e insumos p/efectores MSGC",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "401",
+      "organismo": "MINISTERIO DE SALUD",
+      "fecha_apertura": "2020-05-12T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0030-LPU20",
+      "nombre_proceso": "Contratación del servicio integral de telecomunicaciones para asistencia a distancia.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2020-04-30T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0004-LPU20",
+      "nombre_proceso": "Alquiler de Fotocopiadoras e Impresoras con destino a las dependencias de la Policía de la Ciudad",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2020-02-27T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "401-1892-LPU19",
+      "nombre_proceso": "Provisión, Instalación y puesta en servicio de puestos de red para diversos efectores del MSGC.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "401",
+      "organismo": "MINISTERIO DE SALUD",
+      "fecha_apertura": "2020-01-16T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "412-4112-CME19",
+      "nombre_proceso": "SERVICIO DE INSTALACION Y SOPORTE TECNICO DE SOFTWARE.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "412",
+      "organismo": "HTAL. COSME ARGERICH",
+      "fecha_apertura": "2019-12-27T08:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "545-3881-CME19",
+      "nombre_proceso": "Pedido de Electrónica CAC",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "545",
+      "organismo": "Ministerio de Educación e Innovación",
+      "fecha_apertura": "2019-12-13T09:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "416-4067-CME19",
+      "nombre_proceso": "SOFTWARE DESARROLLO A MEDIDA - PED.35336 -COMPRA MENOR - PLAN SUMAR",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
+      "fecha_apertura": "2019-12-06T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-3854-CME19",
+      "nombre_proceso": "Adquisición de Scanner para diapositivas",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2019-11-25T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1432-LPU19",
+      "nombre_proceso": "Contratación de un servicio integral de telecomunicaciones para asistencia a distancia",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2019-11-15T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-3721-CME19",
+      "nombre_proceso": "Adquisición de Scanner para diapositivas.-",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2019-11-08T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1497-LPU19",
+      "nombre_proceso": "servicio mant. preventivo y correctivo, renovación de lic. y adq. de equipos de seguridad perimetral",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2019-11-08T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "541-3167-CME19",
+      "nombre_proceso": "SERVICIO DE REPARACIÓN DE PLOTTER EPSON.-",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2019-10-15T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-1599-CDI19",
+      "nombre_proceso": "ADQ. SOFTWARE MAGNETT TOOLS Y SERV. D MANT. PREVENTIVO Y CORRECTIVO DE SOFTWARE",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2019-10-11T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-3075-CME19",
+      "nombre_proceso": "Servicio de provisión e instalación de hardware con destino a Efectores de Salud.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2019-09-23T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-2885-CME19",
+      "nombre_proceso": "Adquisición de insumos informáticos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2019-09-11T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-1162-CDI19",
+      "nombre_proceso": "servicio de relevamiento actualización y soporte del sitio web",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2019-07-25T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-1013-CDI19",
+      "nombre_proceso": "Contratación Directa - Adquisición de Software - Magnett Tools",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2019-07-10T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0735-LPU19",
+      "nombre_proceso": "Servicio de mantenimiento preventivo y correctivo de equipamiento de seguridad perimetral de red",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2019-06-07T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "8056-0791-LPU19",
+      "nombre_proceso": "Adquisición de suscripciones Dynatrace como herramienta de monitoreo en tiempo real de aplicaciones",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2019-05-20T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-0458-CDI19",
+      "nombre_proceso": "Servicio de noticias por internet.",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2019-04-26T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-0419-CME19",
+      "nombre_proceso": "CONT. MENOR CANALIZACIÓN DE RED DE DATOS Y PUESTA DE TENSIÓN",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2019-03-07T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-3370-CME18",
+      "nombre_proceso": "CONT. MENOR OBRA CABLEADO, CANALIZACION DE RED DE DATOS Y PUESTA EN TENSION",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2018-11-29T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-2756-CME18",
+      "nombre_proceso": "Servicio de Mensajería de Texto Gratuito Bidireccional para el Ciudadano.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2018-09-28T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1018-LPU18",
+      "nombre_proceso": "Hardware e Instalación de Equipamento con destino a Efectores de Salud",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2018-08-06T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1047-LPU18",
+      "nombre_proceso": "Adquisición de equipamiento de Networking.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2018-08-03T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "8056-0646-CDI18",
+      "nombre_proceso": "Provision de equipos de seguridad de core Firewall",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2018-06-27T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1727-CME18",
+      "nombre_proceso": "Adquisición de Computadoras, Notebooks y Tablets",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2018-06-22T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "541-0866-CME18",
+      "nombre_proceso": "ACTUALIZACIÓN DE SISTEMA OPERATIVO EN SWITCH DE ACCESO",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2018-04-20T15:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "381-0301-CDI18",
+      "nombre_proceso": "CONT. SERV. PROF. ESP. EN DESARROLLO TECNOLOGICO P/ PLATAFORMA PARCELA DIGITAL INTELIGENTE (PDI)",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "381",
+      "organismo": "MIN DESARROLLO URBANO Y TRANSPORTE",
+      "fecha_apertura": "2018-04-16T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0051-LPU18",
+      "nombre_proceso": "Sistema Complementario de Administración de Haberes del Personal de la Policía de la Ciudad",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2018-02-01T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "8056-1803-LPU17",
+      "nombre_proceso": "Provisión, instalación de un sistema de monitoreo y gestión para el Centros de Procesamiento",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2017-12-20T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "9268-3469-CME17",
+      "nombre_proceso": "es la Adquisición de seis modems inalámbricos y provisión de un servicio de internet para los mismos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "9268",
+      "organismo": "ENTE DE TURISMO",
+      "fecha_apertura": "2017-12-07T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-1553-LPU17",
+      "nombre_proceso": "Adquisición de Monitores Digitales con equipamiento informático y accesorios.-",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2017-11-09T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "282-0807-LPU17",
+      "nombre_proceso": "SERVICIO DE INTERNET REDUNDANTE",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "282",
+      "organismo": "MINISTERIO DE JUSTICIA Y SEGURIDAD",
+      "fecha_apertura": "2017-06-13T16:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "410-0746-CME17",
+      "nombre_proceso": "P91- Servicios Técnicos y Profesionales - Rayos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "410",
+      "organismo": "HTAL.TEODORO ALVAREZ",
+      "fecha_apertura": "2017-04-07T10:30:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "410-0611-CME17",
+      "nombre_proceso": "P91- Servicios Técnicos y Profesionales - Rayos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "410",
+      "organismo": "HTAL.TEODORO ALVAREZ",
+      "fecha_apertura": "2017-03-29T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-1557-LPU16",
+      "nombre_proceso": "ADQUISICIÓN DE EQUIPAMIENTO INFORMATICO",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2017-02-09T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "401-2886-CME16",
+      "nombre_proceso": "Prov, inst y puesta en servicio de cableado integral para el Instituto de Trasplante de la CABA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "401",
+      "organismo": "MINISTERIO DE SALUD",
+      "fecha_apertura": "2016-11-30T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "401-1291-LPU16",
+      "nombre_proceso": "Adquisición de bienes de informática y accesorios para equipo de comunicaciónpara el MSGC",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "401",
+      "organismo": "MINISTERIO DE SALUD",
+      "fecha_apertura": "2016-11-10T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "282-2022-CME16",
+      "nombre_proceso": "Elementos Varios - DGEYTI",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "282",
+      "organismo": "MINISTERIO DE JUSTICIA Y SEGURIDAD",
+      "fecha_apertura": "2016-10-14T16:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "2051-2132-CME16",
+      "nombre_proceso": "Adquisición de Insumos Informaticos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2016-09-05T16:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "101-1770-CME16",
+      "nombre_proceso": "EQUIPAMIENTO INFORMÁTICO PORTÁTIL.-",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "101",
+      "organismo": "SECRETARIA LEGAL Y TECNICA",
+      "fecha_apertura": "2016-08-16T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "282-0385-CDI16",
+      "nombre_proceso": "SERVICIO DE INTERNET - TELECENTRO.",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "282",
+      "organismo": "MINISTERIO DE JUSTICIA Y SEGURIDAD",
+      "fecha_apertura": "2016-08-01T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0173-LPU16",
+      "nombre_proceso": "SERVICIO TÉCNICO PARA SISTEMA DE BACK UP TS-3310",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2016-04-29T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1396-CDI15",
+      "nombre_proceso": "Actualización y Mejora del Sistema de Asignación de Turnos - Sede Comuna Nº 7",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-10-09T15:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "300-2039-CME15",
+      "nombre_proceso": "Diseño, Desarrollo y/o Provisión e Implementación de Sistema - Seguimiento de obras adjudicacdas",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "300",
+      "organismo": "MINISTERIO DE DESARROLLO URBANO",
+      "fecha_apertura": "2015-09-22T10:30:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "401-1987-CME15",
+      "nombre_proceso": "Adquisición de una red de almacenamiento de datos con destino al Ministerio de Salud del GCBA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "401",
+      "organismo": "MINISTERIO DE SALUD",
+      "fecha_apertura": "2015-09-09T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "401-1779-CME15",
+      "nombre_proceso": "Adquisición de una red de almacenamiento de datos con destino al Ministerio de Salud del GCBA.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "401",
+      "organismo": "MINISTERIO DE SALUD",
+      "fecha_apertura": "2015-08-24T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1284-CDI15",
+      "nombre_proceso": "\"Simulador de Gobierno\"",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-08-21T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1223-CDI15",
+      "nombre_proceso": "Reconstrucción del Perfil de la plataforma BA Participación Ciudadana en Obras\"",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-07-31T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1221-CDI15",
+      "nombre_proceso": "“Servicio de actualización y mejora del Sistema de Asignación de Turnos para la Sede Comunal N° 7”",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-07-30T16:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1213-CDI15",
+      "nombre_proceso": "Simulador de Gobierno",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-07-30T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1045-CDI15",
+      "nombre_proceso": "Reconstrucción del perfil de la plataforma \"BA Participación Ciudadana en Obras\"",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-07-16T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-0317-CDI15",
+      "nombre_proceso": "\"Servicio de Comunicación Web en Facebook y Twitter\"",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-06-05T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-1112-CME15",
+      "nombre_proceso": "\"Adquisición y emplazamiento de luminarias con estrellas de granito\"",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-06-03T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "424-0721-CME15",
+      "nombre_proceso": "SERVICIO DE REPARACION INTEGRAL DE IMPRESORA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "424",
+      "organismo": "HTAL.DE ODONTOLOGIA",
+      "fecha_apertura": "2015-04-22T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-0354-CME15",
+      "nombre_proceso": "\"Adquisición y emplazamiento de luminarias con estrellas de granito\"",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-03-20T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "2204-0120-CDI15",
+      "nombre_proceso": "Actualización y mejora del Sistema de Asignación de Turnos para la Sede de la Comuna 7",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-03-09T15:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-0065-CDI15",
+      "nombre_proceso": "\"Servicio de comunicación web en Facebook\"",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2015-02-24T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "300-1011-LPU14",
+      "nombre_proceso": "Servicio de implementar un Sistema de Trazabilidad y seguridad de archarchivos con tecnología RFID",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "300",
+      "organismo": "MINISTERIO DE DESARROLLO URBANO",
+      "fecha_apertura": "2014-12-18T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2051-0991-LPU14",
+      "nombre_proceso": "Servicio de desarrollo de software para dispositivos móviles UPECCYCC",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2014-12-11T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "425-0381-CME14",
+      "nombre_proceso": "Adquisicion de Electrodomesticos y Mobiliario p/Ctro. Obstetrico y Guardia",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "425",
+      "organismo": "HTAL. JOSE M. PENNA",
+      "fecha_apertura": "2014-11-26T10:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2900-0881-LPU14",
+      "nombre_proceso": "ADQUISICIÓN DE DE CREDENCIALES DE IDENTIFICACIÓN PARA POLICÍA METROPOLITANA",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2900",
+      "organismo": "PLAN DE SEGURIDAD PUBLICA",
+      "fecha_apertura": "2014-11-19T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-0196-CDI14",
+      "nombre_proceso": "Provisión, instalación y puesta en marcha de 2 tótems de impresión de resultados de laboratorios",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2014-11-04T14:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "282-0192-CME14",
+      "nombre_proceso": "Servidor de aplicaciones",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "282",
+      "organismo": "MINISTERIO DE JUSTICIA Y SEGURIDAD",
+      "fecha_apertura": "2014-10-06T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "112-0081-CDI14",
+      "nombre_proceso": "Servicio de reparación de impresoras",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "112",
+      "organismo": "CONSEJO DE LOS DERECHOS DE LAS NIÑAS, NIÑOS Y ADOLESCENTES",
+      "fecha_apertura": "2014-09-09T13:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-0134-CME14",
+      "nombre_proceso": "\"Provisión de tótems de impresión\"",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2014-09-09T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "2204-0529-LPU14",
+      "nombre_proceso": "Sistema de Asignación de turnos para Hospitales Monovalentes",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Dejado Sin Efecto",
+      "unidad_ejecutora_codigo": "2204",
+      "organismo": "Secretaria de Gestion Comunal y Atencion Ciudadana",
+      "fecha_apertura": "2014-07-07T12:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "8736-0067-CME14",
+      "nombre_proceso": "Adquisicion Insumos Informaticos",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "8736",
+      "organismo": "ENTE DE HIGIENE URBANA",
+      "fecha_apertura": "2014-06-17T11:00:00-03:00"
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    },
+    {
+      "estado_buscado": "Dejado Sin Efecto",
+      "numero_proceso": "1",
+      "nombre_proceso": "2",
+      "tipo_proceso": "3",
+      "estado": "5",
+      "unidad_ejecutora_codigo": null,
+      "organismo": "6",
+      "fecha_apertura": null
+    }
+  ]
+}

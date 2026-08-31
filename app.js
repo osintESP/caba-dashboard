@@ -1,4 +1,4 @@
-const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null,normativeImpact:null};
+const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null,normativeImpact:null,pliegosCaidos:null};
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-AR');
 const fmtCurrency=new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
@@ -7,7 +7,7 @@ let normsPage=1,procPage=1;
 const dtf=new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'short',timeStyle:'medium'});
 async function fetchJson(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 async function fetchOptional(path){try{return await fetchJson(path)}catch(e){console.warn(`optional dataset unavailable: ${path}`,e);return null}}
-async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
+async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json'),fetchOptional('data/bac_pliegos_caidos.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
 function fillSelect(el,values){for(const v of values){const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o)}}
 function populateFilters(){fillSelect($('filter-org'),[...new Set(state.norms.map(x=>x.organismo).filter(Boolean))].sort());fillSelect($('filter-type'),[...new Set(state.norms.map(x=>x.tipo).filter(Boolean))].sort());fillSelect($('filter-category'),[...new Set(state.procurements.map(x=>x.categoria).filter(Boolean))].sort())}
 function filteredNorms(){const q=$('filter-search').value.trim().toLowerCase(),org=$('filter-org').value,type=$('filter-type').value;return state.norms.filter(n=>{const hay=`${n.nombre||''} ${n.sumario||''} ${n.organismo||''} ${n.tipo||''}`.toLowerCase();return(!q||hay.includes(q))&&(!org||n.organismo===org)&&(!type||n.tipo===type)}).sort((a,b)=>(Number(b.id_norma)||0)-(Number(a.id_norma)||0))}
@@ -24,16 +24,19 @@ function normalizeOrgName(name){return String(name||'').normalize('NFKD').replac
 function renderMetrics(){const latest=[...state.editions].sort((a,b)=>Number(b.numero_boletin)-Number(a.numero_boletin))[0];$('metric-bulletin').textContent=latest?`N.º ${latest.numero_boletin}`:'—';$('metric-bulletin-date').textContent=latest?.fecha_publicacion||'—';$('metric-norms').textContent=fmt.format(state.stats?.norms??state.norms.length);$('metric-procurements').textContent=fmt.format(state.stats?.procurements??uniqueProcessCount(state.procurements));$('metric-editions').textContent=fmt.format(state.stats?.editions??state.editions.length);$('data-generated-at').textContent=state.stats?.generated_at?`Datos generados ${dtf.format(new Date(state.stats.generated_at))} ART`:'histórico disponible';const syncAt=state.sync?.public_synced_at||state.sync?.published_at;$('dashboard-sync-at').textContent=syncAt?`Dashboard sincronizado ${dtf.format(new Date(syncAt))} ART`:'Dashboard sin sincronización automática registrada'}
 function renderIntelligence(){const s=state.intelligence?.summary;if(!s){$('intel-status').textContent='sin sincronizar';$('metric-tech').textContent='—';$('metric-cyber').textContent='—';$('intel-tags').innerHTML='<div class="empty">La capa Intelligence todavía no fue publicada en el repositorio público.</div>';return}$('intel-status').textContent='activo';$('metric-tech').textContent=fmt.format(s.technology_related||0);$('metric-cyber').textContent=fmt.format(s.cybersecurity_related||0);const rows=Object.entries(s.tag_counts||{}).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('intel-tags').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin etiquetas tecnológicas.</div>'}
 function renderRankRows(container,rows){container.innerHTML=rows.map(([name,value,badge],i)=>`<div class="rank-row"><span class="rank-index">${i+1}</span><span class="rank-name">${esc(name)}${badge||''}</span><span class="rank-value">${value}</span></div>`).join('')||'<div class="empty">Sin resultados.</div>'}
-const METHOD_LABELS={direct:'contratación directa',limited:'contratación limitada',open:'licitación pública'};
-function failedTenderRecordHtml(f){
-  const statusLabel=f.status==='cancelled'?'Cancelada':'Fracasada';
-  const methodLabel=METHOD_LABELS[f.method]||f.method||'método sin especificar';
-  const fecha=f.date?dtf.format(new Date(f.date)):'Fecha no disponible';
-  const pills=[f.organismo,methodLabel,f.tender_id].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);
-  return `<article class="record"><div><h3 class="record-title">${esc(f.title||f.tender_id||'Proceso sin título')} <span class="badge audit-flag">${esc(statusLabel)}</span></h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Fecha del acto: ${esc(fecha)} ART.</p></div></article>`;
+function pliegoCaidoRecordHtml(p){
+  const fecha=p.fecha_apertura?dtf.format(new Date(p.fecha_apertura)):'Fecha no disponible';
+  const pills=[p.organismo,p.tipo_proceso,p.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);
+  return `<article class="record"><div><h3 class="record-title">${esc(p.nombre_proceso||p.numero_proceso||'Proceso sin título')} <span class="badge audit-flag">${esc(p.estado||'—')}</span></h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Fecha de apertura: ${esc(fecha)} ART.</p></div></article>`;
+}
+function renderPliegosCaidos(){
+  const data=state.pliegosCaidos,el=$('bac-failed-tenders'),countEl=$('novedad-failed-count');
+  const items=data?.pliegos||[];
+  if(el)el.innerHTML=items.length?items.slice(0,15).map(pliegoCaidoRecordHtml).join(''):'<div class="empty">Sin pliegos caídos detectados.</div>';
+  if(countEl)countEl.textContent=`${fmt.format(items.length)} detectado${items.length===1?'':'s'}`;
 }
 function renderBAC(data){
-  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner'),failedEl=$('bac-failed-tenders');
+  const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner');
   const panel=statusEl?.closest('.panel')||statusEl?.parentElement;
   if(!data){if(panel)panel.style.display='none';return}
   if(panel)panel.style.display='';
@@ -52,7 +55,6 @@ function renderBAC(data){
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
     ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
     ${audit.repeat_winner_across_organismos?.note?`<div class="bac-note">${esc(audit.repeat_winner_across_organismos.note)}</div>`:''}
-    ${audit.failed_or_cancelled_tenders?.note?`<div class="bac-note">${esc(audit.failed_or_cancelled_tenders.note)}</div>`:''}
   `;
   if(rankingEl)renderRankRows(rankingEl,(data.vendor_ranking_tech||[]).slice(0,8).map(v=>[v.name,fmtCurrency.format(v.amount_ars)]));
   if(concEl){
@@ -75,12 +77,6 @@ function renderBAC(data){
       return[f.vendor,fmtCurrency.format(f.total_amount_ars||0),` <span class="badge audit-flag" title="${attr(title)}">${f.organismos_count} organismos en ${f.window_days}d</span>`];
     });
     renderRankRows(repeatEl,rows);
-  }
-  if(failedEl){
-    const flags=audit.failed_or_cancelled_tenders?.tenders||[];
-    failedEl.innerHTML=flags.length?flags.map(failedTenderRecordHtml).join(''):'<div class="empty">Sin pliegos caídos detectados.</div>';
-    const failedCountEl=$('novedad-failed-count');
-    if(failedCountEl)failedCountEl.textContent=`${fmt.format(flags.length)} detectado${flags.length===1?'':'s'}`;
   }
 }
 function renderSyncNotice(){const missing=[];if(!state.intelligence)missing.push('Intelligence');if(!state.sync)missing.push('registro de sincronización');if(missing.length){$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Datos base operativos. Pendiente de sincronización pública: ${esc(missing.join(' + '))}.`}else{const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';$('sync-notice').innerHTML=`<strong>Dashboard v1 mejorada.</strong> Boletín e Intelligence sincronizados.${bulletin}`}}
@@ -145,7 +141,7 @@ function renderLists(){
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
+function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
