@@ -24,6 +24,14 @@ function normalizeOrgName(name){return String(name||'').normalize('NFKD').replac
 function renderMetrics(){const latest=[...state.editions].sort((a,b)=>Number(b.numero_boletin)-Number(a.numero_boletin))[0];$('metric-bulletin').textContent=latest?`N.º ${latest.numero_boletin}`:'—';$('metric-bulletin-date').textContent=latest?.fecha_publicacion||'—';$('metric-norms').textContent=fmt.format(state.stats?.norms??state.norms.length);$('metric-procurements').textContent=fmt.format(state.stats?.procurements??uniqueProcessCount(state.procurements));$('metric-editions').textContent=fmt.format(state.stats?.editions??state.editions.length);$('data-generated-at').textContent=state.stats?.generated_at?`Datos generados ${dtf.format(new Date(state.stats.generated_at))} ART`:'histórico disponible';const syncAt=state.sync?.public_synced_at||state.sync?.published_at;$('dashboard-sync-at').textContent=syncAt?`Dashboard sincronizado ${dtf.format(new Date(syncAt))} ART`:'Dashboard sin sincronización automática registrada'}
 function renderIntelligence(){const s=state.intelligence?.summary;if(!s){$('intel-status').textContent='sin sincronizar';$('metric-tech').textContent='—';$('metric-cyber').textContent='—';$('intel-tags').innerHTML='<div class="empty">La capa Intelligence todavía no fue publicada en el repositorio público.</div>';return}$('intel-status').textContent='activo';$('metric-tech').textContent=fmt.format(s.technology_related||0);$('metric-cyber').textContent=fmt.format(s.cybersecurity_related||0);const rows=Object.entries(s.tag_counts||{}).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('intel-tags').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin etiquetas tecnológicas.</div>'}
 function renderRankRows(container,rows){container.innerHTML=rows.map(([name,value,badge],i)=>`<div class="rank-row"><span class="rank-index">${i+1}</span><span class="rank-name">${esc(name)}${badge||''}</span><span class="rank-value">${value}</span></div>`).join('')||'<div class="empty">Sin resultados.</div>'}
+const METHOD_LABELS={direct:'contratación directa',limited:'contratación limitada',open:'licitación pública'};
+function failedTenderRecordHtml(f){
+  const statusLabel=f.status==='cancelled'?'Cancelada':'Fracasada';
+  const methodLabel=METHOD_LABELS[f.method]||f.method||'método sin especificar';
+  const fecha=f.date?dtf.format(new Date(f.date)):'Fecha no disponible';
+  const pills=[f.organismo,methodLabel,f.tender_id].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);
+  return `<article class="record"><div><h3 class="record-title">${esc(f.title||f.tender_id||'Proceso sin título')} <span class="badge audit-flag">${esc(statusLabel)}</span></h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Fecha del acto: ${esc(fecha)} ART.</p></div></article>`;
+}
 function renderBAC(data){
   const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner'),failedEl=$('bac-failed-tenders');
   const panel=statusEl?.closest('.panel')||statusEl?.parentElement;
@@ -70,11 +78,7 @@ function renderBAC(data){
   }
   if(failedEl){
     const flags=audit.failed_or_cancelled_tenders?.tenders||[];
-    const rows=flags.map(f=>{
-      const statusLabel=f.status==='cancelled'?'Cancelada':'Fracasada';
-      return[f.title||f.tender_id,f.organismo||'—',` <span class="badge audit-flag" title="${attr(f.tender_id||'')}">${esc(statusLabel)}</span>`];
-    });
-    renderRankRows(failedEl,rows);
+    failedEl.innerHTML=flags.length?flags.map(failedTenderRecordHtml).join(''):'<div class="empty">Sin pliegos caídos detectados.</div>';
     const failedCountEl=$('novedad-failed-count');
     if(failedCountEl)failedCountEl.textContent=`${fmt.format(flags.length)} detectado${flags.length===1?'':'s'}`;
   }
