@@ -90,6 +90,74 @@ class BuildFlaggedNormsTest(unittest.TestCase):
         self.assertIn('ciberseguridad', flagged[0]['topics'])
         self.assertIn('plataforma_o_sistema', flagged[0]['topics'])
 
+    def test_includes_price_redetermination_field(self):
+        norms = [self._norm(5, 'Jefatura de Gabinete de Ministros', 'Disposición N° 56/DGIASINF/26',
+                             sumario='Aprueba la Novena Actualización de Precios de la Orden de Compra N° 8056-0106-OCA25')]
+        flagged = ni.build_flagged_norms(norms)
+        self.assertEqual(flagged[0]['price_redetermination'],
+                          {'orden_de_compra': '8056-0106-OCA25', 'ordinal': 9, 'ordinal_word': 'Novena'})
+
+    def test_price_redetermination_is_none_when_not_mentioned(self):
+        norms = [self._norm(6, 'Jefatura de Gabinete de Ministros', 'Disposición N° 1/ASINF/26',
+                             sumario='Dar de baja bienes inventariados')]
+        flagged = ni.build_flagged_norms(norms)
+        self.assertIsNone(flagged[0]['price_redetermination'])
+
+
+class ExtractPriceRedeterminationTest(unittest.TestCase):
+    """Las disposiciones de actualización de precios de Orden de Compra declaran el ordinal
+    en texto plano (verificado contra normative_impact.json real) -eso es lo que hace viable
+    esta señal sin reconstruir un historial de montos, que no existe en ningún dataset."""
+
+    def test_parses_real_example(self):
+        result = ni.extract_price_redetermination(
+            'Aprueba la Cuarta Actualización de Precios de la Orden de Compra N° 8056-0311-OCA25')
+        self.assertEqual(result, {'orden_de_compra': '8056-0311-OCA25', 'ordinal': 4, 'ordinal_word': 'Cuarta'})
+
+    def test_first_ordinal_parses(self):
+        result = ni.extract_price_redetermination(
+            'Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0524-OCA25')
+        self.assertEqual(result['ordinal'], 1)
+
+    def test_returns_none_when_no_match(self):
+        self.assertIsNone(ni.extract_price_redetermination('Dar de baja bienes inventariados'))
+        self.assertIsNone(ni.extract_price_redetermination(None))
+        self.assertIsNone(ni.extract_price_redetermination(''))
+
+    def test_returns_none_for_unrecognized_ordinal_word(self):
+        # ordinales compuestos (ej. "Décimo Primera") no se parsean -documentado como
+        # limitación conocida, no un bug-.
+        self.assertIsNone(ni.extract_price_redetermination(
+            'Aprueba la Décimo Primera Actualización de Precios de la Orden de Compra N° 8056-0001-OCA25'))
+
+
+class BuildPriceRedeterminationFlagsTest(unittest.TestCase):
+    def _flagged(self, id_norma, ordinal, ordinal_word, orden='8056-0001-OCA25'):
+        return {'id_norma': id_norma, 'numero_boletin': 7000, 'fecha_publicacion': '01/01/2026',
+                'nombre': f'Disposición N° {id_norma}/DGISIS/26', 'sigla_unidad': 'DGISIS',
+                'url_norma': f'http://x/{id_norma}',
+                'price_redetermination': {'orden_de_compra': orden, 'ordinal': ordinal, 'ordinal_word': ordinal_word}}
+
+    def test_flags_at_or_above_threshold(self):
+        flagged = [self._flagged(1, 3, 'Tercera')]
+        flags = ni.build_price_redetermination_flags(flagged)
+        self.assertEqual(len(flags), 1)
+        self.assertEqual(flags[0]['ordinal'], 3)
+        self.assertEqual(flags[0]['orden_de_compra'], '8056-0001-OCA25')
+
+    def test_below_threshold_excluded(self):
+        flagged = [self._flagged(1, 2, 'Segunda')]
+        self.assertEqual(ni.build_price_redetermination_flags(flagged), [])
+
+    def test_norms_without_price_redetermination_excluded(self):
+        flagged = [{**self._flagged(1, 3, 'Tercera'), 'price_redetermination': None}]
+        self.assertEqual(ni.build_price_redetermination_flags(flagged), [])
+
+    def test_sorted_by_ordinal_descending(self):
+        flagged = [self._flagged(1, 3, 'Tercera'), self._flagged(2, 9, 'Novena')]
+        flags = ni.build_price_redetermination_flags(flagged)
+        self.assertEqual([f['ordinal'] for f in flags], [9, 3])
+
 
 if __name__ == '__main__':
     unittest.main()

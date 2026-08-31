@@ -113,16 +113,20 @@ function renderAperturas(){
   if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas de tecnología publicadas.</div>';
 }
 function normativeImpactRecordHtml(n){const pills=[n.sigla_unidad,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const topicPills=(n.topics||[]).map(t=>`<span class="meta-pill category">${esc(t.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}</h3><div class="record-meta">${topicPills.join('')}${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}
+function priceRedeterminationRecordHtml(f){const pills=[f.sigla_unidad,`Orden de Compra ${f.orden_de_compra}`,`Boletín ${f.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const href=safeHref(f.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(f.nombre||'Disposición')} <span class="badge audit-flag">${esc(f.ordinal_word)} actualización</span></h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Redeterminación N.º ${f.ordinal} sobre la misma Orden de Compra.</p></div>${link}</article>`}
 function renderNormativeImpact(){
-  const data=state.normativeImpact,statusEl=$('normative-impact-status'),summaryEl=$('normative-impact-summary'),listEl=$('normative-impact-list');
-  if(!data){if(statusEl)statusEl.textContent='sin sincronizar';if(summaryEl)summaryEl.innerHTML='<div class="empty">Impacto normativo en sistemas todavía no fue publicado.</div>';if(listEl)listEl.innerHTML='';return}
+  const data=state.normativeImpact,statusEl=$('normative-impact-status'),summaryEl=$('normative-impact-summary'),listEl=$('normative-impact-list'),priceEl=$('price-redetermination-list');
+  if(!data){if(statusEl)statusEl.textContent='sin sincronizar';if(summaryEl)summaryEl.innerHTML='<div class="empty">Impacto normativo en sistemas todavía no fue publicado.</div>';if(listEl)listEl.innerHTML='';if(priceEl)priceEl.innerHTML='';return}
   if(statusEl)statusEl.textContent='activo';
-  const norms=data.norms||[],s=data.summary||{};
+  const norms=data.norms||[],s=data.summary||{},priceFlags=data.price_redeterminations?.flags||[];
   const bySigla=Object.entries(s.by_sigla||{}).map(([k,v])=>`${k}: ${v}`).join(' · ');
-  if(summaryEl)summaryEl.innerHTML=`<div>${fmt.format(s.total_flagged||0)} normas de unidades de sistemas/transformación digital detectadas (${esc(bySigla||'—')})</div>${data.note?`<div class="bac-note">${esc(data.note)}</div>`:''}`;
+  if(summaryEl)summaryEl.innerHTML=`<div>${fmt.format(s.total_flagged||0)} normas de unidades de sistemas/transformación digital detectadas (${esc(bySigla||'—')})</div>${data.note?`<div class="bac-note">${esc(data.note)}</div>`:''}${data.price_redeterminations?.note?`<div class="bac-note">${esc(data.price_redeterminations.note)}</div>`:''}`;
+  if(priceEl)priceEl.innerHTML=priceFlags.length?priceFlags.map(priceRedeterminationRecordHtml).join(''):'<div class="empty">Sin redeterminaciones reiteradas detectadas.</div>';
   if(listEl)listEl.innerHTML=norms.length?norms.slice(0,25).map(normativeImpactRecordHtml).join(''):'<div class="empty">Sin normas detectadas.</div>';
   const normativeCountEl=$('novedad-normative-count');
   if(normativeCountEl)normativeCountEl.textContent=`${fmt.format(norms.length)} detectada${norms.length===1?'':'s'}`;
+  const priceCountEl=$('novedad-price-redetermination-count');
+  if(priceCountEl)priceCountEl.textContent=`${fmt.format(priceFlags.length)} detectada${priceFlags.length===1?'':'s'}`;
 }
 function procesoGroupHtml(group){const[main,...related]=group;
   // El acto principal (normalmente el "Llamado") no siempre es el que cita el número de

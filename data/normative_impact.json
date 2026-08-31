@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": "norms.json",
   "note": "Normas de Jefatura de Gabinete de Ministros publicadas por unidades de sistemas o transformación digital de la Ciudad (Secretaría de Innovación y Transformación Digital / Agencia de Sistemas de Información y direcciones asociadas), identificadas por la sigla embebida en el número de acto. Es una señal de que la norma PUEDE afectar circuitos digitales (GDE, TAD, ciberseguridad, interoperabilidad, sistemas) — no confirma el impacto real ni identifica qué procedimiento puntual modifica, porque sólo se analiza título y sumario del Boletín, no el cuerpo completo de la resolución (considerandos/articulado). Es un disparador para revisión manual, no una conclusión automática.",
   "siglas_monitoreadas": [
@@ -21,8 +21,10 @@
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 8
-    }
+      "plataforma_o_sistema": 8,
+      "redeterminacion_precios": 5
+    },
+    "price_redeterminations_flagged": 3
   },
   "norms": [
     {
@@ -34,6 +36,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270897"
     },
     {
@@ -45,6 +48,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270716"
     },
     {
@@ -56,6 +60,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270895"
     },
     {
@@ -66,7 +71,14 @@
       "sumario": "Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0524-OCA25",
       "tipo": "Disposición",
       "sigla_unidad": "DGISIS",
-      "topics": [],
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0524-OCA25",
+        "ordinal": 1,
+        "ordinal_word": "Primera"
+      },
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270714"
     },
     {
@@ -78,6 +90,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270715"
     },
     {
@@ -89,6 +102,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGISIS",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268487"
     },
     {
@@ -100,6 +114,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGISIS",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268234"
     },
     {
@@ -111,6 +126,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268235"
     },
     {
@@ -122,6 +138,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268149"
     },
     {
@@ -133,6 +150,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268148"
     },
     {
@@ -146,6 +164,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5266046"
     },
     {
@@ -156,7 +175,14 @@
       "sumario": "Aprueba la Cuarta Actualización de Precios de la Orden de Compra N° 8056-0311-OCA25",
       "tipo": "Disposición",
       "sigla_unidad": "DGISIS",
-      "topics": [],
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0311-OCA25",
+        "ordinal": 4,
+        "ordinal_word": "Cuarta"
+      },
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5263071"
     },
     {
@@ -168,6 +194,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5257906"
     },
     {
@@ -179,6 +206,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255637"
     },
     {
@@ -190,6 +218,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5260185"
     },
     {
@@ -201,6 +230,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5253046"
     },
     {
@@ -212,6 +242,7 @@
       "tipo": "Contratación Menor",
       "sigla_unidad": "SECITD",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5253047"
     },
     {
@@ -223,6 +254,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGTALINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255444"
     },
     {
@@ -233,7 +265,14 @@
       "sumario": "Aprueba la Novena Actualización de Precios de la Orden de Compra N° 8056-0106-OCA25",
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
-      "topics": [],
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0106-OCA25",
+        "ordinal": 9,
+        "ordinal_word": "Novena"
+      },
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255443"
     },
     {
@@ -244,7 +283,14 @@
       "sumario": "Aprueba la Cuarta Actualización de Precios de la Orden de Compra N° 8056-0200-OCA25",
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
-      "topics": [],
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0200-OCA25",
+        "ordinal": 4,
+        "ordinal_word": "Cuarta"
+      },
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255442"
     },
     {
@@ -256,6 +302,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255441"
     },
     {
@@ -267,6 +314,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "SECITD",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252860"
     },
     {
@@ -278,6 +326,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "SECITD",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252859"
     },
     {
@@ -289,6 +338,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "SECITD",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5252858"
     },
     {
@@ -300,6 +350,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248630"
     },
     {
@@ -313,6 +364,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248631"
     },
     {
@@ -324,6 +376,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5246585"
     },
     {
@@ -335,6 +388,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGTALINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5243840"
     },
     {
@@ -346,6 +400,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "SECITD",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241093"
     },
     {
@@ -357,6 +412,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGGEDOC",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238992"
     },
     {
@@ -368,6 +424,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5243839"
     },
     {
@@ -379,6 +436,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241092"
     },
     {
@@ -390,6 +448,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241091"
     },
     {
@@ -401,6 +460,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241090"
     },
     {
@@ -414,6 +474,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5239180"
     },
     {
@@ -427,6 +488,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238995"
     },
     {
@@ -438,6 +500,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241374"
     },
     {
@@ -449,6 +512,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "SECITD",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236627"
     },
     {
@@ -460,6 +524,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241204"
     },
     {
@@ -471,6 +536,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238996"
     },
     {
@@ -482,6 +548,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGIASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241203"
     },
     {
@@ -493,6 +560,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGTALINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241205"
     },
     {
@@ -504,6 +572,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGISIS",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238994"
     },
     {
@@ -515,6 +584,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238891"
     },
     {
@@ -526,6 +596,7 @@
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGTALINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236930"
     },
     {
@@ -539,6 +610,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234767"
     },
     {
@@ -552,6 +624,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234442"
     },
     {
@@ -563,6 +636,7 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGTALINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238997"
     },
     {
@@ -576,6 +650,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234766"
     },
     {
@@ -589,6 +664,7 @@
       "topics": [
         "plataforma_o_sistema"
       ],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5230103"
     },
     {
@@ -599,7 +675,14 @@
       "sumario": "Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0529-OCA25",
       "tipo": "Disposición",
       "sigla_unidad": "DGISIS",
-      "topics": [],
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0529-OCA25",
+        "ordinal": 1,
+        "ordinal_word": "Primera"
+      },
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5234579"
     },
     {
@@ -611,6 +694,7 @@
       "tipo": "Resolución",
       "sigla_unidad": "ASINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5229945"
     },
     {
@@ -622,7 +706,46 @@
       "tipo": "Disposición",
       "sigla_unidad": "DGTALINF",
       "topics": [],
+      "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5227624"
     }
-  ]
+  ],
+  "price_redeterminations": {
+    "flags": [
+      {
+        "id_norma": 995997,
+        "numero_boletin": 7435,
+        "fecha_publicacion": "21/08/2026",
+        "nombre": "Disposición N° 56/DGIASINF/26",
+        "sigla_unidad": "DGIASINF",
+        "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255443",
+        "orden_de_compra": "8056-0106-OCA25",
+        "ordinal": 9,
+        "ordinal_word": "Novena"
+      },
+      {
+        "id_norma": 997309,
+        "numero_boletin": 7438,
+        "fecha_publicacion": "26/08/2026",
+        "nombre": "Disposición N° 28/DGISIS/26",
+        "sigla_unidad": "DGISIS",
+        "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5263071",
+        "orden_de_compra": "8056-0311-OCA25",
+        "ordinal": 4,
+        "ordinal_word": "Cuarta"
+      },
+      {
+        "id_norma": 995994,
+        "numero_boletin": 7435,
+        "fecha_publicacion": "21/08/2026",
+        "nombre": "Disposición N° 55/DGIASINF/26",
+        "sigla_unidad": "DGIASINF",
+        "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5255442",
+        "orden_de_compra": "8056-0200-OCA25",
+        "ordinal": 4,
+        "ordinal_word": "Cuarta"
+      }
+    ],
+    "note": "Disposiciones de unidades de sistemas que aprueban una actualización de precios de una Orden de Compra con ordinal ≥ 3 (ej. \"Novena Actualización de Precios\" = la 9ª redeterminación de esa orden) — el propio texto del Boletín declara el número, no hace falta reconstruir el historial de montos, que no existe en ningún dataset disponible. Redeterminar precios es un mecanismo contractual legítimo (ajuste por inflación, emergencia económica, etc.), así que esto no implica irregularidad — pero muchas redeterminaciones seguidas de la MISMA orden de compra es un patrón atípico que amerita revisar el contrato subyacente."
+  }
 }
