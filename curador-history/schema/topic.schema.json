@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osintesp.github.io/caba-dashboard/curador-history/schema/topic.schema.json",
+  "title": "Curador CABA Topic",
+  "type": "object",
+  "required": ["topic_id", "title", "category", "first_seen", "last_seen", "status", "event_ids"],
+  "properties": {
+    "topic_id": {"type": "string", "pattern": "^[a-z0-9_\\-]+$"},
+    "title": {"type": "string", "minLength": 3},
+    "category": {"type": "string"},
+    "first_seen": {"type": "string", "format": "date"},
+    "last_seen": {"type": "string", "format": "date"},
+    "status": {"enum": ["activo", "en_observacion", "cerrado"]},
+    "event_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "keywords": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "entities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "summary": {"type": "string"},
+    "open_questions": {"type": "array", "items": {"type": "string"}},
+    "last_change": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
