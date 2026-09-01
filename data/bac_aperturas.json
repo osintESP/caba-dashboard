@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-01T14:22:52+00:00",
+  "collected_at": "2026-09-01T15:25:13+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -58,7 +58,7 @@
       "numero_proceso": "441-1033-CDI26",
       "nombre_proceso": "Reactivos para Laboratorio",
       "tipo_proceso": "Contratación Directa",
-      "estado": "En Apertura",
+      "estado": "En Evaluacion",
       "unidad_ejecutora_codigo": "441",
       "organismo": "HTAL. ABEL ZUBIZARRETA",
       "fecha_apertura": "2026-09-01T10:00:00-03:00",
