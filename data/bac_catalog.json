@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "collected_at": "2026-08-31T21:00:39+00:00",
+  "collected_at": "2026-09-01T12:44:40+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -382,6 +382,35 @@
     "repeat_winner_across_organismos": {
       "vendors": [],
       "note": "Proveedor con adjudicaciones directas o de contratación limitada en 3 o más organismos distintos en un lapso de hasta 90 días, en compras de tecnología. Un proveedor legítimo puede ganar en múltiples organismos por capacidad real — esto no prueba irregularidad, es un disparador para revisar si hay un proveedor recurrente/potencialmente favorecido a nivel ciudad."
+    },
+    "recurring_direct_pairs": {
+      "pairs": [
+        {
+          "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
+          "vendor": "AP Supplier Group SA",
+          "awards_count": 3,
+          "total_amount_ars": 3859000.0,
+          "date_from": "2026-02-04",
+          "date_to": "2026-02-04"
+        },
+        {
+          "organismo": "HTAL. BERNARDINO RIVADAVIA",
+          "vendor": "Facundo Adrian Ortiz Guerreiro",
+          "awards_count": 2,
+          "total_amount_ars": 295000.0,
+          "date_from": "2026-01-12",
+          "date_to": "2026-01-12"
+        },
+        {
+          "organismo": "MINISTERIO DE EDUCACION",
+          "vendor": "EXO SA",
+          "awards_count": 2,
+          "total_amount_ars": 3262453.43,
+          "date_from": "2026-03-27",
+          "date_to": "2026-03-27"
+        }
+      ],
+      "note": "Organismo + proveedor con 2 o más adjudicaciones directas o de contratación limitada en compras de tecnología, SIN ventana de tiempo (a diferencia de possible_fractionation, que exige que se agrupen en 90 días). Es la lista de candidatos para el chequeo en vivo de bac_recurring_vendor_watch.py: una posible renovación informal por vía directa en vez de re-licitar, no una ráfaga puntual. No implica irregularidad por sí sola — un proveedor puede ganar de nuevo legítimamente."
     }
   },
   "tender_index": {
