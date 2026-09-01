@@ -1,0 +1,100 @@
+name: Refresh Buenos Aires Compras (BAC) proveedor recurrente en vivo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'runtime/bac_recurring_vendor_watch.py'
+      - '.github/workflows/refresh-bac-recurring-vendor-watch.yml'
+  schedule:
+    # Diario, no horario: el universo de candidatos (bac_catalog.json.audit_signals.
+    # recurring_direct_pairs) casi no cambia entre corridas de refresh-bac-data.yml, que
+    # también es diaria -scrapear la Búsqueda avanzada cada hora para esto desperdiciaría
+    # carga sobre el sitio de BAC sin ningún beneficio real. Corre después del horario de
+    # refresh-bac-data.yml (06:00 UTC) para trabajar sobre candidatos frescos.
+    - cron: '0 8 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: caba-dashboard-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r runtime/requirements.txt
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
+
+      - name: Watch recurring direct-award vendors (sitio transaccional, navegación real por click)
+        run: python runtime/bac_recurring_vendor_watch.py
+
+      - name: Validate mandatory outputs
+        run: |
+          test -s data/bac_recurring_vendor_watch.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d = json.loads(Path('data/bac_recurring_vendor_watch.json').read_text(encoding='utf-8'))
+          assert 'status' in d and 'candidates' in d
+          print('BAC_RECURRING_VENDOR_WATCH_QUALITY=OK')
+          PY
+
+      - name: Persist refreshed dataset
+        run: |
+          git config user.name 'caba-dashboard[bot]'
+          git config user.email 'caba-dashboard@users.noreply.github.com'
+          git add data/bac_recurring_vendor_watch.json
+          if git diff --cached --quiet; then
+            echo 'No recurring vendor watch data changes.'
+          else
+            git commit -m 'Refresh Buenos Aires Compras (BAC) proveedor recurrente en vivo'
+            git fetch origin master
+            # Regeneración completa en cada corrida (no un merge incremental), igual que
+            # bac_aperturas.json/bac_pliegos_caidos.json: ante un conflicto de rebase, siempre
+            # gana la versión recién scrapeada por esta corrida.
+            if ! git rebase origin/master; then
+              git checkout --theirs data/bac_recurring_vendor_watch.json
+              git add data/bac_recurring_vendor_watch.json
+              GIT_EDITOR=true git rebase --continue
+            fi
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload refreshed site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy refreshed dashboard to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-09-01T12:38:46+00:00",
+  "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
+  "candidate_source": "bac_catalog.json audit_signals.recurring_direct_pairs",
+  "coverage_date_to_used_as_cutoff": "2026-05-29T16:00:00-03:00",
+  "note": "Candidatos: organismo+proveedor con adjudicaciones directas/limitadas repetidas en compras de tecnología, según bac_anual.csv (ver recurring_direct_pairs en bac_catalog.json). Para cada uno se buscó en vivo -BuscarAvanzado.aspx del sitio transaccional de BAC, no el export masivo- si hubo una adjudicación directa más reciente que la cobertura del CSV al mismo organismo, y se confirmó la identidad del proveedor visitando el detalle del proceso antes de marcarlo. No implica irregularidad: un proveedor puede ganar de nuevo legítimamente por capacidad real — es un disparador para revisar si el contrato se está renovando informalmente por vía directa en vez de re-licitar. Universo de candidatos chico hoy porque bac_anual.csv sólo cubre unos meses; es esperable \"sin resultados\" la mayor parte del tiempo, mismo criterio que repeat_winner_across_organismos.",
+  "status": "ok",
+  "candidates": [
+    {
+      "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
+      "vendor": "AP Supplier Group SA",
+      "known_awards_count": 3,
+      "known_date_to": "2026-02-04",
+      "confirmed_recent_award": null
+    },
+    {
+      "organismo": "HTAL. BERNARDINO RIVADAVIA",
+      "vendor": "Facundo Adrian Ortiz Guerreiro",
+      "known_awards_count": 2,
+      "known_date_to": "2026-01-12",
+      "confirmed_recent_award": null
+    },
+    {
+      "organismo": "MINISTERIO DE EDUCACION",
+      "vendor": "EXO SA",
+      "known_awards_count": 2,
+      "known_date_to": "2026-03-27",
+      "confirmed_recent_award": null
+    }
+  ]
+}

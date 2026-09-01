@@ -17,7 +17,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 8
+COLLECTOR_VERSION = 9
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -358,6 +358,15 @@ FRACTIONATION_WINDOW_DAYS = 90
 REPEAT_WINNER_MIN_ORGANISMOS = 3
 REPEAT_WINNER_WINDOW_DAYS = 90
 
+# - RECURRING_PAIR_MIN_AWARDS: a diferencia de possible_fractionation (ráfaga: 3+ en 90
+#   días), esta señal mira una relación de LARGO PLAZO -organismo+proveedor con adjudicaciones
+#   directas/limitadas repetidas SIN ventana de tiempo-, para detectar una posible renovación
+#   informal de un contrato por vía directa en vez de re-licitar (en vez de un fraccionamiento
+#   puntual). El umbral es más bajo (2, no 3) justamente porque no exige que se agrupen en poco
+#   tiempo: 2 adjudicaciones separadas por meses ya es un patrón de recurrencia, no una
+#   coincidencia. Arbitrario y documentado como tal, mismo criterio que el resto.
+RECURRING_PAIR_MIN_AWARDS = 2
+
 
 def build_fractionation_flags(direct_awards_by_pair):
     flags = []
@@ -397,6 +406,23 @@ def build_repeat_winner_flags(direct_awards_by_vendor):
             'window_days': span_days,
         })
     flags.sort(key=lambda f: f['total_amount_ars'], reverse=True)
+    return flags
+
+
+def build_recurring_pairs_flags(direct_awards_by_pair):
+    flags = []
+    for (organismo, vendor), awards in direct_awards_by_pair.items():
+        if len(awards) < RECURRING_PAIR_MIN_AWARDS:
+            continue
+        dates = [a['date'] for a in awards if a['date']]
+        flags.append({
+            'organismo': organismo, 'vendor': vendor,
+            'awards_count': len(awards),
+            'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
+            'date_from': min(dates).isoformat() if dates else None,
+            'date_to': max(dates).isoformat() if dates else None,
+        })
+    flags.sort(key=lambda f: f['awards_count'], reverse=True)
     return flags
 
 
@@ -454,6 +480,16 @@ def build_audit_signals(stats):
                      'proveedor legítimo puede ganar en múltiples organismos por capacidad real '
                      '— esto no prueba irregularidad, es un disparador para revisar si hay un '
                      'proveedor recurrente/potencialmente favorecido a nivel ciudad.'),
+        },
+        'recurring_direct_pairs': {
+            'pairs': build_recurring_pairs_flags(stats.get('direct_awards_by_pair', {})),
+            'note': (f'Organismo + proveedor con {RECURRING_PAIR_MIN_AWARDS} o más adjudicaciones '
+                     'directas o de contratación limitada en compras de tecnología, SIN ventana de '
+                     'tiempo (a diferencia de possible_fractionation, que exige que se agrupen en '
+                     f'{FRACTIONATION_WINDOW_DAYS} días). Es la lista de candidatos para el chequeo '
+                     'en vivo de bac_recurring_vendor_watch.py: una posible renovación informal por '
+                     'vía directa en vez de re-licitar, no una ráfaga puntual. No implica '
+                     'irregularidad por sí sola — un proveedor puede ganar de nuevo legítimamente.'),
         },
     }
 

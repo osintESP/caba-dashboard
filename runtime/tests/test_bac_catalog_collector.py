@@ -385,6 +385,60 @@ class RepeatWinnerTest(unittest.TestCase):
         self.assertNotIn('Vendor Abierto', vendors)
 
 
+class RecurringPairsTest(unittest.TestCase):
+    """Señal nueva: organismo+proveedor con adjudicaciones directas/limitadas repetidas SIN
+    ventana de tiempo -a diferencia de possible_fractionation, que exige una ráfaga de 3+ en
+    90 días-, para capturar una relación de largo plazo (posible renovación informal por vía
+    directa) que una señal de ráfaga no puede ver."""
+
+    def test_flags_pair_with_awards_spread_across_a_long_period(self):
+        # 8 meses de diferencia -possible_fractionation NUNCA lo marcaría (excede 90 días),
+        # pero acá sí, porque no hay ventana.
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio Largo Plazo', 'direct', False, 200_000, 'Vendor Constante'),
+            _tech_release('2026-08-15T00:00:00-03:00', 'Ministerio Largo Plazo', 'direct', False, 300_000, 'Vendor Constante'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        pairs = signals['recurring_direct_pairs']['pairs']
+        row = next(p for p in pairs if p['organismo'] == 'Ministerio Largo Plazo' and p['vendor'] == 'Vendor Constante')
+        self.assertEqual(row['awards_count'], 2)
+        self.assertAlmostEqual(row['total_amount_ars'], 500_000)
+        self.assertEqual(row['date_from'], '2026-01-01')
+        self.assertEqual(row['date_to'], '2026-08-15')
+
+    def test_does_not_flag_single_award(self):
+        releases = [_tech_release('2026-01-01T00:00:00-03:00', 'Ministerio Unico', 'direct', False, 200_000, 'Vendor Solitario')]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [p['organismo'] for p in signals['recurring_direct_pairs']['pairs']]
+        self.assertNotIn('Ministerio Unico', organismos)
+
+    def test_open_method_awards_are_not_counted(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Ministerio Abierto', 'open', True, 200_000, 'Vendor Publico'),
+            _tech_release('2026-03-01T00:00:00-03:00', 'Ministerio Abierto', 'open', True, 200_000, 'Vendor Publico'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [p['organismo'] for p in signals['recurring_direct_pairs']['pairs']]
+        self.assertNotIn('Ministerio Abierto', organismos)
+
+    def test_sorted_by_awards_count_descending(self):
+        releases = [
+            _tech_release('2026-01-01T00:00:00-03:00', 'Org A', 'direct', False, 100_000, 'Vendor A'),
+            _tech_release('2026-02-01T00:00:00-03:00', 'Org A', 'direct', False, 100_000, 'Vendor A'),
+            _tech_release('2026-01-01T00:00:00-03:00', 'Org B', 'direct', False, 100_000, 'Vendor B'),
+            _tech_release('2026-02-01T00:00:00-03:00', 'Org B', 'direct', False, 100_000, 'Vendor B'),
+            _tech_release('2026-03-01T00:00:00-03:00', 'Org B', 'direct', False, 100_000, 'Vendor B'),
+        ]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        pairs = signals['recurring_direct_pairs']['pairs']
+        self.assertEqual(pairs[0]['organismo'], 'Org B')
+        self.assertEqual(pairs[0]['awards_count'], 3)
+
+
 class UnchangedDetectionTest(unittest.TestCase):
     def test_matches_on_etag(self):
         prev = {'url': 'https://cdn/x.json', 'etag': 'abc', 'collector_version': bcc.COLLECTOR_VERSION}

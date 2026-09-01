@@ -1,4 +1,4 @@
-const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null,normativeImpact:null,pliegosCaidos:null};
+const state={stats:null,editions:[],norms:[],procurements:[],intelligence:null,sync:null,bac:null,aperturas:null,normativeImpact:null,pliegosCaidos:null,recurringVendorWatch:null};
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-AR');
 const fmtCurrency=new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
@@ -7,7 +7,7 @@ let normsPage=1,procPage=1;
 const dtf=new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'short',timeStyle:'medium'});
 async function fetchJson(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 async function fetchOptional(path){try{return await fetchJson(path)}catch(e){console.warn(`optional dataset unavailable: ${path}`,e);return null}}
-async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json'),fetchOptional('data/bac_pliegos_caidos.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
+async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos,recurringVendorWatch]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json'),fetchOptional('data/bac_pliegos_caidos.json'),fetchOptional('data/bac_recurring_vendor_watch.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos,recurringVendorWatch});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
 function fillSelect(el,values){for(const v of values){const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o)}}
 function populateFilters(){fillSelect($('filter-org'),[...new Set(state.norms.map(x=>x.organismo).filter(Boolean))].sort());fillSelect($('filter-type'),[...new Set(state.norms.map(x=>x.tipo).filter(Boolean))].sort());fillSelect($('filter-category'),[...new Set(state.procurements.map(x=>x.categoria).filter(Boolean))].sort())}
 function filteredNorms(){const q=$('filter-search').value.trim().toLowerCase(),org=$('filter-org').value,type=$('filter-type').value;return state.norms.filter(n=>{const hay=`${n.nombre||''} ${n.sumario||''} ${n.organismo||''} ${n.tipo||''}`.toLowerCase();return(!q||hay.includes(q))&&(!org||n.organismo===org)&&(!type||n.tipo===type)}).sort((a,b)=>(Number(b.id_norma)||0)-(Number(a.id_norma)||0))}
@@ -34,6 +34,19 @@ function renderPliegosCaidos(){
   const items=data?.pliegos||[];
   if(el)el.innerHTML=items.length?items.slice(0,15).map(pliegoCaidoRecordHtml).join(''):'<div class="empty">Sin pliegos caídos detectados.</div>';
   if(countEl)countEl.textContent=`${fmt.format(items.length)} detectado${items.length===1?'':'s'}`;
+}
+function recurringVendorRecordHtml(c){
+  const a=c.confirmed_recent_award;
+  const pills=[c.organismo,`Conocido: ${c.known_awards_count} adjudicaciones hasta ${c.known_date_to||'—'}`,a?.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);
+  const fecha=a?.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):null;
+  const summary=a?`Confirmado: ${esc(a.proveedor_confirmado||c.vendor)} volvió a ganar por contratación directa${fecha?` (apertura ${esc(fecha)} ART)`:''}${a.monto?`, monto ${esc(a.monto)}`:''}.`:'';
+  return `<article class="record"><div><h3 class="record-title">${esc(c.vendor)} <span class="badge audit-flag">Patrón vigente</span></h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">${summary}</p></div></article>`;
+}
+function renderRecurringVendorWatch(){
+  const data=state.recurringVendorWatch,el=$('bac-recurring-vendor-watch'),countEl=$('novedad-recurring-vendor-count');
+  const items=(data?.candidates||[]).filter(c=>c.confirmed_recent_award);
+  if(el)el.innerHTML=items.length?items.map(recurringVendorRecordHtml).join(''):'<div class="empty">Sin patrones confirmados por ahora.</div>';
+  if(countEl)countEl.textContent=`${fmt.format(items.length)} confirmado${items.length===1?'':'s'}`;
 }
 function renderBAC(data){
   const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner');
@@ -145,7 +158,7 @@ function renderLists(){
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
+function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
