@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osintesp.github.io/caba-dashboard/curador-history/schema/event.schema.json",
+  "title": "Curador CABA Event",
+  "type": "object",
+  "required": ["event_id", "topic_id", "title", "category", "first_seen", "last_update", "status", "verification", "summary", "impact", "sources", "documents", "updates"],
+  "properties": {
+    "event_id": {"type": "string", "pattern": "^evt_[0-9]{8}_[a-z0-9_\\-]+$"},
+    "topic_id": {"type": "string"},
+    "title": {"type": "string", "minLength": 3},
+    "category": {"type": "string"},
+    "first_seen": {"type": "string", "format": "date"},
+    "last_update": {"type": "string", "format": "date"},
+    "status": {"enum": ["abierto", "actualizado", "cerrado"]},
+    "editorial_badge": {"enum": ["NUEVO", "SEGUIMIENTO", "ACTUALIZACIÓN", "OFICIAL"]},
+    "verification": {"enum": ["Confirmado por cruce", "Fuente única confiable", "Versión oficial sin contraste", "Actualización de seguimiento", "Dato dudoso"]},
+    "summary": {"type": "string"},
+    "impact": {"type": "string"},
+    "entities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "object": {"type": ["string", "null"]},
+    "action": {"type": ["string", "null"]},
+    "location": {"type": ["string", "null"]},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "date", "url"],
+        "properties": {
+          "name": {"type": "string"},
+          "date": {"type": "string", "format": "date"},
+          "url": {"type": "string"},
+          "kind": {"enum": ["periodistica", "institucional", "oficial", "otra"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url"],
+        "properties": {
+          "title": {"type": "string"},
+          "url": {"type": "string"},
+          "id_norma": {"type": ["integer", "string", "null"]},
+          "bulletin_number": {"type": ["integer", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "updates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["date", "change"],
+        "properties": {
+          "date": {"type": "string", "format": "date"},
+          "change": {"type": "string"},
+          "verification": {"type": ["string", "null"]},
+          "source_urls": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
