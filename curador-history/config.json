@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "project": "Curador de Noticias — CABA",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "repository": "osintESP/caba-dashboard",
+  "root_path": "curador-history",
+  "categories": [
+    "Gobierno y política",
+    "Legislatura",
+    "Justicia",
+    "Seguridad",
+    "Transporte",
+    "Salud",
+    "Educación",
+    "Urbanismo",
+    "Infraestructura",
+    "Ambiente",
+    "Economía/Presupuesto",
+    "Contrataciones",
+    "Tecnología",
+    "Servicios públicos",
+    "Comunas"
+  ],
+  "editorial_badges": ["NUEVO", "SEGUIMIENTO", "ACTUALIZACIÓN", "OFICIAL"],
+  "verification_states": [
+    "Confirmado por cruce",
+    "Fuente única confiable",
+    "Versión oficial sin contraste",
+    "Actualización de seguimiento",
+    "Dato dudoso"
+  ],
+  "topic_statuses": ["activo", "en_observacion", "cerrado"],
+  "event_statuses": ["abierto", "actualizado", "cerrado"],
+  "daily_tracking_limit_visible": 5,
+  "continuity_dimensions": ["entities", "object", "action", "location", "time_window"],
+  "monthly_policy": {
+    "generate_on_first_business_day_if_missing": true,
+    "include_main_topics": true,
+    "include_timeline": true,
+    "include_open_topics": true,
+    "include_category_summary": true
+  },
+  "annual_policy": {
+    "generate_on_first_business_day_if_missing": true,
+    "source": "persisted_events_and_monthly_summaries",
+    "include_main_topics": true,
+    "include_year_timeline": true,
+    "include_open_topics": true
+  },
+  "bootstrap_policy": {
+    "do_not_fabricate_history": true,
+    "allow_backfill_only_from_verifiable_sources": true
+  }
+}
