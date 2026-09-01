@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-01T15:25:13+00:00",
+  "collected_at": "2026-09-01T19:16:03+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -8,7 +8,7 @@
       "numero_proceso": "3125-2927-CME26",
       "nombre_proceso": "SERVICIO DE CONSULTORÍA EN COMUNICACIÓN, MONITOREO Y AUDITORÍA EN MEDIOS (CLIPPING)",
       "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "3125",
       "organismo": "Ministerio de Movilidad e Infraestructura",
       "fecha_apertura": "2026-09-01T13:00:00-03:00",
@@ -48,7 +48,7 @@
       "numero_proceso": "3190-0996-CDI26",
       "nombre_proceso": "Servicio de Iluminación y Pantallas",
       "tipo_proceso": "Contratación Directa",
-      "estado": "Pendiente Afectación",
+      "estado": "Adjudicado",
       "unidad_ejecutora_codigo": "3190",
       "organismo": "Direccion General Festivales y Noches Culturales",
       "fecha_apertura": "2026-09-01T10:00:00-03:00",
@@ -58,7 +58,7 @@
       "numero_proceso": "441-1033-CDI26",
       "nombre_proceso": "Reactivos para Laboratorio",
       "tipo_proceso": "Contratación Directa",
-      "estado": "En Evaluacion",
+      "estado": "Disponible Para Adjudicar",
       "unidad_ejecutora_codigo": "441",
       "organismo": "HTAL. ABEL ZUBIZARRETA",
       "fecha_apertura": "2026-09-01T10:00:00-03:00",
@@ -126,16 +126,6 @@
     }
   ],
   "aperturas_proximas": [
-    {
-      "numero_proceso": "3125-2927-CME26",
-      "nombre_proceso": "SERVICIO DE CONSULTORÍA EN COMUNICACIÓN, MONITOREO Y AUDITORÍA EN MEDIOS (CLIPPING)",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "3125",
-      "organismo": "Ministerio de Movilidad e Infraestructura",
-      "fecha_apertura": "2026-09-01T13:00:00-03:00",
-      "is_technology": false
-    },
     {
       "numero_proceso": "438-1037-CDI26",
       "nombre_proceso": "SENSOR DE SPO2",
@@ -223,6 +213,16 @@
       "estado": "Publicado",
       "unidad_ejecutora_codigo": "431",
       "organismo": "HTAL. BERNARDINO RIVADAVIA",
+      "fecha_apertura": "2026-09-02T10:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "416-2941-CME26",
+      "nombre_proceso": "Servicio de Dosimetria Personal Para Cuerpo Enetero -Pedido 42034 -Abastecimiento 12 Meses",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "416",
+      "organismo": "HTAL. CARLOS G. DURAND",
       "fecha_apertura": "2026-09-02T10:00:00-03:00",
       "is_technology": false
     },
