@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "initialized_at": "2026-08-31T22:45:00-03:00",
+  "last_successful_daily": null,
+  "last_daily_file": null,
+  "last_monthly_close": null,
+  "last_annual_close": null,
+  "topic_count": 0,
+  "event_count": 0,
+  "notes": "Histórico inicializado. No se cargó información retroactiva sin validación."
+}
