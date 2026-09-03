@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-02T18:36:56+00:00",
+  "collected_at": "2026-09-03T14:55:47+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "estados_monitoreados": [
     "Desierto",
@@ -10,6 +10,16 @@
   "note": "Pliegos de tecnología (rubro \"Informática\", filtrado del lado del servidor por BAC) declarados Desierto o Dejado Sin Efecto, scrapeados en vivo del sitio transaccional de Buenos Aires Compras -no del export masivo trimestral (bac_anual.csv), que puede tener varios meses de atraso-. No implica irregularidad: un pliego puede caer por motivos operativos legítimos, pero suele forzar una re-licitación y trabar la operación del área usuaria.",
   "status": "ok",
   "pliegos": [
+    {
+      "estado_buscado": "Desierto",
+      "numero_proceso": "7192-0993-CDI26",
+      "nombre_proceso": "Contratación Plataforma Let’s Game the Change / EX-2026-25802679-GCABA-SSGDA",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2026-09-03T08:00:00-03:00"
+    },
     {
       "estado_buscado": "Desierto",
       "numero_proceso": "541-2119-CME26",
