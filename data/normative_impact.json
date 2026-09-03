@@ -11,13 +11,13 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 54,
+    "total_flagged": 53,
     "by_sigla": {
       "DGIASINF": 19,
       "DGISIS": 11,
       "ASINF": 8,
       "SECITD": 8,
-      "DGTALINF": 7,
+      "DGTALINF": 6,
       "DGGEDOC": 1
     },
     "by_topic": {
@@ -27,18 +27,6 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
-    {
-      "id_norma": 998808,
-      "numero_boletin": 7444,
-      "fecha_publicacion": "03/09/2026",
-      "nombre": "Disposición N° 95/DGTALINF/26",
-      "sumario": "Da de baja bienes inventariados",
-      "tipo": "Disposición",
-      "sigla_unidad": "DGTALINF",
-      "topics": [],
-      "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5278724"
-    },
     {
       "id_norma": 998515,
       "numero_boletin": 7441,
