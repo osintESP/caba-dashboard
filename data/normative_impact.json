@@ -11,11 +11,11 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 53,
+    "total_flagged": 55,
     "by_sigla": {
       "DGIASINF": 19,
       "DGISIS": 11,
-      "ASINF": 8,
+      "ASINF": 10,
       "SECITD": 8,
       "DGTALINF": 6,
       "DGGEDOC": 1
@@ -27,6 +27,30 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 999436,
+      "numero_boletin": 7445,
+      "fecha_publicacion": "04/09/2026",
+      "nombre": "Resolución N° 159/ASINF/26",
+      "sumario": "Acepta la renuncia como Gerente Operativo de la Gerencia Operativa de Infraestructura presentada por Fernando Mario Karadzole",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5281203"
+    },
+    {
+      "id_norma": 999390,
+      "numero_boletin": 7445,
+      "fecha_publicacion": "04/09/2026",
+      "nombre": "Resolución N° 158/ASINF/26",
+      "sumario": "Adhiere a las disposiciones generales para el Régimen Gerencial de la Ciudad Autónoma de Buenos Aires establecidas por Decreto N° 260/26",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5281202"
+    },
     {
       "id_norma": 998515,
       "numero_boletin": 7441,
