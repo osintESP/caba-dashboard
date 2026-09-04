@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-04T14:51:59+00:00",
+  "collected_at": "2026-09-04T18:11:17+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -28,7 +28,7 @@
       "numero_proceso": "434-1264-LPU26",
       "nombre_proceso": "Adquisición Vendas elásticas - Agujas hipodérmicas y otros",
       "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "434",
       "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
       "fecha_apertura": "2026-09-04T13:00:00-03:00",
@@ -38,7 +38,7 @@
       "numero_proceso": "3202-1154-LPU26",
       "nombre_proceso": "Adquisición de elementos de seguridad para puestos de control en la vía pública",
       "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-09-04T13:00:00-03:00",
@@ -48,7 +48,7 @@
       "numero_proceso": "401-0743-CDI26",
       "nombre_proceso": "Adquisición de Insumos para Salud Reproductiva - Etonogestrel.",
       "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
+      "estado": "En Evaluacion",
       "unidad_ejecutora_codigo": "401",
       "organismo": "MINISTERIO DE SALUD",
       "fecha_apertura": "2026-09-04T12:00:00-03:00",
@@ -127,36 +127,6 @@
   ],
   "aperturas_proximas": [
     {
-      "numero_proceso": "401-0743-CDI26",
-      "nombre_proceso": "Adquisición de Insumos para Salud Reproductiva - Etonogestrel.",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "401",
-      "organismo": "MINISTERIO DE SALUD",
-      "fecha_apertura": "2026-09-04T12:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "434-1264-LPU26",
-      "nombre_proceso": "Adquisición Vendas elásticas - Agujas hipodérmicas y otros",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "434",
-      "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
-      "fecha_apertura": "2026-09-04T13:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "3202-1154-LPU26",
-      "nombre_proceso": "Adquisición de elementos de seguridad para puestos de control en la vía pública",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "3202",
-      "organismo": "Ministerio de Seguridad",
-      "fecha_apertura": "2026-09-04T13:00:00-03:00",
-      "is_technology": false
-    },
-    {
       "numero_proceso": "416-1002-CDI26",
       "nombre_proceso": "Membranas Para Kit - Pedido 42077 -Empresa Infant Care S.A.- Abastecimiento 1 Año",
       "tipo_proceso": "Contratación Directa",
@@ -224,6 +194,36 @@
       "unidad_ejecutora_codigo": "438",
       "organismo": "HTAL. ENRIQUE TORNU",
       "fecha_apertura": "2026-09-07T08:30:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "417-1371-LPU26",
+      "nombre_proceso": "Adquisición de fórmula láctea de inicio - Alimentación",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "417",
+      "organismo": "HTAL. PEDRO DE ELIZALDE",
+      "fecha_apertura": "2026-09-07T08:30:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "426-2997-CME26",
+      "nombre_proceso": "TERMOMETRO DIGITAL",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "426",
+      "organismo": "HTAL. PARMENIO PIÑERO",
+      "fecha_apertura": "2026-09-07T09:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "417-1383-LPU26",
+      "nombre_proceso": "Reactivos reaccion en cadena polimerasa PCR con equipo en comodato - Biologia Molecular.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "417",
+      "organismo": "HTAL. PEDRO DE ELIZALDE",
+      "fecha_apertura": "2026-09-07T09:00:00-03:00",
       "is_technology": false
     },
     {
