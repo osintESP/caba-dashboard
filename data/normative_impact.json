@@ -11,11 +11,11 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 55,
+    "total_flagged": 56,
     "by_sigla": {
       "DGIASINF": 19,
+      "ASINF": 11,
       "DGISIS": 11,
-      "ASINF": 10,
       "SECITD": 8,
       "DGTALINF": 6,
       "DGGEDOC": 1
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 999977,
+      "numero_boletin": 7446,
+      "fecha_publicacion": "07/09/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1245/ASINF/26",
+      "sumario": "Preadjudica la Licitación Pública N° 8056-1245-LPU26 para la Renovación del servicio de mantenimiento integral de centrales telefónicas autónomas y equipamiento de comunicaciones IP.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5283479"
+    },
     {
       "id_norma": 999436,
       "numero_boletin": 7445,
