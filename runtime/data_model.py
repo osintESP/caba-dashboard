@@ -16,7 +16,10 @@ PROCESS_RE=re.compile(r'n[°º]\s*(\d+/[a-z]+/\d+)',re.I)
 # sigla (confirmado contra datos reales: ~70% de procurements.json trae este patrón en
 # nombre+sumario). Cuando aparece, es una clave de cruce por EXPEDIENTE, más precisa que el
 # cruce actual por nombre de organismo (ver bacOrgIndex en app.js).
-BAC_TENDER_RE=re.compile(r'\b(\d{3,4}-\d{3,4}-[a-z]{2,4}\d{2})\b',re.I)
+# Bug real: el código de organismo de BAC puede tener 1-2 dígitos, no sólo 3-4 (verificado
+# contra norms.json real: 58 normas citan procesos BAC de "Consejo de la Magistratura" -código
+# 2- o "Lotería de la Ciudad" -código 1-, ej. "2-0023-LPU26", que \d{3,4} descartaba entero).
+BAC_TENDER_RE=re.compile(r'\b(\d{1,4}-\d{3,4}-[a-z]{2,4}\d{2})\b',re.I)
 # Frases específicas de redes de TI: evita que "redes" en sentido genérico (redes eléctricas,
 # redes de agua, etc.) se clasifique como tecnología.
 TECH_NETWORK=('redes de datos','redes informáticas','redes informaticas','red de datos','redes inalámbricas','redes inalambricas','red wifi','fibra óptica','fibra optica')
@@ -42,12 +45,22 @@ def isproc(n):
 def _has(t,words): return any(re.search(r'\b'+re.escape(w),t) for w in words)
 def category(n):
  t=txt(n).lower()
- if _has(t,('software','saas','nutanix','veritas','plataforma','telecom','ciberseg','digital','datos','informática','informatica','tecnolog','servidor','storage','backup','cctv','control de acceso','identidad','licencia de software')): return 'tecnologia'
- if _has(t,('sistema',)) and not _sistema_excluded(t): return 'tecnologia'
+ # Bug real: la misma licitación (817/DGACSA/26, "Compresores... para Sistema Central de Gases
+ # Medicinales", Ministerio de Salud) quedaba 'salud' en un acto y 'tecnologia' en otro del
+ # MISMO proceso, según si ese acto puntual mencionaba la palabra 'sistema' -señal genérica y
+ # débil- o no. 'sistema' ahora se evalúa último, después de los dominios específicos, para que
+ # un match de salud/obra/alimentos no compita con una señal tan poco específica.
+ if _has(t,('software','saas','nutanix','veritas','plataforma','telecom','ciberseg','datos','informática','informatica','tecnolog','servidor','storage','backup','cctv','control de acceso','identidad','licencia de software','hardware','notebook','computador','computación','computacion','firewall','nube','cloud','conectividad','datacenter','data center','switch')): return 'tecnologia'
+ # 'digital' exige borde de palabra completo (a diferencia del resto, que sólo exige borde
+ # izquierdo para permitir raíces como 'tecnolog'): sin esto, "equipos digitalizador" (bug real,
+ # Htal. Municipal de Oncología, 1274/HMOMC/26 -equipamiento médico, no tecnología-) matcheaba
+ # por ser 'digital' un prefijo literal de 'digitalizador'.
+ if re.search(r'\bdigital\b',t): return 'tecnologia'
  if _has(t,TECH_NETWORK): return 'tecnologia'
  if _has(t,('obra','constru','reparaci','mantenimiento edilicio','pavimento','edificio','infraestructura','instalación eléctrica','instalacion electrica')): return 'obra_infraestructura'
  if _has(t,('medic','hospital','salud','insumo','nitrógeno','nitrogeno','reactivo','prótesis','protesis','equipamiento médico','equipamiento medico')): return 'salud'
  if _has(t,('alimento','comida','catering','víveres','viveres')): return 'alimentos'
+ if _has(t,('sistema',)) and not _sistema_excluded(t): return 'tecnologia'
  return 'otros'
 def _id_sort_key(v):
  try:return(0,int(v))

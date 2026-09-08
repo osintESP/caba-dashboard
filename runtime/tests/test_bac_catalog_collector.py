@@ -54,6 +54,12 @@ class BacTenderIdTest(unittest.TestCase):
         self.assertIsNone(bcc.bac_tender_id(''))
         self.assertIsNone(bcc.bac_tender_id(None))
 
+    def test_extracts_id_with_single_digit_organismo_code(self):
+        # Bug real: Consejo de la Magistratura (código 2) y Lotería de la Ciudad (código 1)
+        # usan un código de organismo de 1 dígito, no sólo 3-4 -verificado contra norms.json
+        # real: 58 normas citan procesos con este esquema, todos invisibles antes del fix.
+        self.assertEqual(bcc.bac_tender_id('2-0023-LPU26-1-0'), '2-0023-LPU26')
+
 
 class ClassifyTechnologyTest(unittest.TestCase):
     def test_true_positive_software(self):
@@ -64,6 +70,13 @@ class ClassifyTechnologyTest(unittest.TestCase):
 
     def test_true_positive_redes_de_datos_calificado(self):
         self.assertTrue(bcc.classify_technology(RELEASES[2]['tender']))
+
+    def test_true_positive_computacion_budget_rubro(self):
+        # Bug real: AGC + BINIT S.R.L., $478.5M en 2 contrataciones directas de "Programas de
+        # computación-" (rubro presupuestario oficial de bac_anual.csv), invisibles porque
+        # sólo se buscaba 'computador\w*' y no 'computación' -+80% sobre tech_ars reportado.
+        self.assertTrue(bcc.classify_technology({'description': 'Programas de computación-'}))
+        self.assertTrue(bcc.classify_technology({'description': 'Equipo para computación-'}))
 
 
 class ResolveSupplierNamesTest(unittest.TestCase):
@@ -321,6 +334,36 @@ class FractionationTest(unittest.TestCase):
         organismos = [f['organismo'] for f in signals['possible_fractionation']['awards']]
         self.assertNotIn('Ministerio U', organismos)
 
+    def test_multiple_line_items_of_the_same_tender_count_as_one_award(self):
+        # Bug real visto en producción (Museo de Arte Moderno + AP Supplier Group SA,
+        # proceso 9625-0248-CME26): 3 renglones de UN MISMO proceso se contaban como 3
+        # adjudicaciones directas distintas -las 4 flags que existían en bac_catalog.json
+        # eran todas de este tipo, 0% de precisión-. Deben colapsar a 1 adjudicación real.
+        def _rel(amount):
+            r = _tech_release('2026-02-04T00:00:00-03:00', 'Museo de Arte Moderno', 'direct',
+                               False, amount, 'AP Supplier Group SA')
+            r['tender']['id'] = '9625-0248-CME26'
+            return r
+        releases = [_rel(247_000), _rel(1_371_000), _rel(2_241_000)]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [f['organismo'] for f in signals['possible_fractionation']['awards']]
+        self.assertNotIn('Museo de Arte Moderno', organismos)
+
+    def test_awards_across_distinct_tenders_still_flag(self):
+        # Contraparte del test anterior: 3 renglones de 3 PROCESOS distintos sí deben
+        # seguir contando como 3 adjudicaciones (la señal no debe quedar ciega).
+        def _rel(tender_id, day):
+            r = _tech_release(f'2026-01-{day:02d}T00:00:00-03:00', 'Ministerio T', 'direct',
+                               False, 300_000, 'Vendor Repetido')
+            r['tender']['id'] = tender_id
+            return r
+        releases = [_rel('100-0001-CDI26', 1), _rel('100-0002-CDI26', 10), _rel('100-0003-CDI26', 20)]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        row = next(f for f in signals['possible_fractionation']['awards'] if f['organismo'] == 'Ministerio T')
+        self.assertEqual(row['awards_count'], 3)
+
 
 class RepeatWinnerTest(unittest.TestCase):
     """Señal nueva: mismo proveedor con adjudicaciones directas/limitadas en varios
@@ -423,6 +466,20 @@ class RecurringPairsTest(unittest.TestCase):
         signals = bcc.build_audit_signals(stats)
         organismos = [p['organismo'] for p in signals['recurring_direct_pairs']['pairs']]
         self.assertNotIn('Ministerio Abierto', organismos)
+
+    def test_multiple_line_items_of_the_same_tender_do_not_count_as_recurring(self):
+        # Mismo bug que en FractionationTest: 2 renglones de UN proceso no son 2
+        # adjudicaciones separadas, no alcanzan RECURRING_PAIR_MIN_AWARDS (2 procesos).
+        def _rel(amount):
+            r = _tech_release('2026-02-04T00:00:00-03:00', 'Museo de Arte Moderno', 'direct',
+                               False, amount, 'AP Supplier Group SA')
+            r['tender']['id'] = '9625-0248-CME26'
+            return r
+        releases = [_rel(247_000), _rel(1_371_000)]
+        stats = bcc.process_releases(releases)
+        signals = bcc.build_audit_signals(stats)
+        organismos = [p['organismo'] for p in signals['recurring_direct_pairs']['pairs']]
+        self.assertNotIn('Museo de Arte Moderno', organismos)
 
     def test_sorted_by_awards_count_descending(self):
         releases = [

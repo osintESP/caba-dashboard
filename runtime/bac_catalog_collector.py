@@ -17,7 +17,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 9
+COLLECTOR_VERSION = 10
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -25,7 +25,9 @@ COLLECTOR_VERSION = 9
 # texto libre, cita el sumario del Boletín además de la sigla/expediente (ver bac_tender_id en
 # data_model.py) — es la clave de cruce por EXPEDIENTE pendiente en el README, más precisa que
 # el cruce actual sólo por nombre de organismo.
-BAC_TENDER_ID_RE = re.compile(r'^(\d{3,4}-\d{3,4}-[a-z]{2,4}\d{2})', re.I)
+# \d{1,4} (no sólo 3-4) para el código de organismo: ver misma corrección en BAC_TENDER_RE de
+# data_model.py (organismos como Consejo de la Magistratura/Lotería usan código de 1 dígito).
+BAC_TENDER_ID_RE = re.compile(r'^(\d{1,4}-\d{3,4}-[a-z]{2,4}\d{2})', re.I)
 
 # "redes" en sentido genérico (eléctricas, de agua, viales, etc.) NO es tecnología;
 # sólo cuenta si está calificada como red de datos/informática (mismo criterio que
@@ -33,7 +35,8 @@ BAC_TENDER_ID_RE = re.compile(r'^(\d{3,4}-\d{3,4}-[a-z]{2,4}\d{2})', re.I)
 TECH_INCLUDE = [
     r'\bsoftware\b', r'\bhardware\b', r'\binform[aá]tic\w*', r'\btecnol[oó]gic\w*',
     r'\bciberseguridad\b', r'\bservidor(es)?\b', r'\bdata\s*center\b', r'\bcentro\s+de\s+datos\b',
-    r'\bnube\b', r'\bcloud\b', r'\bnotebook(s)?\b', r'\bcomputador\w*', r'\bfirewall\b',
+    r'\bnube\b', r'\bcloud\b', r'\bnotebook(s)?\b', r'\bcomputador\w*', r'\bcomputaci[oó]n\b',
+    r'\bfirewall\b',
     r'\blicencia(s)?\s+de\s+software\b', r'\bequipamiento\s+inform[aá]tico\b',
     r'\btelecomunicaciones\b', r'\bredes?\s+(de\s+)?(datos|inform[aá]tic\w*|c[oó]mputo)\b',
     r'\bconectividad\b', r'\bsistemas?\s+inform[aá]tic\w*',
@@ -187,6 +190,14 @@ def dedupe_csv_rows(rows):
     # ocid completamente distinto, no cruza contra bac_anual.csv-. Ver README, limitaciones
     # conocidas. Este dedup es una mejora validada sobre no deduplicar nada (que es 100%
     # incorrecto, no una aproximación con error conocido), no una reconciliación perfecta.
+    #
+    # NO tocar el sufijo -N de awards/0/items/0/id: se evaluó normalizarlo (agrupar variantes
+    # del mismo renglón como si fueran ítems distintos), pero test_bac_catalog_collector.py
+    # ya documenta un caso real verificado donde item_id distinto SÍ es un ítem real distinto
+    # dentro del mismo renglón, mismo monto y proveedor (test_multiple_real_items_under_one_
+    # award_are_not_merged) — no hay forma de distinguir ese caso real de un posible duplicado
+    # de flattening sin volver a la fuente (pliego), así que se preserva el comportamiento
+    # original en vez de arriesgar un undercount silencioso.
     seen = {}
     for idx, row in enumerate(rows):
         rid = row.get('id') or ''
@@ -308,9 +319,10 @@ def process_releases(releases):
                     parsed_date = _parse_date(rel_date)
                     for name in names:
                         direct_awards_by_pair.setdefault((organismo, name), []).append(
-                            {'date': parsed_date, 'amount': share})
+                            {'date': parsed_date, 'amount': share, 'tender_id': tender_id})
                         direct_awards_by_vendor.setdefault(name, []).append(
-                            {'organismo': organismo, 'date': parsed_date, 'amount': share})
+                            {'organismo': organismo, 'date': parsed_date, 'amount': share,
+                             'tender_id': tender_id})
                 if tender_id:
                     entry = tech_tenders_by_id.setdefault(tender_id, {
                         'organismo': organismo, 'method': method, 'competitive': competitive,
@@ -368,19 +380,39 @@ REPEAT_WINNER_WINDOW_DAYS = 90
 RECURRING_PAIR_MIN_AWARDS = 2
 
 
+def _group_by_tender(awards):
+    # direct_awards_by_pair/by_vendor holds one entry per LINE ITEM (bac_anual.csv's own
+    # renglón granularity survives dedupe_csv_rows), not one per adjudicación/process — a single
+    # tender with 3 renglones awarded directly to the same vendor is 1 contracting decision, not
+    # 3. Collapse by tender_id (summing amounts, keeping the earliest date) before counting so
+    # the fractionation/recurring-pair thresholds measure distinct processes, matching what
+    # their own 'note' text claims ("N adjudicaciones", not "N renglones"). An entry with no
+    # resolvable tender_id (BAC_TENDER_ID_RE didn't match its row id) is kept as its own group —
+    # we have no basis to assume it shares a process with anything else.
+    groups = {}
+    for i, a in enumerate(awards):
+        key = a.get('tender_id') or f'__no_tender_{i}__'
+        g = groups.setdefault(key, {'date': None, 'amount': 0.0})
+        g['amount'] += a['amount']
+        if a['date'] and (g['date'] is None or a['date'] < g['date']):
+            g['date'] = a['date']
+    return list(groups.values())
+
+
 def build_fractionation_flags(direct_awards_by_pair):
     flags = []
     for (organismo, vendor), awards in direct_awards_by_pair.items():
-        dates = [a['date'] for a in awards if a['date']]
-        if len(awards) < FRACTIONATION_MIN_AWARDS or len(dates) < FRACTIONATION_MIN_AWARDS:
+        processes = _group_by_tender(awards)
+        dates = [p['date'] for p in processes if p['date']]
+        if len(processes) < FRACTIONATION_MIN_AWARDS or len(dates) < FRACTIONATION_MIN_AWARDS:
             continue
         span_days = (max(dates) - min(dates)).days
         if span_days > FRACTIONATION_WINDOW_DAYS:
             continue
         flags.append({
             'organismo': organismo, 'vendor': vendor,
-            'awards_count': len(awards),
-            'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
+            'awards_count': len(processes),
+            'total_amount_ars': round(sum(p['amount'] for p in processes), 2),
             'date_from': min(dates).isoformat(), 'date_to': max(dates).isoformat(),
             'window_days': span_days,
         })
@@ -392,7 +424,8 @@ def build_repeat_winner_flags(direct_awards_by_vendor):
     flags = []
     for vendor, awards in direct_awards_by_vendor.items():
         organismos = sorted({a['organismo'] for a in awards})
-        dates = [a['date'] for a in awards if a['date']]
+        processes = _group_by_tender(awards)
+        dates = [p['date'] for p in processes if p['date']]
         if len(organismos) < REPEAT_WINNER_MIN_ORGANISMOS or len(dates) < REPEAT_WINNER_MIN_ORGANISMOS:
             continue
         span_days = (max(dates) - min(dates)).days
@@ -400,8 +433,8 @@ def build_repeat_winner_flags(direct_awards_by_vendor):
             continue
         flags.append({
             'vendor': vendor, 'organismos_count': len(organismos), 'organismos': organismos,
-            'awards_count': len(awards),
-            'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
+            'awards_count': len(processes),
+            'total_amount_ars': round(sum(p['amount'] for p in processes), 2),
             'date_from': min(dates).isoformat(), 'date_to': max(dates).isoformat(),
             'window_days': span_days,
         })
@@ -412,13 +445,14 @@ def build_repeat_winner_flags(direct_awards_by_vendor):
 def build_recurring_pairs_flags(direct_awards_by_pair):
     flags = []
     for (organismo, vendor), awards in direct_awards_by_pair.items():
-        if len(awards) < RECURRING_PAIR_MIN_AWARDS:
+        processes = _group_by_tender(awards)
+        if len(processes) < RECURRING_PAIR_MIN_AWARDS:
             continue
-        dates = [a['date'] for a in awards if a['date']]
+        dates = [p['date'] for p in processes if p['date']]
         flags.append({
             'organismo': organismo, 'vendor': vendor,
-            'awards_count': len(awards),
-            'total_amount_ars': round(sum(a['amount'] for a in awards), 2),
+            'awards_count': len(processes),
+            'total_amount_ars': round(sum(p['amount'] for p in processes), 2),
             'date_from': min(dates).isoformat() if dates else None,
             'date_to': max(dates).isoformat() if dates else None,
         })

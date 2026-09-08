@@ -61,6 +61,7 @@ function renderBAC(data){
   summaryEl.innerHTML=`
     <div>Dataset actualizado: ${esc(data.dataset?.metadata_modified||data.collected_at||'—')}</div>
     <div>Cobertura de releases procesados: ${esc(cov.date_from||'—')} a ${esc(cov.date_to||'—')} (${fmt.format(cov.releases_processed||0)} releases — ver nota de cobertura)</div>
+    ${cov.note?`<div class="bac-note">${esc(cov.note)}</div>`:''}
     <div>Monto total adjudicado: ${fmtCurrency.format(s.total_awarded_ars||0)} · en tecnología: ${fmtCurrency.format(s.tech_awarded_ars||0)} (${s.tech_share_pct||0}%)</div>
     <div>Contratación directa/limitada en tecnología: ${audit.direct_or_limited_share_pct||0}% del monto</div>
     <div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} procesos, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
@@ -103,7 +104,13 @@ function orgAuditBadge(organismo,idx){const c=idx.get(normalizeOrgName(organismo
 // ausencia de badge no implica ausencia de cruce en BAC, sólo que no se pudo confirmar acá.
 function bacTenderIndex(){return state.bac?.tender_index||{}}
 function tenderAuditBadge(tenderId){const t=tenderId&&bacTenderIndex()[tenderId];if(!t)return'';const method=({direct:'directa',limited:'limitada',open:'pública'})[t.method]||t.method||'método desconocido';const comp=t.competitive===false?', sin competencia real':'';const label=`BAC ${tenderId}: ${fmtCurrency.format(t.amount_ars||0)} adjudicados a ${t.suppliers.join(', ')||'proveedor sin identificar'} (contratación ${method}${comp})`;return` <span class="badge audit-flag" title="${attr(label)}">⚠ BAC expediente</span>`}
-function renderOrgRanking(){const counts={};for(const x of filteredNorms()){const k=x.organismo||'Sin organismo';counts[k]=(counts[k]||0)+1}const idx=bacOrgIndex();const rows=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([name,value])=>[name,value,orgAuditBadge(name,idx)]);renderRankRows($('org-ranking'),rows)}
+function renderOrgRanking(){const counts={};for(const x of filteredNorms()){const k=x.organismo||'Sin organismo';counts[k]=(counts[k]||0)+1}const idx=bacOrgIndex();const sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]);const top=sorted.slice(0,8);const topNames=new Set(top.map(([name])=>name));
+  // No cortar el top-8 (por cantidad de normas del Boletín) antes de mirar los hallazgos de BAC:
+  // un organismo con alta concentración de proveedor puede publicar pocas normas y quedar afuera
+  // del top pese a ser el hallazgo más severo del cruce (bug real: Vicejefatura de Gobierno,
+  // $493M/100% en un proveedor, quedaba invisible por tener pocas normas en el Boletín).
+  const flagged=sorted.filter(([name])=>!topNames.has(name)&&idx.get(normalizeOrgName(name))?.high_concentration);
+  const rows=[...top,...flagged].map(([name,value])=>[name,value,orgAuditBadge(name,idx)]);renderRankRows($('org-ranking'),rows)}
 function safeHref(u){return typeof u==='string'&&/^https?:\/\//i.test(u)?u:null}
 function recordHtml(n,proc,tenderId){const pills=[n.organismo,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);if(proc&&n.categoria)pills.unshift(`<span class="meta-pill category">${esc(n.categoria.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';const badge=tenderAuditBadge(tenderId===undefined?n.bac_tender_id:tenderId);return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}${badge}</h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}
 function aperturaRecordHtml(a){const pills=[a.organismo,a.tipo_proceso,a.estado,a.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const fecha=a.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):'—';return `<article class="record"><div><h3 class="record-title">${esc(a.nombre_proceso||a.numero_proceso||'Proceso sin nombre')}</h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Apertura: ${esc(fecha)} ART</p></div></article>`}

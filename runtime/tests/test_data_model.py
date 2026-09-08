@@ -131,6 +131,50 @@ class CategoryTest(unittest.TestCase):
         n = {'nombre': 'Resolución', 'sumario': 'Servicio integral de tecnología para el organismo'}
         self.assertEqual(data_model.category(n), 'tecnologia')
 
+    def test_digitalizador_is_not_technology(self):
+        # Bug real (Htal. Municipal de Oncología María Curie, 1274/HMOMC/26): "equipos
+        # digitalizador" (equipamiento médico de radiología) clasificaba tecnología porque
+        # 'digital' sólo exigía borde izquierdo y matcheaba como prefijo de 'digitalizador'.
+        n = {'nombre': 'Licitación Pública / Llamado N° 1274/HMOMC/26',
+             'organismo': 'Ministerio de Salud',
+             'sumario': 'Adquisición de Chasis p/equipos digitalizador'}
+        self.assertEqual(data_model.category(n), 'salud')
+
+    def test_digital_as_real_word_still_matches(self):
+        n = {'nombre': 'Licitación', 'sumario': 'Contenido digital para redes sociales'}
+        self.assertEqual(data_model.category(n), 'tecnologia')
+
+    def test_missing_tech_vocabulary_now_matches(self):
+        # Bug real: 18 procesos con vocabulario IT inequívoco (verificado contra
+        # procurements.json real: 369/SSGEOPE/26, 1137/DGIASINF/26, 14/DGA/26) clasificaban
+        # 'otros' porque category() no compartía vocabulario con classify_technology()
+        # (bac_catalog_collector.py), que sí reconoce estas palabras.
+        cases = [
+            'Adquisición de Computadoras, Notebooks y Tablets',
+            'Provisión, Instalación y Soporte de Switches de Core y Red Datacenter',
+            'Contratación del servicio de soporte del Data Center principal',
+        ]
+        for sumario in cases:
+            with self.subTest(sumario=sumario):
+                n = {'nombre': 'Licitación', 'sumario': sumario}
+                self.assertEqual(data_model.category(n), 'tecnologia')
+
+    def test_same_process_no_longer_gets_inconsistent_category(self):
+        # Bug real: el MISMO proceso (817/DGACSA/26, "Compresores... para Sistema Central de
+        # Gases Medicinales", Ministerio de Salud) clasificaba 'salud' en la Preadjudicación
+        # y 'tecnologia' en la Adjudicación, según si ese acto puntual mencionaba 'sistema'.
+        preadj = {'nombre': 'Licitación Pública / Preadjudicación N° 817/DGACSA/26',
+                  'organismo': 'Ministerio de Salud',
+                  'sumario': 'Preadjudica la Licitación Pública N° 401-0817-LPU26 para la '
+                             'Provisión e instalación de Compresores de Aire y Bombas de Aspiración.'}
+        adj = {'nombre': 'Licitación Pública / Adjudicación N° 817/DGACSA/26',
+               'organismo': 'Ministerio de Salud',
+               'sumario': 'Adjudica la Licitación Pública N° 401-0817-LPU26 para la Provisión e '
+                          'Instalación de Compresores de Aire y Bombas de Aspiración para Sistema '
+                          'Central de Gases Medicinales.'}
+        self.assertEqual(data_model.category(preadj), data_model.category(adj))
+        self.assertEqual(data_model.category(adj), 'salud')
+
 
 class ProcesoIdTest(unittest.TestCase):
     """Bug: cada acto (llamado, circular, prórroga) de una misma licitación se
@@ -186,6 +230,14 @@ class BacTenderIdTest(unittest.TestCase):
 
     def test_missing_fields_do_not_crash(self):
         self.assertIsNone(data_model.bac_tender_id({}))
+
+    def test_extracts_id_with_single_digit_organismo_code(self):
+        # Bug real: Consejo de la Magistratura (código 2) y Lotería de la Ciudad (código 1)
+        # usan un código de organismo de 1 dígito -verificado contra norms.json real: 58
+        # normas citan procesos con este esquema, todas invisibles antes del fix (\d{3,4}
+        # descartaba el match entero, no sólo el primer dígito).
+        n = {'nombre': '', 'sumario': 'Llama a Licitación Pública 2-0023-LPU26 para...'}
+        self.assertEqual(data_model.bac_tender_id(n), '2-0023-LPU26')
 
 
 class IdSortKeyTest(unittest.TestCase):
