@@ -568,7 +568,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236974",
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Licitación Obra Pública",
-    "categoria": "tecnologia",
+    "categoria": "obra_infraestructura",
     "proceso_id": "44/DGTALMMI/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-22T13:33:03+00:00",
@@ -2218,7 +2218,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "474/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0006-CDI26",
     "first_seen_at": "2026-08-22T13:33:03+00:00",
     "last_seen_at": "2026-08-22T13:33:03+00:00",
     "estado": "detectada"
@@ -4682,7 +4682,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "18/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0018-LPU26",
     "first_seen_at": "2026-08-22T13:33:37+00:00",
     "last_seen_at": "2026-08-22T13:33:37+00:00",
     "estado": "detectada"
@@ -4874,7 +4874,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "13/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0013-LPU26",
     "first_seen_at": "2026-08-22T13:34:10+00:00",
     "last_seen_at": "2026-08-22T13:34:10+00:00",
     "estado": "detectada"
@@ -5416,7 +5416,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5232596",
     "organismo": "Ministerio de Educación",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "1015/DGPARE/26",
     "bac_tender_id": "7192-1015-LPU26",
     "first_seen_at": "2026-08-22T13:34:10+00:00",
@@ -5546,7 +5546,7 @@
     "tipo": "Disposición",
     "categoria": "otros",
     "proceso_id": "958/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0010-LPU26",
     "first_seen_at": "2026-08-22T13:35:14+00:00",
     "last_seen_at": "2026-08-22T13:35:14+00:00",
     "estado": "detectada"
@@ -7160,9 +7160,9 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236858",
     "organismo": "Consejo de la Magistratura",
     "tipo": "Resolución",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "515/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0023-LPU26",
     "first_seen_at": "2026-08-22T13:35:14+00:00",
     "last_seen_at": "2026-08-22T13:35:14+00:00",
     "estado": "detectada"
@@ -7210,7 +7210,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "23/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0023-LPU26",
     "first_seen_at": "2026-08-22T13:34:42+00:00",
     "last_seen_at": "2026-08-22T13:34:42+00:00",
     "estado": "detectada"
@@ -7482,7 +7482,7 @@
     "tipo": "Disposición",
     "categoria": "otros",
     "proceso_id": "964/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0010-CME26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
     "last_seen_at": "2026-08-22T13:35:46+00:00",
     "estado": "detectada"
@@ -7498,7 +7498,7 @@
     "tipo": "Contratación Menor",
     "categoria": "otros",
     "proceso_id": "10/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0010-CME26",
     "first_seen_at": "2026-08-22T13:35:14+00:00",
     "last_seen_at": "2026-08-22T13:35:14+00:00",
     "estado": "detectada"
@@ -8058,7 +8058,7 @@
     "tipo": "Disposición",
     "categoria": "tecnologia",
     "proceso_id": "961/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0011-LPU26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
     "last_seen_at": "2026-08-22T13:35:46+00:00",
     "estado": "detectada"
@@ -8074,7 +8074,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "11/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0011-LPU26",
     "first_seen_at": "2026-08-22T13:35:14+00:00",
     "last_seen_at": "2026-08-22T13:35:14+00:00",
     "estado": "detectada"
@@ -8152,7 +8152,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5236930",
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "587/DGTALINF/26",
     "bac_tender_id": "8056-0587-LPU26",
     "first_seen_at": "2026-08-22T13:35:14+00:00",
@@ -8344,7 +8344,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5241377",
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "1197/SSGEOPE/26",
     "bac_tender_id": "623-1197-LPU26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
@@ -8360,7 +8360,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238894",
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Resolución",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "342/SSGEOPE/26",
     "bac_tender_id": "623-1197-LPU26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
@@ -8536,7 +8536,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5238981",
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Resolución",
-    "categoria": "tecnologia",
+    "categoria": "obra_infraestructura",
     "proceso_id": "193/SECTR/26",
     "bac_tender_id": "3125-1112-LPU26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
@@ -8586,7 +8586,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "508/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0009-LPU26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
     "last_seen_at": "2026-08-22T13:35:46+00:00",
     "estado": "detectada"
@@ -9688,7 +9688,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5244076",
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "obra_infraestructura",
     "proceso_id": "1112/DGTALMMI/26",
     "bac_tender_id": "3125-1112-LPU26",
     "first_seen_at": "2026-08-22T13:35:46+00:00",
@@ -10618,7 +10618,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "526/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0019-LPU26",
     "first_seen_at": "2026-08-22T13:36:52+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -10634,7 +10634,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "19/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0019-LPU26",
     "first_seen_at": "2026-08-22T13:36:20+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -10666,7 +10666,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "527/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0021-LPU26",
     "first_seen_at": "2026-08-22T13:36:52+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -10682,7 +10682,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "21/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0021-LPU26",
     "first_seen_at": "2026-08-22T13:36:20+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -11066,7 +11066,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "528/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0027-LPU24",
     "first_seen_at": "2026-08-22T13:36:52+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -11944,7 +11944,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5244081",
     "organismo": "Ministerio de Movilidad e Infraestructura",
     "tipo": "Licitación Obra Pública",
-    "categoria": "tecnologia",
+    "categoria": "obra_infraestructura",
     "proceso_id": "44/DGTALMMI/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-22T13:36:52+00:00",
@@ -12186,7 +12186,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "529/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0031-LPU26",
     "first_seen_at": "2026-08-22T13:37:25+00:00",
     "last_seen_at": "2026-08-22T13:37:25+00:00",
     "estado": "detectada"
@@ -12218,7 +12218,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "31/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0031-LPU26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-22T13:37:56+00:00",
     "estado": "detectada"
@@ -12284,7 +12284,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -12316,7 +12316,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -12396,7 +12396,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -12680,7 +12680,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5246872",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Resolución de Presidencia",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "22/TSJCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-22T13:37:25+00:00",
@@ -12776,7 +12776,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5244083",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "12/DGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-22T13:36:52+00:00",
@@ -12956,7 +12956,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -12972,7 +12972,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -12986,7 +12986,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "530/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0002-LPU26",
     "first_seen_at": "2026-08-22T13:36:52+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -13002,7 +13002,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "2/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0002-LPU26",
     "first_seen_at": "2026-08-22T13:36:52+00:00",
     "last_seen_at": "2026-08-22T13:36:52+00:00",
     "estado": "detectada"
@@ -13020,7 +13020,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-20T14:41:39+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -13402,7 +13402,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "11/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0011-LPU26",
     "first_seen_at": "2026-08-22T13:37:25+00:00",
     "last_seen_at": "2026-08-22T13:37:56+00:00",
     "estado": "detectada"
@@ -13594,7 +13594,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "11/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0011-LPU26",
     "first_seen_at": "2026-08-22T13:37:25+00:00",
     "last_seen_at": "2026-08-22T13:37:56+00:00",
     "estado": "detectada"
@@ -13610,7 +13610,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "11/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0011-LPU26",
     "first_seen_at": "2026-08-22T13:37:25+00:00",
     "last_seen_at": "2026-08-22T13:37:56+00:00",
     "estado": "detectada"
@@ -13784,7 +13784,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5248630",
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "1137/DGIASINF/26",
     "bac_tender_id": "8056-1137-LPU26",
     "first_seen_at": "2026-08-22T13:37:25+00:00",
@@ -14874,7 +14874,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "29/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0029-LPU26",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-24T12:58:54+00:00",
     "estado": "detectada"
@@ -14986,7 +14986,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "538/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0004-LPU23",
     "first_seen_at": "2026-08-20T14:41:39+00:00",
     "last_seen_at": "2026-08-21T12:57:06+00:00",
     "estado": "detectada"
@@ -17610,7 +17610,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "545/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0026-LPU26",
     "first_seen_at": "2026-08-24T13:57:46+00:00",
     "last_seen_at": "2026-08-25T12:55:24+00:00",
     "estado": "detectada"
@@ -17626,7 +17626,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "26/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0026-LPU26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
     "last_seen_at": "2026-08-24T12:58:54+00:00",
     "estado": "detectada"
@@ -17642,7 +17642,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "546/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0027-LPU26",
     "first_seen_at": "2026-08-24T13:57:46+00:00",
     "last_seen_at": "2026-08-25T12:55:24+00:00",
     "estado": "detectada"
@@ -17658,7 +17658,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "27/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0027-LPU26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
     "last_seen_at": "2026-08-24T12:58:54+00:00",
     "estado": "detectada"
@@ -17738,7 +17738,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "547/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0028-LPU26",
     "first_seen_at": "2026-08-24T13:57:46+00:00",
     "last_seen_at": "2026-08-25T12:55:24+00:00",
     "estado": "detectada"
@@ -17754,7 +17754,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "28/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0028-LPU26",
     "first_seen_at": "2026-08-21T13:51:38+00:00",
     "last_seen_at": "2026-08-24T12:58:54+00:00",
     "estado": "detectada"
@@ -17932,7 +17932,7 @@
     "proceso_id": "15/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-24T13:57:46+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -18648,7 +18648,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5260333",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Disposición",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "609/DGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-25T13:54:39+00:00",
@@ -18728,7 +18728,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5257949",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "13/DGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-24T13:57:46+00:00",
@@ -19482,7 +19482,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "536/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0013-LPU26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
     "last_seen_at": "2026-08-26T13:01:10+00:00",
     "estado": "detectada"
@@ -19610,7 +19610,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "11/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0011-LPU26",
     "first_seen_at": "2026-08-25T13:54:39+00:00",
     "last_seen_at": "2026-08-26T13:01:10+00:00",
     "estado": "detectada"
@@ -20232,7 +20232,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5263200",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Resolución",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "623/DGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-26T14:13:24+00:00",
@@ -20280,7 +20280,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5260469",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "14/DGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-25T13:54:39+00:00",
@@ -20700,7 +20700,7 @@
     "proceso_id": "1368/HGACD/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-07T15:19:27+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -21722,7 +21722,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "552/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0022-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
     "last_seen_at": "2026-08-26T18:19:17+00:00",
     "estado": "detectada"
@@ -21738,7 +21738,7 @@
     "tipo": "Disposición",
     "categoria": "otros",
     "proceso_id": "1012/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0011-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
     "last_seen_at": "2026-08-26T18:19:17+00:00",
     "estado": "detectada"
@@ -21786,7 +21786,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "22/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0022-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
     "last_seen_at": "2026-08-28T01:31:27+00:00",
     "estado": "detectada"
@@ -21816,7 +21816,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268490",
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "369/SSGEOPE/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-27T16:49:57+00:00",
@@ -22604,7 +22604,7 @@
     "proceso_id": "52/DGACSA/26",
     "bac_tender_id": "401-0052-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -22620,7 +22620,7 @@
     "proceso_id": "53/DGACSA/26",
     "bac_tender_id": "401-0053-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -22908,7 +22908,7 @@
     "proceso_id": "54/DGACSA/26",
     "bac_tender_id": "401-0054-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -23020,7 +23020,7 @@
     "proceso_id": "55/DGACSA/26",
     "bac_tender_id": "401-0055-LPU26",
     "first_seen_at": "2026-08-26T14:13:24+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -23482,7 +23482,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "560/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0025-LPU26",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
     "last_seen_at": "2026-08-29T00:14:54+00:00",
     "estado": "detectada"
@@ -23514,7 +23514,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "25/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0025-LPU26",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
     "last_seen_at": "2026-09-01T19:12:20+00:00",
     "estado": "detectada"
@@ -23624,7 +23624,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5266053",
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "salud",
     "proceso_id": "1274/HMOMC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-27T16:49:57+00:00",
@@ -23772,7 +23772,7 @@
     "proceso_id": "1319/SSHIG/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-28T21:20:33+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -24140,7 +24140,7 @@
     "proceso_id": "56/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-27T16:49:57+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -24316,7 +24316,7 @@
     "proceso_id": "57/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-27T16:49:57+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -24346,7 +24346,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "564/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0034-LPU26",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
     "last_seen_at": "2026-08-29T00:14:54+00:00",
     "estado": "detectada"
@@ -24522,7 +24522,7 @@
     "tipo": "Resolución",
     "categoria": "obra_infraestructura",
     "proceso_id": "563/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0030-LPU26",
     "first_seen_at": "2026-08-27T16:49:57+00:00",
     "last_seen_at": "2026-08-28T01:31:27+00:00",
     "estado": "detectada"
@@ -24554,7 +24554,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "30/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0030-LPU26",
     "first_seen_at": "2026-08-27T16:49:57+00:00",
     "last_seen_at": "2026-09-01T12:46:25+00:00",
     "estado": "detectada"
@@ -24602,7 +24602,7 @@
     "tipo": "Resolución",
     "categoria": "tecnologia",
     "proceso_id": "565/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0032-LPU26",
     "first_seen_at": "2026-08-27T16:49:57+00:00",
     "last_seen_at": "2026-08-28T01:31:27+00:00",
     "estado": "detectada"
@@ -24698,7 +24698,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "566/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0004-LPU23",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
     "last_seen_at": "2026-08-29T00:14:54+00:00",
     "estado": "detectada"
@@ -24714,7 +24714,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "8/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0008-LPU26",
     "first_seen_at": "2026-08-27T16:49:57+00:00",
     "last_seen_at": "2026-08-28T01:31:27+00:00",
     "estado": "detectada"
@@ -24796,7 +24796,7 @@
     "proceso_id": "58/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-27T16:49:57+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -25530,7 +25530,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "14/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0014-LPU26",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
     "last_seen_at": "2026-08-29T00:14:54+00:00",
     "estado": "detectada"
@@ -25800,7 +25800,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5268531",
     "organismo": "Ministerio de Salud",
     "tipo": "Contratación Menor",
-    "categoria": "tecnologia",
+    "categoria": "salud",
     "proceso_id": "2892/HGAT/26",
     "bac_tender_id": "438-2892-CME26",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
@@ -25994,7 +25994,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "32/DGCYC/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0032-LPU26",
     "first_seen_at": "2026-08-28T21:20:33+00:00",
     "last_seen_at": "2026-09-01T12:46:25+00:00",
     "estado": "detectada"
@@ -26458,7 +26458,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "555/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0011-LPU26",
     "first_seen_at": "2026-08-31T17:49:21+00:00",
     "last_seen_at": "2026-09-01T12:46:25+00:00",
     "estado": "detectada"
@@ -26538,7 +26538,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "573/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0035-LPU24",
     "first_seen_at": "2026-08-31T17:49:21+00:00",
     "last_seen_at": "2026-09-01T12:46:25+00:00",
     "estado": "detectada"
@@ -28120,7 +28120,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5270897",
     "organismo": "Jefatura de Gabinete de Ministros",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "1137/DGIASINF/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-08-31T17:49:21+00:00",
@@ -28346,7 +28346,7 @@
     "tipo": "Disposición",
     "categoria": "otros",
     "proceso_id": "1028/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0008-CME26",
     "first_seen_at": "2026-09-01T14:19:53+00:00",
     "last_seen_at": "2026-09-01T19:12:20+00:00",
     "estado": "detectada"
@@ -28362,7 +28362,7 @@
     "tipo": "Contratación Menor",
     "categoria": "otros",
     "proceso_id": "8/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0008-CME26",
     "first_seen_at": "2026-08-31T17:49:21+00:00",
     "last_seen_at": "2026-09-01T12:46:25+00:00",
     "estado": "detectada"
@@ -28474,7 +28474,7 @@
     "tipo": "Licitación Pública Abreviada",
     "categoria": "otros",
     "proceso_id": "3/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0003-LPA26",
     "first_seen_at": "2026-08-31T17:49:21+00:00",
     "last_seen_at": "2026-09-01T12:46:25+00:00",
     "estado": "detectada"
@@ -28556,7 +28556,7 @@
     "proceso_id": "1023/HGACD/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -29626,7 +29626,7 @@
     "tipo": "Licitación Pública",
     "categoria": "tecnologia",
     "proceso_id": "17/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0017-LPU26",
     "first_seen_at": "2026-09-01T14:19:53+00:00",
     "last_seen_at": "2026-09-01T19:12:20+00:00",
     "estado": "detectada"
@@ -29674,7 +29674,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "4/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0004-LPU26",
     "first_seen_at": "2026-09-02T14:58:26+00:00",
     "last_seen_at": "2026-09-02T19:03:49+00:00",
     "estado": "detectada"
@@ -29834,7 +29834,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "23/CMCABA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0023-LPU26",
     "first_seen_at": "2026-09-02T14:58:26+00:00",
     "last_seen_at": "2026-09-02T19:03:49+00:00",
     "estado": "detectada"
@@ -30732,7 +30732,7 @@
     "proceso_id": "1020/SECD/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-02T14:58:26+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -30972,7 +30972,7 @@
     "proceso_id": "15/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-02T14:58:26+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -31160,7 +31160,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5275952",
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "salud",
     "proceso_id": "817/DGACSA/26",
     "bac_tender_id": "401-0817-LPU26",
     "first_seen_at": "2026-09-02T14:58:26+00:00",
@@ -31658,7 +31658,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "579/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0005-CDI26",
     "first_seen_at": "2026-09-04T14:46:55+00:00",
     "last_seen_at": "2026-09-04T18:40:40+00:00",
     "estado": "detectada"
@@ -31788,7 +31788,7 @@
     "proceso_id": "22/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-03T14:52:07+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -32232,7 +32232,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5283486",
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "salud",
     "proceso_id": "1246/DGACSA/26",
     "bac_tender_id": "401-1246-LPU26",
     "first_seen_at": "2026-09-04T14:46:55+00:00",
@@ -32680,7 +32680,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5281467",
     "organismo": "Ministerio de Educación",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "1015/DGPARE/26",
     "bac_tender_id": "7192-1015-LPU26",
     "first_seen_at": "2026-09-04T14:46:55+00:00",
@@ -32812,7 +32812,7 @@
     "proceso_id": "14/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-04T14:46:55+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -33516,7 +33516,7 @@
     "proceso_id": "1196/DGGDA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-04T14:46:55+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -33576,7 +33576,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5281481",
     "organismo": "Ministerio de Salud",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "salud",
     "proceso_id": "1246/DGACSA/26",
     "bac_tender_id": "401-1246-LPU26",
     "first_seen_at": "2026-09-04T14:46:55+00:00",
@@ -33722,7 +33722,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "581/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0025-OC24",
     "first_seen_at": "2026-09-07T15:19:27+00:00",
     "last_seen_at": "2026-09-07T19:29:10+00:00",
     "estado": "detectada"
@@ -33770,7 +33770,7 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "583/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0022-OC22",
     "first_seen_at": "2026-09-07T15:19:27+00:00",
     "last_seen_at": "2026-09-07T19:29:10+00:00",
     "estado": "detectada"
@@ -33802,7 +33802,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "5/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0005-LPU26",
     "first_seen_at": "2026-09-07T15:19:27+00:00",
     "last_seen_at": "2026-09-07T19:29:10+00:00",
     "estado": "detectada"
@@ -33820,7 +33820,7 @@
     "proceso_id": "342/DGPARE/26",
     "bac_tender_id": "7192-3049-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -33900,7 +33900,7 @@
     "proceso_id": "1675/DGR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-07T15:19:27+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -33978,7 +33978,7 @@
     "tipo": "Licitación Pública",
     "categoria": "otros",
     "proceso_id": "3/LOTBA/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "1-0003-LPU26",
     "first_seen_at": "2026-09-07T15:19:27+00:00",
     "last_seen_at": "2026-09-07T19:29:10+00:00",
     "estado": "detectada"
@@ -34028,7 +34028,7 @@
     "proceso_id": "1433/HGNPE/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -34268,7 +34268,7 @@
     "proceso_id": "1052/SSHIG/26",
     "bac_tender_id": "2051-1052-LPU26",
     "first_seen_at": "2026-09-07T15:19:27+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -34908,7 +34908,7 @@
     "proceso_id": "130/EAIT/26",
     "bac_tender_id": "4002-0771-CDI26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -34972,7 +34972,7 @@
     "proceso_id": "279/HGADS/26",
     "bac_tender_id": "434-2954-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -34984,7 +34984,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5283431",
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Resolución Interna",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "131/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-07T15:19:27+00:00",
@@ -35000,7 +35000,7 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5286142",
     "organismo": "Defensoría del Pueblo de la CABA",
     "tipo": "Licitación Pública",
-    "categoria": "otros",
+    "categoria": "tecnologia",
     "proceso_id": "1000154",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-07T15:19:27+00:00",
@@ -35084,7 +35084,7 @@
     "proceso_id": "280/HGADS/26",
     "bac_tender_id": "434-2943-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35132,7 +35132,7 @@
     "proceso_id": "179/DGAHGAT/26",
     "bac_tender_id": "438-2582-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35148,7 +35148,7 @@
     "proceso_id": "193/HIFJM/26",
     "bac_tender_id": "423-3057-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35164,7 +35164,7 @@
     "proceso_id": "180/HRRMF/26",
     "bac_tender_id": "419-3103-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35180,7 +35180,7 @@
     "proceso_id": "3057/HIFJM/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35212,7 +35212,7 @@
     "proceso_id": "175/DGAHGAT/26",
     "bac_tender_id": "438-2803-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35228,7 +35228,7 @@
     "proceso_id": "1411/DGTALMMI/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35272,11 +35272,11 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5288440",
     "organismo": "Ministerio de Hacienda y Finanzas",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "1197/SSGEOPE/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35292,7 +35292,7 @@
     "proceso_id": "1429/HIFJM/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35324,7 +35324,7 @@
     "proceso_id": "1835/DGACSA/25",
     "bac_tender_id": "401-1835-LPU25",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35356,7 +35356,7 @@
     "proceso_id": "1837/DGACSA/25",
     "bac_tender_id": "401-1837-LPU25",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35404,7 +35404,7 @@
     "proceso_id": "1838/DGACSA/25",
     "bac_tender_id": "401-1838-LPU25",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35420,7 +35420,7 @@
     "proceso_id": "193/HMIRS/26",
     "bac_tender_id": "435-3100-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35436,7 +35436,7 @@
     "proceso_id": "187/AGT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35468,7 +35468,7 @@
     "proceso_id": "206/IRPS/26",
     "bac_tender_id": "446-1447-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35484,7 +35484,7 @@
     "proceso_id": "1841/DGACSA/25",
     "bac_tender_id": "401-1841-LPU25",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35500,7 +35500,7 @@
     "proceso_id": "181/HRRMF/26",
     "bac_tender_id": "419-3111-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35516,7 +35516,7 @@
     "proceso_id": "1842/DGACSA/25",
     "bac_tender_id": "401-1842-LPU25",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35548,7 +35548,7 @@
     "proceso_id": "43/DGLTACDN/26",
     "bac_tender_id": "1112-2760-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35564,7 +35564,7 @@
     "proceso_id": "1059/SECGVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35644,7 +35644,7 @@
     "proceso_id": "208/IRPS/26",
     "bac_tender_id": "446-1449-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35660,7 +35660,7 @@
     "proceso_id": "1449/IRPS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35756,7 +35756,7 @@
     "proceso_id": "1839/DGACSA/25",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35772,7 +35772,7 @@
     "proceso_id": "1840/DGACSA/25",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35804,7 +35804,7 @@
     "proceso_id": "55/DGMAMBA/26",
     "bac_tender_id": "9625-2869-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35836,7 +35836,7 @@
     "proceso_id": "182/HRRMF/26",
     "bac_tender_id": "419-3114-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35852,7 +35852,7 @@
     "proceso_id": "9283/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35884,7 +35884,7 @@
     "proceso_id": "170/DGAHGATA/26",
     "bac_tender_id": "410-2712-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35932,7 +35932,7 @@
     "proceso_id": "202/DGAHBR/26",
     "bac_tender_id": "431-1003-CDI26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35948,7 +35948,7 @@
     "proceso_id": "875/HGNRG/26",
     "bac_tender_id": "420-0875-CDI26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35964,7 +35964,7 @@
     "proceso_id": "193/DGAHGAP/26",
     "bac_tender_id": "425-2671-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35980,7 +35980,7 @@
     "proceso_id": "38/DGTALPG/26",
     "bac_tender_id": "730-2319-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -35996,7 +35996,7 @@
     "proceso_id": "185/DGAHGAP/26",
     "bac_tender_id": "425-2700-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36028,7 +36028,7 @@
     "proceso_id": "190/DGAHGAP/26",
     "bac_tender_id": "425-2706-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36044,7 +36044,7 @@
     "proceso_id": "133/IRPS/26",
     "bac_tender_id": "446-1294-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36060,7 +36060,7 @@
     "proceso_id": "2319/DGTALPG/26",
     "bac_tender_id": "730-2319-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36140,7 +36140,7 @@
     "proceso_id": "189/HGATA/26",
     "bac_tender_id": "410-2840-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36156,7 +36156,7 @@
     "proceso_id": "1193/MEPHUGC/26",
     "bac_tender_id": "7162-1193-LPU26",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36172,7 +36172,7 @@
     "proceso_id": "1025/DGGFA/26",
     "bac_tender_id": "9763-1025-LPU26",
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36188,7 +36188,7 @@
     "proceso_id": "188/HGATA/26",
     "bac_tender_id": "410-2740-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36220,7 +36220,7 @@
     "proceso_id": "187/HGATA/26",
     "bac_tender_id": "410-2811-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36252,7 +36252,7 @@
     "proceso_id": "172/DGAHGATA/26",
     "bac_tender_id": "410-2195-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36266,9 +36266,9 @@
     "tipo": "Resolución",
     "categoria": "otros",
     "proceso_id": "593/SAGYP/26",
-    "bac_tender_id": null,
+    "bac_tender_id": "2-0031-LPU24",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36284,7 +36284,7 @@
     "proceso_id": "133/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36300,7 +36300,7 @@
     "proceso_id": "18/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36316,7 +36316,7 @@
     "proceso_id": "10/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36348,7 +36348,7 @@
     "proceso_id": "1153/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36364,7 +36364,7 @@
     "proceso_id": "1152/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36380,7 +36380,7 @@
     "proceso_id": "1150/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36428,7 +36428,7 @@
     "proceso_id": "1151/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-08T14:53:05+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36460,7 +36460,7 @@
     "proceso_id": "45/MGEYA/26",
     "bac_tender_id": "101-1199-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36476,7 +36476,7 @@
     "proceso_id": "1199/MGEYA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36492,7 +36492,7 @@
     "proceso_id": "1427/HIJCTG/26",
     "bac_tender_id": "437-1427-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36508,7 +36508,7 @@
     "proceso_id": "1431/HGATA/26",
     "bac_tender_id": "410-1431-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36524,7 +36524,7 @@
     "proceso_id": "3028/HGAT/26",
     "bac_tender_id": "438-3028-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36540,7 +36540,7 @@
     "proceso_id": "3117/HO/26",
     "bac_tender_id": "424-3117-CME26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36556,7 +36556,7 @@
     "proceso_id": "1330/HGARM/26",
     "bac_tender_id": "430-1330-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36572,7 +36572,7 @@
     "proceso_id": "3112/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36588,7 +36588,7 @@
     "proceso_id": "1391/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36604,7 +36604,7 @@
     "proceso_id": "94/DGTALMMI/25",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36620,7 +36620,7 @@
     "proceso_id": "1239/HGACD/26",
     "bac_tender_id": "416-1239-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36636,7 +36636,7 @@
     "proceso_id": "3106/HGATA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36652,7 +36652,7 @@
     "proceso_id": "1152/DGACSA/26",
     "bac_tender_id": "401-1152-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36668,7 +36668,7 @@
     "proceso_id": "436/HGADS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36684,7 +36684,7 @@
     "proceso_id": "1297/HGARM/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36700,7 +36700,7 @@
     "proceso_id": "1253/HMO/26",
     "bac_tender_id": "415-1253-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36716,7 +36716,7 @@
     "proceso_id": "1294/IRPS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36732,7 +36732,7 @@
     "proceso_id": "15/SGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36748,7 +36748,7 @@
     "proceso_id": "769/DGACSA/26",
     "bac_tender_id": "401-0769-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36764,7 +36764,7 @@
     "proceso_id": "16/SGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36780,7 +36780,7 @@
     "proceso_id": "966/DGLTACDN/26",
     "bac_tender_id": "1112-0966-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36796,7 +36796,7 @@
     "proceso_id": "18/SGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36808,11 +36808,11 @@
     "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5288500",
     "organismo": "Tribunal Superior de Justicia de la Ciudad de Buenos Aires",
     "tipo": "Licitación Pública",
-    "categoria": "tecnologia",
+    "categoria": "otros",
     "proceso_id": "12/DGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36828,7 +36828,7 @@
     "proceso_id": "407/DGACSA/26",
     "bac_tender_id": "401-1295-LPU26",
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36844,7 +36844,7 @@
     "proceso_id": "1150/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   },
   {
@@ -36860,7 +36860,7 @@
     "proceso_id": "1295/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-09-09T15:01:03+00:00",
-    "last_seen_at": "2026-09-09T15:01:03+00:00",
+    "last_seen_at": "2026-09-09T12:11:47-03:00",
     "estado": "detectada"
   }
 ]

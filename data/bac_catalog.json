@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "collected_at": "2026-09-01T12:44:40+00:00",
+  "collected_at": "2026-09-09T15:12:00+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -29,8 +29,8 @@
   },
   "summary": {
     "total_awarded_ars": 69192590372.13,
-    "tech_awarded_ars": 915341302.96,
-    "tech_share_pct": 1.32,
+    "tech_awarded_ars": 1677494319.91,
+    "tech_share_pct": 2.42,
     "awards_counted": 7525,
     "vendors_counted": 554,
     "currencies": {
@@ -150,7 +150,7 @@
     {
       "name": "BINIT S.R.L.",
       "amount_ars": 673500000.0,
-      "tech_amount_ars": 0,
+      "tech_amount_ars": 673500000.0,
       "awards": 3
     },
     {
@@ -161,6 +161,11 @@
     }
   ],
   "vendor_ranking_tech": [
+    {
+      "name": "BINIT S.R.L.",
+      "amount_ars": 673500000.0,
+      "awards": 3
+    },
     {
       "name": "Mariana Irene Albornoz",
       "amount_ars": 492952851.55,
@@ -177,9 +182,19 @@
       "awards": 2
     },
     {
+      "name": "AP Supplier Group SA",
+      "amount_ars": 54853000.0,
+      "awards": 5
+    },
+    {
       "name": "AKSEC SRL",
       "amount_ars": 30120000.0,
       "awards": 1
+    },
+    {
+      "name": "ID GROUP S.A.",
+      "amount_ars": 28863440.0,
+      "awards": 14
     },
     {
       "name": "ATRIX S.A.",
@@ -217,14 +232,14 @@
       "awards": 4
     },
     {
-      "name": "AP Supplier Group SA",
-      "amount_ars": 3859000.0,
-      "awards": 5
-    },
-    {
       "name": "EXO SA",
       "amount_ars": 3262453.43,
       "awards": 3
+    },
+    {
+      "name": "VIDITEC S.A.",
+      "amount_ars": 2983105.95,
+      "awards": 4
     },
     {
       "name": "INFORMATICA PALMAR SRL",
@@ -232,39 +247,52 @@
       "awards": 14
     },
     {
-      "name": "Facundo Adrian Ortiz Guerreiro",
-      "amount_ars": 295000.0,
-      "awards": 6
+      "name": "Daniel Raúl Lezcano",
+      "amount_ars": 1925000.0,
+      "awards": 68
     },
     {
-      "name": "BEATRIZ DECRISTO",
-      "amount_ars": 80000.0,
-      "awards": 77
+      "name": "NOVARED SOCIEDAD ANONIMA ",
+      "amount_ars": 1353401.0,
+      "awards": 4
     },
     {
-      "name": "Laurence Javier Druscovich",
-      "amount_ars": 5300.0,
-      "awards": 22
-    },
-    {
-      "name": "ALL FLASH SRL",
-      "amount_ars": 2884.23,
-      "awards": 1
+      "name": "DANIEL GONZALEZ GARCIA",
+      "amount_ars": 1250000.0,
+      "awards": 18
     }
   ],
   "audit_signals": {
     "method_breakdown_ars": {
-      "direct": 417487567.18,
-      "open": 497853735.78
+      "direct": 1098429743.13,
+      "open": 579064576.78
     },
-    "direct_or_limited_share_pct": 45.61,
+    "direct_or_limited_share_pct": 65.48,
     "non_competitive_open_tenders": {
-      "count": 3,
-      "amount_ars": 497853735.78,
-      "share_pct_of_tech": 54.39,
+      "count": 10,
+      "amount_ars": 579064576.78,
+      "share_pct_of_tech": 34.52,
       "note": "Procesos formalmente públicos (procurementMethod=open) que BAC marca como sin competencia real (competitive=false), en compras de tecnología. BAC no publica numberOfTenderers/tenderers; esta es la única señal de competencia real que expone el propio publicador."
     },
     "vendor_concentration_by_organismo": [
+      {
+        "organismo": "Agencia Gubernamental de Control",
+        "top_vendor": "BINIT S.R.L.",
+        "top_vendor_amount_ars": 673500000.0,
+        "organismo_tech_amount_ars": 673500000.0,
+        "top_vendor_share_pct": 100.0,
+        "vendors_count": 1,
+        "high_concentration": true
+      },
+      {
+        "organismo": "MINISTERIO DE SALUD",
+        "top_vendor": "ID GROUP S.A.",
+        "top_vendor_amount_ars": 28334040.0,
+        "organismo_tech_amount_ars": 28334040.0,
+        "top_vendor_share_pct": 100.0,
+        "vendors_count": 1,
+        "high_concentration": true
+      },
       {
         "organismo": "HTAL. RICARDO GUTIERREZ",
         "top_vendor": "INEGHO SRL",
@@ -320,12 +348,21 @@
         "high_concentration": true
       },
       {
+        "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+        "top_vendor": "NOVARED SOCIEDAD ANONIMA ",
+        "top_vendor_amount_ars": 1353401.0,
+        "organismo_tech_amount_ars": 1356285.23,
+        "top_vendor_share_pct": 99.79,
+        "vendors_count": 2,
+        "high_concentration": true
+      },
+      {
         "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
         "top_vendor": "AP Supplier Group SA",
-        "top_vendor_amount_ars": 3859000.0,
-        "organismo_tech_amount_ars": 3859000.0,
-        "top_vendor_share_pct": 100.0,
-        "vendors_count": 1,
+        "top_vendor_amount_ars": 54853000.0,
+        "organismo_tech_amount_ars": 57836105.95,
+        "top_vendor_share_pct": 94.84,
+        "vendors_count": 2,
         "high_concentration": true
       },
       {
@@ -347,15 +384,6 @@
         "high_concentration": true
       },
       {
-        "organismo": "MINISTERIO DE EDUCACION",
-        "top_vendor": "CAISEN S.R.L.",
-        "top_vendor_amount_ars": 18600000.0,
-        "organismo_tech_amount_ars": 21862453.43,
-        "top_vendor_share_pct": 85.08,
-        "vendors_count": 2,
-        "high_concentration": true
-      },
-      {
         "organismo": "ENTE AUTARQUICO TEATRO COLON",
         "top_vendor": "AKSEC SRL",
         "top_vendor_amount_ars": 30120000.0,
@@ -363,20 +391,19 @@
         "top_vendor_share_pct": 79.96,
         "vendors_count": 2,
         "high_concentration": true
+      },
+      {
+        "organismo": "MINISTERIO DE EDUCACION",
+        "top_vendor": "CAISEN S.R.L.",
+        "top_vendor_amount_ars": 18600000.0,
+        "organismo_tech_amount_ars": 26321523.43,
+        "top_vendor_share_pct": 70.66,
+        "vendors_count": 7,
+        "high_concentration": true
       }
     ],
     "possible_fractionation": {
-      "awards": [
-        {
-          "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
-          "vendor": "AP Supplier Group SA",
-          "awards_count": 3,
-          "total_amount_ars": 3859000.0,
-          "date_from": "2026-02-04",
-          "date_to": "2026-02-04",
-          "window_days": 0
-        }
-      ],
+      "awards": [],
       "note": "Organismo + proveedor con 3 o más adjudicaciones directas o de contratación limitada en un lapso de hasta 90 días, en compras de tecnología. No implica que se haya superado un umbral legal específico (ese dato no está en el dataset) — es un disparador para revisión manual de posible fraccionamiento."
     },
     "repeat_winner_across_organismos": {
@@ -386,28 +413,12 @@
     "recurring_direct_pairs": {
       "pairs": [
         {
-          "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
-          "vendor": "AP Supplier Group SA",
-          "awards_count": 3,
-          "total_amount_ars": 3859000.0,
-          "date_from": "2026-02-04",
-          "date_to": "2026-02-04"
-        },
-        {
-          "organismo": "HTAL. BERNARDINO RIVADAVIA",
-          "vendor": "Facundo Adrian Ortiz Guerreiro",
+          "organismo": "Agencia Gubernamental de Control",
+          "vendor": "BINIT S.R.L.",
           "awards_count": 2,
-          "total_amount_ars": 295000.0,
-          "date_from": "2026-01-12",
-          "date_to": "2026-01-12"
-        },
-        {
-          "organismo": "MINISTERIO DE EDUCACION",
-          "vendor": "EXO SA",
-          "awards_count": 2,
-          "total_amount_ars": 3262453.43,
-          "date_from": "2026-03-27",
-          "date_to": "2026-03-27"
+          "total_amount_ars": 673500000.0,
+          "date_from": "2026-01-29",
+          "date_to": "2026-02-02"
         }
       ],
       "note": "Organismo + proveedor con 2 o más adjudicaciones directas o de contratación limitada en compras de tecnología, SIN ventana de tiempo (a diferencia de possible_fractionation, que exige que se agrupen en 90 días). Es la lista de candidatos para el chequeo en vivo de bac_recurring_vendor_watch.py: una posible renovación informal por vía directa en vez de re-licitar, no una ráfaga puntual. No implica irregularidad por sí sola — un proveedor puede ganar de nuevo legítimamente."
@@ -432,6 +443,46 @@
       "awards_count": 1,
       "suppliers": [
         "SERVICIOS GLOBALES DE INFORMATICA S.A."
+      ]
+    },
+    "3181-0012-CDI26": {
+      "organismo": "Agencia Gubernamental de Control",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 390000000.0,
+      "awards_count": 2,
+      "suppliers": [
+        "BINIT S.R.L."
+      ]
+    },
+    "3181-0040-CDI26": {
+      "organismo": "Agencia Gubernamental de Control",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 283500000.0,
+      "awards_count": 1,
+      "suppliers": [
+        "BINIT S.R.L."
+      ]
+    },
+    "401-0097-LPU26": {
+      "organismo": "MINISTERIO DE SALUD",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 28334040.0,
+      "awards_count": 1,
+      "suppliers": [
+        "ID GROUP S.A."
+      ]
+    },
+    "414-2095-LPU25": {
+      "organismo": "HTAL. MARIA CURIE",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 529400.0,
+      "awards_count": 1,
+      "suppliers": [
+        "ID GROUP S.A."
       ]
     },
     "420-0098-LPU26": {
@@ -516,6 +567,18 @@
         "ATRIX S.A."
       ]
     },
+    "7192-0119-CME26": {
+      "organismo": "MINISTERIO DE EDUCACION",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 2460570.0,
+      "awards_count": 3,
+      "suppliers": [
+        "CENTENARIO SUPPLY SAS",
+        "DANIEL GONZALEZ GARCIA",
+        "Facundo Adrian Ortiz Guerreiro"
+      ]
+    },
     "7192-0175-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
       "method": "direct",
@@ -524,6 +587,17 @@
       "awards_count": 1,
       "suppliers": [
         "CAISEN S.R.L."
+      ]
+    },
+    "7192-0333-CME26": {
+      "organismo": "MINISTERIO DE EDUCACION",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 1998500.0,
+      "awards_count": 2,
+      "suppliers": [
+        "BEATRIZ DECRISTO",
+        "Daniel Raúl Lezcano"
       ]
     },
     "7192-0891-CME26": {
@@ -546,6 +620,16 @@
         "MBC DESARROLLOS SOCIEDAD DE RESPONSABILIDAD LIMITADA "
       ]
     },
+    "8618-0007-LPU26": {
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 1353401.0,
+      "awards_count": 3,
+      "suppliers": [
+        "NOVARED SOCIEDAD ANONIMA "
+      ]
+    },
     "8618-0315-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
       "method": "open",
@@ -566,12 +650,32 @@
         "Mariana Irene Albornoz"
       ]
     },
+    "9625-0223-CME26": {
+      "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 2983105.95,
+      "awards_count": 2,
+      "suppliers": [
+        "VIDITEC S.A."
+      ]
+    },
     "9625-0248-CME26": {
       "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
       "method": "direct",
       "competitive": false,
       "amount_ars": 3859000.0,
       "awards_count": 3,
+      "suppliers": [
+        "AP Supplier Group SA"
+      ]
+    },
+    "9625-0256-LPU26": {
+      "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 50994000.0,
+      "awards_count": 2,
       "suppliers": [
         "AP Supplier Group SA"
       ]
