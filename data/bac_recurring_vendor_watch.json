@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-09T12:46:55+00:00",
+  "collected_at": "2026-09-10T12:45:03+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "candidate_source": "bac_catalog.json audit_signals.recurring_direct_pairs",
   "coverage_date_to_used_as_cutoff": "2026-05-29T16:00:00-03:00",
@@ -8,24 +8,10 @@
   "status": "ok",
   "candidates": [
     {
-      "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
-      "vendor": "AP Supplier Group SA",
-      "known_awards_count": 3,
-      "known_date_to": "2026-02-04",
-      "confirmed_recent_award": null
-    },
-    {
-      "organismo": "HTAL. BERNARDINO RIVADAVIA",
-      "vendor": "Facundo Adrian Ortiz Guerreiro",
+      "organismo": "Agencia Gubernamental de Control",
+      "vendor": "BINIT S.R.L.",
       "known_awards_count": 2,
-      "known_date_to": "2026-01-12",
-      "confirmed_recent_award": null
-    },
-    {
-      "organismo": "MINISTERIO DE EDUCACION",
-      "vendor": "EXO SA",
-      "known_awards_count": 2,
-      "known_date_to": "2026-03-27",
+      "known_date_to": "2026-02-02",
       "confirmed_recent_award": null
     }
   ]
