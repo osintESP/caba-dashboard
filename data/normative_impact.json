@@ -11,13 +11,13 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 56,
+    "total_flagged": 57,
     "by_sigla": {
       "DGIASINF": 19,
       "ASINF": 11,
       "DGISIS": 11,
       "SECITD": 8,
-      "DGTALINF": 6,
+      "DGTALINF": 7,
       "DGGEDOC": 1
     },
     "by_topic": {
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1000468,
+      "numero_boletin": 7449,
+      "fecha_publicacion": "10/09/2026",
+      "nombre": "Disposición N° 98/DGTALINF/26",
+      "sumario": "Incrementa la Orden de Compra Abierta N° 8056-0099-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5290953"
+    },
     {
       "id_norma": 999977,
       "numero_boletin": 7446,
