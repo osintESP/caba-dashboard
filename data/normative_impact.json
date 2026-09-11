@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 57,
+    "total_flagged": 62,
     "by_sigla": {
       "DGIASINF": 19,
-      "ASINF": 11,
+      "ASINF": 16,
       "DGISIS": 11,
       "SECITD": 8,
       "DGTALINF": 7,
@@ -27,6 +27,66 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1000841,
+      "numero_boletin": 7450,
+      "fecha_publicacion": "11/09/2026",
+      "nombre": "Resolución N° 165/ASINF/26",
+      "sumario": "Deja sin efecto la designación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5293430"
+    },
+    {
+      "id_norma": 1000838,
+      "numero_boletin": 7450,
+      "fecha_publicacion": "11/09/2026",
+      "nombre": "Resolución N° 164/ASINF/26",
+      "sumario": "Deja sin efecto la designación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5293429"
+    },
+    {
+      "id_norma": 1000833,
+      "numero_boletin": 7450,
+      "fecha_publicacion": "11/09/2026",
+      "nombre": "Resolución N° 163/ASINF/26",
+      "sumario": "Limita la licencia sin goce de haberes otorgada a Pablo Hernán Barbera",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5293428"
+    },
+    {
+      "id_norma": 1000831,
+      "numero_boletin": 7450,
+      "fecha_publicacion": "11/09/2026",
+      "nombre": "Resolución N° 162/ASINF/26",
+      "sumario": "Cesa y ratifica a responsables de la administración y rendición de fondos en concepto de Caja Chica Común y Gastos de Movilidad",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5293427"
+    },
+    {
+      "id_norma": 1000830,
+      "numero_boletin": 7450,
+      "fecha_publicacion": "11/09/2026",
+      "nombre": "Resolución N° 161/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Patricio Adrián Mercuri",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5293426"
+    },
     {
       "id_norma": 1000468,
       "numero_boletin": 7449,
