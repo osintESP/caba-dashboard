@@ -11,22 +11,48 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 62,
+    "total_flagged": 64,
     "by_sigla": {
       "DGIASINF": 19,
-      "ASINF": 16,
-      "DGISIS": 11,
+      "ASINF": 17,
+      "DGISIS": 12,
       "SECITD": 8,
       "DGTALINF": 7,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 8,
+      "plataforma_o_sistema": 9,
       "redeterminacion_precios": 5
     },
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1001545,
+      "numero_boletin": 7451,
+      "fecha_publicacion": "14/09/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1188/DGISIS/26",
+      "sumario": "Preadjudica la Licitación Pública N° 8056-1188-LPU26 para la contratación Servicios de mantenimiento correctivo y evolutivo de las soluciones tecnológicas implementadas sobre Plataforma SAP.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5297635"
+    },
+    {
+      "id_norma": 1001493,
+      "numero_boletin": 7451,
+      "fecha_publicacion": "14/09/2026",
+      "nombre": "Resolución N° 24/ASINF/26",
+      "sumario": "Deja sin efecto la Resolución N 21-ASINF/26 y cesa, ratifica y designa a responsables de la administración y rendición de fondos otorgados en concepto de Caja Chica Común y Gastos de Movilidad",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5297321"
+    },
     {
       "id_norma": 1000841,
       "numero_boletin": 7450,
