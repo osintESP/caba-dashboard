@@ -10,6 +10,11 @@ OUT = BASE / 'data' / 'bac_catalog.json'
 STATE = BASE / 'data' / 'bac_sync_state.json'
 API = 'https://data.buenosaires.gob.ar/api/3/action/package_show'
 PACKAGE = 'buenos-aires-compras'
+# El WAF delante de data.buenosaires.gob.ar empezó a rechazar (HTTP 200 "Request Rejected", HTML)
+# el User-Agent por defecto de requests ("python-requests/x.y") en septiembre 2026 -> refresh-bac-data.yml
+# falló 4 días seguidos en fetch_package(). Un UA de navegador pasa el WAF sin problema.
+HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                         '(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'}
 TOP_N_VENDORS = 20
 ACTIVE_STATUSES = (None, '', 'active')
 
@@ -68,7 +73,7 @@ def now():
 
 
 def fetch_package():
-    r = requests.get(API, params={'id': PACKAGE}, timeout=30)
+    r = requests.get(API, params={'id': PACKAGE}, headers=HEADERS, timeout=30)
     r.raise_for_status()
     p = r.json()
     if not p.get('success'):
@@ -93,7 +98,7 @@ def find_resource(result):
 
 def head_fingerprint(url):
     try:
-        r = requests.head(url, timeout=30, allow_redirects=True)
+        r = requests.head(url, headers=HEADERS, timeout=30, allow_redirects=True)
         r.raise_for_status()
         return {'etag': r.headers.get('ETag'), 'last_modified': r.headers.get('Last-Modified'),
                 'content_length': r.headers.get('Content-Length')}
@@ -114,7 +119,7 @@ def unchanged(prev_state, url, fp):
 
 
 def download(url):
-    r = requests.get(url, timeout=180)
+    r = requests.get(url, headers=HEADERS, timeout=180)
     r.raise_for_status()
     r.encoding = 'utf-8'
     return r.text
