@@ -11,13 +11,13 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 64,
+    "total_flagged": 69,
     "by_sigla": {
+      "ASINF": 19,
       "DGIASINF": 19,
-      "ASINF": 17,
       "DGISIS": 12,
+      "DGTALINF": 10,
       "SECITD": 8,
-      "DGTALINF": 7,
       "DGGEDOC": 1
     },
     "by_topic": {
@@ -27,6 +27,66 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1002138,
+      "numero_boletin": 7452,
+      "fecha_publicacion": "15/09/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1417/DGTALINF/26",
+      "sumario": "Suscripción de soluciones de inteligencia artificial y consumos",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5300026"
+    },
+    {
+      "id_norma": 1002083,
+      "numero_boletin": 7452,
+      "fecha_publicacion": "15/09/2026",
+      "nombre": "Disposición N° 102/DGTALINF/26",
+      "sumario": "Prorroga la fecha de apertura y ratifica pliegos de la Licitación Pública N° 8056-1288-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5299871"
+    },
+    {
+      "id_norma": 1002077,
+      "numero_boletin": 7452,
+      "fecha_publicacion": "15/09/2026",
+      "nombre": "Disposición N° 101/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública 8056-1417-LPU26 por la suscripción de soluciones de inteligencia artificial (IA) y consumos con soporte técnico",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5299870"
+    },
+    {
+      "id_norma": 1001570,
+      "numero_boletin": 7452,
+      "fecha_publicacion": "15/09/2026",
+      "nombre": "Resolución N° 168/ASINF/26",
+      "sumario": "Modifica el monto del Suplemento de Gabinete otorgado a Alejandro Marcelo De Marco",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5299738"
+    },
+    {
+      "id_norma": 1001566,
+      "numero_boletin": 7452,
+      "fecha_publicacion": "15/09/2026",
+      "nombre": "Resolución N° 167/ASINF/26",
+      "sumario": "Modifica la remuneración de personal de Planta de Gabinete",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5299737"
+    },
     {
       "id_norma": 1001545,
       "numero_boletin": 7451,
