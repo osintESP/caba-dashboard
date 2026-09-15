@@ -3,10 +3,13 @@ name: Check data freshness
 on:
   workflow_dispatch:
   schedule:
-    # 20:00 UTC = 17:00 ART, lunes a viernes -- corre bien después de la última corrida horaria
-    # esperada (grilla 11-16 UTC + control extra a las 15:55 UTC), para dar margen a una corrida
-    # demorada antes de declarar el pipeline como caído.
-    - cron: '0 20 * * 1-5'
+    # 14:30 UTC = 11:30 ART, lunes a viernes -- el Boletín Oficial siempre se publica antes de
+    # las 11:00 ART, y la grilla horaria (11-16 UTC = 08-13 ART) ya corrió a las 11,12,13,14 UTC
+    # (08,09,10,11 ART) para cuando dispara este chequeo, así que a las 11:30 ART el pipeline ya
+    # debería haber levantado la edición del día. Chequear temprano (en vez de al final del día
+    # hábil) deja margen para que el re-disparo automático y las corridas 15/16 UTC (12/13 ART)
+    # que quedan todavía puedan recuperar el gap el mismo día.
+    - cron: '30 14 * * 1-5'
 
 permissions:
   contents: read
