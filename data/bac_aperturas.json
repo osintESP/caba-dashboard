@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-15T15:28:46+00:00",
+  "collected_at": "2026-09-15T19:34:44+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -8,7 +8,7 @@
       "numero_proceso": "4002-0808-CDI26",
       "nombre_proceso": "Contratación Recertificación IRAM - Unidad de Auditoria Interna EAIT Año 2026",
       "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "4002",
       "organismo": "ENTE AUTARQUICO INSTITUTO DE TRANSPLANTE",
       "fecha_apertura": "2026-09-15T13:00:00-03:00",
@@ -127,16 +127,6 @@
   ],
   "aperturas_proximas": [
     {
-      "numero_proceso": "4002-0808-CDI26",
-      "nombre_proceso": "Contratación Recertificación IRAM - Unidad de Auditoria Interna EAIT Año 2026",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "4002",
-      "organismo": "ENTE AUTARQUICO INSTITUTO DE TRANSPLANTE",
-      "fecha_apertura": "2026-09-15T13:00:00-03:00",
-      "is_technology": false
-    },
-    {
       "numero_proceso": "438-3112-CME26",
       "nombre_proceso": "TRANSDUCTOR ENDOCAVITARIO",
       "tipo_proceso": "Contratación Menor",
@@ -223,6 +213,16 @@
       "estado": "Publicado",
       "unidad_ejecutora_codigo": "414",
       "organismo": "HTAL. MARIA CURIE",
+      "fecha_apertura": "2026-09-16T09:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "425-3104-CME26",
+      "nombre_proceso": "ADQUISICION DE MISOPROSTOL (COMPRIMIDOS) P.342 Serv. FARMACIA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "425",
+      "organismo": "HTAL. JOSE M. PENNA",
       "fecha_apertura": "2026-09-16T09:00:00-03:00",
       "is_technology": false
     },
