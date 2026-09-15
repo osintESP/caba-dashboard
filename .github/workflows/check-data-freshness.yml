@@ -1,0 +1,119 @@
+name: Check data freshness
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 20:00 UTC = 17:00 ART, lunes a viernes -- corre bien después de la última corrida horaria
+    # esperada (grilla 11-16 UTC + control extra a las 15:55 UTC), para dar margen a una corrida
+    # demorada antes de declarar el pipeline como caído.
+    - cron: '0 20 * * 1-5'
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+concurrency:
+  group: caba-dashboard-freshness-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Evaluate freshness of today's scheduled refreshes
+        id: freshness
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          now = datetime.now(timezone.utc)
+          today = now.date()
+
+          # Cada entrada: (nombre legible, archivo, campo de timestamp, workflow a re-disparar
+          # si está desactualizado). Sólo cubre los dos pipelines que corren en grilla horaria
+          # de días hábiles -- son los únicos expuestos al descarte silencioso de triggers
+          # `schedule` de alta frecuencia de GitHub Actions (ver refresh-official-data.yml y
+          # refresh-bac-aperturas.yml). Los pipelines diarios (bac-data, bac-recurring-vendor-watch)
+          # no sufren este problema y no se chequean acá.
+          sources = [
+              ('Boletín Oficial / procurement pipeline', 'data/sync_manifest.json',
+               'dataset_generated_at', 'refresh-official-data.yml'),
+              ('BAC aperturas / pliegos caídos', 'data/bac_aperturas.json',
+               'collected_at', 'refresh-bac-aperturas.yml'),
+          ]
+
+          stale = []
+          report_lines = []
+          for label, path, field, workflow in sources:
+              p = Path(path)
+              if not p.exists():
+                  stale.append(workflow)
+                  report_lines.append(f'- **{label}**: `{path}` no existe.')
+                  continue
+              data = json.loads(p.read_text(encoding='utf-8'))
+              ts_raw = data.get(field)
+              if not ts_raw:
+                  stale.append(workflow)
+                  report_lines.append(f'- **{label}**: falta el campo `{field}` en `{path}`.')
+                  continue
+              ts = datetime.fromisoformat(ts_raw.replace('Z', '+00:00'))
+              if ts.date() != today:
+                  stale.append(workflow)
+                  report_lines.append(f'- **{label}**: última actualización `{ts_raw}` (no es de hoy, {today}).')
+              else:
+                  report_lines.append(f'- **{label}**: OK, actualizado `{ts_raw}`.')
+
+          print('is_stale=' + ('true' if stale else 'false'))
+          print('stale_workflows=' + ','.join(sorted(set(stale))))
+          Path('freshness_report.md').write_text('\n'.join(report_lines), encoding='utf-8')
+          PY
+
+      - name: Re-trigger stale pipelines
+        if: steps.freshness.outputs.is_stale == 'true'
+        run: |
+          IFS=',' read -ra WORKFLOWS <<< "${{ steps.freshness.outputs.stale_workflows }}"
+          for wf in "${WORKFLOWS[@]}"; do
+            echo "Re-disparando $wf"
+            gh workflow run "$wf"
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Open or update alert issue
+        if: steps.freshness.outputs.is_stale == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="⚠️ Pipeline de datos desactualizado"
+          BODY="El chequeo diario de frescura detectó que uno o más pipelines horarios no corrieron hoy (probable descarte silencioso del trigger \`schedule\` de GitHub Actions). Se volvieron a disparar manualmente (\`workflow_dispatch\`) automáticamente desde este check.
+
+          $(cat freshness_report.md)
+
+          Ejecución: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          existing=$(gh issue list --search "\"$TITLE\" in:title" --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label "data-staleness"
+          fi
+
+      - name: Close alert issue if data is fresh again
+        if: steps.freshness.outputs.is_stale == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="⚠️ Pipeline de datos desactualizado"
+          existing=$(gh issue list --search "\"$TITLE\" in:title" --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Los datos volvieron a estar al día. Cerrando la alerta.
+
+          $(cat freshness_report.md)"
+            gh issue close "$existing"
+          fi
