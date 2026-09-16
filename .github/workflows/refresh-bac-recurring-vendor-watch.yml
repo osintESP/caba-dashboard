@@ -13,7 +13,9 @@ on:
     # también es diaria -scrapear la Búsqueda avanzada cada hora para esto desperdiciaría
     # carga sobre el sitio de BAC sin ningún beneficio real. Corre después del horario de
     # refresh-bac-data.yml (06:00 UTC) para trabajar sobre candidatos frescos.
-    - cron: '0 8 * * *'
+    # Minuto 18, no 0: ver nota en refresh-official-data.yml sobre por qué GitHub descarta más
+    # seguido los disparos justo a la hora en punto.
+    - cron: '18 8 * * *'
 
 permissions:
   contents: write

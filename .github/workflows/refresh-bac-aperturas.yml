@@ -14,7 +14,11 @@ on:
     # empezó a demorar/descartar disparos de `schedule` en cron de alta frecuencia):
     # las aperturas de BAC ocurren en horario administrativo, no tiene sentido scrapear
     # fuera de esa ventana.
-    - cron: '0 11-16 * * 1-5'
+    # Minuto 22, no 0: ver misma nota en refresh-official-data.yml -- GitHub prioriza peor los
+    # disparos justo a la hora en punto, y se confirmó en la práctica que se descartaba entero
+    # el día. Desfasado además de refresh-official-data.yml (minuto 7) para no competir por
+    # runners en el mismo instante.
+    - cron: '22 11-16 * * 1-5'
 
 permissions:
   contents: write

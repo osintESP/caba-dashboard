@@ -9,7 +9,9 @@ on:
       - '.github/workflows/refresh-bac-data.yml'
   schedule:
     # 06:00 UTC = 03:00 ART, fuera de la ventana 11-16 UTC del refresh de 30 min del Boletín.
-    - cron: '0 6 * * *'
+    # Minuto 11, no 0: ver nota en refresh-official-data.yml sobre por qué GitHub descarta más
+    # seguido los disparos justo a la hora en punto.
+    - cron: '11 6 * * *'
 
 permissions:
   contents: write

@@ -12,9 +12,13 @@ on:
     # GitHub empezó a demorar/descartar los disparos de `schedule` en cron de alta frecuencia
     # -- ver commit que introdujo este cambio -- así que se bajó la cadencia en vez de pelear
     # contra el scheduler).
-    - cron: '0 11-16 * * 1-5'
-    # Control adicional a las 12:55 ART.
-    - cron: '55 15 * * 1-5'
+    # Minuto 7, no 0: GitHub documenta que "high load times include the start of every hour"
+    # y son los disparos con más chance de demorarse/descartarse -- confirmado en la práctica
+    # el 2026-09-15 y 2026-09-16, donde TODOS los schedule del repo (éste, bac-aperturas, e
+    # incluso check-data-freshness.yml en :30) no dispararon un día entero cada uno.
+    - cron: '7 11-16 * * 1-5'
+    # Control adicional a las 12:55 ART (también corrido a :52 por el mismo motivo).
+    - cron: '52 15 * * 1-5'
 
 permissions:
   contents: write
