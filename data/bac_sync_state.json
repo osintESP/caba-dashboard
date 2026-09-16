@@ -1,10 +1,10 @@
 {
-  "etag": "\"501e7d-34fc8a3-65335614be5c0\"",
-  "last_modified": "Mon, 01 Jun 2026 18:29:51 GMT",
-  "content_length": "55560355",
+  "etag": "\"501e61-7ec9e34-65b8920e83540\"",
+  "last_modified": "Tue, 15 Sep 2026 17:46:21 GMT",
+  "content_length": "132947508",
   "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-economia-y-finanzas/buenos-aires-compras/bac_anual.csv",
-  "checked_at": "2026-09-15T11:13:26+00:00",
-  "downloaded_at": "2026-09-09T15:12:00+00:00",
-  "status": "unchanged",
+  "checked_at": "2026-09-16T10:57:26+00:00",
+  "downloaded_at": "2026-09-16T10:57:26+00:00",
+  "status": "ok",
   "collector_version": 10
 }
