@@ -11,33 +11,59 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 69,
+    "total_flagged": 73,
     "by_sigla": {
       "ASINF": 19,
       "DGIASINF": 19,
+      "DGTALINF": 14,
       "DGISIS": 12,
-      "DGTALINF": 10,
       "SECITD": 8,
       "DGGEDOC": 1
     },
     "by_topic": {
       "plataforma_o_sistema": 9,
-      "redeterminacion_precios": 5
+      "redeterminacion_precios": 6
     },
     "price_redeterminations_flagged": 3
   },
   "norms": [
     {
+      "id_norma": 1002346,
+      "numero_boletin": 7453,
+      "fecha_publicacion": "16/09/2026",
+      "nombre": "Licitación Pública / Prórroga  N° 1288/DGTALINF/26",
+      "sumario": "Provisión de un servicio de acceso dinámico a internet",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5303050"
+    },
+    {
       "id_norma": 1002138,
-      "numero_boletin": 7452,
-      "fecha_publicacion": "15/09/2026",
+      "numero_boletin": 7453,
+      "fecha_publicacion": "16/09/2026",
       "nombre": "Licitación Pública / Llamado  N° 1417/DGTALINF/26",
       "sumario": "Suscripción de soluciones de inteligencia artificial y consumos",
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGTALINF",
       "topics": [],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5300026"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5303049"
+    },
+    {
+      "id_norma": 1002087,
+      "numero_boletin": 7453,
+      "fecha_publicacion": "16/09/2026",
+      "nombre": "Disposición N° 103/DGTALINF/26",
+      "sumario": "Aprueba a Tercera Actualización de Precios de la Orden de Compra N° 8056-0126-OCA25,",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5302905"
     },
     {
       "id_norma": 1002083,
@@ -62,6 +88,30 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5299870"
+    },
+    {
+      "id_norma": 1002068,
+      "numero_boletin": 7453,
+      "fecha_publicacion": "16/09/2026",
+      "nombre": "Disposición N° 100/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1125-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5302904"
+    },
+    {
+      "id_norma": 1001904,
+      "numero_boletin": 7453,
+      "fecha_publicacion": "16/09/2026",
+      "nombre": "Disposición N° 99/DGTALINF/26",
+      "sumario": "Reconoce suplemento por tareas nocturnas del mes de agosto de 2026",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5302903"
     },
     {
       "id_norma": 1001570,
