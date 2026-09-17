@@ -11,33 +11,131 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 73,
+    "total_flagged": 81,
     "by_sigla": {
-      "ASINF": 19,
+      "ASINF": 24,
       "DGIASINF": 19,
-      "DGTALINF": 14,
-      "DGISIS": 12,
+      "DGTALINF": 16,
+      "DGISIS": 13,
       "SECITD": 8,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 9,
+      "plataforma_o_sistema": 10,
       "redeterminacion_precios": 6
     },
     "price_redeterminations_flagged": 3
   },
   "norms": [
     {
+      "id_norma": 1002974,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1245/DGTALINF/26",
+      "sumario": "Adjudica la Licitación Pública N° 8056-1245-LPU26 para la Renovación del servicio de mantenimiento integral de centrales telefónicas autónomas y equipamiento de comunicaciones IP.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305624"
+    },
+    {
+      "id_norma": 1002949,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1125/DGTALINF/26",
+      "sumario": "Adjudica la Licitación Pública N° 8056-1125-LPU26 para la Renovación de los Servicios de Mantenimiento y Consultoría para los Sistemas SAP-BASIS.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305623"
+    },
+    {
+      "id_norma": 1002809,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1278/DGISIS/26",
+      "sumario": "Preadjudica la Licitación Pública N° 8056-1278-LPU26 para la Renovación de la suscripción anual de paquete de licencias y servicios de soporte y mantenimiento correctivo y evolutivo de la plataforma Automation Anywhere.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305622"
+    },
+    {
       "id_norma": 1002346,
-      "numero_boletin": 7453,
-      "fecha_publicacion": "16/09/2026",
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
       "nombre": "Licitación Pública / Prórroga  N° 1288/DGTALINF/26",
       "sumario": "Provisión de un servicio de acceso dinámico a internet",
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGTALINF",
       "topics": [],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5303050"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305625"
+    },
+    {
+      "id_norma": 1002299,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Resolución N° 174/ASINF/26",
+      "sumario": "Cesa y ratifica a responsables de la administración y rendición de los fondos otorgados en concepto de Caja Chica Especial",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305286"
+    },
+    {
+      "id_norma": 1002294,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Resolución N° 173/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Ludmila Rocío Sánchez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305285"
+    },
+    {
+      "id_norma": 1002291,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Resolución N° 172/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Melina Danila Roldán",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305284"
+    },
+    {
+      "id_norma": 1002287,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Resolución N° 171/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Valeria Alejandra Albarracín",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305283"
+    },
+    {
+      "id_norma": 1002284,
+      "numero_boletin": 7454,
+      "fecha_publicacion": "17/09/2026",
+      "nombre": "Resolución N° 169/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Maricel Calvo",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305282"
     },
     {
       "id_norma": 1002138,
