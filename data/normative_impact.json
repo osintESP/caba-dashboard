@@ -11,11 +11,11 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 81,
+    "total_flagged": 82,
     "by_sigla": {
       "ASINF": 24,
       "DGIASINF": 19,
-      "DGTALINF": 16,
+      "DGTALINF": 17,
       "DGISIS": 13,
       "SECITD": 8,
       "DGGEDOC": 1
@@ -64,6 +64,18 @@
       ],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5305622"
+    },
+    {
+      "id_norma": 1002709,
+      "numero_boletin": 7455,
+      "fecha_publicacion": "18/09/2026",
+      "nombre": "Disposición N° 104/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1245-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5308154"
     },
     {
       "id_norma": 1002346,
