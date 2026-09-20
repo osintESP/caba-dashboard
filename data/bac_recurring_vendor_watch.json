@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-19T12:34:01+00:00",
+  "collected_at": "2026-09-20T13:06:09+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "candidate_source": "bac_catalog.json audit_signals.recurring_direct_pairs",
   "coverage_date_to_used_as_cutoff": "2026-08-31T15:45:00-03:00",
