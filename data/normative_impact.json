@@ -11,11 +11,11 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 82,
+    "total_flagged": 83,
     "by_sigla": {
       "ASINF": 24,
       "DGIASINF": 19,
-      "DGTALINF": 17,
+      "DGTALINF": 18,
       "DGISIS": 13,
       "SECITD": 8,
       "DGGEDOC": 1
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1003326,
+      "numero_boletin": 7456,
+      "fecha_publicacion": "21/09/2026",
+      "nombre": "Disposición N° 106/DGTALINF/26",
+      "sumario": "Prorroga la Orden de Compra N° 8056-17184-OC25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5310696"
+    },
     {
       "id_norma": 1002974,
       "numero_boletin": 7454,
