@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 83,
+    "total_flagged": 86,
     "by_sigla": {
-      "ASINF": 24,
+      "ASINF": 27,
       "DGIASINF": 19,
       "DGTALINF": 18,
       "DGISIS": 13,
@@ -27,6 +27,42 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1003678,
+      "numero_boletin": 7458,
+      "fecha_publicacion": "22/09/2026",
+      "nombre": "Resolución N° 177/ASINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5314599"
+    },
+    {
+      "id_norma": 1003574,
+      "numero_boletin": 7458,
+      "fecha_publicacion": "22/09/2026",
+      "nombre": "Resolución N° 176/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Iván Ariel Jajdelski",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5314598"
+    },
+    {
+      "id_norma": 1003450,
+      "numero_boletin": 7458,
+      "fecha_publicacion": "22/09/2026",
+      "nombre": "Resolución N° 175/ASINF/26",
+      "sumario": "Aprueba el Informe Final de Gestión como Director General de la Dirección General de Infraestructura presentado por Federico TUFFANO",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5314597"
+    },
     {
       "id_norma": 1003326,
       "numero_boletin": 7456,
