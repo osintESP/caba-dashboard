@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-23T15:29:07+00:00",
+  "collected_at": "2026-09-23T19:43:55+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -8,7 +8,7 @@
       "numero_proceso": "434-3102-CME26",
       "nombre_proceso": "Adquisición Proyector Multimedia de 5200 ANSI lumenes resolución HD o superior",
       "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "434",
       "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
       "fecha_apertura": "2026-09-23T13:00:00-03:00",
@@ -127,16 +127,6 @@
   ],
   "aperturas_proximas": [
     {
-      "numero_proceso": "434-3102-CME26",
-      "nombre_proceso": "Adquisición Proyector Multimedia de 5200 ANSI lumenes resolución HD o superior",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "434",
-      "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
-      "fecha_apertura": "2026-09-23T13:00:00-03:00",
-      "is_technology": false
-    },
-    {
       "numero_proceso": "418-3223-CME26",
       "nombre_proceso": "HEMOTERAPIA - INSUMOS PARA INMUNOSEROLOGIA CUATRIMESTRAL C. N. Nº 274",
       "tipo_proceso": "Contratación Menor",
@@ -224,6 +214,16 @@
       "unidad_ejecutora_codigo": "425",
       "organismo": "HTAL. JOSE M. PENNA",
       "fecha_apertura": "2026-09-24T09:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "431-2615-CME26",
+      "nombre_proceso": "ADQUISICION DE ELEMENTO DE TRABAJO E INSERTO DE 1 CANAL CISTORESECTOSCOPIO-UROLOGIA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "431",
+      "organismo": "HTAL. BERNARDINO RIVADAVIA",
+      "fecha_apertura": "2026-09-24T09:30:00-03:00",
       "is_technology": false
     },
     {
