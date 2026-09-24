@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-24T15:51:29+00:00",
+  "collected_at": "2026-09-24T20:02:05+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -31,16 +31,6 @@
       "estado": "Desierto",
       "unidad_ejecutora_codigo": "431",
       "organismo": "HTAL. BERNARDINO RIVADAVIA",
-      "fecha_apertura": "2026-09-24T11:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "3181-1107-CDI26",
-      "nombre_proceso": "Servicio calibraciones equipos sonoros 2",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "3181",
-      "organismo": "Agencia Gubernamental de Control",
       "fecha_apertura": "2026-09-24T11:00:00-03:00",
       "is_technology": false
     },
@@ -102,6 +92,16 @@
       "unidad_ejecutora_codigo": "431",
       "organismo": "HTAL. BERNARDINO RIVADAVIA",
       "fecha_apertura": "2026-09-24T10:30:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "428-2875-CME26",
+      "nombre_proceso": "SERVICIO DE VALIDACION DE CABINA PARA SEGURIDAD BIOLOGICA",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Evaluacion",
+      "unidad_ejecutora_codigo": "428",
+      "organismo": "HTAL. DE QUEMADOS",
+      "fecha_apertura": "2026-09-24T10:00:00-03:00",
       "is_technology": false
     },
     {
