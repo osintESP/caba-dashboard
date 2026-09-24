@@ -11,13 +11,13 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 86,
+    "total_flagged": 97,
     "by_sigla": {
-      "ASINF": 27,
+      "ASINF": 28,
+      "DGTALINF": 19,
       "DGIASINF": 19,
-      "DGTALINF": 18,
-      "DGISIS": 13,
-      "SECITD": 8,
+      "SECITD": 16,
+      "DGISIS": 14,
       "DGGEDOC": 1
     },
     "by_topic": {
@@ -27,6 +27,138 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1004497,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 144/SECITD/26",
+      "sumario": "Acepta la renuncia presentada por Julieta Verónica Rappan",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320553"
+    },
+    {
+      "id_norma": 1004493,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 143/SECITD/26",
+      "sumario": "Autoriza la contratación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320552"
+    },
+    {
+      "id_norma": 1004490,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 142/SECITD/26",
+      "sumario": "Autoriza la contratación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320551"
+    },
+    {
+      "id_norma": 1004477,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 140/SECITD/26",
+      "sumario": "Autoriza la contratación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320548"
+    },
+    {
+      "id_norma": 1004473,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 139/SECITD/26",
+      "sumario": "Acepta la renuncia presentada por Delfina Giuri",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320547"
+    },
+    {
+      "id_norma": 1004468,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 137/SECITD/26",
+      "sumario": "Acepta la renuncia presentada por Nazareno Mercante",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320546"
+    },
+    {
+      "id_norma": 1004466,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 135/SECITD/26",
+      "sumario": "Autoriza la contratación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320545"
+    },
+    {
+      "id_norma": 1004463,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 134/SECITD/26",
+      "sumario": "Autoriza la contratación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320544"
+    },
+    {
+      "id_norma": 1004267,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Resolución N° 178/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Ezequiel Emilio Machado Suer",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320543"
+    },
+    {
+      "id_norma": 1003863,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Disposición N° 107/DGTALINF/26",
+      "sumario": "Autoriza el pago por la Suscripción y Renovación de Licencias Microsoft",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320747"
+    },
+    {
+      "id_norma": 1003860,
+      "numero_boletin": 7460,
+      "fecha_publicacion": "24/09/2026",
+      "nombre": "Disposición N° 32/DGISIS/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1188-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5320746"
+    },
     {
       "id_norma": 1003678,
       "numero_boletin": 7458,
