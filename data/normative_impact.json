@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 97,
+    "total_flagged": 101,
     "by_sigla": {
-      "ASINF": 28,
+      "ASINF": 32,
       "DGTALINF": 19,
       "DGIASINF": 19,
       "SECITD": 16,
@@ -27,6 +27,54 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1004866,
+      "numero_boletin": 7461,
+      "fecha_publicacion": "25/09/2026",
+      "nombre": "Resolución N° 186/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Mariana Cecilia Tonina",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5323342"
+    },
+    {
+      "id_norma": 1004832,
+      "numero_boletin": 7461,
+      "fecha_publicacion": "25/09/2026",
+      "nombre": "Resolución N° 183/ASINF/26",
+      "sumario": "Deja sin efecto y asigna Suplementos de Gabinete",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5323341"
+    },
+    {
+      "id_norma": 1004820,
+      "numero_boletin": 7461,
+      "fecha_publicacion": "25/09/2026",
+      "nombre": "Resolución N° 182/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Yago Zaragoza",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5323340"
+    },
+    {
+      "id_norma": 1004800,
+      "numero_boletin": 7461,
+      "fecha_publicacion": "25/09/2026",
+      "nombre": "Resolución N° 181/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Nahuel Agustín Palacio",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5323339"
+    },
     {
       "id_norma": 1004497,
       "numero_boletin": 7460,
