@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 101,
+    "total_flagged": 104,
     "by_sigla": {
-      "ASINF": 32,
+      "ASINF": 35,
       "DGTALINF": 19,
       "DGIASINF": 19,
       "SECITD": 16,
@@ -27,6 +27,42 @@
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1005111,
+      "numero_boletin": 7462,
+      "fecha_publicacion": "28/09/2026",
+      "nombre": "Resolución N° 189/ASINF/26",
+      "sumario": "Aprueba el Acta Acuerdo de la Primera a la Tercera Redeterminación Definitiva de Precios de la Contratación Directa por Exclusividad N° 8056-1493-CDI15",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5326365"
+    },
+    {
+      "id_norma": 1005110,
+      "numero_boletin": 7462,
+      "fecha_publicacion": "28/09/2026",
+      "nombre": "Resolución N° 188/ASINF/26",
+      "sumario": "Aprueba el Acta Acuerdo de la Primera Redeterminación Definitiva de Precios de la Licitación Pública N° 8056-0021-LPU22",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5326364"
+    },
+    {
+      "id_norma": 1005008,
+      "numero_boletin": 7462,
+      "fecha_publicacion": "28/09/2026",
+      "nombre": "Resolución N° 187/ASINF/26",
+      "sumario": "Deja sin efecto y modifica a Suplementos de Gabinete",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5326363"
+    },
     {
       "id_norma": 1004866,
       "numero_boletin": 7461,
