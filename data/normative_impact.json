@@ -11,22 +11,96 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 104,
+    "total_flagged": 111,
     "by_sigla": {
-      "ASINF": 35,
-      "DGTALINF": 19,
+      "ASINF": 37,
+      "DGTALINF": 20,
       "DGIASINF": 19,
-      "SECITD": 16,
-      "DGISIS": 14,
+      "DGISIS": 17,
+      "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 10,
+      "plataforma_o_sistema": 11,
       "redeterminacion_precios": 6
     },
     "price_redeterminations_flagged": 3
   },
   "norms": [
+    {
+      "id_norma": 1006008,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Disposición N° 109/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Contratación Directa por Exclusividad N° 8056-1106-CDI26 por el Servicio de Auditoría de Recertificación",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329390"
+    },
+    {
+      "id_norma": 1006000,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1188/DGISIS/26",
+      "sumario": "Adjudica la Licitación Pública N° 8056-1188-LPU26 para el Servicio de mantenimiento correctivo y evolutivo de las soluciones tecnológicas implementadas sobre Plataforma SAP.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329571"
+    },
+    {
+      "id_norma": 1005691,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Resolución N° 149/SECITD/26",
+      "sumario": "Sustituye el Anexo II la Resolución N° 136-SECITD/22",
+      "tipo": "Resolución",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329235"
+    },
+    {
+      "id_norma": 1005529,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Disposición N° 34/DGISIS/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1278-LPU26,",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329389"
+    },
+    {
+      "id_norma": 1005304,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Resolución N° 191/ASINF/26",
+      "sumario": "Acepta la renuncia como Gerente Operativa de la Gerencia Operativa Planificación Estratégica presentada por Macarena Andrea Fuentes",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329234"
+    },
+    {
+      "id_norma": 1005302,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Resolución N° 190/ASINF/26",
+      "sumario": "Acepta la renuncia como Subgerente Operativo de la Subgerencia Operativa de Mantenimiento Edilicio y Servicios Generales presentada por Alejandro Rafael Capria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329233"
+    },
     {
       "id_norma": 1005111,
       "numero_boletin": 7462,
@@ -50,6 +124,18 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5326364"
+    },
+    {
+      "id_norma": 1005077,
+      "numero_boletin": 7463,
+      "fecha_publicacion": "29/09/2026",
+      "nombre": "Disposición N° 33/DGISIS/26",
+      "sumario": "Incrementa la Orden de Compra Abierta N° 8056-0311-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329388"
     },
     {
       "id_norma": 1005008,
