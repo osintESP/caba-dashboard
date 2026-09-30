@@ -11,22 +11,64 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 111,
+    "total_flagged": 116,
     "by_sigla": {
-      "ASINF": 37,
-      "DGTALINF": 20,
+      "ASINF": 40,
+      "DGTALINF": 21,
       "DGIASINF": 19,
-      "DGISIS": 17,
+      "DGISIS": 18,
       "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
       "plataforma_o_sistema": 11,
-      "redeterminacion_precios": 6
+      "redeterminacion_precios": 7
     },
-    "price_redeterminations_flagged": 3
+    "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1006412,
+      "numero_boletin": 7464,
+      "fecha_publicacion": "30/09/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1278/DGISIS/26",
+      "sumario": "Adjudica la Licitación Pública N° 8056-1278-LPU26 para la Renovación de la suscripción anual de paquete de licencias.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5332628"
+    },
+    {
+      "id_norma": 1006159,
+      "numero_boletin": 7464,
+      "fecha_publicacion": "30/09/2026",
+      "nombre": "Resolución N° 193/ASINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5332282"
+    },
+    {
+      "id_norma": 1006021,
+      "numero_boletin": 7464,
+      "fecha_publicacion": "30/09/2026",
+      "nombre": "Disposición N° 110/DGTALINF/26",
+      "sumario": "Aprueba la Tercera Actualización de Precios de la Orden de Compra N° 8056-0098-OCA26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0098-OCA26",
+        "ordinal": 3,
+        "ordinal_word": "Tercera"
+      },
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5332457"
+    },
     {
       "id_norma": 1006008,
       "numero_boletin": 7463,
@@ -52,6 +94,18 @@
       ],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5329571"
+    },
+    {
+      "id_norma": 1005857,
+      "numero_boletin": 7464,
+      "fecha_publicacion": "30/09/2026",
+      "nombre": "Resolución N° 192/ASINF/26",
+      "sumario": "Da de baja bienes inventariados",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5332281"
     },
     {
       "id_norma": 1005691,
@@ -596,6 +650,18 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5299737"
+    },
+    {
+      "id_norma": 1001565,
+      "numero_boletin": 7464,
+      "fecha_publicacion": "30/09/2026",
+      "nombre": "Resolución N° 166/ASINF/26",
+      "sumario": "Acepta la renuncia como Gerente Operativo de la Gerencia Operativa de Evaluación de Proyectos y Servicios presentada por Mariano Nicolás Cortina",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5332280"
     },
     {
       "id_norma": 1001545,
@@ -1448,6 +1514,17 @@
         "orden_de_compra": "8056-0200-OCA25",
         "ordinal": 4,
         "ordinal_word": "Cuarta"
+      },
+      {
+        "id_norma": 1006021,
+        "numero_boletin": 7464,
+        "fecha_publicacion": "30/09/2026",
+        "nombre": "Disposición N° 110/DGTALINF/26",
+        "sigla_unidad": "DGTALINF",
+        "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5332457",
+        "orden_de_compra": "8056-0098-OCA26",
+        "ordinal": 3,
+        "ordinal_word": "Tercera"
       }
     ],
     "note": "Disposiciones de unidades de sistemas que aprueban una actualización de precios de una Orden de Compra con ordinal ≥ 3 (ej. \"Novena Actualización de Precios\" = la 9ª redeterminación de esa orden) — el propio texto del Boletín declara el número, no hace falta reconstruir el historial de montos, que no existe en ningún dataset disponible. Redeterminar precios es un mecanismo contractual legítimo (ajuste por inflación, emergencia económica, etc.), así que esto no implica irregularidad — pero muchas redeterminaciones seguidas de la MISMA orden de compra es un patrón atípico que amerita revisar el contrato subyacente."
