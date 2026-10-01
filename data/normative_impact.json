@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 116,
+    "total_flagged": 118,
     "by_sigla": {
-      "ASINF": 40,
+      "ASINF": 42,
       "DGTALINF": 21,
       "DGIASINF": 19,
       "DGISIS": 18,
@@ -27,6 +27,30 @@
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1006549,
+      "numero_boletin": 7465,
+      "fecha_publicacion": "01/10/2026",
+      "nombre": "Resolución N° 195/ASINF/26",
+      "sumario": "Acepta la renuncia como Gerente Operativa de la Gerencia Operativa de Gestión de Proyectos presentada por Rocío Triaca",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5334579"
+    },
+    {
+      "id_norma": 1006547,
+      "numero_boletin": 7465,
+      "fecha_publicacion": "01/10/2026",
+      "nombre": "Resolución N° 194/ASINF/26",
+      "sumario": "Acepta la renuncia como Gerente Operativo de la Gerencia Operativa de Implementaciones presentada por Ramiro Gabriel Gómez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5334578"
+    },
     {
       "id_norma": 1006412,
       "numero_boletin": 7464,
