@@ -7,7 +7,7 @@ let normsPage=1,procPage=1;
 const dtf=new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'short',timeStyle:'medium'});
 async function fetchJson(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 async function fetchOptional(path){try{return await fetchJson(path)}catch(e){console.warn(`optional dataset unavailable: ${path}`,e);return null}}
-async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos,recurringVendorWatch]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json'),fetchOptional('data/bac_pliegos_caidos.json'),fetchOptional('data/bac_recurring_vendor_watch.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,aperturas,normativeImpact,pliegosCaidos,recurringVendorWatch});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
+async function loadData(){const [stats,editions,norms,procurements,intelligence,sync,bac,bacSyncState,aperturas,normativeImpact,pliegosCaidos,recurringVendorWatch]=await Promise.all([fetchJson('data/stats.json'),fetchJson('data/editions.json'),fetchJson('data/norms.json'),fetchJson('data/procurements.json'),fetchOptional('data/procurement_intelligence.json'),fetchOptional('data/sync_manifest.json'),fetchOptional('data/bac_catalog.json'),fetchOptional('data/bac_sync_state.json'),fetchOptional('data/bac_aperturas.json'),fetchOptional('data/normative_impact.json'),fetchOptional('data/bac_pliegos_caidos.json'),fetchOptional('data/bac_recurring_vendor_watch.json')]);Object.assign(state,{stats,editions,norms,procurements,intelligence,sync,bac,bacSyncState,aperturas,normativeImpact,pliegosCaidos,recurringVendorWatch});$('data-status').textContent='Datos conectados';$('data-status').className='status status-ok'}
 function fillSelect(el,values){for(const v of values){const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o)}}
 function populateFilters(){fillSelect($('filter-org'),[...new Set(state.norms.map(x=>x.organismo).filter(Boolean))].sort());fillSelect($('filter-type'),[...new Set(state.norms.map(x=>x.tipo).filter(Boolean))].sort());fillSelect($('filter-category'),[...new Set(state.procurements.map(x=>x.categoria).filter(Boolean))].sort())}
 function filteredNorms(){const q=$('filter-search').value.trim().toLowerCase(),org=$('filter-org').value,type=$('filter-type').value;return state.norms.filter(n=>{const hay=`${n.nombre||''} ${n.sumario||''} ${n.organismo||''} ${n.tipo||''}`.toLowerCase();return(!q||hay.includes(q))&&(!org||n.organismo===org)&&(!type||n.tipo===type)}).sort((a,b)=>(Number(b.id_norma)||0)-(Number(a.id_norma)||0))}
@@ -48,7 +48,7 @@ function renderRecurringVendorWatch(){
   if(el)el.innerHTML=items.length?items.map(recurringVendorRecordHtml).join(''):'<div class="empty">Sin patrones confirmados por ahora.</div>';
   if(countEl)countEl.textContent=`${fmt.format(items.length)} confirmado${items.length===1?'':'s'}`;
 }
-function renderBAC(data){
+function renderBAC(data,syncState){
   const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner');
   const panel=statusEl?.closest('.panel')||statusEl?.parentElement;
   if(!data){if(panel)panel.style.display='none';return}
@@ -58,8 +58,10 @@ function renderBAC(data){
   const s=data.summary||{},audit=data.audit_signals||{},cov=data.coverage||{},nco=audit.non_competitive_open_tenders||{};
   const concentration=audit.vendor_concentration_by_organismo||[];
   const highConc=concentration.filter(c=>c.high_concentration).length;
+  const checkedAt=syncState?.checked_at;
   summaryEl.innerHTML=`
     <div>Dataset actualizado: ${esc(data.dataset?.metadata_modified||data.collected_at||'—')}</div>
+    ${checkedAt?`<div>Última verificación contra la fuente: ${esc(checkedAt)}${syncState?.status==='unchanged'?' (sin cambios desde la última descarga)':''}</div>`:''}
     <div>Cobertura de releases procesados: ${esc(cov.date_from||'—')} a ${esc(cov.date_to||'—')} (${fmt.format(cov.releases_processed||0)} releases — ver nota de cobertura)</div>
     ${cov.note?`<div class="bac-note">${esc(cov.note)}</div>`:''}
     <div>Monto total adjudicado: ${fmtCurrency.format(s.total_awarded_ars||0)} · en tecnología: ${fmtCurrency.format(s.tech_awarded_ars||0)} (${s.tech_share_pct||0}%)</div>
@@ -165,7 +167,7 @@ function renderLists(){
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
+function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac,state.bacSyncState));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
