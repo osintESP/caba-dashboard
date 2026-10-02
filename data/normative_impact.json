@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 118,
+    "total_flagged": 120,
     "by_sigla": {
-      "ASINF": 42,
-      "DGTALINF": 21,
+      "ASINF": 43,
+      "DGTALINF": 22,
       "DGIASINF": 19,
       "DGISIS": 18,
       "SECITD": 17,
@@ -22,11 +22,41 @@
     },
     "by_topic": {
       "plataforma_o_sistema": 11,
-      "redeterminacion_precios": 7
+      "redeterminacion_precios": 8
     },
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1006870,
+      "numero_boletin": 7466,
+      "fecha_publicacion": "02/10/2026",
+      "nombre": "Disposición N° 113/DGTALINF/26",
+      "sumario": "Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0312-OCA26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0312-OCA26",
+        "ordinal": 1,
+        "ordinal_word": "Primera"
+      },
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5337386"
+    },
+    {
+      "id_norma": 1006843,
+      "numero_boletin": 7466,
+      "fecha_publicacion": "02/10/2026",
+      "nombre": "Resolución N° 196/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Matías Sergio Tornatore",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5337206"
+    },
     {
       "id_norma": 1006549,
       "numero_boletin": 7465,
