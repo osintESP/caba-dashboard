@@ -11,22 +11,48 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 120,
+    "total_flagged": 122,
     "by_sigla": {
-      "ASINF": 43,
+      "ASINF": 44,
       "DGTALINF": 22,
+      "DGISIS": 19,
       "DGIASINF": 19,
-      "DGISIS": 18,
       "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 11,
+      "plataforma_o_sistema": 12,
       "redeterminacion_precios": 8
     },
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1007517,
+      "numero_boletin": 7467,
+      "fecha_publicacion": "05/10/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1581/DGISIS/26",
+      "sumario": "Llama a Licitación Pública N° 8056-1581-LPU26 para el Mantenimiento para la Plataforma Salesforce.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5339750"
+    },
+    {
+      "id_norma": 1006958,
+      "numero_boletin": 7467,
+      "fecha_publicacion": "05/10/2026",
+      "nombre": "Resolución N° 197/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Natalia Elizabet Viana",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5339392"
+    },
     {
       "id_norma": 1006870,
       "numero_boletin": 7466,
