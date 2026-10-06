@@ -11,26 +11,64 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 122,
+    "total_flagged": 125,
     "by_sigla": {
       "ASINF": 44,
-      "DGTALINF": 22,
-      "DGISIS": 19,
+      "DGTALINF": 24,
+      "DGISIS": 20,
       "DGIASINF": 19,
       "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 12,
+      "plataforma_o_sistema": 13,
       "redeterminacion_precios": 8
     },
     "price_redeterminations_flagged": 4
   },
   "norms": [
     {
+      "id_norma": 1007752,
+      "numero_boletin": 7468,
+      "fecha_publicacion": "06/10/2026",
+      "nombre": "Disposición N° 115/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública 8056-1573-LPU26 para la Renovación del servicio de mantenimiento del sistema de almacenamiento Hitachi y la red de almacenamiento instalados en los centros de datos",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5341556"
+    },
+    {
+      "id_norma": 1007719,
+      "numero_boletin": 7468,
+      "fecha_publicacion": "06/10/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1288/DGTALINF/26",
+      "sumario": "Provisión de un servicio de acceso dinámico a internet",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5341728"
+    },
+    {
+      "id_norma": 1007530,
+      "numero_boletin": 7468,
+      "fecha_publicacion": "06/10/2026",
+      "nombre": "Disposición N° 36/DGISIS/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1581-LPU26 por los Servicios de mantenimiento correctivo y evolutivo para la Plataforma Salesforce",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5341555"
+    },
+    {
       "id_norma": 1007517,
-      "numero_boletin": 7467,
-      "fecha_publicacion": "05/10/2026",
+      "numero_boletin": 7468,
+      "fecha_publicacion": "06/10/2026",
       "nombre": "Licitación Pública / Llamado  N° 1581/DGISIS/26",
       "sumario": "Llama a Licitación Pública N° 8056-1581-LPU26 para el Mantenimiento para la Plataforma Salesforce.",
       "tipo": "Licitación Pública",
@@ -39,7 +77,7 @@
         "plataforma_o_sistema"
       ],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5339750"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5341727"
     },
     {
       "id_norma": 1006958,
