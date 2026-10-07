@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 125,
+    "total_flagged": 133,
     "by_sigla": {
-      "ASINF": 44,
-      "DGTALINF": 24,
+      "ASINF": 51,
+      "DGTALINF": 25,
       "DGISIS": 20,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -27,6 +27,42 @@
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1007953,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1573/DGTALINF/26",
+      "sumario": "Llama a Licitación Pública N° 8056-1573-LPU26 para la Renovación del servicio de mantenimiento del sistema de almacenamiento Hitachi y la red de almacenamiento.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5344188"
+    },
+    {
+      "id_norma": 1007774,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 204/ASINF/26",
+      "sumario": "Modifica el monto del Suplemento de Gabinete otorgado a Nicolás Martín Hubner",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343840"
+    },
+    {
+      "id_norma": 1007764,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 203/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Pablo Raúl Luchetti",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343839"
+    },
     {
       "id_norma": 1007752,
       "numero_boletin": 7468,
@@ -50,6 +86,66 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5341728"
+    },
+    {
+      "id_norma": 1007656,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 202/ASINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343838"
+    },
+    {
+      "id_norma": 1007579,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 201/ASINF/26",
+      "sumario": "Designa como Gerente Operativo de la Gerencia Operativa Planificación Estratégica a Claudio Javier Vassallo",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343837"
+    },
+    {
+      "id_norma": 1007577,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 200/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Lucas Manuel Gómez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343836"
+    },
+    {
+      "id_norma": 1007576,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 199/ASINF/26",
+      "sumario": "Designa como Gerente Operativa de la Gerencia Operativa Evaluación de Proyectos y Servicios a Macarena Andrea Fuentes",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343835"
+    },
+    {
+      "id_norma": 1007574,
+      "numero_boletin": 7469,
+      "fecha_publicacion": "07/10/2026",
+      "nombre": "Resolución N° 198/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Leonardo Gabriel Merello",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5343834"
     },
     {
       "id_norma": 1007530,
