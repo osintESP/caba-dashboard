@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 133,
+    "total_flagged": 137,
     "by_sigla": {
-      "ASINF": 51,
-      "DGTALINF": 25,
+      "ASINF": 54,
+      "DGTALINF": 26,
       "DGISIS": 20,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -27,6 +27,54 @@
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1008642,
+      "numero_boletin": 7471,
+      "fecha_publicacion": "09/10/2026",
+      "nombre": "Disposición N° 116/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1520-LPU26 para la Renovación del servicio de mantenimiento integral del equipamiento HPE",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5348711"
+    },
+    {
+      "id_norma": 1008335,
+      "numero_boletin": 7471,
+      "fecha_publicacion": "09/10/2026",
+      "nombre": "Resolución N° 206/ASINF/26",
+      "sumario": "Deja sin efecto la designación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5348604"
+    },
+    {
+      "id_norma": 1008106,
+      "numero_boletin": 7471,
+      "fecha_publicacion": "09/10/2026",
+      "nombre": "Resolución N° 205/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Santiago González Pondal",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5348603"
+    },
+    {
+      "id_norma": 1008082,
+      "numero_boletin": 7471,
+      "fecha_publicacion": "09/10/2026",
+      "nombre": "Trimestral de contratos s/Ley de Presupuesto N° 3/ASINF/26",
+      "sumario": "Tercer Trimestre año 2026",
+      "tipo": "Trimestral de contratos s/Ley de Presupuesto",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5348839"
+    },
     {
       "id_norma": 1007953,
       "numero_boletin": 7470,
