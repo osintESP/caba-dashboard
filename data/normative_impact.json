@@ -11,22 +11,34 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 137,
+    "total_flagged": 139,
     "by_sigla": {
       "ASINF": 54,
-      "DGTALINF": 26,
-      "DGISIS": 20,
+      "DGTALINF": 27,
+      "DGISIS": 21,
       "DGIASINF": 19,
       "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
       "plataforma_o_sistema": 13,
-      "redeterminacion_precios": 8
+      "redeterminacion_precios": 9
     },
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1008686,
+      "numero_boletin": 7472,
+      "fecha_publicacion": "13/10/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1520/DGTALINF/26",
+      "sumario": "Mantenimiento integral del equipamiento HPE",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5351264"
+    },
     {
       "id_norma": 1008642,
       "numero_boletin": 7471,
@@ -38,6 +50,24 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5348711"
+    },
+    {
+      "id_norma": 1008397,
+      "numero_boletin": 7472,
+      "fecha_publicacion": "13/10/2026",
+      "nombre": "Disposición N° 37/DGISIS/26",
+      "sumario": "Aprueba la Segunda Actualización de Precios de la Orden de Compra N° 8056-0529-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0529-OCA25",
+        "ordinal": 2,
+        "ordinal_word": "Segunda"
+      },
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5351063"
     },
     {
       "id_norma": 1008335,
