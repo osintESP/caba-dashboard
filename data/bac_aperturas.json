@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-14T15:51:48+00:00",
+  "collected_at": "2026-10-14T20:15:20+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
@@ -8,7 +8,7 @@
       "numero_proceso": "416-3456-CME26",
       "nombre_proceso": "TROCAR PARA LAPAROSCOPIA COMPRA MENOR PLAN SUMAR PEDIDO N° 41833-ABASTEC INMEDIATO-TOCOGINECOLOGIA-",
       "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "416",
       "organismo": "HTAL. CARLOS G. DURAND",
       "fecha_apertura": "2026-10-14T15:00:00-03:00",
@@ -18,7 +18,7 @@
       "numero_proceso": "623-0836-LPU26",
       "nombre_proceso": "Adquisición de Maderas y Afines.",
       "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "623",
       "organismo": "DIR. GRAL. DE COMPRAS Y CONTRATACIONES",
       "fecha_apertura": "2026-10-14T14:00:00-03:00",
@@ -28,7 +28,7 @@
       "numero_proceso": "3202-1282-LPU26",
       "nombre_proceso": "Servicio de provisión, entrega, recepción, retiro, lavado, secado, y planchado de ropa blanca",
       "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
+      "estado": "En Apertura",
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-10-14T13:00:00-03:00",
@@ -78,7 +78,7 @@
       "numero_proceso": "441-3453-CME26",
       "nombre_proceso": "Reactivos para Celiaquía",
       "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
+      "estado": "En Evaluacion",
       "unidad_ejecutora_codigo": "441",
       "organismo": "HTAL. ABEL ZUBIZARRETA",
       "fecha_apertura": "2026-10-14T10:00:00-03:00",
@@ -98,7 +98,7 @@
       "numero_proceso": "441-3491-CME26",
       "nombre_proceso": "Insumos para Odontología",
       "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
+      "estado": "En Evaluacion",
       "unidad_ejecutora_codigo": "441",
       "organismo": "HTAL. ABEL ZUBIZARRETA",
       "fecha_apertura": "2026-10-14T10:00:00-03:00",
@@ -126,36 +126,6 @@
     }
   ],
   "aperturas_proximas": [
-    {
-      "numero_proceso": "3202-1282-LPU26",
-      "nombre_proceso": "Servicio de provisión, entrega, recepción, retiro, lavado, secado, y planchado de ropa blanca",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "3202",
-      "organismo": "Ministerio de Seguridad",
-      "fecha_apertura": "2026-10-14T13:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "623-0836-LPU26",
-      "nombre_proceso": "Adquisición de Maderas y Afines.",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "623",
-      "organismo": "DIR. GRAL. DE COMPRAS Y CONTRATACIONES",
-      "fecha_apertura": "2026-10-14T14:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "416-3456-CME26",
-      "nombre_proceso": "TROCAR PARA LAPAROSCOPIA COMPRA MENOR PLAN SUMAR PEDIDO N° 41833-ABASTEC INMEDIATO-TOCOGINECOLOGIA-",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "416",
-      "organismo": "HTAL. CARLOS G. DURAND",
-      "fecha_apertura": "2026-10-14T15:00:00-03:00",
-      "is_technology": false
-    },
     {
       "numero_proceso": "418-3511-CME26",
       "nombre_proceso": "DPTO URGENCIAS - LARINGOSCOPIOS, COLLARES CERVICALES Y OTROS INSUMOS PARA CONTINGENCIAS IMV",
@@ -224,6 +194,36 @@
       "unidad_ejecutora_codigo": "412",
       "organismo": "HTAL. COSME ARGERICH",
       "fecha_apertura": "2026-10-15T09:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "430-1598-LPU26",
+      "nombre_proceso": "INSUMOS DE INMUNOHISTOQUIMICA (ANATOMIA PATOLOGICA)",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "430",
+      "organismo": "HTAL. JOSE M.RAMOS MEJIA",
+      "fecha_apertura": "2026-10-15T10:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "420-1176-CDI26",
+      "nombre_proceso": "Auricular para audiología",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "420",
+      "organismo": "HTAL. RICARDO GUTIERREZ",
+      "fecha_apertura": "2026-10-15T10:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "420-3470-CME26",
+      "nombre_proceso": "Adquisicion de Ortesis toracica (Paciente E.P) Cirugia gral.",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "420",
+      "organismo": "HTAL. RICARDO GUTIERREZ",
+      "fecha_apertura": "2026-10-15T10:00:00-03:00",
       "is_technology": false
     },
     {
