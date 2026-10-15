@@ -11,11 +11,11 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 139,
+    "total_flagged": 144,
     "by_sigla": {
-      "ASINF": 54,
-      "DGTALINF": 27,
-      "DGISIS": 21,
+      "ASINF": 55,
+      "DGTALINF": 30,
+      "DGISIS": 22,
       "DGIASINF": 19,
       "SECITD": 17,
       "DGGEDOC": 1
@@ -27,6 +27,66 @@
     "price_redeterminations_flagged": 4
   },
   "norms": [
+    {
+      "id_norma": 1009458,
+      "numero_boletin": 7474,
+      "fecha_publicacion": "15/10/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1614/DGTALINF/26",
+      "sumario": "Mantenimiento integral para los equipos y software IBM",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5355975"
+    },
+    {
+      "id_norma": 1009319,
+      "numero_boletin": 7474,
+      "fecha_publicacion": "15/10/2026",
+      "nombre": "Disposición N° 119/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1614-LPU26 para la Renovación del Servicio de Mantenimiento integral para los equipos y software IBM",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5355820"
+    },
+    {
+      "id_norma": 1009295,
+      "numero_boletin": 7474,
+      "fecha_publicacion": "15/10/2026",
+      "nombre": "Disposición N° 38/DGISIS/26",
+      "sumario": "Rectifica la Disposición N° 36-DGISIS/26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5355818"
+    },
+    {
+      "id_norma": 1009142,
+      "numero_boletin": 7474,
+      "fecha_publicacion": "15/10/2026",
+      "nombre": "Disposición N° 118/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1288-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5355819"
+    },
+    {
+      "id_norma": 1008952,
+      "numero_boletin": 7474,
+      "fecha_publicacion": "15/10/2026",
+      "nombre": "Resolución N° 208/ASINF/26",
+      "sumario": "Designa como Gerente Operativo de la Gerencia Operativa Infraestructura a Leonardo Gabriel Merello",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5355713"
+    },
     {
       "id_norma": 1008686,
       "numero_boletin": 7473,
