@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 146,
+    "total_flagged": 152,
     "by_sigla": {
-      "ASINF": 57,
-      "DGTALINF": 29,
+      "ASINF": 59,
+      "DGTALINF": 33,
       "DGISIS": 23,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -22,22 +22,46 @@
     },
     "by_topic": {
       "plataforma_o_sistema": 13,
-      "redeterminacion_precios": 9
+      "redeterminacion_precios": 10
     },
     "price_redeterminations_flagged": 4
   },
   "norms": [
     {
+      "id_norma": 1010491,
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1573/DGTALINF/26",
+      "sumario": "Mantenimiento del sistema de almacenamiento y red de almacenamiento ",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5362158"
+    },
+    {
+      "id_norma": 1010178,
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1288/DGTALINF/26",
+      "sumario": "Servicio de acceso dinámico a internet para dependencias del Gobierno de la Ciudad Autónoma de Buenos Aires",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5362159"
+    },
+    {
       "id_norma": 1010073,
-      "numero_boletin": 7475,
-      "fecha_publicacion": "16/10/2026",
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
       "nombre": "Licitación Pública / Llamado  N° 1593/DGISIS/26",
       "sumario": "Soporte técnico especializado y mantenimiento evolutivo y correctivo de Microsoft Dynamics del GCABA",
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGISIS",
       "topics": [],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5358987"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5362156"
     },
     {
       "id_norma": 1009903,
@@ -50,6 +74,56 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5358823"
+    },
+    {
+      "id_norma": 1009879,
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
+      "nombre": "Disposición N° 122/DGTALINF/26",
+      "sumario": "Aprueba la Sexta Actualización de precios de la Licitación Pública N° 8056-0060-LPU25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5361975"
+    },
+    {
+      "id_norma": 1009812,
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
+      "nombre": "Resolución N° 214/ASINF/26",
+      "sumario": "Designa a personal de Planta de Gabinete",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5361833"
+    },
+    {
+      "id_norma": 1009738,
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
+      "nombre": "Resolución N° 213/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Judit Mariela Novgorosky",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5361832"
+    },
+    {
+      "id_norma": 1009635,
+      "numero_boletin": 7476,
+      "fecha_publicacion": "19/10/2026",
+      "nombre": "Disposición N° 121/DGTALINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5361974"
     },
     {
       "id_norma": 1009458,
