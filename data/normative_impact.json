@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 152,
+    "total_flagged": 158,
     "by_sigla": {
-      "ASINF": 59,
-      "DGTALINF": 33,
+      "ASINF": 62,
+      "DGTALINF": 36,
       "DGISIS": 23,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -22,11 +22,47 @@
     },
     "by_topic": {
       "plataforma_o_sistema": 13,
-      "redeterminacion_precios": 10
+      "redeterminacion_precios": 11
     },
-    "price_redeterminations_flagged": 4
+    "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1010615,
+      "numero_boletin": 7477,
+      "fecha_publicacion": "20/10/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1417/DGTALINF/26",
+      "sumario": "Suscripción de soluciones de inteligencia artificial",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5365245"
+    },
+    {
+      "id_norma": 1010569,
+      "numero_boletin": 7477,
+      "fecha_publicacion": "20/10/2026",
+      "nombre": "Disposición N° 125/DGTALINF/26",
+      "sumario": "Prorroga la Orden de Compra N° 8056-16535-OC25,",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5365053"
+    },
+    {
+      "id_norma": 1010567,
+      "numero_boletin": 7477,
+      "fecha_publicacion": "20/10/2026",
+      "nombre": "Resolución N° 217/ASINF/26",
+      "sumario": "Asigna Suplemento de Gabinete a Claudio Javier Vassallo",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5364935"
+    },
     {
       "id_norma": 1010491,
       "numero_boletin": 7476,
@@ -38,6 +74,30 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5362158"
+    },
+    {
+      "id_norma": 1010402,
+      "numero_boletin": 7477,
+      "fecha_publicacion": "20/10/2026",
+      "nombre": "Resolución N° 216/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Mariela Bermúdez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5364934"
+    },
+    {
+      "id_norma": 1010377,
+      "numero_boletin": 7477,
+      "fecha_publicacion": "20/10/2026",
+      "nombre": "Resolución N° 215/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Lucas Manuel Gómez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5364933"
     },
     {
       "id_norma": 1010178,
@@ -62,6 +122,24 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5362156"
+    },
+    {
+      "id_norma": 1010041,
+      "numero_boletin": 7477,
+      "fecha_publicacion": "20/10/2026",
+      "nombre": "Disposición N° 124/DGTALINF/26",
+      "sumario": "Aprueba la Quinta Actualización de Precios de la Orden de Compra N° 8056-0211-OCA22,",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0211-OCA22",
+        "ordinal": 5,
+        "ordinal_word": "Quinta"
+      },
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5365052"
     },
     {
       "id_norma": 1009903,
@@ -1942,6 +2020,17 @@
         "orden_de_compra": "8056-0106-OCA25",
         "ordinal": 9,
         "ordinal_word": "Novena"
+      },
+      {
+        "id_norma": 1010041,
+        "numero_boletin": 7477,
+        "fecha_publicacion": "20/10/2026",
+        "nombre": "Disposición N° 124/DGTALINF/26",
+        "sigla_unidad": "DGTALINF",
+        "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5365052",
+        "orden_de_compra": "8056-0211-OCA22",
+        "ordinal": 5,
+        "ordinal_word": "Quinta"
       },
       {
         "id_norma": 997309,
