@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 158,
+    "total_flagged": 160,
     "by_sigla": {
-      "ASINF": 62,
+      "ASINF": 64,
       "DGTALINF": 36,
       "DGISIS": 23,
       "DGIASINF": 19,
@@ -27,6 +27,30 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1010628,
+      "numero_boletin": 7478,
+      "fecha_publicacion": "21/10/2026",
+      "nombre": "Resolución N° 219/ASINF/26",
+      "sumario": "Designa con carácter transitorio en la Planta de Perfiles de Sistemas, a la Sra. Lacoste Cecilia Florencia, al puesto de “Analista Desarrollo de Sistemas Nivel 1” para prestar servicios en la Dirección General Integración de Sistemas de la Agencia de Sistemas de Información",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5367583"
+    },
+    {
+      "id_norma": 1010626,
+      "numero_boletin": 7478,
+      "fecha_publicacion": "21/10/2026",
+      "nombre": "Resolución N° 218/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por el Sr. Baspineiro, Pablo Sebastián, al puesto de “Administrador Base de Datos Nivel 2” de la Dirección General de Infraestructura de la Agencia de Sistemas de Información",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5367582"
+    },
     {
       "id_norma": 1010615,
       "numero_boletin": 7477,
