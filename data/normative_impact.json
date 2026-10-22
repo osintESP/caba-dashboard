@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 161,
+    "total_flagged": 160,
     "by_sigla": {
-      "ASINF": 65,
+      "ASINF": 64,
       "DGTALINF": 36,
       "DGISIS": 23,
       "DGIASINF": 19,
@@ -27,18 +27,6 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
-    {
-      "id_norma": 1010635,
-      "numero_boletin": 7479,
-      "fecha_publicacion": "22/10/2026",
-      "nombre": "Resolución N° 220/ASINF/26",
-      "sumario": "Aprueba modificaciones presupuestarias",
-      "tipo": "Resolución",
-      "sigla_unidad": "ASINF",
-      "topics": [],
-      "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5369570"
-    },
     {
       "id_norma": 1010628,
       "numero_boletin": 7478,
