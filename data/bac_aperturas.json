@@ -1,107 +1,107 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-22T20:12:44+00:00",
+  "collected_at": "2026-10-23T15:46:58+00:00",
   "source": "https://www.buenosairescompras.gob.ar/",
   "status": "ok",
   "aperturas_recientes": [
     {
-      "numero_proceso": "434-3538-CME26",
-      "nombre_proceso": "Adquisición Stent Biliar Autoexpandible Nitinol - DUARTE BORDON LUCIA CELIA",
+      "numero_proceso": "3201-3615-CME26",
+      "nombre_proceso": "Servicio de Monitoreo de Medios Digitales y Campañas",
       "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "3201",
+      "organismo": "Ente de Turismo",
+      "fecha_apertura": "2026-10-23T15:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "541-1602-LPU26",
+      "nombre_proceso": "TELA DE RASO, DE GASA, SHANGTUN Y OTRAS",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2026-10-23T14:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "434-1571-LPU26",
+      "nombre_proceso": "Adquisición insumos para Ginecología - Prótesis incontinencia urinaria de esfuerzo y otros",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
       "unidad_ejecutora_codigo": "434",
       "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
-      "fecha_apertura": "2026-10-22T13:00:00-03:00",
+      "fecha_apertura": "2026-10-23T13:30:00-03:00",
       "is_technology": false
     },
     {
-      "numero_proceso": "401-1483-LPU26",
-      "nombre_proceso": "Adquisición de medicamentos - Anexo II",
+      "numero_proceso": "2051-1648-LPU26",
+      "nombre_proceso": "Servicio integral de traslados y alojamiento – Juegos Nacionales Evita 2026, Mar del Plata",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "2051-1269-CDI26",
+      "nombre_proceso": "SERVICIO DE RECOLECCIÓN, TRASLADO Y PROCESAMIENTO DE RESIDUOS SÓLIDOS URBANOS SECOS",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "2051-1611-LPU26",
+      "nombre_proceso": "Adq. y evolución de solución de analítica avanzada de datos con agentes de IA.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "434-1594-LPU26",
+      "nombre_proceso": "ADQ. BIOQUIMICA CLINICA: BILLIRRUBINA, CREATININA, UREA, SODIO, ALBUMINA, GLUCOSA, ETC",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "434",
+      "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "439-1222-CDI26",
+      "nombre_proceso": "Servicio de Reparación de Colonoscopio Sonoscape EC-430T s/N° 7515243356",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Desierto",
+      "unidad_ejecutora_codigo": "439",
+      "organismo": "HTAL. BONORINO UDAONDO",
+      "fecha_apertura": "2026-10-23T12:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "7162-3345-CME26",
+      "nombre_proceso": "SERVICIO DE DISEÑO, DESARROLLO, IMPLEMENTACIÓN Y SOPORTE DE UNA PLATAFORMA WEB",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "7162",
+      "organismo": "MINISTERIO DE ESPACIO PUBLICO E HIGIENE URBANA",
+      "fecha_apertura": "2026-10-23T12:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "8618-1345-LPU26",
+      "nombre_proceso": "Renovación licenciamiento y contratación de soporte técnico equipos FortiMail y FortiSandbox",
       "tipo_proceso": "Licitación Pública",
       "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "401",
-      "organismo": "MINISTERIO DE SALUD",
-      "fecha_apertura": "2026-10-22T12:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "8056-1520-LPU26",
-      "nombre_proceso": "Renov. serv. de mant. integral del equipamiento HPE en Centros de Datos de Independencia y Uspallat",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-10-22T11:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "435-3540-CME26",
-      "nombre_proceso": "ADQUISICION DE INSUMOS SEDRONAR PARA ANATOMIA PATOLOGICA",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "435",
-      "organismo": "HTAL. RAMON SARDA",
-      "fecha_apertura": "2026-10-22T11:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "420-3498-CME26",
-      "nombre_proceso": "ADQUSICIÓN DE ESTILETE PARA MONITOR ENDOSCOPICO",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "420",
-      "organismo": "HTAL. RICARDO GUTIERREZ",
-      "fecha_apertura": "2026-10-22T10:30:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "420-1192-CDI26",
-      "nombre_proceso": "ADQUISICIÓN DE INSTRUMENTAL",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "420",
-      "organismo": "HTAL. RICARDO GUTIERREZ",
-      "fecha_apertura": "2026-10-22T10:30:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "420-1239-CDI26",
-      "nombre_proceso": "ADQUISICIÓN DE CLAVO ENDOMEDULAR Y PROTESIS OCULAR",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "420",
-      "organismo": "HTAL. RICARDO GUTIERREZ",
-      "fecha_apertura": "2026-10-22T10:30:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "427-3649-CME26",
-      "nombre_proceso": "SERVICIO DE MANTENIMIENTO SISTEMA NEUMATICO/TRANSPORTE DE MUESTRAS PARA LABORATORIO",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "427",
-      "organismo": "HTAL. IGNACIO PIROVANO",
-      "fecha_apertura": "2026-10-22T10:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "430-3559-CME26",
-      "nombre_proceso": "PROTEINOGRAMAS - LABORATORIO CENTRAL",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Evaluacion",
-      "unidad_ejecutora_codigo": "430",
-      "organismo": "HTAL. JOSE M.RAMOS MEJIA",
-      "fecha_apertura": "2026-10-22T10:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "410-3575-CME26",
-      "nombre_proceso": "PED 305- Adquisición de Equipamiento (lavador de chatas) para Dto de Urgencias.",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "410",
-      "organismo": "HTAL.TEODORO ALVAREZ",
-      "fecha_apertura": "2026-10-22T10:00:00-03:00",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-10-23T12:00:00-03:00",
       "is_technology": false
     },
     {
@@ -127,103 +127,103 @@
   ],
   "aperturas_proximas": [
     {
-      "numero_proceso": "418-1250-CDI26",
-      "nombre_proceso": "USOVNI- ALQ.EQ. AUTOCPAP, HUMIDIFICADOR Y MASCARA NASAL PTE CORTEZ ANALIA LOURDES - 12 MESES",
+      "numero_proceso": "2051-1648-LPU26",
+      "nombre_proceso": "Servicio integral de traslados y alojamiento – Juegos Nacionales Evita 2026, Mar del Plata",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "2051-1269-CDI26",
+      "nombre_proceso": "SERVICIO DE RECOLECCIÓN, TRASLADO Y PROCESAMIENTO DE RESIDUOS SÓLIDOS URBANOS SECOS",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "2051-1611-LPU26",
+      "nombre_proceso": "Adq. y evolución de solución de analítica avanzada de datos con agentes de IA.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "434-1594-LPU26",
+      "nombre_proceso": "ADQ. BIOQUIMICA CLINICA: BILLIRRUBINA, CREATININA, UREA, SODIO, ALBUMINA, GLUCOSA, ETC",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "434",
+      "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
+      "fecha_apertura": "2026-10-23T13:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "434-1571-LPU26",
+      "nombre_proceso": "Adquisición insumos para Ginecología - Prótesis incontinencia urinaria de esfuerzo y otros",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "434",
+      "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
+      "fecha_apertura": "2026-10-23T13:30:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "541-1602-LPU26",
+      "nombre_proceso": "TELA DE RASO, DE GASA, SHANGTUN Y OTRAS",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2026-10-23T14:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "3201-3615-CME26",
+      "nombre_proceso": "Servicio de Monitoreo de Medios Digitales y Campañas",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "3201",
+      "organismo": "Ente de Turismo",
+      "fecha_apertura": "2026-10-23T15:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "418-3676-CME26",
+      "nombre_proceso": "GASTROENTEROLOGIA-SERV. REPARACION VIDEOENDOSCOPIO SONOSCAPE-TRIMESTRAL",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2026-10-26T07:00:00-03:00",
+      "is_technology": false
+    },
+    {
+      "numero_proceso": "418-1262-CDI26",
+      "nombre_proceso": "CARDIOLOGIA - ADQ. DESFIBRILADOR DESCARGA BIFASICA PTE DURE CARLOS - 6 MESES",
       "tipo_proceso": "Contratación Directa",
       "estado": "Publicado",
       "unidad_ejecutora_codigo": "418",
       "organismo": "HTAL. JUAN A. FERNANDEZ",
-      "fecha_apertura": "2026-10-23T07:00:00-03:00",
+      "fecha_apertura": "2026-10-26T07:00:00-03:00",
       "is_technology": false
     },
     {
-      "numero_proceso": "418-1249-CDI26",
-      "nombre_proceso": "NEUMONOLOGIA- ALQUILER EQUIPO OXIGENOTERAPIA PCTE:PALLY MENDIETA WENCESLAO RAMIRO- 12 MESES",
+      "numero_proceso": "418-1257-CDI26",
+      "nombre_proceso": "CARDIOLOGIA - ADQ. DESFIBRILADOR DESCARGA BIFASICA PTE BASILIO LEANDRO - 6 MESES",
       "tipo_proceso": "Contratación Directa",
       "estado": "Publicado",
       "unidad_ejecutora_codigo": "418",
       "organismo": "HTAL. JUAN A. FERNANDEZ",
-      "fecha_apertura": "2026-10-23T07:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "414-1641-LPU26",
-      "nombre_proceso": "ADQUISICION DE RESECTOSCOPIO BIPOLAR -GINECOLOGIA",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "414",
-      "organismo": "HTAL. MARIA CURIE",
-      "fecha_apertura": "2026-10-23T08:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "440-1642-LPU26",
-      "nombre_proceso": "REACTIVOS PARA SEROLOGIA",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "440",
-      "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "440-3634-CME26",
-      "nombre_proceso": "REACTIVOS PARA BACTERIOLOGIA",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "440",
-      "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "440-3654-CME26",
-      "nombre_proceso": "REACTIVOS ( HCG)",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "440",
-      "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "412-3736-CME26",
-      "nombre_proceso": "Provision Insumos Dispositivo de cierre CIA Pac Gerding Silvina",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "412",
-      "organismo": "HTAL. COSME ARGERICH",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "412-3734-CME26",
-      "nombre_proceso": "Provision Cardiodesfibrilador Pac Lusardi Martínez Miguel Ángel",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "412",
-      "organismo": "HTAL. COSME ARGERICH",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "426-1238-CDI26",
-      "nombre_proceso": "PROTESIS DE CODO PTE. LUCIANO FRANCO",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "426",
-      "organismo": "HTAL. PARMENIO PIÑERO",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
-      "is_technology": false
-    },
-    {
-      "numero_proceso": "426-3687-CME26",
-      "nombre_proceso": "NITROGENO LIQUIDO",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "426",
-      "organismo": "HTAL. PARMENIO PIÑERO",
-      "fecha_apertura": "2026-10-23T09:00:00-03:00",
+      "fecha_apertura": "2026-10-26T07:00:00-03:00",
       "is_technology": false
     },
     {
