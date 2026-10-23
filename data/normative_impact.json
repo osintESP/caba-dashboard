@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 160,
+    "total_flagged": 162,
     "by_sigla": {
-      "ASINF": 64,
+      "ASINF": 66,
       "DGTALINF": 36,
       "DGISIS": 23,
       "DGIASINF": 19,
@@ -27,6 +27,30 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1011402,
+      "numero_boletin": 7480,
+      "fecha_publicacion": "23/10/2026",
+      "nombre": "Resolución N° 224/ASINF/26",
+      "sumario": "Autoriza cláusula modificatoria adicional referida al monto de los contratos de locación de servicios",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5371903"
+    },
+    {
+      "id_norma": 1011385,
+      "numero_boletin": 7480,
+      "fecha_publicacion": "23/10/2026",
+      "nombre": "Resolución N° 223/ASINF/26",
+      "sumario": "Deja sin efecto el Suplemento de Gabinete oportunamente asignado por Resolución 2-ASINF/26",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5371902"
+    },
     {
       "id_norma": 1010628,
       "numero_boletin": 7478,
