@@ -23,6 +23,7 @@ python runtime/bac_aperturas_scraper.py      # headless-browser scrape of BAC's 
 python runtime/bac_pliegos_caidos_scraper.py # headless-browser scrape of BAC's live "Desierto"/"Dejado Sin Efecto" tech tenders -> data/bac_pliegos_caidos.json
 python runtime/bac_recurring_vendor_watch.py # headless-browser check of bac_catalog.json's recurring_direct_pairs candidates against BAC's live search -> data/bac_recurring_vendor_watch.json
 BACKFILL_START=7275 python runtime/backfill_boletin.py  # one-off historical Boletín backfill
+python runtime/data_health_check.py           # read-only invariant check over data/*.json; exit 1 + Markdown report on any issue
 
 # tests (stdlib unittest, no pytest/jest, no frontend test runner)
 python -m unittest discover -s runtime/tests -v
@@ -43,6 +44,7 @@ There is no linter, no bundler, no frontend `package.json` — `app.js`/`index.h
 - `refresh-bac-recurring-vendor-watch.yml` — once a day (deliberately not hourly: its candidate list, `bac_catalog.json.audit_signals.recurring_direct_pairs`, barely changes between the daily `refresh-bac-data.yml` runs it depends on — scraping BAC's live search hourly for a list that's ~static would just be load on their site for no benefit): `bac_recurring_vendor_watch.py`.
 - `backfill-boletin.yml` — `workflow_dispatch` only, for patching historical gaps: `backfill_boletin.py` → `procurement_intelligence.py`. Budget ~30-50s per Boletín edition when picking a range (measured, not estimated).
 - `pages.yml` — deploys to GitHub Pages on every push to `master`.
+- `check-data-freshness.yml` — weekdays 11:30 ART, read-only: re-dispatches hourly pipelines that didn't run today ("did it run?"), then runs `data_health_check.py` ("does what ran make sense?" — gaps in recent Boletín numbers, scraper rows not matching BAC's reported totals, junk/duplicate rows, non-ok statuses). Each opens/closes its own GitHub issue. When fixing a pipeline bug that produced bad-but-`ok` data, add an invariant there so it can't recur silently.
 
 When a workflow's persist step hits a rebase conflict: `refresh-bac-data.yml`, `refresh-bac-aperturas.yml`, and `refresh-bac-recurring-vendor-watch.yml` auto-resolve in favor of the current run (their output is a full regeneration from a freshly fetched source, so "ours" is always at least as complete); `refresh-official-data.yml` and `backfill-boletin.yml` do **not** auto-resolve (their output is an incremental merge against the prior file, so blindly picking a side could silently drop an edition) — they fail the job for manual review instead. Keep this distinction if you add another workflow that touches `data/`.
 

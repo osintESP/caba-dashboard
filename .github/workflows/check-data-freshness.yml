@@ -120,3 +120,49 @@ jobs:
           $(cat freshness_report.md)"
             gh issue close "$existing"
           fi
+
+      # Frescura dice "¿corrió hoy?"; esto dice "¿lo que corrió tiene sentido?" -ver docstring de
+      # runtime/data_health_check.py-. Issue separado del de frescura: son fallas distintas, con
+      # arreglos distintos (re-disparar vs. revisar el código del pipeline).
+      - name: Check data invariants
+        id: health
+        run: |
+          if python runtime/data_health_check.py > health_report.md; then
+            echo 'has_issues=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'has_issues=true' >> "$GITHUB_OUTPUT"
+          fi
+          cat health_report.md
+
+      - name: Open or update data-health issue
+        if: steps.health.outputs.has_issues == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="🩺 Invariantes de datos rotos"
+          BODY="El chequeo diario de invariantes (\`runtime/data_health_check.py\`) detectó datos inconsistentes. A diferencia de la alerta de frescura, re-disparar el workflow probablemente no alcance: suele indicar un cambio en la fuente o un bug del pipeline.
+
+          $(cat health_report.md)
+
+          Ejecución: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          gh label create data-health --color B60205 --description 'Invariantes de datos rotos' --force
+          existing=$(gh issue list --search "\"$TITLE\" in:title" --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label "data-health"
+          fi
+
+      - name: Close data-health issue if invariants hold again
+        if: steps.health.outputs.has_issues == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="🩺 Invariantes de datos rotos"
+          existing=$(gh issue list --search "\"$TITLE\" in:title" --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Los invariantes volvieron a cumplirse. Cerrando.
+
+          $(cat health_report.md)"
+            gh issue close "$existing"
+          fi
