@@ -30,7 +30,7 @@ UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
 TIPO_PROCESO = 'Contratación Directa'
 RUBRO = 'Informática'
 ESTADO = 'Adjudicado'
-MAX_PAGES = 40  # universo real (TipoProceso+Rubro+Estado) verificado en ~10-15 páginas
+MAX_PAGES = 100  # tope de seguridad, mismo criterio que bac_pliegos_caidos_scraper.MAX_PAGES
 
 
 def now():
@@ -134,7 +134,14 @@ def extract_orden_compra(page):
     return None
 
 
-def search_direct_awards(page):
+def open_search(page):
+    page.goto(f'{SITE}/Default.aspx', timeout=30000, wait_until='networkidle')
+    with page.expect_navigation(timeout=30000):
+        page.click('a[href*="BuscarAvanzado"]')
+    page.wait_for_selector('#ctl00_CPH1_ddlEstadoProceso', timeout=15000)
+
+
+def submit_search(page):
     page.select_option('#ctl00_CPH1_ddlTipoProceso', label=TIPO_PROCESO)
     page.select_option('#ctl00_CPH1_ddlRubro', label=RUBRO)
     page.select_option('#ctl00_CPH1_ddlEstadoProceso', label=ESTADO)
@@ -142,20 +149,42 @@ def search_direct_awards(page):
     page.wait_for_selector('#ctl00_CPH1_GridListaPliegos', timeout=15000)
     page.wait_for_timeout(1500)
 
+
+def search_direct_awards(page):
+    submit_search(page)
     rows = []
     current_page = 1
     while True:
         raw_rows = read_grid_rows(page)
         data_rows = [r for r in raw_rows if r and r[0] != 'Número proceso' and len(r) >= len(ROW_KEYS)]
-        rows.extend(parse_row(cells) for cells in data_rows)
+        # Se recuerda la página de cada fila: al terminar de paginar la grilla queda en la
+        # ÚLTIMA página, y confirm_candidate necesita volver a la página de esa fila para
+        # clickear su link (antes lo buscaba en la grilla actual y casi nunca lo encontraba).
+        rows.extend({**parse_row(cells), '_page': current_page} for cells in data_rows)
         if current_page >= MAX_PAGES or not click_next_page(page, current_page):
             break
         current_page += 1
     return rows
 
 
+def open_results_page(page, target_page):
+    # No hay forma de saltar a una página arbitraria sin un link vivo en el paginador (ver
+    # restricción de ViewState en CLAUDE.md), así que se rehace la búsqueda por clicks y se
+    # avanza página a página hasta la de la fila -pocas confirmaciones por corrida, es barato-.
+    open_search(page)
+    submit_search(page)
+    current_page = 1
+    while current_page < target_page:
+        if not click_next_page(page, current_page):
+            return False
+        current_page += 1
+    return True
+
+
 def confirm_candidate(page, candidate, row):
     numero_proceso = row.get('numero_proceso')
+    if not open_results_page(page, row.get('_page') or 1):
+        return None
     link = page.locator(f'#ctl00_CPH1_GridListaPliegos a:text-is("{numero_proceso}")')
     if link.count() == 0:
         return None
@@ -163,8 +192,6 @@ def confirm_candidate(page, candidate, row):
         link.first.click()
     page.wait_for_timeout(1500)
     detail = extract_orden_compra(page)
-    page.go_back(timeout=30000, wait_until='networkidle')
-    page.wait_for_selector('#ctl00_CPH1_GridListaPliegos', timeout=15000)
     if not detail or not vendor_confirmed(detail.get('proveedor'), candidate.get('vendor')):
         return None
     return {
@@ -182,10 +209,7 @@ def watch_all():
         browser = p.chromium.launch(headless=True)
         try:
             page = browser.new_page(user_agent=UA)
-            page.goto(f'{SITE}/Default.aspx', timeout=30000, wait_until='networkidle')
-            with page.expect_navigation(timeout=30000):
-                page.click('a[href*="BuscarAvanzado"]')
-            page.wait_for_selector('#ctl00_CPH1_ddlEstadoProceso', timeout=15000)
+            open_search(page)
             rows = search_direct_awards(page)
             candidate_matches = find_candidate_matches(rows, candidates, cutoff)
             results = []

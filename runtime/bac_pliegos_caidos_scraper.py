@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, sys
+import json, re, sys
 from datetime import datetime, timezone
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -32,7 +32,11 @@ UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
 # nunca se llama en este archivo, se confía en el filtro server-side)-.
 ESTADOS = ('Desierto', 'Dejado Sin Efecto')
 RUBRO = 'Informática'
-MAX_PAGES = 20  # tope de seguridad -el universo real (Estado+Rubro) es chico, 2-3 páginas-
+# Tope de seguridad, no de negocio: el universo real NO es chico -"Dejado Sin Efecto" +
+# Informática dio 537 resultados (54 páginas de 10) el 23/10/2026-. El tope anterior (20) y un
+# paginador que no seguía el link "..." truncaban silenciosamente en 100 filas; ahora se
+# compara contra el total que reporta BAC (ver read_reported_total) para detectar truncado.
+MAX_PAGES = 100
 
 ROW_KEYS = ('numero_proceso', 'nombre_proceso', 'tipo_proceso', 'fecha_apertura_raw', 'estado', 'unidad_ejecutora_raw')
 
@@ -60,26 +64,37 @@ def parse_row(cells):
 
 
 def read_grid_rows(page):
-    # tr.pagination-gv es la fila del paginador (números de página en una tabla anidada);
-    # se excluye acá en vez de filtrarse después para no confundirla con una fila de datos.
+    # tr.pagination-gv es la fila del paginador, que contiene una tabla anidada con su propio
+    # <tr> de números de página -por eso se toman sólo los <tr> HIJOS DIRECTOS de la grilla:
+    # con un selector descendiente ese <tr> anidado se colaba como fila de datos ("1","2",...).
     return page.eval_on_selector_all(
-        '#ctl00_CPH1_GridListaPliegos tr:not(.pagination-gv)',
+        '#ctl00_CPH1_GridListaPliegos > tbody > tr:not(.pagination-gv)',
         "rows => rows.map(r => Array.from(r.querySelectorAll('td')).map(td => td.innerText.trim()))",
     )
 
 
 def click_next_page(page, current_page):
     # DevExpress renderiza la página actual como <span>, las demás como <a> con
-    # __doPostBack(...,'Page$N') -se busca puntualmente el link de la página siguiente en
-    # vez de "cualquier link del paginador" para no volver atrás cuando páginas ya vistas
-    # vuelven a aparecer como link.
-    target = str(current_page + 1)
-    links = page.locator(f'tr.pagination-gv a:text-is("{target}")')
+    # __doPostBack(...,'Page$N') -se busca el link por el argumento 'Page$N' del href, NO por
+    # su texto: el paginador muestra de a 10 números y el salto a la página 11 es un link
+    # "..." (href 'Page$11'), así que buscar por texto "11" cortaba siempre en la página 10.
+    target = current_page + 1
+    links = page.locator(f'#ctl00_CPH1_GridListaPliegos tr.pagination-gv a[href*="\'Page${target}\'"]')
     if links.count() == 0:
         return False
     links.first.click()
-    page.wait_for_timeout(1200)
+    # Esperar a que el paginador marque la página nueva como actual en vez de un sleep fijo:
+    # leer la grilla antes de que termine el postback duplicaría la página anterior.
+    page.wait_for_selector(f'#ctl00_CPH1_GridListaPliegos tr.pagination-gv span:text-is("{target}")',
+                           timeout=30000)
     return True
+
+
+def read_reported_total(page):
+    # BAC muestra "Se han encontrado (N) resultados para su búsqueda" -se guarda para poder
+    # verificar que la paginación trajo todo, en vez de confiar en que el tope alcanza.
+    match = re.search(r'Se han encontrado \((\d+)\)', page.inner_text('body'))
+    return int(match.group(1)) if match else None
 
 
 def scrape_estado(page, estado):
@@ -89,6 +104,7 @@ def scrape_estado(page, estado):
     page.wait_for_selector('#ctl00_CPH1_GridListaPliegos', timeout=15000)
     page.wait_for_timeout(1500)
 
+    reported_total = read_reported_total(page)
     rows = []
     current_page = 1
     while True:
@@ -98,7 +114,7 @@ def scrape_estado(page, estado):
         if current_page >= MAX_PAGES or not click_next_page(page, current_page):
             break
         current_page += 1
-    return rows
+    return rows, reported_total
 
 
 def scrape_all():
@@ -139,7 +155,12 @@ def main():
         print(json.dumps({'status': 'error', 'error': repr(e)}, ensure_ascii=False))
         return
 
-    pliegos = [{'estado_buscado': estado, **row} for estado, rows in scraped.items() for row in rows]
+    pliegos = [{'estado_buscado': estado, **row} for estado, (rows, _) in scraped.items() for row in rows]
+    totales = {estado: total for estado, (_, total) in scraped.items()}
+    obtenidos = {estado: len(rows) for estado, (rows, _) in scraped.items()}
+    # 'incompleto' (no 'error'): los datos traídos son válidos, pero no son todo lo que BAC
+    # reporta -antes este truncado pasaba silencioso y el contador quedaba clavado en ~139-.
+    completo = all(totales[e] is None or obtenidos[e] >= totales[e] for e in totales)
     pliegos.sort(key=lambda r: r.get('fecha_apertura') or '', reverse=True)
     out = {
         'schema_version': 1,
@@ -153,11 +174,13 @@ def main():
                  '(bac_anual.csv), que puede tener varios meses de atraso-. No implica '
                  'irregularidad: un pliego puede caer por motivos operativos legítimos, pero '
                  'suele forzar una re-licitación y trabar la operación del área usuaria.'),
-        'status': 'ok',
+        'status': 'ok' if completo else 'incompleto',
+        'totales_reportados_por_bac': totales,
         'pliegos': pliegos,
     }
     write(OUT, out)
-    print(json.dumps({'status': 'ok', 'pliegos': len(pliegos)}, ensure_ascii=False))
+    print(json.dumps({'status': out['status'], 'pliegos': len(pliegos), 'obtenidos': obtenidos,
+                      'totales_reportados_por_bac': totales}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
