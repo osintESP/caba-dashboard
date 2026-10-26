@@ -66,7 +66,8 @@ function renderBAC(data,syncState){
     ${cov.note?`<div class="bac-note">${esc(cov.note)}</div>`:''}
     <div>Monto total adjudicado: ${fmtCurrency.format(s.total_awarded_ars||0)} · en tecnología: ${fmtCurrency.format(s.tech_awarded_ars||0)} (${s.tech_share_pct||0}%)</div>
     <div>Contratación directa/limitada en tecnología: ${audit.direct_or_limited_share_pct||0}% del monto</div>
-    <div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} procesos, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
+    <div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} adjudicaciones, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
+    ${nco.amount_ars&&nco.amount_ars===(audit.method_breakdown_ars||{}).open?'<div class="bac-note">BAC marca competitive=false en el 100% de las licitaciones públicas de tecnología de esta muestra: el campo no distingue unas de otras, así que esta cifra no indica por sí sola falta de competencia.</div>':''}
     ${nco.note?`<div class="bac-note">${esc(nco.note)}</div>`:''}
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
     ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
@@ -124,14 +125,14 @@ function renderAperturas(){
     if(proxEl)proxEl.innerHTML='<div class="empty">Radar de aperturas en tiempo real todavía no fue publicado.</div>';
     return;
   }
-  if(statusEl)statusEl.textContent=data.status==='ok'?'activo':'error';
+  if(statusEl)statusEl.textContent=data.status==='ok'?'activo':data.status==='incompleto'?'incompleto':'error';
   const recientesAll=data.aperturas_recientes||[],proximasAll=data.aperturas_proximas||[];
   // El dashboard audita contrataciones de TECNOLOGÍA, no toda la actividad de BAC — se
   // filtra acá (mismo criterio que audit_signals en bac_catalog.json), mostrando el total
   // sin filtrar sólo como contexto de cobertura, no como listado.
   const recientes=recientesAll.filter(a=>a.is_technology),proximas=proximasAll.filter(a=>a.is_technology);
-  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART · ${recientesAll.length+proximasAll.length} aperturas totales, ${recientes.length+proximas.length} de tecnología`:'';
-  if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas de tecnología en los últimos 30 días.</div>';
+  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART · ${recientesAll.length+proximasAll.length} aperturas totales, ${recientes.length+proximas.length} de tecnología${data.status==='incompleto'?' · sólo la primera página de cada listado de BAC: no cubre todo el período':''}`:'';
+  if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):`<div class="empty">Sin aperturas de tecnología ${data.status==='incompleto'?'en la primera página del listado de BAC':'en los últimos 30 días'}.</div>`;
   if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas de tecnología publicadas.</div>';
 }
 function normativeImpactRecordHtml(n){const pills=[n.sigla_unidad,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const topicPills=(n.topics||[]).map(t=>`<span class="meta-pill category">${esc(t.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}</h3><div class="record-meta">${topicPills.join('')}${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}

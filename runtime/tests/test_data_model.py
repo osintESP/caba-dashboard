@@ -37,6 +37,26 @@ class MergeNormTest(unittest.TestCase):
         merged = data_model.merge_norm(old, new, num=100, b={}, collected='2026-08-21T00:00:00')
         self.assertEqual(merged['rutas_recuperacion'], ['obtenerBoletin_true', 'obtenerResultado'])
 
+    def test_backfill_of_older_edition_keeps_latest_publication(self):
+        # Caso real: el backfill del Boletín 7457 (21/09) re-fechó la circular 1000828, ya
+        # guardada con su publicación del 7472 (13/10), al 21/09.
+        old = {'id_norma': 1000828, 'numero_boletin': 7472, 'fecha_publicacion': '13/10/2026',
+               'url_norma': 'http://api/download/5351342', 'first_seen_at': '2026-10-13T20:50:17+00:00'}
+        new = {'id_norma': 1000828, 'url_norma': 'http://api/download/5312018'}
+        merged = data_model.merge_norm(old, new, num=7457, b={'fecha_publicacion': '21/09/2026'},
+                                       collected='2026-10-24T11:52:29+00:00')
+        self.assertEqual(merged['numero_boletin'], 7472)
+        self.assertEqual(merged['fecha_publicacion'], '13/10/2026')
+        self.assertEqual(merged['url_norma'], 'http://api/download/5351342')
+        self.assertEqual(merged['last_seen_at'], '2026-10-24T11:52:29+00:00')
+
+    def test_newer_edition_still_moves_publication_forward(self):
+        old = {'id_norma': 1, 'numero_boletin': 7456, 'fecha_publicacion': '18/09/2026', 'url_norma': 'http://a/1'}
+        new = {'id_norma': 1, 'url_norma': 'http://a/2'}
+        merged = data_model.merge_norm(old, new, num=7457, b={'fecha_publicacion': '21/09/2026'}, collected='x')
+        self.assertEqual((merged['numero_boletin'], merged['fecha_publicacion'], merged['url_norma']),
+                         (7457, '21/09/2026', 'http://a/2'))
+
 
 class CleanOrganismoTest(unittest.TestCase):
     """Bug real visto en producción: 'Ministerio de Salud' y 'Ministerio de Salud-'

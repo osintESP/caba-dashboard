@@ -48,6 +48,11 @@ def check_editions(editions):
     return issues
 
 
+def malformed_rows(rows):
+    return [r.get('numero_proceso') for r in rows
+            if not NUMERO_PROCESO_RE.match(r.get('numero_proceso') or '') or not r.get('fecha_apertura')]
+
+
 def check_pliegos_caidos(data):
     if data is None:
         return ['bac_pliegos_caidos.json no existe.']
@@ -56,8 +61,7 @@ def check_pliegos_caidos(data):
         issues.append(f'bac_pliegos_caidos.json: status={data.get("status")!r}'
                       f'{" — " + data["last_error"] if data.get("last_error") else ""}.')
     pliegos = data.get('pliegos') or []
-    malformed = [p.get('numero_proceso') for p in pliegos
-                 if not NUMERO_PROCESO_RE.match(p.get('numero_proceso') or '') or not p.get('fecha_apertura')]
+    malformed = malformed_rows(pliegos)
     if malformed:
         issues.append(f'bac_pliegos_caidos.json: {len(malformed)} filas sin número de proceso válido o sin '
                       f'fecha (¿fila del paginador u otro cambio de HTML?): {malformed[:5]}.')
@@ -69,6 +73,18 @@ def check_pliegos_caidos(data):
         got = sum(1 for p in pliegos if p.get('estado_buscado') == estado)
         if total is not None and got != total:
             issues.append(f'bac_pliegos_caidos.json: "{estado}" trajo {got} filas, BAC reporta {total}.')
+    return issues
+
+
+def check_aperturas(data):
+    # Mismo invariante de filas basura que pliegos caídos: bac_aperturas_scraper.py publicó
+    # con status 'ok' la fila del paginador ("1\n2\n...\n10\n...") como si fuera una apertura.
+    issues = check_status('bac_aperturas.json', data)
+    for key in ('aperturas_recientes', 'aperturas_proximas'):
+        malformed = malformed_rows((data or {}).get(key) or [])
+        if malformed:
+            issues.append(f'bac_aperturas.json: {key} tiene {len(malformed)} filas sin número de proceso '
+                          f'válido o sin fecha (¿fila del paginador?): {malformed[:5]}.')
     return issues
 
 
@@ -97,7 +113,7 @@ def run_checks(now=None):
     return {
         'Boletín Oficial': check_editions(read('editions.json')),
         'BAC pliegos caídos': check_pliegos_caidos(read('bac_pliegos_caidos.json')),
-        'BAC aperturas': check_status('bac_aperturas.json', read('bac_aperturas.json')),
+        'BAC aperturas': check_aperturas(read('bac_aperturas.json')),
         'BAC proveedor recurrente': check_status('bac_recurring_vendor_watch.json',
                                                  read('bac_recurring_vendor_watch.json')),
         'BAC catálogo': (check_status('bac_catalog.json', read('bac_catalog.json'))

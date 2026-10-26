@@ -73,5 +73,27 @@ class ParseRowTest(unittest.TestCase):
         self.assertTrue(row['is_technology'])
 
 
+class SplitGridRowsTest(unittest.TestCase):
+    DATA = ['416-2754-CME26', 'CONECTOR,JERINGA HIPODERMICA', 'Contratación Menor',
+            '25/08/2026 15:00 Hrs.', 'En Apertura', '416 - HTAL. CARLOS G. DURAND']
+    # Filas reales del paginador que se colaron en data/bac_aperturas.json (23/10/2026): la fila
+    # externa (su <td> con la tabla anidada + los <td> de ésta) y el <tr> anidado.
+    PAGER_OUTER = ['1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '...']
+    PAGER_INNER = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '...']
+
+    def test_drops_pager_rows_and_reports_more_pages(self):
+        data, has_more_pages = bas.split_grid_rows([self.DATA, self.PAGER_OUTER, self.PAGER_INNER])
+        self.assertEqual(data, [self.DATA])
+        self.assertTrue(has_more_pages)
+
+    def test_single_page_listing_is_not_truncated(self):
+        self.assertEqual(bas.split_grid_rows([self.DATA]), ([self.DATA], False))
+        # un paginador con una sola página no implica páginas sin leer
+        self.assertEqual(bas.split_grid_rows([self.DATA, ['1']]), ([self.DATA], False))
+
+    def test_empty_row_is_not_a_pager(self):
+        self.assertFalse(bas.is_pager_row(['', '']))
+
+
 if __name__ == '__main__':
     unittest.main()
