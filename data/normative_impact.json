@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 162,
+    "total_flagged": 163,
     "by_sigla": {
       "ASINF": 66,
-      "DGTALINF": 36,
+      "DGTALINF": 37,
       "DGISIS": 23,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1012118,
+      "numero_boletin": 7481,
+      "fecha_publicacion": "26/10/2026",
+      "nombre": "Disposición N° 127/DGTALINF/26",
+      "sumario": "Aprueba Pliego de Bases y Condiciones Particulares y de Especificaciones Técnicas, por la Suscripción de Licencias JIRA Software On Cloud (Versión Premium) y complementos, con soporte técnico por el período de 12 meses",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5373858"
+    },
     {
       "id_norma": 1011402,
       "numero_boletin": 7480,
