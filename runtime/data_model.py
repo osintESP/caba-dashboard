@@ -87,9 +87,15 @@ def merge_norm(old,n,num,b,collected):
  # fetch (ej. "-") pasa el chequeo de pick() por no ser falsy, y clean_organismo lo reduce
  # a None después, borrando silenciosamente un organismo válido que ya teníamos guardado.
  organismo=clean_organismo(n.get('organismo')) or old.get('organismo')
+ # Un aviso (llamado, circular) se republica en varias ediciones con el mismo id_norma, y el
+ # pipeline horario deja la publicación MÁS RECIENTE. backfill_boletin.py procesa ediciones
+ # viejas después: sin esto, rellenar el 7457 el 24/10/2026 movió 194 normas ya conocidas de
+ # ediciones posteriores (hasta la 7472, una circular del 13/10) a la 7457 del 21/09.
+ older=old.get('numero_boletin') is not None and num is not None and int(num)<int(old['numero_boletin'])
  return {**old,
-  'id_norma':n.get('id_norma'),'numero_boletin':num,'fecha_publicacion':b.get('fecha_publicacion'),
-  'nombre':pick(old,n,'nombre'),'sumario':pick(old,n,'sumario'),'url_norma':pick(old,n,'url_norma'),
+  'id_norma':n.get('id_norma'),'numero_boletin':old['numero_boletin'] if older else num,
+  'fecha_publicacion':old.get('fecha_publicacion') if older else b.get('fecha_publicacion'),
+  'nombre':pick(old,n,'nombre'),'sumario':pick(old,n,'sumario'),'url_norma':pick(n,old,'url_norma') if older else pick(old,n,'url_norma'),
   'anexos':pick(old,n,'anexos') or [],'tipo':pick(old,n,'tipo'),'subtipo':pick(old,n,'subtipo'),
   'seccion':pick(old,n,'seccion'),'organismo':organismo,'ruta_arbol':pick(old,n,'ruta_arbol') or [],
   'rutas_recuperacion':sorted(set(old.get('rutas_recuperacion') or [])|set(n.get('rutas_recuperacion') or [])),

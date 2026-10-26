@@ -29,6 +29,8 @@ PAGES = (
 ROW_KEYS = ('numero_proceso', 'nombre_proceso', 'tipo_proceso', 'fecha_apertura_raw', 'estado', 'unidad_ejecutora_raw')
 UNIDAD_RE = re.compile(r'^\s*(\d+)\s*-\s*(.+?)\s*$')
 FECHA_RE = re.compile(r'(\d{2})/(\d{2})/(\d{4})\s+(\d{2}):(\d{2})')
+# Filas del paginador de la grilla: sólo números de página y "..." (p. ej. "1\n2\n...\n10\n...").
+PAGER_CELL_RE = re.compile(r'^[\d.\s]*$')
 
 
 def now():
@@ -76,6 +78,22 @@ def parse_row(cells):
     return row
 
 
+def is_pager_row(cells):
+    return any((c or '').strip() for c in cells) and all(PAGER_CELL_RE.match(c or '') for c in cells)
+
+
+def split_grid_rows(raw_rows):
+    # 'table tbody tr' también matchea la fila del paginador y el <tr> de su tabla anidada:
+    # se colaban como aperturas basura (numero_proceso "1\n2\n...", sin fecha) -mismo bug que
+    # tuvo bac_pliegos_caidos_scraper.py-. Que haya paginador significa además que hay más
+    # páginas que la primera, que es la única que se lee hoy: se devuelve para no truncar en
+    # silencio. Se exige más de un número de página por si BAC renderiza el paginador ("1")
+    # aun cuando el listado entra en una sola página.
+    pager = [cells for cells in raw_rows if is_pager_row(cells)]
+    data = [cells for cells in raw_rows if not is_pager_row(cells) and len(cells) >= len(ROW_KEYS)]
+    return data, any(len(re.findall(r'\d+', ' '.join(cells))) > 1 for cells in pager)
+
+
 def scrape_page(page, link_href_fragment):
     with page.expect_navigation(timeout=30000):
         page.click(f'a[href*="{link_href_fragment}"]')
@@ -84,7 +102,8 @@ def scrape_page(page, link_href_fragment):
         'table tbody tr',
         "rows => rows.map(r => Array.from(r.querySelectorAll('td')).map(td => td.innerText.trim()))",
     )
-    return [parse_row(cells) for cells in raw_rows if len(cells) >= len(ROW_KEYS)]
+    data_rows, has_more_pages = split_grid_rows(raw_rows)
+    return [parse_row(cells) for cells in data_rows], has_more_pages
 
 
 def scrape_all():
@@ -125,11 +144,18 @@ def main():
 
     out = {
         'schema_version': 1, 'collected_at': now(), 'source': f'{SITE}/', 'status': 'ok',
-        **scraped,
+        **{key: rows for key, (rows, _) in scraped.items()},
     }
+    truncados = [key for key, (_, has_more_pages) in scraped.items() if has_more_pages]
+    if truncados:
+        # 'incompleto' (no 'error'), mismo criterio que bac_pliegos_caidos_scraper.py: lo traído
+        # es válido pero es sólo la primera página -p. ej. "últimos 30 días" quedaba cubriendo
+        # apenas el último día hábil-. Se mantiene hasta que el scraper siga el paginador.
+        out['status'] = 'incompleto'
+        out['listados_con_paginas_sin_leer'] = truncados
     write(OUT, out)
     print(json.dumps({
-        'status': 'ok',
+        'status': out['status'],
         'aperturas_recientes': len(out.get('aperturas_recientes', [])),
         'aperturas_proximas': len(out.get('aperturas_proximas', [])),
     }, ensure_ascii=False))

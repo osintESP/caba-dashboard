@@ -48,6 +48,23 @@ class PliegosCaidosTest(unittest.TestCase):
         self.assertTrue(any("'incompleto'" in i for i in issues))
 
 
+class AperturasTest(unittest.TestCase):
+    def test_clean_dataset_passes(self):
+        data = {'status': 'ok', 'aperturas_recientes': [pliego('541-1602-LPU26')], 'aperturas_proximas': []}
+        self.assertEqual(dhc.check_aperturas(data), [])
+
+    def test_flags_pager_junk_row(self):
+        # Fila real publicada en data/bac_aperturas.json con status 'ok' (23/10/2026).
+        junk = {'numero_proceso': '1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n...', 'fecha_apertura': None}
+        data = {'status': 'ok', 'aperturas_recientes': [pliego('541-1602-LPU26'), junk]}
+        issues = dhc.check_aperturas(data)
+        self.assertEqual(len(issues), 1)
+        self.assertIn('aperturas_recientes', issues[0])
+
+    def test_flags_incomplete_status(self):
+        self.assertTrue(any("'incompleto'" in i for i in dhc.check_aperturas({'status': 'incompleto'})))
+
+
 class BacCoverageTest(unittest.TestCase):
     NOW = datetime(2026, 10, 23, tzinfo=timezone.utc)
 
