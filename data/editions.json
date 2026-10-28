@@ -888,5 +888,20 @@
     "last_collected_at": "2026-10-27T20:15:40+00:00",
     "total_normas": 375,
     "schema_source": 2
+  },
+  {
+    "numero_boletin": 7483,
+    "fecha_publicacion": "28/10/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5379305",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5379306"
+      }
+    ],
+    "first_collected_at": "2026-10-28T17:04:50+00:00",
+    "last_collected_at": "2026-10-28T17:04:50+00:00",
+    "total_normas": 466,
+    "schema_source": 2
   }
 ]

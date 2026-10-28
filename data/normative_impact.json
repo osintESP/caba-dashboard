@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 168,
+    "total_flagged": 169,
     "by_sigla": {
-      "ASINF": 67,
+      "ASINF": 68,
       "DGTALINF": 40,
       "DGISIS": 24,
       "DGIASINF": 19,
@@ -40,16 +40,28 @@
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5376184"
     },
     {
+      "id_norma": 1012212,
+      "numero_boletin": 7483,
+      "fecha_publicacion": "28/10/2026",
+      "nombre": "Resolución N° 229/ASINF/26",
+      "sumario": "Modifica, da de baja y asigna Suplementos de Gabinete",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5378655"
+    },
+    {
       "id_norma": 1012122,
-      "numero_boletin": 7482,
-      "fecha_publicacion": "27/10/2026",
+      "numero_boletin": 7483,
+      "fecha_publicacion": "28/10/2026",
       "nombre": "Licitación Pública / Llamado  N° 1688/DGTALINF/26",
       "sumario": "Suscripción de Licencias JIRA Software On Cloud",
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGTALINF",
       "topics": [],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5376183"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5379004"
     },
     {
       "id_norma": 1012118,
