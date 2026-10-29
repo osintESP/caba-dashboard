@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "public_synced_at": "2026-10-29T17:22:58+00:00",
+  "public_synced_at": "2026-10-29T20:40:59+00:00",
   "latest_bulletin": 7483,
   "latest_bulletin_date": "28/10/2026",
-  "dataset_generated_at": "2026-10-29T17:22:57+00:00",
+  "dataset_generated_at": "2026-10-29T20:40:57+00:00",
   "source_scope": "official_gcba_bulletin_only",
   "runtime": "github_actions_public_nonprod"
 }
