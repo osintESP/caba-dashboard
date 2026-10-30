@@ -11,22 +11,108 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 169,
+    "total_flagged": 176,
     "by_sigla": {
-      "ASINF": 68,
-      "DGTALINF": 40,
-      "DGISIS": 24,
+      "ASINF": 73,
+      "DGTALINF": 41,
+      "DGISIS": 25,
       "DGIASINF": 19,
       "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 13,
+      "plataforma_o_sistema": 14,
       "redeterminacion_precios": 12
     },
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1013352,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1581/DGISIS/26",
+      "sumario": "Servicios de mantenimiento correctivo y evolutivo para la Plataforma Salesforce",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385463"
+    },
+    {
+      "id_norma": 1013041,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Resolución N° 239/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Yago Zaragoza",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385175"
+    },
+    {
+      "id_norma": 1012875,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Resolución N° 238/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Matías Sergio Tornatore",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385174"
+    },
+    {
+      "id_norma": 1012873,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Resolución N° 237/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Rafael Cristián Liggeri",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385173"
+    },
+    {
+      "id_norma": 1012871,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Resolución N° 236/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Nahuel Agustín Palacio",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385172"
+    },
+    {
+      "id_norma": 1012870,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Resolución N° 235/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Pablo Sebastián Baspineiro",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385171"
+    },
+    {
+      "id_norma": 1012566,
+      "numero_boletin": 7485,
+      "fecha_publicacion": "30/10/2026",
+      "nombre": "Disposición N° 128/DGTALINF/26",
+      "sumario": "Autoriza el pago en concepto de Suscripción y Renovación de Licencias Microsoft",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385319"
+    },
     {
       "id_norma": 1012369,
       "numero_boletin": 7482,
