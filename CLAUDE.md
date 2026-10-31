@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Curador CABA Intelligence: a fully static dashboard (no backend) for auditing public procurement in the City of Buenos Aires (CABA). It correlates two independent official sources — the Boletín Oficial (norms/actos published day by day) and Buenos Aires Compras / BAC (an OCDS export with real award amounts) — with the explicit goal of surfacing audit signals (non-competitive tenders, vendor concentration, direct-contracting share), not just displaying metrics. `README.md` has the full architecture diagram, data file schemas, and known limitations — this file is about working in the codebase productively, not repeating that.
+Curador CABA · Compras de Tecnología (formerly "Curador CABA Intelligence", renamed 2026-10-31): a fully static dashboard (no backend) for auditing public procurement in the City of Buenos Aires (CABA). It correlates two independent official sources — the Boletín Oficial (norms/actos published day by day) and Buenos Aires Compras / BAC (an OCDS export with real award amounts) — with the explicit goal of surfacing audit signals (non-competitive tenders, vendor concentration, direct-contracting share), not just displaying metrics. `README.md` has the full architecture diagram, data file schemas, and known limitations — this file is about working in the codebase productively, not repeating that.
 
 ## Commands
 
