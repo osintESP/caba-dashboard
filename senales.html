@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Señales para revisar — Curador CABA</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="senales">
+  <div id="shell"></div>
+  <main class="container">
+    <div class="notice signals-note">Estas señales son <strong>disparadores de revisión</strong>, no prueba de irregularidad: cada una tiene explicaciones operativas legítimas posibles. Los umbrales son arbitrarios y están documentados como tales.</div>
+    <details class="panel fold" id="senal-concentracion"><summary><span class="fold-title">Concentración de proveedor por organismo (mayor a menor monto)</span> <span id="count-concentracion" class="badge badge-count">—</span></summary>
+      <div id="bac-concentration" class="ranking"></div>
+    </details>
+    <details class="panel fold" id="senal-fraccionamiento"><summary><span class="fold-title">Posible fraccionamiento (adjudicaciones directas repetidas)</span> <span id="count-fraccionamiento" class="badge badge-count">—</span></summary>
+      <div id="bac-fractionation" class="ranking"></div>
+    </details>
+    <details class="panel fold" id="senal-multiorganismo"><summary><span class="fold-title">Proveedor recurrente en múltiples organismos (mayor a menor monto)</span> <span id="count-multiorganismo" class="badge badge-count">—</span></summary>
+      <div id="bac-repeat-winner" class="ranking"></div>
+    </details>
+    <details class="panel fold" id="senal-recurrente"><summary><span class="fold-title">Proveedor recurrente por contratación directa — patrón vigente</span> <span id="count-recurrente" class="badge badge-count">—</span></summary>
+      <div id="bac-recurring-vendor-watch" class="record-list"></div>
+    </details>
+    <details class="panel fold" id="senal-pliegos-caidos"><summary><span class="fold-title">Pliegos caídos o fracasados (tecnología)</span> <span id="count-pliegos" class="badge badge-count">—</span></summary>
+      <div id="bac-failed-tenders" class="record-list"></div><button id="pliegos-load-more" class="button ghost" type="button" style="display:none">Cargar más</button>
+    </details>
+    <details class="panel fold" id="senal-redeterminaciones"><summary><span class="fold-title">Redeterminaciones de precio reiteradas (Orden de Compra)</span> <span id="count-redeterminaciones" class="badge badge-count">—</span></summary>
+      <div id="price-redetermination-list" class="record-list"></div>
+    </details>
+  </main>
+  <footer class="footer"><span>Curador CABA Intelligence · v1 mejorada</span><span>Fuentes: Boletín Oficial CABA + BA Data/BAC · Gobierno de la Ciudad Autónoma de Buenos Aires</span></footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
