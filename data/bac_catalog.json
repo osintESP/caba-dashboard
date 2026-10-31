@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "collected_at": "2026-10-31T22:35:55+00:00",
+  "collected_at": "2026-10-31T22:41:23+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -598,7 +598,8 @@
       "suppliers": [
         "ATIX S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 178300000.0
     },
     "2624-0490-CDI26": {
       "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
@@ -609,7 +610,8 @@
       "suppliers": [
         "Waldo QUIROGA NICOLÁS"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 2320000.0
     },
     "2624-1349-CME26": {
       "organismo": "INSTITUTO DE ESTADISTICAS Y CENSOS DE LA CIUDAD AUTONOMA DE BUENOS AIRES",
@@ -620,7 +622,8 @@
       "suppliers": [
         "SERVICIOS GLOBALES DE INFORMATICA S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 23836620.0
     },
     "3125-0353-CDI26": {
       "organismo": "Ministerio de Movilidad e Infraestructura",
@@ -631,7 +634,8 @@
       "suppliers": [
         "DATASTAR ARGENTINA SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 46781280.0
     },
     "3125-0600-LPU26": {
       "organismo": "Ministerio de Movilidad e Infraestructura",
@@ -643,7 +647,8 @@
         "AC&A INFRASTRUCTURE S.L. S. E. E."
       ],
       "amount_usd": 22500.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 30465000.0
     },
     "3163-0562-CDI26": {
       "organismo": "AGENCIA AMBIENTAL",
@@ -654,7 +659,8 @@
       "suppliers": [
         "ARQUISONIC SRL"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 54930854.0
     },
     "3181-0012-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -665,7 +671,8 @@
       "suppliers": [
         "BINIT S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 195000000.0
     },
     "3181-0040-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -676,7 +683,8 @@
       "suppliers": [
         "BINIT S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 283500000.0
     },
     "3181-0347-LPU26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -687,7 +695,8 @@
       "suppliers": [
         "BINIT S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 727234560.0
     },
     "3181-0369-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -698,7 +707,8 @@
       "suppliers": [
         "Stark Solution S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 541440000.0
     },
     "3181-0513-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -709,7 +719,8 @@
       "suppliers": [
         "GEOTARGET S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 68925000.0
     },
     "3181-0514-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -720,7 +731,8 @@
       "suppliers": [
         "Stark Solution S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 270720000.0
     },
     "3181-0620-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -731,7 +743,8 @@
       "suppliers": [
         "BINIT S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 248160000.0
     },
     "3181-0647-CDI26": {
       "organismo": "Agencia Gubernamental de Control",
@@ -742,7 +755,8 @@
       "suppliers": [
         "BINIT S.R.L."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 423000000.0
     },
     "3202-0363-LPU26": {
       "organismo": "Ministerio de Seguridad",
@@ -753,7 +767,8 @@
       "suppliers": [
         "DATASTAR ARGENTINA SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 75153300.0
     },
     "3202-1965-CDI25": {
       "organismo": "Ministerio de Seguridad",
@@ -764,7 +779,8 @@
       "suppliers": [
         "DANAIDE S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 105299040.0
     },
     "3202-2041-LPU25": {
       "organismo": "Ministerio de Seguridad",
@@ -775,7 +791,8 @@
       "suppliers": [
         "SOFLEX SA"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 6624000000.0
     },
     "401-0097-LPU26": {
       "organismo": "MINISTERIO DE SALUD",
@@ -786,7 +803,8 @@
       "suppliers": [
         "ID GROUP S.A."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 28334040.0
     },
     "412-1851-CME26": {
       "organismo": "HTAL. COSME ARGERICH",
@@ -797,7 +815,8 @@
       "suppliers": [
         "ID GROUP S.A."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 654175.0
     },
     "414-0407-LPU26": {
       "organismo": "HTAL. MARIA CURIE",
@@ -808,7 +827,8 @@
       "suppliers": [
         "MERIDIANO ELECTRONICA SRL"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 205700.0
     },
     "414-2095-LPU25": {
       "organismo": "HTAL. MARIA CURIE",
@@ -819,7 +839,8 @@
       "suppliers": [
         "ID GROUP S.A."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 529400.0
     },
     "417-1515-CME26": {
       "organismo": "HTAL. PEDRO DE ELIZALDE",
@@ -830,7 +851,8 @@
       "suppliers": [
         "Rosenblat Ezequiel"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 3271562.0
     },
     "420-0098-LPU26": {
       "organismo": "HTAL. RICARDO GUTIERREZ",
@@ -841,7 +863,8 @@
       "suppliers": [
         "INEGHO SRL"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 4898000.0
     },
     "420-2229-CME26": {
       "organismo": "HTAL. RICARDO GUTIERREZ",
@@ -852,7 +875,8 @@
       "suppliers": [
         "PAPELERA EP S.R.L."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 407880.0
     },
     "426-0168-CDI26": {
       "organismo": "HTAL. PARMENIO PIÑERO",
@@ -863,7 +887,8 @@
       "suppliers": [
         "TECNOIMAGEN S.A."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 11860793.75
     },
     "426-0798-CDI26": {
       "organismo": "HTAL. PARMENIO PIÑERO",
@@ -874,7 +899,8 @@
       "suppliers": [
         "GENETRICS S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 7622000.0
     },
     "430-1185-CME26": {
       "organismo": "HTAL. JOSE M.RAMOS MEJIA",
@@ -885,7 +911,8 @@
       "suppliers": [
         "Hernan Jorge Da Costa Marquez"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 6300000.0
     },
     "430-1564-CME26": {
       "organismo": "HTAL. JOSE M.RAMOS MEJIA",
@@ -896,7 +923,8 @@
       "suppliers": [
         "INGENIERO CARUSO S.R.L."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 6496670.0
     },
     "431-0013-CME26": {
       "organismo": "HTAL. BERNARDINO RIVADAVIA",
@@ -909,7 +937,8 @@
         "Facundo Adrian Ortiz Guerreiro",
         "Laurence Javier Druscovich"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 495300.0
     },
     "431-1524-CME26": {
       "organismo": "HTAL. BERNARDINO RIVADAVIA",
@@ -920,7 +949,8 @@
       "suppliers": [
         "INFORMATICA PALMAR SRL"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 2798000.0
     },
     "434-1539-CME26": {
       "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
@@ -932,7 +962,8 @@
         "ETHERLAB SAS",
         "INFORMATICA PALMAR SRL"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 1127073.0
     },
     "435-0897-LPU26": {
       "organismo": "HTAL. RAMON SARDA",
@@ -943,7 +974,8 @@
       "suppliers": [
         "GENETRICS S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 11820000.0
     },
     "435-1500-CME26": {
       "organismo": "HTAL. RAMON SARDA",
@@ -954,7 +986,8 @@
       "suppliers": [
         "GENETRICS S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 12000000.0
     },
     "440-2037-CME26": {
       "organismo": "HTAL. DALMACIO VELEZ SARSFIELD",
@@ -965,7 +998,8 @@
       "suppliers": [
         "GENETRICS S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 23250000.0
     },
     "500-1392-CME26": {
       "organismo": "MINISTERIO DE CULTURA",
@@ -976,7 +1010,8 @@
       "suppliers": [
         "Twins Music S.R.L"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 7800000.0
     },
     "541-1504-CME26": {
       "organismo": "ENTE AUTARQUICO TEATRO COLON",
@@ -987,7 +1022,8 @@
       "suppliers": [
         "TELEFONICA MOVILES ARGENTINA S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 7550400.0
     },
     "541-1593-CME26": {
       "organismo": "ENTE AUTARQUICO TEATRO COLON",
@@ -998,7 +1034,8 @@
       "suppliers": [
         "AKSEC SRL"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 30120000.0
     },
     "541-1623-CME26": {
       "organismo": "ENTE AUTARQUICO TEATRO COLON",
@@ -1009,7 +1046,8 @@
       "suppliers": [
         "Daniel Alfredo Pérez Consentino"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 30600000.0
     },
     "6638-0289-CDI26": {
       "organismo": "D.G. UNIDAD INFORMATICA DE ADMIN. FIN",
@@ -1020,7 +1058,8 @@
       "suppliers": [
         "ATRIX S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 24120000.0
     },
     "7192-0119-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1033,7 +1072,8 @@
         "DANIEL GONZALEZ GARCIA",
         "Facundo Adrian Ortiz Guerreiro"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 2460570.0
     },
     "7192-0175-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1044,7 +1084,8 @@
       "suppliers": [
         "CAISEN S.R.L."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 18600000.0
     },
     "7192-0181-LPU26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1055,7 +1096,8 @@
       "suppliers": [
         "Marcelo Alejandro Jose Gonzalez Theyler"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 58361331.0
     },
     "7192-0333-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1067,7 +1109,8 @@
         "BEATRIZ DECRISTO",
         "Daniel Raúl Lezcano"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 1998500.0
     },
     "7192-0437-CDI26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1078,7 +1121,8 @@
       "suppliers": [
         "Juan Martín Sardoy"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 70000000.0
     },
     "7192-0477-CDI26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1089,7 +1133,8 @@
       "suppliers": [
         "Empresa de Computacion y Servicios SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 14300000.0
     },
     "7192-0601-CDI26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1100,7 +1145,8 @@
       "suppliers": [
         "VI - DA TEC SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 97980000.0
     },
     "7192-0650-CDI26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1111,7 +1157,8 @@
       "suppliers": [
         "VI - DA TEC SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 195000000.0
     },
     "7192-0724-CDI26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1122,7 +1169,8 @@
       "suppliers": [
         "VI - DA TEC SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 156400000.0
     },
     "7192-0891-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1133,7 +1181,8 @@
       "suppliers": [
         "EXO SA"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 3262453.43
     },
     "7192-1151-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1145,7 +1194,8 @@
         "Héctor Gonzalo Alcántara",
         "LICICOM S.R.L."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 2828114.0
     },
     "7192-1338-CME26": {
       "organismo": "MINISTERIO DE EDUCACION",
@@ -1157,7 +1207,8 @@
         "Facundo Adrian Ortiz Guerreiro",
         "Paulo Emilio Fernandez"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 10664500.0
     },
     "730-0128-CDI26": {
       "organismo": "PROCURACION GENERAL DE LA CIUDAD",
@@ -1168,7 +1219,8 @@
       "suppliers": [
         "MBC DESARROLLOS SOCIEDAD DE RESPONSABILIDAD LIMITADA "
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 139200000.0
     },
     "7304-0042-CDI26": {
       "organismo": "DIRECCION GENERAL PROMOCION DEL LIBRO, BIBILIOTECAS Y LA CULTURA",
@@ -1179,7 +1231,8 @@
       "suppliers": [
         "Waldo QUIROGA NICOLÁS"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 1308600.0
     },
     "7304-0687-CDI26": {
       "organismo": "DIRECCION GENERAL PROMOCION DEL LIBRO, BIBILIOTECAS Y LA CULTURA",
@@ -1190,7 +1243,8 @@
       "suppliers": [
         "Waldo QUIROGA NICOLÁS"
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 995000.0
     },
     "753-1446-CME26": {
       "organismo": "SUBSECRETARIA DE GESTION CULTURAL",
@@ -1201,7 +1255,8 @@
       "suppliers": [
         "PROYECCIONES DIGITALES S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 7800000.0
     },
     "8056-0209-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1212,7 +1267,8 @@
       "suppliers": [
         "DATCO S.A."
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 320000000.0
     },
     "8056-0325-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1224,7 +1280,8 @@
         "Claudio Oscar Freda"
       ],
       "amount_usd": 666640.4,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 920630392.4
     },
     "8056-0389-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1236,7 +1293,8 @@
         "SIA SISTEMAS S.A."
       ],
       "amount_usd": 55105.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 76926580.0
     },
     "8056-0424-CDI26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1248,7 +1306,8 @@
         "UNIFY COMMUNICATIONS S.A."
       ],
       "amount_usd": 266586.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 371087712.0
     },
     "8056-0493-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1260,7 +1319,8 @@
         "DATASTAR ARGENTINA SA"
       ],
       "amount_usd": 122000.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 168665000.0
     },
     "8056-0587-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1273,7 +1333,8 @@
         "DATASTAR ARGENTINA SA"
       ],
       "amount_usd": 810875.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 1132792375.0
     },
     "8056-0589-CDI26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1285,7 +1346,8 @@
         "MSLI LATAM, Inc."
       ],
       "amount_usd": 6850.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 9853725.0
     },
     "8056-0653-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1297,7 +1359,8 @@
         "AVANZIT TECNOLOGÍA S.A."
       ],
       "amount_usd": 3791985.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 5287923082.5
     },
     "8056-0726-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1309,7 +1372,8 @@
         "ICAP S.A."
       ],
       "amount_usd": 18876.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 26294268.0
     },
     "8056-0835-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1321,7 +1385,8 @@
         "DATASTAR ARGENTINA SA"
       ],
       "amount_usd": 695100.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 998511150.0
     },
     "8056-0955-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1333,7 +1398,8 @@
         "ZNET SOLUCIONES INFORMATICAS SRL"
       ],
       "amount_usd": 59281.17,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 85424165.97
     },
     "8056-1074-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1345,7 +1411,8 @@
         "TRANS INDUSTRIAS ELECTRONICAS S.A"
       ],
       "amount_usd": 582900.0,
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 866480850.0
     },
     "8056-1137-LPU26": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1357,7 +1424,8 @@
         "TRANS INDUSTRIAS ELECTRONICAS S.A"
       ],
       "amount_usd": 318760.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 471127280.0
     },
     "8056-2070-LPU25": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1369,7 +1437,8 @@
         "OCP TECH S.A."
       ],
       "amount_usd": 1456587.59,
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 2141183757.3
     },
     "8056-2079-LPU25": {
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
@@ -1381,7 +1450,8 @@
         "TECNOLOGIA, COMUNICACIONES Y NEGOCIOS S.A."
       ],
       "amount_usd": 573830.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 843530100.0
     },
     "8618-0007-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1392,7 +1462,8 @@
       "suppliers": [
         "NOVARED SOCIEDAD ANONIMA "
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 12243401.0
     },
     "8618-0009-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1404,7 +1475,8 @@
         "NOVARED SOCIEDAD ANONIMA "
       ],
       "amount_usd": 49735.0,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 71121050.0
     },
     "8618-0053-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1416,7 +1488,8 @@
         "Quick Supplies SRL"
       ],
       "amount_usd": 338896.27,
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 484621666.1
     },
     "8618-0173-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1428,7 +1501,8 @@
         "G&L GROUP SA"
       ],
       "amount_usd": 128318.0,
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 186189418.0
     },
     "8618-0315-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1439,7 +1513,8 @@
       "suppliers": [
         "ALL FLASH SRL"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 2884.23
     },
     "8618-0416-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1450,7 +1525,8 @@
       "suppliers": [
         "AVANZIT TECNOLOGÍA S.A."
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 471073.66
     },
     "8618-0652-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1461,7 +1537,8 @@
       "suppliers": [
         "COMPUSISTEM S.A."
       ],
-      "tech_source": "catalogo"
+      "tech_source": "catalogo",
+      "monto_reconstruido_ars": 92114880.0
     },
     "8618-0786-CDI26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
@@ -1472,7 +1549,8 @@
       "suppliers": [
         "DCE SA"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 75649.2
     },
     "9611-0264-LPU26": {
       "organismo": "VICEJEFATURA DE GOBIERNO",
@@ -1483,7 +1561,8 @@
       "suppliers": [
         "Mariana Irene Albornoz"
       ],
-      "tech_source": "catalogo+palabra_clave"
+      "tech_source": "catalogo+palabra_clave",
+      "monto_reconstruido_ars": 492952851.55
     },
     "9625-0223-CME26": {
       "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
@@ -1494,7 +1573,8 @@
       "suppliers": [
         "VIDITEC S.A."
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 2983105.95
     },
     "9625-0248-CME26": {
       "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
@@ -1505,7 +1585,8 @@
       "suppliers": [
         "AP Supplier Group SA"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 3859000.0
     },
     "9625-0256-LPU26": {
       "organismo": "DIRECCIÓN GENERAL MUSEO DE ARTE MODERO DE BUENOS AIRES",
@@ -1516,7 +1597,8 @@
       "suppliers": [
         "AP Supplier Group SA"
       ],
-      "tech_source": "palabra_clave"
+      "tech_source": "palabra_clave",
+      "monto_reconstruido_ars": 50994000.0
     }
   },
   "status": "ok",

@@ -24,7 +24,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 14
+COLLECTOR_VERSION = 15
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -179,6 +179,15 @@ def csv_row_to_release(row):
                       if amount is not None else None),
             'suppliers': ([{'id': supplier_id, 'name': supplier_name}]
                           if (supplier_id or supplier_name) else []),
+            # Para reconstruir el monto por un camino independiente (ver build_tender_index):
+            # cantidad total del renglón en el pliego x precio unitario adjudicado.
+            'renglon_quantity': _to_float(row.get('tender/items/0/quantity')),
+            # Renglón + código de ítem SIN sufijo -N, derivado del id de la fila y NO de la clave
+            # de dedupe_csv_rows: el monto reconstruido se cuenta una vez por renglón aunque
+            # el dedupe deje pasar filas repetidas, que es justo lo que tiene que detectar.
+            'renglon_key': (('-'.join((row.get('id') or '').split('-')[:-1]) or None),
+                            re.sub(r'-\d+$', '', row.get('awards/0/items/0/id') or '') or None),
+            'unit_price': _to_float(row.get('awards/0/items/0/unit/value/amount')),
         }],
     }
 
@@ -391,6 +400,16 @@ def process_releases(releases, usd_rate=None):
                     })
                     entry['tech_sources'].update(source.split('+'))
                     entry['amount_ars'] += amount
+                    # Monto reconstruido = cantidad del renglón x precio unitario adjudicado, en la
+                    # misma moneda convertida que amount. Es un cálculo independiente del campo
+                    # awards/0/value/amount: si una adjudicación se cuenta de más (como las
+                    # variantes -N antes del fix del 31/10/2026), amount_ars lo supera.
+                    qty, unit = award.get('renglon_quantity'), award.get('unit_price')
+                    rkey = award.get('renglon_key')
+                    if qty and unit and rkey and rkey[0]:
+                        factor = amount / value['amount'] if value.get('amount') else 1.0
+                        entry.setdefault('expected_by_renglon', {})[rkey] = qty * unit * factor
+                        entry['reconcilable_awards'] = entry.get('reconcilable_awards', 0) + 1
                     if amount_usd is not None:
                         entry['amount_usd'] += amount_usd
                     entry['awards_count'] += 1
@@ -607,6 +626,10 @@ def build_tender_index(stats):
         # Parte del monto adjudicada originalmente en USD (ya incluida en amount_ars, convertida).
         **({'amount_usd': round(entry['amount_usd'], 2)} if entry.get('amount_usd') else {}),
         'tech_source': '+'.join(sorted(entry.get('tech_sources') or [])) or None,
+        # Reconciliación (data_health_check.check_bac_reconciliation): sólo si TODAS las
+        # adjudicaciones del proceso traen cantidad y precio unitario.
+        **({'monto_reconstruido_ars': round(sum(entry['expected_by_renglon'].values()), 2)}
+           if entry.get('reconcilable_awards') == entry['awards_count'] else {}),
     } for tender_id, entry in stats.get('tech_tenders_by_id', {}).items()}
 
 

@@ -107,6 +107,46 @@ class PresupuestosTest(unittest.TestCase):
         self.assertEqual(len(dhc.check_presupuestos({'errores': {'_corte': 'x'}})), 1)
 
 
+class BacAmountIntegrityTest(unittest.TestCase):
+    def cat(self, index, total=None):
+        return {'status': 'ok', 'summary': {'tech_awarded_ars': total or sum(t['amount_ars'] for t in index.values())},
+                'tender_index': index}
+
+    def test_reconciliation_flags_overcount(self):
+        # El caso real que motivó el control: SATE911 contado 3 veces.
+        c = self.cat({'3202-2041-LPU25': {'amount_ars': 19_253_760_000, 'monto_reconstruido_ars': 6_624_000_000}})
+        self.assertEqual(len(dhc.check_bac_reconciliation(c)), 1)
+
+    def test_reconciliation_accepts_exact_and_partial(self):
+        c = self.cat({'A': {'amount_ars': 100, 'monto_reconstruido_ars': 100},
+                      'B': {'amount_ars': 60, 'monto_reconstruido_ars': 100}})  # adjudicación parcial
+        self.assertEqual(dhc.check_bac_reconciliation(c), [])
+
+    def test_reconciliation_blind_when_few_reconcilable(self):
+        c = self.cat({'A': {'amount_ars': 1}, 'B': {'amount_ars': 1}, 'C': {'amount_ars': 1, 'monto_reconstruido_ars': 1}})
+        self.assertEqual(len(dhc.check_bac_reconciliation(c)), 1)
+
+    def test_verified_amount_regression(self):
+        v = [{'numero_proceso': 'X', 'monto_ars': 6_624_000_000}]
+        self.assertEqual(dhc.check_bac_verified_amounts(self.cat({'X': {'amount_ars': 6_624_000_000}}), v), [])
+        self.assertEqual(len(dhc.check_bac_verified_amounts(self.cat({'X': {'amount_ars': 19_253_760_000}}), v)), 1)
+        self.assertEqual(dhc.check_bac_verified_amounts(self.cat({'Y': {'amount_ars': 1}}), v), [])  # fuera de cobertura
+
+    def test_verified_usd(self):
+        v = [{'numero_proceso': 'U', 'monto_usd': 3_791_985}]
+        self.assertEqual(len(dhc.check_bac_verified_amounts(self.cat({'U': {'amount_ars': 1}}), v)), 1)  # USD descartado
+
+    def test_dominant_tender_needs_verification(self):
+        c = self.cat({'BIG': {'amount_ars': 900}, 'S': {'amount_ars': 100}})
+        self.assertEqual(len(dhc.check_bac_dominant_tenders(c, [])), 1)
+        self.assertEqual(dhc.check_bac_dominant_tenders(c, [{'numero_proceso': 'BIG'}]), [])
+
+    def test_real_verified_file_is_valid(self):
+        procs = dhc._verified()
+        self.assertGreaterEqual(len(procs), 2)
+        self.assertTrue(all(p.get('numero_proceso') and (p.get('monto_ars') or p.get('monto_usd')) and p.get('como_se_verifico') for p in procs))
+
+
 class BacCoverageTest(unittest.TestCase):
     NOW = datetime(2026, 10, 23, tzinfo=timezone.utc)
 

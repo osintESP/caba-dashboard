@@ -1,0 +1,19 @@
+{
+  "nota": "Procesos cuyo monto adjudicado se verificó contra la fuente con un cálculo independiente (renglón por renglón: cantidad del pliego x precio unitario adjudicado) o contra el Boletín / la página de BAC. data_health_check.py exige que bac_catalog.json los reproduzca (tolerancia 1%). Agregar un caso cuando se verifica a mano un monto importante, en especial si un proceso pesa más del 25% del total de tecnología (check_bac_dominant_tenders lo pide). Nunca cargar un monto que no se haya recalculado desde la fuente.",
+  "procesos": [
+    {
+      "numero_proceso": "3202-2041-LPU25",
+      "descripcion": "SATE911 a la línea 147 — Ministerio de Seguridad — SOFLEX SA, adjudicado el 07/04/2026, contrato 24 meses",
+      "monto_ars": 6624000000.0,
+      "como_se_verifico": "bac_anual.csv, renglones del pliego: 4.800 x $1.251.200 (mant. software) + 8.000 x $73.600 (desarrollo) + 10 x $2.944.000 (capacitación) = $6.624.000.000. El dashboard llegó a mostrar $19.254M por contar 3 veces la misma adjudicación (variantes -N, corregido en #22).",
+      "verificado": "2026-10-31"
+    },
+    {
+      "numero_proceso": "8056-0653-LPU26",
+      "descripcion": "Renovación de soporte técnico y mantenimiento — Agencia de Sistemas de Información — AVANZIT TECNOLOGÍA S.A., adjudicado el 07/07/2026, en USD",
+      "monto_usd": 3791985.0,
+      "como_se_verifico": "bac_anual.csv: 16 renglones adjudicados en USD, cada uno cantidad x precio unitario exacto; suma USD 3.791.985. Hasta #9 este proceso no aparecía (las adjudicaciones en USD se descartaban).",
+      "verificado": "2026-10-31"
+    }
+  ]
+}

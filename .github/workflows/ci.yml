@@ -1,0 +1,65 @@
+name: CI (pull requests)
+
+# Antes no había ningún control automático sobre los PRs: los tests sólo corrían a mano. Dos
+# errores de cálculo de montos (USD descartados, adjudicaciones contadas 3 veces) llegaron al
+# dashboard. Este workflow corre en cada PR: tests, invariantes de datos (incluida la
+# reconciliación de montos) y un informe de impacto que exige explicación si los montos se
+# mueven más de lo esperado.
+on:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r runtime/requirements.txt
+
+      - name: Tests
+        run: python -m unittest discover -s runtime/tests -v
+
+      - name: Invariantes de datos (incluye reconciliación de montos)
+        run: |
+          set -o pipefail
+          python runtime/data_health_check.py | tee health.md
+
+      - name: Informe de impacto en montos
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          git show "origin/${BASE_REF}:data/bac_catalog.json" > /tmp/base.json 2>/dev/null || echo '{}' > /tmp/base.json
+          set +e
+          python runtime/impact_report.py /tmp/base.json data/bac_catalog.json > impact.md
+          code=$?
+          set -e
+          cat impact.md >> "$GITHUB_STEP_SUMMARY"
+          gh pr comment "$PR_NUMBER" --body-file impact.md --edit-last 2>/dev/null || gh pr comment "$PR_NUMBER" --body-file impact.md
+          if [ "$code" -eq 2 ]; then
+            if printf '%s' "$PR_BODY" | grep -qi 'impacto en montos'; then
+              echo "Montos movidos más del umbral; el PR incluye la sección 'Impacto en montos'."
+            else
+              echo "::error::Los montos se movieron más del umbral. Agregá al PR una sección 'Impacto en montos' que explique el cambio y reconcilie los procesos que más cambiaron."
+              exit 1
+            fi
+          elif [ "$code" -ne 0 ]; then
+            exit "$code"
+          fi
