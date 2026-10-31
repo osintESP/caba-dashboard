@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "collected_at": "2026-10-31T22:25:44+00:00",
+  "collected_at": "2026-10-31T22:35:55+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -22,42 +22,36 @@
     "last_modified": "2023-01-13T17:41:29.592138"
   },
   "coverage": {
-    "releases_processed": 26927,
+    "releases_processed": 24900,
     "date_from": "2026-01-02T09:00:00-03:00",
     "date_to": "2026-08-31T15:45:00-03:00",
     "note": "Ventana de cobertura de bac_anual.csv no confirmada oficialmente por el publicador; inferida del rango real de fechas de los releases procesados. La fuente suele tener ~2-3 meses de atraso respecto a la fecha actual."
   },
   "summary": {
-    "total_awarded_ars": 287866998857.08,
-    "tech_awarded_ars": 46878849294.04,
-    "tech_share_pct": 16.28,
-    "awards_counted": 17179,
+    "total_awarded_ars": 209280721400.44,
+    "tech_awarded_ars": 26020430134.04,
+    "tech_share_pct": 12.43,
+    "awards_counted": 15152,
     "vendors_counted": 766,
     "currencies": {
-      "ARS": 16958,
-      "USD": 221
+      "ARS": 14956,
+      "USD": 196
     },
     "fx": {
       "source": "BCRA — API Estadísticas Cambiarias, cotización oficial del dólar estadounidense (USD)",
       "method": "Adjudicaciones en USD convertidas a ARS a la cotización del día de la adjudicación (o del último día hábil previo). Los montos en ARS de este archivo las incluyen; amount_usd conserva el monto original.",
-      "usd_awards_converted": 221,
-      "usd_amount": 16498877.64,
-      "usd_tech_amount": 12197273.43,
+      "usd_awards_converted": 196,
+      "usd_amount": 13663416.6,
+      "usd_tech_amount": 9964825.43,
       "excluded_awards_by_currency": {}
     }
   },
   "vendor_ranking": [
     {
       "name": "DIENST CONSULTING SOCIEDAD ANONIMA",
-      "amount_ars": 26640000000.0,
+      "amount_ars": 13320000000.0,
       "tech_amount_ars": 0,
-      "awards": 2
-    },
-    {
-      "name": "SOFLEX SA",
-      "amount_ars": 19253760000.0,
-      "tech_amount_ars": 19253760000.0,
-      "awards": 7
+      "awards": 1
     },
     {
       "name": "MECHP SRL- BLINKAY MOBILITY SLU UNION TRANSITORIA",
@@ -66,46 +60,28 @@
       "awards": 1
     },
     {
-      "name": "LULEY SA",
-      "amount_ars": 11487544576.81,
-      "tech_amount_ars": 0,
-      "awards": 35
-    },
-    {
       "name": "MEDI SISTEM S.R.L.",
-      "amount_ars": 11458320887.0,
+      "amount_ars": 11222593047.0,
       "tech_amount_ars": 0,
-      "awards": 929
+      "awards": 925
     },
     {
-      "name": "G Y C COMUNICACIONES S.A.",
-      "amount_ars": 9743344000.0,
+      "name": "LULEY SA",
+      "amount_ars": 10010168346.13,
       "tech_amount_ars": 0,
-      "awards": 8
+      "awards": 29
     },
     {
       "name": "DROGUERIA ARTIGAS S.A.",
-      "amount_ars": 7688671721.11,
+      "amount_ars": 6902645436.33,
       "tech_amount_ars": 0,
-      "awards": 771
+      "awards": 596
     },
     {
-      "name": "ARTFUL S.A.",
-      "amount_ars": 6767935895.39,
-      "tech_amount_ars": 0,
-      "awards": 50
-    },
-    {
-      "name": "REDIMER S.A.",
-      "amount_ars": 6612204738.7,
-      "tech_amount_ars": 0,
-      "awards": 87
-    },
-    {
-      "name": "QUIMICA EROVNE S.A.",
-      "amount_ars": 6427895255.0,
-      "tech_amount_ars": 0,
-      "awards": 304
+      "name": "SOFLEX SA",
+      "amount_ars": 6624000000.0,
+      "tech_amount_ars": 6624000000.0,
+      "awards": 3
     },
     {
       "name": "AVANZIT TECNOLOGÍA S.A.",
@@ -114,22 +90,16 @@
       "awards": 18
     },
     {
-      "name": "JUAN CARLOS SAVINO",
-      "amount_ars": 5127036138.96,
-      "tech_amount_ars": 0,
-      "awards": 594
-    },
-    {
       "name": "FRIGORIFICO ONETO Y CIA. SAIC",
       "amount_ars": 4970400000.0,
       "tech_amount_ars": 0,
       "awards": 4
     },
     {
-      "name": "BINIT S.R.L.",
-      "amount_ars": 4961863680.0,
-      "tech_amount_ars": 4961863680.0,
-      "awards": 14
+      "name": "REDIMER S.A.",
+      "amount_ars": 4650271152.43,
+      "tech_amount_ars": 0,
+      "awards": 64
     },
     {
       "name": "FIVEMASA S.A.",
@@ -144,50 +114,70 @@
       "awards": 1
     },
     {
-      "name": "Claudio Oscar Freda",
-      "amount_ars": 3294309764.4,
-      "tech_amount_ars": 3294309764.4,
-      "awards": 20
+      "name": "ARTFUL S.A.",
+      "amount_ars": 3504669688.39,
+      "tech_amount_ars": 0,
+      "awards": 41
     },
     {
       "name": "BIOMÉRIEUX ARGENTINA SA",
-      "amount_ars": 2678206875.52,
+      "amount_ars": 2611859768.32,
       "tech_amount_ars": 0,
-      "awards": 127
+      "awards": 118
     },
     {
-      "name": "TECNOLAB S.A.",
-      "amount_ars": 2586532760.19,
+      "name": "G Y C COMUNICACIONES S.A.",
+      "amount_ars": 2435836000.0,
       "tech_amount_ars": 0,
-      "awards": 233
+      "awards": 2
     },
     {
       "name": "BIODIAGNOSTICO S.A.",
-      "amount_ars": 2491142321.11,
+      "amount_ars": 2416570928.59,
       "tech_amount_ars": 0,
-      "awards": 563
+      "awards": 531
+    },
+    {
+      "name": "DATASTAR ARGENTINA SA",
+      "amount_ars": 2371192005.0,
+      "tech_amount_ars": 2371192005.0,
+      "awards": 12
+    },
+    {
+      "name": "DROFAST S.R.L.",
+      "amount_ars": 2364148554.0,
+      "tech_amount_ars": 0,
+      "awards": 306
+    },
+    {
+      "name": "STORING INSUMOS MEDICOS S.R.L.",
+      "amount_ars": 2201888044.44,
+      "tech_amount_ars": 0,
+      "awards": 34
+    },
+    {
+      "name": "OCP TECH S.A.",
+      "amount_ars": 2141183757.3,
+      "tech_amount_ars": 2141183757.3,
+      "awards": 1
+    },
+    {
+      "name": "TECNOLAB S.A.",
+      "amount_ars": 2052816188.8,
+      "tech_amount_ars": 0,
+      "awards": 220
     }
   ],
   "vendor_ranking_tech": [
     {
       "name": "SOFLEX SA",
-      "amount_ars": 19253760000.0,
-      "awards": 7
+      "amount_ars": 6624000000.0,
+      "awards": 3
     },
     {
       "name": "AVANZIT TECNOLOGÍA S.A.",
       "amount_ars": 5288394156.16,
       "awards": 18
-    },
-    {
-      "name": "BINIT S.R.L.",
-      "amount_ars": 4961863680.0,
-      "awards": 14
-    },
-    {
-      "name": "Claudio Oscar Freda",
-      "amount_ars": 3294309764.4,
-      "awards": 20
     },
     {
       "name": "DATASTAR ARGENTINA SA",
@@ -200,9 +190,9 @@
       "awards": 1
     },
     {
-      "name": "Stark Solution S.R.L.",
-      "amount_ars": 1624320000.0,
-      "awards": 4
+      "name": "BINIT S.R.L.",
+      "amount_ars": 1876894560.0,
+      "awards": 5
     },
     {
       "name": "TRANS INDUSTRIAS ELECTRONICAS S.A",
@@ -210,18 +200,18 @@
       "awards": 3
     },
     {
-      "name": "DATCO S.A.",
-      "amount_ars": 1280000000.0,
-      "awards": 4
-    },
-    {
-      "name": "UNIFY COMMUNICATIONS S.A.",
-      "amount_ars": 1059793632.0,
-      "awards": 11
+      "name": "Claudio Oscar Freda",
+      "amount_ars": 920630392.4,
+      "awards": 9
     },
     {
       "name": "TECNOLOGIA, COMUNICACIONES Y NEGOCIOS S.A.",
       "amount_ars": 843530100.0,
+      "awards": 2
+    },
+    {
+      "name": "Stark Solution S.R.L.",
+      "amount_ars": 812160000.0,
       "awards": 2
     },
     {
@@ -240,9 +230,14 @@
       "awards": 3
     },
     {
-      "name": "DANAIDE S.A.",
-      "amount_ars": 315897120.0,
-      "awards": 3
+      "name": "UNIFY COMMUNICATIONS S.A.",
+      "amount_ars": 371087712.0,
+      "awards": 5
+    },
+    {
+      "name": "DATCO S.A.",
+      "amount_ars": 320000000.0,
+      "awards": 1
     },
     {
       "name": "G&L GROUP SA",
@@ -260,26 +255,31 @@
       "awards": 2
     },
     {
-      "name": "GEOTARGET S.A.",
-      "amount_ars": 137850000.0,
-      "awards": 2
+      "name": "DANAIDE S.A.",
+      "amount_ars": 105299040.0,
+      "awards": 1
     },
     {
       "name": "COMPUSISTEM S.A.",
       "amount_ars": 92114880.0,
       "awards": 1
+    },
+    {
+      "name": "ZNET SOLUCIONES INFORMATICAS SRL",
+      "amount_ars": 85424165.97,
+      "awards": 1
     }
   ],
   "audit_signals": {
     "method_breakdown_ars": {
-      "direct": 7142915577.33,
-      "open": 39735933716.71
+      "direct": 3729228577.33,
+      "open": 22291201556.71
     },
-    "direct_or_limited_share_pct": 15.24,
+    "direct_or_limited_share_pct": 14.33,
     "non_competitive_open_tenders": {
-      "count": 99,
-      "amount_ars": 39735933716.71,
-      "share_pct_of_tech": 84.76,
+      "count": 77,
+      "amount_ars": 22291201556.71,
+      "share_pct_of_tech": 85.67,
       "note": "Procesos formalmente públicos (procurementMethod=open) que BAC marca como sin competencia real (competitive=false), en compras de tecnología. BAC no publica numberOfTenderers/tenderers; esta es la única señal de competencia real que expone el propio publicador."
     },
     "vendor_concentration_by_organismo": [
@@ -385,9 +385,9 @@
       {
         "organismo": "Ministerio de Seguridad",
         "top_vendor": "SOFLEX SA",
-        "top_vendor_amount_ars": 19253760000.0,
-        "organismo_tech_amount_ars": 19644810420.0,
-        "top_vendor_share_pct": 98.01,
+        "top_vendor_amount_ars": 6624000000.0,
+        "organismo_tech_amount_ars": 6804452340.0,
+        "top_vendor_share_pct": 97.35,
         "vendors_count": 3,
         "high_concentration": true
       },
@@ -401,21 +401,21 @@
         "high_concentration": true
       },
       {
-        "organismo": "HTAL. BERNARDINO RIVADAVIA",
-        "top_vendor": "INFORMATICA PALMAR SRL",
-        "top_vendor_amount_ars": 5596000.0,
-        "organismo_tech_amount_ars": 5976300.0,
-        "top_vendor_share_pct": 93.64,
-        "vendors_count": 4,
-        "high_concentration": true
-      },
-      {
         "organismo": "HTAL. RICARDO GUTIERREZ",
         "top_vendor": "INEGHO SRL",
         "top_vendor_amount_ars": 4898000.0,
         "organismo_tech_amount_ars": 5305880.0,
         "top_vendor_share_pct": 92.31,
         "vendors_count": 2,
+        "high_concentration": true
+      },
+      {
+        "organismo": "HTAL. BERNARDINO RIVADAVIA",
+        "top_vendor": "INFORMATICA PALMAR SRL",
+        "top_vendor_amount_ars": 2798000.0,
+        "organismo_tech_amount_ars": 3178300.0,
+        "top_vendor_share_pct": 88.03,
+        "vendors_count": 4,
         "high_concentration": true
       },
       {
@@ -428,15 +428,6 @@
         "high_concentration": true
       },
       {
-        "organismo": "HTAL. MARIA CURIE",
-        "top_vendor": "ID GROUP S.A.",
-        "top_vendor_amount_ars": 1058800.0,
-        "organismo_tech_amount_ars": 1264500.0,
-        "top_vendor_share_pct": 83.73,
-        "vendors_count": 2,
-        "high_concentration": true
-      },
-      {
         "organismo": "HTAL.DONACION FRANCISCO SANTOJANNI",
         "top_vendor": "ETHERLAB SAS",
         "top_vendor_amount_ars": 833688.0,
@@ -446,21 +437,21 @@
         "high_concentration": true
       },
       {
-        "organismo": "Agencia Gubernamental de Control",
-        "top_vendor": "BINIT S.R.L.",
-        "top_vendor_amount_ars": 4961863680.0,
-        "organismo_tech_amount_ars": 6724033680.0,
-        "top_vendor_share_pct": 73.79,
-        "vendors_count": 3,
-        "high_concentration": true
-      },
-      {
         "organismo": "MINISTERIO DE EDUCACION",
         "top_vendor": "VI - DA TEC SA",
         "top_vendor_amount_ars": 449380000.0,
         "organismo_tech_amount_ars": 631855468.43,
         "top_vendor_share_pct": 71.12,
         "vendors_count": 14,
+        "high_concentration": true
+      },
+      {
+        "organismo": "Agencia Gubernamental de Control",
+        "top_vendor": "BINIT S.R.L.",
+        "top_vendor_amount_ars": 1876894560.0,
+        "organismo_tech_amount_ars": 2757979560.0,
+        "top_vendor_share_pct": 68.05,
+        "vendors_count": 3,
         "high_concentration": true
       },
       {
@@ -512,8 +503,8 @@
         "organismo": "AGENCIA SISTEMAS DE INFORMACION",
         "top_vendor": "AVANZIT TECNOLOGÍA S.A.",
         "top_vendor_amount_ars": 5287923082.5,
-        "organismo_tech_amount_ars": 17769109998.17,
-        "top_vendor_share_pct": 29.76,
+        "organismo_tech_amount_ars": 13720430438.17,
+        "top_vendor_share_pct": 38.54,
         "vendors_count": 13,
         "high_concentration": false
       }
@@ -557,7 +548,7 @@
           "organismo": "Agencia Gubernamental de Control",
           "vendor": "BINIT S.R.L.",
           "awards_count": 4,
-          "total_amount_ars": 2780160000.0,
+          "total_amount_ars": 1149660000.0,
           "date_from": "2026-01-29",
           "date_to": "2026-06-26"
         },
@@ -573,7 +564,7 @@
           "organismo": "Agencia Gubernamental de Control",
           "vendor": "Stark Solution S.R.L.",
           "awards_count": 2,
-          "total_amount_ars": 1624320000.0,
+          "total_amount_ars": 812160000.0,
           "date_from": "2026-05-08",
           "date_to": "2026-05-21"
         },
@@ -669,8 +660,8 @@
       "organismo": "Agencia Gubernamental de Control",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 975000000.0,
-      "awards_count": 5,
+      "amount_ars": 195000000.0,
+      "awards_count": 1,
       "suppliers": [
         "BINIT S.R.L."
       ],
@@ -680,8 +671,8 @@
       "organismo": "Agencia Gubernamental de Control",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 1134000000.0,
-      "awards_count": 4,
+      "amount_ars": 283500000.0,
+      "awards_count": 1,
       "suppliers": [
         "BINIT S.R.L."
       ],
@@ -691,8 +682,8 @@
       "organismo": "Agencia Gubernamental de Control",
       "method": "open",
       "competitive": false,
-      "amount_ars": 2181703680.0,
-      "awards_count": 3,
+      "amount_ars": 727234560.0,
+      "awards_count": 1,
       "suppliers": [
         "BINIT S.R.L."
       ],
@@ -702,8 +693,8 @@
       "organismo": "Agencia Gubernamental de Control",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 1082880000.0,
-      "awards_count": 2,
+      "amount_ars": 541440000.0,
+      "awards_count": 1,
       "suppliers": [
         "Stark Solution S.R.L."
       ],
@@ -713,8 +704,8 @@
       "organismo": "Agencia Gubernamental de Control",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 137850000.0,
-      "awards_count": 2,
+      "amount_ars": 68925000.0,
+      "awards_count": 1,
       "suppliers": [
         "GEOTARGET S.A."
       ],
@@ -724,8 +715,8 @@
       "organismo": "Agencia Gubernamental de Control",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 541440000.0,
-      "awards_count": 2,
+      "amount_ars": 270720000.0,
+      "awards_count": 1,
       "suppliers": [
         "Stark Solution S.R.L."
       ],
@@ -768,8 +759,8 @@
       "organismo": "Ministerio de Seguridad",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 315897120.0,
-      "awards_count": 3,
+      "amount_ars": 105299040.0,
+      "awards_count": 1,
       "suppliers": [
         "DANAIDE S.A."
       ],
@@ -779,8 +770,8 @@
       "organismo": "Ministerio de Seguridad",
       "method": "open",
       "competitive": false,
-      "amount_ars": 19253760000.0,
-      "awards_count": 7,
+      "amount_ars": 6624000000.0,
+      "awards_count": 3,
       "suppliers": [
         "SOFLEX SA"
       ],
@@ -823,8 +814,8 @@
       "organismo": "HTAL. MARIA CURIE",
       "method": "open",
       "competitive": false,
-      "amount_ars": 1058800.0,
-      "awards_count": 2,
+      "amount_ars": 529400.0,
+      "awards_count": 1,
       "suppliers": [
         "ID GROUP S.A."
       ],
@@ -924,8 +915,8 @@
       "organismo": "HTAL. BERNARDINO RIVADAVIA",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 5596000.0,
-      "awards_count": 2,
+      "amount_ars": 2798000.0,
+      "awards_count": 1,
       "suppliers": [
         "INFORMATICA PALMAR SRL"
       ],
@@ -1216,8 +1207,8 @@
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "method": "open",
       "competitive": false,
-      "amount_ars": 1280000000.0,
-      "awards_count": 4,
+      "amount_ars": 320000000.0,
+      "awards_count": 1,
       "suppliers": [
         "DATCO S.A."
       ],
@@ -1227,12 +1218,12 @@
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "method": "open",
       "competitive": false,
-      "amount_ars": 3294309764.4,
-      "awards_count": 20,
+      "amount_ars": 920630392.4,
+      "awards_count": 9,
       "suppliers": [
         "Claudio Oscar Freda"
       ],
-      "amount_usd": 2385452.4,
+      "amount_usd": 666640.4,
       "tech_source": "catalogo+palabra_clave"
     },
     "8056-0389-LPU26": {
@@ -1251,12 +1242,12 @@
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "method": "direct",
       "competitive": false,
-      "amount_ars": 1059793632.0,
-      "awards_count": 11,
+      "amount_ars": 371087712.0,
+      "awards_count": 5,
       "suppliers": [
         "UNIFY COMMUNICATIONS S.A."
       ],
-      "amount_usd": 761346.0,
+      "amount_usd": 266586.0,
       "tech_source": "catalogo+palabra_clave"
     },
     "8056-0493-LPU26": {
@@ -1312,12 +1303,12 @@
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "method": "open",
       "competitive": false,
-      "amount_ars": 52588536.0,
-      "awards_count": 2,
+      "amount_ars": 26294268.0,
+      "awards_count": 1,
       "suppliers": [
         "ICAP S.A."
       ],
-      "amount_usd": 37752.0,
+      "amount_usd": 18876.0,
       "tech_source": "catalogo+palabra_clave"
     },
     "8056-0835-LPU26": {
