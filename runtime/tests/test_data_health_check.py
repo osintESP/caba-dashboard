@@ -81,6 +81,19 @@ class AperturasTest(unittest.TestCase):
         self.assertEqual(len(dhc.check_aperturas({'status': 'ok', 'aperturas_proximas': []}, self.NOW)), 1)
 
 
+class BacFxTest(unittest.TestCase):
+    def test_converted_ok(self):
+        c = {'status': 'ok', 'summary': {'fx': {'usd_awards_converted': 221, 'excluded_awards_by_currency': {}}}}
+        self.assertEqual(dhc.check_bac_fx(c), [])
+
+    def test_excluded_usd_flagged(self):
+        c = {'status': 'ok', 'summary': {'fx': {'excluded_awards_by_currency': {'USD': 3}}}}
+        self.assertEqual(len(dhc.check_bac_fx(c)), 1)
+
+    def test_missing_fx_block_flagged(self):
+        self.assertEqual(len(dhc.check_bac_fx({'status': 'ok', 'summary': {}})), 1)
+
+
 class BacCoverageTest(unittest.TestCase):
     NOW = datetime(2026, 10, 23, tzinfo=timezone.utc)
 

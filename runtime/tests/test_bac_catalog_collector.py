@@ -116,7 +116,9 @@ class ProcessReleasesTest(unittest.TestCase):
         self.assertEqual(stats['vendor_totals']['Vendor X'], 150_000)
         self.assertEqual(stats['vendor_totals']['Vendor Y'], 150_000)
 
-    def test_non_ars_currency_excluded_from_totals(self):
+    def test_usd_without_rate_is_excluded_but_counted(self):
+        # Sin cotización (o sin conversor) no se inventa un monto: se excluye, pero queda
+        # contado en fx_excluded para que la UI y data_health_check lo hagan visible.
         release = {
             'date': '2026-02-20T00:00:00-03:00',
             'tender': {'title': 'Compra de equipamiento'},
@@ -127,6 +129,27 @@ class ProcessReleasesTest(unittest.TestCase):
         self.assertNotIn('Vendor Z', stats['vendor_totals'])
         self.assertEqual(stats['currencies'], {'USD': 1})
         self.assertEqual(stats['total_ars'], 0)
+        self.assertEqual(stats['fx_excluded'], {'USD': 1})
+
+    def test_usd_award_converted_at_award_date_rate(self):
+        # Caso real: la Agencia de Sistemas de Información adjudica casi todo en USD y antes
+        # desaparecía de totales, rankings y señales.
+        release = {
+            'date': '2026-02-20T00:00:00-03:00',
+            'id': '8056-0653-LPU26-1-0',
+            'tender': {'id': '8056-0653-LPU26', 'title': 'Licencias de software', 'procuringEntity': {'name': 'AGENCIA SISTEMAS DE INFORMACION'},
+                       'procurementMethod': 'open'},
+            'parties': [],
+            'awards': [_award(1000, currency='USD', suppliers=[{'id': 'Z', 'name': 'Vendor Z'}])],
+        }
+        stats = bcc.process_releases([release], usd_rate=lambda d: 1500.0 if str(d).startswith('2026-02-20') else None)
+        self.assertEqual(stats['vendor_totals']['Vendor Z'], 1_500_000)
+        self.assertEqual(stats['tech_ars'], 1_500_000)
+        self.assertEqual(stats['fx_converted'], {'awards': 1, 'amount_usd': 1000, 'tech_amount_usd': 1000})
+        self.assertEqual(stats['fx_excluded'], {})
+        entry = bcc.build_tender_index(stats)['8056-0653-LPU26']
+        self.assertEqual(entry['amount_ars'], 1_500_000)
+        self.assertEqual(entry['amount_usd'], 1000)
 
     def test_cancelled_award_excluded(self):
         release = {

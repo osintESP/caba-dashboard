@@ -5,6 +5,8 @@ from pathlib import Path
 
 import requests
 
+import fx_bcra
+
 BASE = Path(__file__).resolve().parent.parent
 OUT = BASE / 'data' / 'bac_catalog.json'
 STATE = BASE / 'data' / 'bac_sync_state.json'
@@ -22,7 +24,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 10
+COLLECTOR_VERSION = 11
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -259,7 +261,12 @@ def _parse_date(s):
         return None
 
 
-def process_releases(releases):
+def process_releases(releases, usd_rate=None):
+    # usd_rate: fecha -> ARS por USD (fx_bcra.make_converter), o None. Las adjudicaciones en USD
+    # se convierten a ARS al tipo de cambio de su fecha para que entren en totales, rankings y
+    # señales (antes se descartaban en silencio: más dólares de tecnología que todo lo adjudicado
+    # en pesos, casi todo de la Agencia de Sistemas de Información). Sin cotización para esa
+    # fecha -o sin usd_rate- se excluyen, pero quedan contadas en fx_excluded para que se vea.
     vendor_totals, vendor_tech_totals, vendor_awards = {}, {}, {}
     total_ars = tech_ars = 0.0
     awards_counted = 0
@@ -271,6 +278,8 @@ def process_releases(releases):
     direct_awards_by_pair = {}
     direct_awards_by_vendor = {}
     tech_tenders_by_id = {}
+    fx_converted = {'awards': 0, 'amount_usd': 0.0, 'tech_amount_usd': 0.0}
+    fx_excluded = Counter()
     for rel in releases:
         rel_date = rel.get('date')
         if rel_date:
@@ -296,9 +305,20 @@ def process_releases(releases):
                 continue
             currency = value.get('currency') or 'ARS'
             currencies[currency] += 1
-            if currency != 'ARS':
-                continue
-            amount = value['amount']
+            amount_usd = None
+            if currency == 'ARS':
+                amount = value['amount']
+            else:
+                rate = usd_rate(rel_date) if (currency == 'USD' and usd_rate) else None
+                if rate is None:
+                    fx_excluded[currency] += 1
+                    continue
+                amount_usd = value['amount']
+                amount = amount_usd * rate
+                fx_converted['awards'] += 1
+                fx_converted['amount_usd'] += amount_usd
+                if is_tech:
+                    fx_converted['tech_amount_usd'] += amount_usd
             names = resolve_supplier_names(award, parties)
             if not names:
                 continue
@@ -331,9 +351,11 @@ def process_releases(releases):
                 if tender_id:
                     entry = tech_tenders_by_id.setdefault(tender_id, {
                         'organismo': organismo, 'method': method, 'competitive': competitive,
-                        'amount_ars': 0.0, 'awards_count': 0, 'suppliers': set(),
+                        'amount_ars': 0.0, 'amount_usd': 0.0, 'awards_count': 0, 'suppliers': set(),
                     })
                     entry['amount_ars'] += amount
+                    if amount_usd is not None:
+                        entry['amount_usd'] += amount_usd
                     entry['awards_count'] += 1
                     entry['suppliers'].update(names)
     return {
@@ -345,6 +367,7 @@ def process_releases(releases):
         'org_vendor_tech': org_vendor_tech, 'org_tech_totals': org_tech_totals,
         'direct_awards_by_pair': direct_awards_by_pair, 'direct_awards_by_vendor': direct_awards_by_vendor,
         'tech_tenders_by_id': tech_tenders_by_id,
+        'fx_converted': fx_converted, 'fx_excluded': dict(fx_excluded),
     }
 
 
@@ -544,6 +567,8 @@ def build_tender_index(stats):
         'organismo': entry['organismo'], 'method': entry['method'], 'competitive': entry['competitive'],
         'amount_ars': round(entry['amount_ars'], 2), 'awards_count': entry['awards_count'],
         'suppliers': sorted(entry['suppliers']),
+        # Parte del monto adjudicada originalmente en USD (ya incluida en amount_ars, convertida).
+        **({'amount_usd': round(entry['amount_usd'], 2)} if entry.get('amount_usd') else {}),
     } for tender_id, entry in stats.get('tech_tenders_by_id', {}).items()}
 
 
@@ -593,6 +618,16 @@ def build_output(result, resource, stats, status, releases_count):
             'awards_counted': stats.get('awards_counted', 0),
             'vendors_counted': len(stats.get('vendor_totals', {})),
             'currencies': stats.get('currencies', {}),
+            'fx': {
+                'source': fx_bcra.SOURCE,
+                'method': ('Adjudicaciones en USD convertidas a ARS a la cotización del día de la '
+                           'adjudicación (o del último día hábil previo). Los montos en ARS de este '
+                           'archivo las incluyen; amount_usd conserva el monto original.'),
+                'usd_awards_converted': (stats.get('fx_converted') or {}).get('awards', 0),
+                'usd_amount': round((stats.get('fx_converted') or {}).get('amount_usd', 0), 2),
+                'usd_tech_amount': round((stats.get('fx_converted') or {}).get('tech_amount_usd', 0), 2),
+                'excluded_awards_by_currency': stats.get('fx_excluded', {}),
+            },
         },
         'vendor_ranking': vendor_ranking,
         'vendor_ranking_tech': vendor_ranking_tech,
@@ -618,6 +653,15 @@ def _mark_stale(result, resource, status, error=None):
         write(OUT, existing)
     elif not OUT.exists():
         write(OUT, build_output(result, resource, process_releases([]), status, 0))
+
+
+def usd_converter(releases):
+    usd_dates = sorted(str(r.get('date'))[:10] for r in releases if r.get('date') and any(
+        ((a.get('value') or {}).get('currency') == 'USD') for a in r.get('awards') or []))
+    if not usd_dates:
+        return None
+    rates = fx_bcra.load_rates(datetime.fromisoformat(usd_dates[0]).date(), datetime.fromisoformat(usd_dates[-1]).date())
+    return fx_bcra.make_converter(rates)
 
 
 def main():
@@ -648,7 +692,7 @@ def main():
         print(json.dumps({'status': 'download_error', 'error': str(e)}))
         return
 
-    stats = process_releases(releases)
+    stats = process_releases(releases, usd_rate=usd_converter(releases))
     out = build_output(result, resource, stats, 'ok', len(releases))
     write(OUT, out)
     write(STATE, {**(fp or {}), 'url': url, 'checked_at': now(), 'downloaded_at': now(), 'status': 'ok',
