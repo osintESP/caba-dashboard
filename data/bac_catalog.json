@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "collected_at": "2026-09-16T10:57:26+00:00",
+  "collected_at": "2026-10-31T21:49:06+00:00",
   "source": {
     "owner": "Gobierno de la Ciudad Autónoma de Buenos Aires",
     "api": "https://data.buenosaires.gob.ar/api/3/action",
@@ -28,14 +28,22 @@
     "note": "Ventana de cobertura de bac_anual.csv no confirmada oficialmente por el publicador; inferida del rango real de fechas de los releases procesados. La fuente suele tener ~2-3 meses de atraso respecto a la fecha actual."
   },
   "summary": {
-    "total_awarded_ars": 264573931484.35,
-    "tech_awarded_ars": 8765809770.77,
-    "tech_share_pct": 3.31,
-    "awards_counted": 16958,
-    "vendors_counted": 742,
+    "total_awarded_ars": 287866998857.08,
+    "tech_awarded_ars": 21545525742.74,
+    "tech_share_pct": 7.48,
+    "awards_counted": 17179,
+    "vendors_counted": 766,
     "currencies": {
       "ARS": 16958,
       "USD": 221
+    },
+    "fx": {
+      "source": "BCRA — API Estadísticas Cambiarias, cotización oficial del dólar estadounidense (USD)",
+      "method": "Adjudicaciones en USD convertidas a ARS a la cotización del día de la adjudicación (o del último día hábil previo). Los montos en ARS de este archivo las incluyen; amount_usd conserva el monto original.",
+      "usd_awards_converted": 221,
+      "usd_amount": 16498877.64,
+      "usd_tech_amount": 9105892.84,
+      "excluded_awards_by_currency": {}
     }
   },
   "vendor_ranking": [
@@ -100,6 +108,12 @@
       "awards": 304
     },
     {
+      "name": "AVANZIT TECNOLOGÍA S.A.",
+      "amount_ars": 5288394156.16,
+      "tech_amount_ars": 4011436561.16,
+      "awards": 18
+    },
+    {
       "name": "JUAN CARLOS SAVINO",
       "amount_ars": 5127036138.96,
       "tech_amount_ars": 0,
@@ -130,6 +144,12 @@
       "awards": 1
     },
     {
+      "name": "Claudio Oscar Freda",
+      "amount_ars": 3294309764.4,
+      "tech_amount_ars": 3294309764.4,
+      "awards": 20
+    },
+    {
       "name": "BIOMÉRIEUX ARGENTINA SA",
       "amount_ars": 2678206875.52,
       "tech_amount_ars": 0,
@@ -146,18 +166,6 @@
       "amount_ars": 2491142321.11,
       "tech_amount_ars": 0,
       "awards": 563
-    },
-    {
-      "name": "ARGUS DIAGNOSTICO MEDICO S.A.",
-      "amount_ars": 2485684064.0,
-      "tech_amount_ars": 0,
-      "awards": 7
-    },
-    {
-      "name": "DROFAST S.R.L.",
-      "amount_ars": 2382528554.0,
-      "tech_amount_ars": 0,
-      "awards": 318
     }
   ],
   "vendor_ranking_tech": [
@@ -167,14 +175,49 @@
       "awards": 14
     },
     {
+      "name": "AVANZIT TECNOLOGÍA S.A.",
+      "amount_ars": 4011436561.16,
+      "awards": 18
+    },
+    {
+      "name": "Claudio Oscar Freda",
+      "amount_ars": 3294309764.4,
+      "awards": 20
+    },
+    {
+      "name": "DATASTAR ARGENTINA SA",
+      "amount_ars": 2288395125.0,
+      "awards": 12
+    },
+    {
       "name": "Stark Solution S.R.L.",
       "amount_ars": 1624320000.0,
       "awards": 4
     },
     {
+      "name": "UNIFY COMMUNICATIONS S.A.",
+      "amount_ars": 1059793632.0,
+      "awards": 11
+    },
+    {
+      "name": "TECNOLOGIA, COMUNICACIONES Y NEGOCIOS S.A.",
+      "amount_ars": 843530100.0,
+      "awards": 2
+    },
+    {
       "name": "Mariana Irene Albornoz",
       "amount_ars": 492952851.55,
       "awards": 1
+    },
+    {
+      "name": "Quick Supplies SRL",
+      "amount_ars": 484621666.1,
+      "awards": 2
+    },
+    {
+      "name": "TRANS INDUSTRIAS ELECTRONICAS S.A",
+      "amount_ars": 471127280.0,
+      "awards": 3
     },
     {
       "name": "VI - DA TEC SA",
@@ -202,88 +245,44 @@
       "awards": 2
     },
     {
+      "name": "ZNET SOLUCIONES INFORMATICAS SRL",
+      "amount_ars": 85424165.97,
+      "awards": 1
+    },
+    {
+      "name": "NOVARED SOCIEDAD ANONIMA ",
+      "amount_ars": 72474451.0,
+      "awards": 6
+    },
+    {
       "name": "Juan Martín Sardoy",
       "amount_ars": 70000000.0,
       "awards": 1
     },
     {
+      "name": "SIA SISTEMAS S.A.",
+      "amount_ars": 65947040.0,
+      "awards": 7
+    },
+    {
       "name": "ARQUISONIC SRL",
       "amount_ars": 54930854.0,
       "awards": 3
-    },
-    {
-      "name": "AP Supplier Group SA",
-      "amount_ars": 54853000.0,
-      "awards": 5
-    },
-    {
-      "name": "GENETRICS S.A.",
-      "amount_ars": 54692000.0,
-      "awards": 5
-    },
-    {
-      "name": "DATASTAR ARGENTINA SA",
-      "amount_ars": 39137700.0,
-      "awards": 6
-    },
-    {
-      "name": "AKSEC SRL",
-      "amount_ars": 30120000.0,
-      "awards": 1
-    },
-    {
-      "name": "ID GROUP S.A.",
-      "amount_ars": 30047015.0,
-      "awards": 22
-    },
-    {
-      "name": "ATRIX S.A.",
-      "amount_ars": 24120000.0,
-      "awards": 1
-    },
-    {
-      "name": "SERVICIOS GLOBALES DE INFORMATICA S.A.",
-      "amount_ars": 23836620.0,
-      "awards": 1
-    },
-    {
-      "name": "CAISEN S.R.L.",
-      "amount_ars": 18600000.0,
-      "awards": 1
-    },
-    {
-      "name": "Empresa de Computacion y Servicios SA",
-      "amount_ars": 14300000.0,
-      "awards": 2
-    },
-    {
-      "name": "TECNOIMAGEN S.A.",
-      "amount_ars": 11860793.75,
-      "awards": 36
     }
   ],
   "audit_signals": {
     "method_breakdown_ars": {
-      "direct": 5992067740.33,
-      "open": 2773742030.44
+      "direct": 7061715097.33,
+      "open": 14483810645.41
     },
-    "direct_or_limited_share_pct": 68.36,
+    "direct_or_limited_share_pct": 32.78,
     "non_competitive_open_tenders": {
-      "count": 19,
-      "amount_ars": 2773742030.44,
-      "share_pct_of_tech": 31.64,
+      "count": 75,
+      "amount_ars": 14483810645.41,
+      "share_pct_of_tech": 67.22,
       "note": "Procesos formalmente públicos (procurementMethod=open) que BAC marca como sin competencia real (competitive=false), en compras de tecnología. BAC no publica numberOfTenderers/tenderers; esta es la única señal de competencia real que expone el propio publicador."
     },
     "vendor_concentration_by_organismo": [
-      {
-        "organismo": "Ministerio de Movilidad e Infraestructura",
-        "top_vendor": "DATASTAR ARGENTINA SA",
-        "top_vendor_amount_ars": 38984400.0,
-        "organismo_tech_amount_ars": 38984400.0,
-        "top_vendor_share_pct": 100.0,
-        "vendors_count": 1,
-        "high_concentration": true
-      },
       {
         "organismo": "AGENCIA AMBIENTAL",
         "top_vendor": "ARQUISONIC SRL",
@@ -438,6 +437,15 @@
         "high_concentration": true
       },
       {
+        "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+        "top_vendor": "Quick Supplies SRL",
+        "top_vendor_amount_ars": 484621666.1,
+        "organismo_tech_amount_ars": 557645724.19,
+        "top_vendor_share_pct": 86.9,
+        "vendors_count": 5,
+        "high_concentration": true
+      },
+      {
         "organismo": "ENTE AUTARQUICO TEATRO COLON",
         "top_vendor": "AKSEC SRL",
         "top_vendor_amount_ars": 30120000.0,
@@ -474,15 +482,6 @@
         "high_concentration": true
       },
       {
-        "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-        "top_vendor": "NOVARED SOCIEDAD ANONIMA ",
-        "top_vendor_amount_ars": 1353401.0,
-        "organismo_tech_amount_ars": 1903008.09,
-        "top_vendor_share_pct": 71.12,
-        "vendors_count": 4,
-        "high_concentration": true
-      },
-      {
         "organismo": "HTAL. PARMENIO PIÑERO",
         "top_vendor": "TECNOIMAGEN S.A.",
         "top_vendor_amount_ars": 11860793.75,
@@ -490,6 +489,24 @@
         "top_vendor_share_pct": 60.88,
         "vendors_count": 2,
         "high_concentration": true
+      },
+      {
+        "organismo": "Ministerio de Movilidad e Infraestructura",
+        "top_vendor": "DATASTAR ARGENTINA SA",
+        "top_vendor_amount_ars": 38984400.0,
+        "organismo_tech_amount_ars": 69449400.0,
+        "top_vendor_share_pct": 56.13,
+        "vendors_count": 2,
+        "high_concentration": false
+      },
+      {
+        "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+        "top_vendor": "AVANZIT TECNOLOGÍA S.A.",
+        "top_vendor_amount_ars": 4010965487.5,
+        "organismo_tech_amount_ars": 12193508255.87,
+        "top_vendor_share_pct": 32.89,
+        "vendors_count": 11,
+        "high_concentration": false
       }
     ],
     "possible_fractionation": {
@@ -603,6 +620,17 @@
       "suppliers": [
         "DATASTAR ARGENTINA SA"
       ]
+    },
+    "3125-0600-LPU26": {
+      "organismo": "Ministerio de Movilidad e Infraestructura",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 30465000.0,
+      "awards_count": 1,
+      "suppliers": [
+        "AC&A INFRASTRUCTURE S.L. S. E. E."
+      ],
+      "amount_usd": 22500.0
     },
     "3163-0562-CDI26": {
       "organismo": "AGENCIA AMBIENTAL",
@@ -1042,6 +1070,139 @@
         "PROYECCIONES DIGITALES S.A."
       ]
     },
+    "8056-0325-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 3294309764.4,
+      "awards_count": 20,
+      "suppliers": [
+        "Claudio Oscar Freda"
+      ],
+      "amount_usd": 2385452.4
+    },
+    "8056-0389-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 65947040.0,
+      "awards_count": 4,
+      "suppliers": [
+        "SIA SISTEMAS S.A."
+      ],
+      "amount_usd": 47240.0
+    },
+    "8056-0424-CDI26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 1059793632.0,
+      "awards_count": 11,
+      "suppliers": [
+        "UNIFY COMMUNICATIONS S.A."
+      ],
+      "amount_usd": 761346.0
+    },
+    "8056-0493-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 168665000.0,
+      "awards_count": 1,
+      "suppliers": [
+        "DATASTAR ARGENTINA SA"
+      ],
+      "amount_usd": 122000.0
+    },
+    "8056-0587-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 1132792375.0,
+      "awards_count": 4,
+      "suppliers": [
+        "ABTIO S.A.",
+        "DATASTAR ARGENTINA SA"
+      ],
+      "amount_usd": 810875.0
+    },
+    "8056-0589-CDI26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "direct",
+      "competitive": false,
+      "amount_ars": 9853725.0,
+      "awards_count": 2,
+      "suppliers": [
+        "MSLI LATAM, Inc."
+      ],
+      "amount_usd": 6850.0
+    },
+    "8056-0653-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 4010965487.5,
+      "awards_count": 13,
+      "suppliers": [
+        "AVANZIT TECNOLOGÍA S.A."
+      ],
+      "amount_usd": 2876275.0
+    },
+    "8056-0726-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 52588536.0,
+      "awards_count": 2,
+      "suppliers": [
+        "ICAP S.A."
+      ],
+      "amount_usd": 37752.0
+    },
+    "8056-0835-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 998511150.0,
+      "awards_count": 2,
+      "suppliers": [
+        "DATASTAR ARGENTINA SA"
+      ],
+      "amount_usd": 695100.0
+    },
+    "8056-0955-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 85424165.97,
+      "awards_count": 1,
+      "suppliers": [
+        "ZNET SOLUCIONES INFORMATICAS SRL"
+      ],
+      "amount_usd": 59281.17
+    },
+    "8056-1137-LPU26": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 471127280.0,
+      "awards_count": 2,
+      "suppliers": [
+        "TRANS INDUSTRIAS ELECTRONICAS S.A"
+      ],
+      "amount_usd": 318760.0
+    },
+    "8056-2079-LPU25": {
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 843530100.0,
+      "awards_count": 2,
+      "suppliers": [
+        "TECNOLOGIA, COMUNICACIONES Y NEGOCIOS S.A."
+      ],
+      "amount_usd": 573830.0
+    },
     "8618-0007-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
       "method": "open",
@@ -1051,6 +1212,28 @@
       "suppliers": [
         "NOVARED SOCIEDAD ANONIMA "
       ]
+    },
+    "8618-0009-LPU26": {
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 71121050.0,
+      "awards_count": 2,
+      "suppliers": [
+        "NOVARED SOCIEDAD ANONIMA "
+      ],
+      "amount_usd": 49735.0
+    },
+    "8618-0053-LPU26": {
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "method": "open",
+      "competitive": false,
+      "amount_ars": 484621666.1,
+      "awards_count": 2,
+      "suppliers": [
+        "Quick Supplies SRL"
+      ],
+      "amount_usd": 338896.27
     },
     "8618-0315-LPU26": {
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",

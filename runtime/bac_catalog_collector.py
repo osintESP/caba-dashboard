@@ -24,7 +24,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 11
+COLLECTOR_VERSION = 12
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -664,10 +664,36 @@ def usd_converter(releases):
     return fx_bcra.make_converter(rates)
 
 
+def resolve_source(prev_state, previous_out, fetch=None):
+    """Devuelve (result, resource, api_error). Si la API de CKAN no responde JSON, se usa el CSV conocido.
+
+    El 31/10/2026 data.buenosaires.gob.ar empezó a responder la API de CKAN con un desafío
+    JavaScript anti-bots (F5 "TSPD"), tanto desde GitHub Actions como desde una IP local: un
+    cambio de User-Agent ya no alcanza (ver HEADERS). El CSV en sí se sirve desde otro host
+    (cdn.buenosaires.gob.ar) que sigue respondiendo, y su URL ya está en bac_sync_state.json
+    desde la última corrida buena. La API sólo se usa para descubrir esa URL y la metadata del
+    dataset, así que ante una falla se sigue con la URL y la metadata conocidas, en vez de caerse.
+    """
+    fetch = fetch or fetch_package
+    try:
+        result = fetch()
+        return result, find_resource(result), None
+    except (requests.RequestException, ValueError, RuntimeError) as e:
+        url = prev_state.get('url')
+        if not url:
+            raise
+        prev = previous_out or {}
+        ds = prev.get('dataset') or {}
+        result = ({'id': ds.get('id'), 'title': ds.get('title'), 'metadata_modified': ds.get('metadata_modified'),
+                   'license_id': ds.get('license_id'), 'organization': {'title': ds.get('organization')}}
+                  if ds else None)
+        resource = {**(prev.get('resource') or {}), 'url': url}
+        return result, resource, f'API de catálogo no disponible ({type(e).__name__}); se usó la URL conocida del CSV'
+
+
 def main():
     prev_state = read(STATE, {}) or {}
-    result = fetch_package()
-    resource = find_resource(result)
+    result, resource, api_error = resolve_source(prev_state, read(OUT))
 
     if not resource:
         write(STATE, {**prev_state, 'checked_at': now(), 'status': 'resource_not_found'})
@@ -678,7 +704,8 @@ def main():
     url = resource['url']
     fp = head_fingerprint(url)
     if unchanged(prev_state, url, fp):
-        write(STATE, {**prev_state, **(fp or {}), 'url': url, 'checked_at': now(), 'status': 'unchanged'})
+        write(STATE, {**prev_state, **(fp or {}), 'url': url, 'checked_at': now(), 'status': 'unchanged',
+                      'catalog_api_error': api_error})
         print(json.dumps({'status': 'unchanged'}))
         return
 
@@ -696,7 +723,7 @@ def main():
     out = build_output(result, resource, stats, 'ok', len(releases))
     write(OUT, out)
     write(STATE, {**(fp or {}), 'url': url, 'checked_at': now(), 'downloaded_at': now(), 'status': 'ok',
-                  'collector_version': COLLECTOR_VERSION})
+                  'collector_version': COLLECTOR_VERSION, **({'catalog_api_error': api_error} if api_error else {})})
     print(json.dumps({'status': 'ok', 'releases': len(releases),
                        'vendors': len(stats['vendor_totals']), 'awards': stats['awards_counted']},
                       ensure_ascii=False))

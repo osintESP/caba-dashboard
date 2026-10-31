@@ -792,5 +792,27 @@ class MarkStaleTest(unittest.TestCase):
         self.assertEqual(created['status'], 'resource_not_found')
 
 
+class ResolveSourceTest(unittest.TestCase):
+    # 31/10/2026: la API de CKAN empezó a responder un desafío JS anti-bots (HTML) en vez de JSON.
+    def test_api_blocked_falls_back_to_known_csv_url(self):
+        import requests
+        def blocked():
+            raise requests.exceptions.JSONDecodeError('Expecting value', '<html>', 0)
+        prev_state = {'url': 'https://cdn.buenosaires.gob.ar/x/bac_anual.csv'}
+        prev_out = {'dataset': {'id': 'd1', 'title': 'BAC', 'organization': 'GCBA'}, 'resource': {'id': 'r1', 'format': 'CSV'}}
+        result, resource, err = bcc.resolve_source(prev_state, prev_out, fetch=blocked)
+        self.assertEqual(resource['url'], prev_state['url'])
+        self.assertEqual(resource['id'], 'r1')
+        self.assertEqual(result['organization'], {'title': 'GCBA'})
+        self.assertIn('no disponible', err)
+
+    def test_api_blocked_without_known_url_raises(self):
+        import requests
+        def blocked():
+            raise requests.ConnectionError('down')
+        with self.assertRaises(requests.ConnectionError):
+            bcc.resolve_source({}, None, fetch=blocked)
+
+
 if __name__ == '__main__':
     unittest.main()
