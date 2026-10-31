@@ -24,7 +24,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 12
+COLLECTOR_VERSION = 13
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -168,6 +168,9 @@ def csv_row_to_release(row):
             'procuringEntity': {'name': row.get('tender/procuringEntity/name')},
             'procurementMethod': row.get('tender/procurementMethod') or None,
             'competitive': _to_bool(row.get('tender/competitive')),
+            # Código del catálogo de bienes y servicios de BAC (x_catalogo_bienes_servicios_bac)
+            # del ítem de esta fila. Ver TECH_CATALOG_PREFIXES.
+            'items': [{'classification': {'id': row.get('tender/items/0/classification/id') or None}}],
         },
         'parties': ([{'id': party_id, 'name': row.get('parties/0/name')}] if party_id else []),
         'awards': [{
@@ -246,12 +249,35 @@ def is_valid_amount(value_block):
     return isinstance(amount, (int, float)) and amount > 0
 
 
-def classify_technology(tender):
+# Prefijos del catálogo de bienes y servicios de BAC que son tecnología (análisis del agente de
+# auditoría, issue #15, 31/10/2026, sobre el bac_anual.csv real): 13.02 / 13.03 y los rubros
+# 13.01.010, .011 y .016 del 13.01. Se excluye 13.01.003 (insumos y tóner): mete lotes mixtos de
+# otras áreas (ej. 428-2049 "Hemoterapia"). Suma 24 procesos que las palabras clave no detectaban
+# (103 -> 127: Datos Abiertos, OpenShift, IBM Z16, SATE911, 2630-0747 "Sist. ... Mesa de Ayuda").
+# No se agregó la regex "\bsist\." por eso: sumaba 8 falsos positivos quirúrgicos.
+TECH_CATALOG_PREFIXES = ('13.02.', '13.03.', '13.01.010.', '13.01.011.', '13.01.016.')
+
+
+def catalog_code(tender):
+    items = tender.get('items') or []
+    return ((items[0] if items else {}).get('classification') or {}).get('id') or None
+
+
+def tech_source(tender):
+    """'palabra_clave', 'catalogo', 'palabra_clave+catalogo' o None. Las dos vías se suman."""
     text = normalize(' '.join(filter(None, [
         tender.get('title'), tender.get('description'), tender.get('mainProcurementCategory')])))
-    if any(rx.search(text) for rx in _TECH_EXCLUDE_RE):
-        return False
-    return any(rx.search(text) for rx in _TECH_INCLUDE_RE)
+    by_keyword = (not any(rx.search(text) for rx in _TECH_EXCLUDE_RE)
+                  and any(rx.search(text) for rx in _TECH_INCLUDE_RE))
+    code = catalog_code(tender) or ''
+    by_catalog = code.startswith(TECH_CATALOG_PREFIXES)
+    if by_keyword and by_catalog:
+        return 'palabra_clave+catalogo'
+    return 'palabra_clave' if by_keyword else 'catalogo' if by_catalog else None
+
+
+def classify_technology(tender):
+    return tech_source(tender) is not None
 
 
 def _parse_date(s):
@@ -287,7 +313,8 @@ def process_releases(releases, usd_rate=None):
             date_to = rel_date if date_to is None else max(date_to, rel_date)
         parties = index_parties(rel)
         tender = rel.get('tender') or {}
-        is_tech = classify_technology(tender)
+        source = tech_source(tender)
+        is_tech = source is not None
         # BAC no publica numberOfTenderers/tenderers (verificado: 0 ocurrencias en todo el
         # dataset); 'competitive' es la única señal de competencia real que el propio
         # publicador expone, y vale la pena mirarla: la mayoría de los procesos "open"
@@ -352,7 +379,9 @@ def process_releases(releases, usd_rate=None):
                     entry = tech_tenders_by_id.setdefault(tender_id, {
                         'organismo': organismo, 'method': method, 'competitive': competitive,
                         'amount_ars': 0.0, 'amount_usd': 0.0, 'awards_count': 0, 'suppliers': set(),
+                        'tech_sources': set(),
                     })
+                    entry['tech_sources'].update(source.split('+'))
                     entry['amount_ars'] += amount
                     if amount_usd is not None:
                         entry['amount_usd'] += amount_usd
@@ -569,6 +598,7 @@ def build_tender_index(stats):
         'suppliers': sorted(entry['suppliers']),
         # Parte del monto adjudicada originalmente en USD (ya incluida en amount_ars, convertida).
         **({'amount_usd': round(entry['amount_usd'], 2)} if entry.get('amount_usd') else {}),
+        'tech_source': '+'.join(sorted(entry.get('tech_sources') or [])) or None,
     } for tender_id, entry in stats.get('tech_tenders_by_id', {}).items()}
 
 
