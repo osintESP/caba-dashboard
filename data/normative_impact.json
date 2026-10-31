@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 176,
+    "total_flagged": 183,
     "by_sigla": {
-      "ASINF": 73,
-      "DGTALINF": 41,
+      "ASINF": 78,
+      "DGTALINF": 43,
       "DGISIS": 25,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -40,6 +40,30 @@
       ],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385463"
+    },
+    {
+      "id_norma": 1013178,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1510/DGTALINF/26",
+      "sumario": "Adquisición de Infraestructura de Firewall de Aplicaciones Web F5 y Balanceadores de carga",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5384187"
+    },
+    {
+      "id_norma": 1013138,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Disposición N° 129/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública 8056-1510-LPU26 para la Adquisición de Infraestructura de Firewall de Aplicaciones Web F5 y Balanceadores de carga",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5384059"
     },
     {
       "id_norma": 1013041,
@@ -112,6 +136,66 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5385319"
+    },
+    {
+      "id_norma": 1012483,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Resolución N° 227/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Leandro Ezequiel Gómez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5383895"
+    },
+    {
+      "id_norma": 1012410,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Resolución N° 233/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a David Eduardo Blasco",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5383899"
+    },
+    {
+      "id_norma": 1012409,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Resolución N° 232/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Ariel Hernán Ramírez",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5383898"
+    },
+    {
+      "id_norma": 1012407,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Resolución N° 231/ASINF/26",
+      "sumario": "Asigna Suplemento de Gabinete a Elsa Ethel Mosquera",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5383897"
+    },
+    {
+      "id_norma": 1012406,
+      "numero_boletin": 7484,
+      "fecha_publicacion": "29/10/2026",
+      "nombre": "Resolución N° 230/ASINF/26",
+      "sumario": "Designa en la Planta Transitoria de Perfiles de Sistemas a Judit Mariela Novgorosky",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5383896"
     },
     {
       "id_norma": 1012369,
