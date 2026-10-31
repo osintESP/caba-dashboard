@@ -7,6 +7,7 @@ on:
     paths:
       - 'runtime/bac_aperturas_scraper.py'
       - 'runtime/bac_pliegos_caidos_scraper.py'
+      - 'runtime/bac_buscar_avanzado.py'
       - '.github/workflows/refresh-bac-aperturas.yml'
   schedule:
     # Mismo horario que refresh-official-data.yml (11:00-16:00 UTC = 08:00-13:00 ART,
@@ -64,7 +65,7 @@ jobs:
           import json
           from pathlib import Path
           d = json.loads(Path('data/bac_aperturas.json').read_text(encoding='utf-8'))
-          assert 'status' in d and 'aperturas_recientes' in d and 'aperturas_proximas' in d
+          assert 'status' in d and 'licitaciones_abiertas' in d
           p = json.loads(Path('data/bac_pliegos_caidos.json').read_text(encoding='utf-8'))
           assert 'status' in p and 'pliegos' in p
           print('BAC_APERTURAS_QUALITY=OK')

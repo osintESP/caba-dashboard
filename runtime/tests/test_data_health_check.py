@@ -48,6 +48,39 @@ class PliegosCaidosTest(unittest.TestCase):
         self.assertTrue(any("'incompleto'" in i for i in issues))
 
 
+class AperturasTest(unittest.TestCase):
+    NOW = datetime(2026, 10, 31, 12, tzinfo=timezone.utc)
+
+    def data(self, rows, totales=None, obtenidos=None):
+        totales = totales or {'Publicado': 179}
+        return {'schema_version': 2, 'status': 'ok', 'licitaciones_abiertas': rows,
+                'totales_reportados_por_bac': totales, 'obtenidos': obtenidos or dict(totales)}
+
+    def row(self, numero, estado='Publicado', fecha='2026-11-03T13:00:00-03:00'):
+        return {'estado_buscado': estado, 'numero_proceso': numero, 'fecha_apertura': fecha}
+
+    def test_clean_dataset_passes(self):
+        rows = [self.row('2051-1480-LPU26'), self.row('2051-1196-LPU26', 'En Apertura', '2026-09-10T13:00:00-03:00')]
+        self.assertEqual(dhc.check_aperturas(self.data(rows), self.NOW), [])
+
+    def test_flags_truncation(self):
+        d = self.data([self.row('2051-1480-LPU26')], {'Publicado': 179}, {'Publicado': 100})
+        self.assertEqual(len(dhc.check_aperturas(d, self.NOW)), 1)
+
+    def test_flags_junk_duplicates_and_stale_publicado(self):
+        rows = [self.row('1'), self.row('2051-1480-LPU26'), self.row('2051-1480-LPU26'),
+                self.row('8056-1507-LPU26', fecha='2026-10-01T11:00:00-03:00')]
+        self.assertEqual(len(dhc.check_aperturas(self.data(rows), self.NOW)), 3)
+
+    def test_old_en_apertura_is_not_flagged(self):
+        # Procesos trabados "En Apertura" desde hace años existen en BAC; no son un error del scraper.
+        rows = [self.row('8503-0481-LPU14', 'En Apertura', '2014-10-10T10:00:00-03:00')]
+        self.assertEqual(dhc.check_aperturas(self.data(rows), self.NOW), [])
+
+    def test_old_schema_flagged(self):
+        self.assertEqual(len(dhc.check_aperturas({'status': 'ok', 'aperturas_proximas': []}, self.NOW)), 1)
+
+
 class BacCoverageTest(unittest.TestCase):
     NOW = datetime(2026, 10, 23, tzinfo=timezone.utc)
 

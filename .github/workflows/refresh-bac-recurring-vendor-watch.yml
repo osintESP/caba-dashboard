@@ -6,6 +6,7 @@ on:
     branches: [master]
     paths:
       - 'runtime/bac_recurring_vendor_watch.py'
+      - 'runtime/bac_buscar_avanzado.py'
       - '.github/workflows/refresh-bac-recurring-vendor-watch.yml'
   schedule:
     # Diario, no horario: el universo de candidatos (bac_catalog.json.audit_signals.

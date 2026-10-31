@@ -6,16 +6,14 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-# read_grid_rows/click_next_page/parse_row/ROW_KEYS son genéricos al patrón de grilla+paginador
-# de BuscarAvanzado.aspx, no específicos de "pliegos caídos" -reusarlos, no duplicarlos.
-from bac_pliegos_caidos_scraper import read_grid_rows, click_next_page, parse_row, ROW_KEYS  # noqa: E402
+# Navegación/grilla/paginador de BuscarAvanzado.aspx viven en bac_buscar_avanzado.py,
+# compartidos con los otros scrapers de BAC -reusarlos, no duplicarlos-. La búsqueda en sí
+# (submit_search) queda acá porque además filtra por tipo de proceso y recuerda la página.
+from bac_buscar_avanzado import SITE, UA, open_search, read_grid_rows, data_rows, click_next_page, parse_row  # noqa: E402
 
 BASE = Path(__file__).resolve().parent.parent
 CATALOG = BASE / 'data' / 'bac_catalog.json'
 OUT = BASE / 'data' / 'bac_recurring_vendor_watch.json'
-SITE = 'https://www.buenosairescompras.gob.ar'
-UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-      '(KHTML, like Gecko) Chrome/120.0 Safari/537.36')
 
 # Enriquecimiento del ítem #1 del roadmap (prórrogas encubiertas / contrataciones directas
 # por urgencia): bac_anual.csv SÍ trae proveedor (a diferencia de BuscarAvanzado.aspx, cuya
@@ -30,7 +28,7 @@ UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
 TIPO_PROCESO = 'Contratación Directa'
 RUBRO = 'Informática'
 ESTADO = 'Adjudicado'
-MAX_PAGES = 100  # tope de seguridad, mismo criterio que bac_pliegos_caidos_scraper.MAX_PAGES
+MAX_PAGES = 100  # tope de seguridad, mismo criterio que bac_buscar_avanzado.MAX_PAGES
 
 
 def now():
@@ -134,13 +132,6 @@ def extract_orden_compra(page):
     return None
 
 
-def open_search(page):
-    page.goto(f'{SITE}/Default.aspx', timeout=30000, wait_until='networkidle')
-    with page.expect_navigation(timeout=30000):
-        page.click('a[href*="BuscarAvanzado"]')
-    page.wait_for_selector('#ctl00_CPH1_ddlEstadoProceso', timeout=15000)
-
-
 def submit_search(page):
     page.select_option('#ctl00_CPH1_ddlTipoProceso', label=TIPO_PROCESO)
     page.select_option('#ctl00_CPH1_ddlRubro', label=RUBRO)
@@ -155,12 +146,10 @@ def search_direct_awards(page):
     rows = []
     current_page = 1
     while True:
-        raw_rows = read_grid_rows(page)
-        data_rows = [r for r in raw_rows if r and r[0] != 'Número proceso' and len(r) >= len(ROW_KEYS)]
         # Se recuerda la página de cada fila: al terminar de paginar la grilla queda en la
         # ÚLTIMA página, y confirm_candidate necesita volver a la página de esa fila para
         # clickear su link (antes lo buscaba en la grilla actual y casi nunca lo encontraba).
-        rows.extend({**parse_row(cells), '_page': current_page} for cells in data_rows)
+        rows.extend({**parse_row(cells), '_page': current_page} for cells in data_rows(read_grid_rows(page)))
         if current_page >= MAX_PAGES or not click_next_page(page, current_page):
             break
         current_page += 1
