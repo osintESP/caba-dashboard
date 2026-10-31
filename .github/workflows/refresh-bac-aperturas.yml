@@ -8,6 +8,8 @@ on:
       - 'runtime/bac_aperturas_scraper.py'
       - 'runtime/bac_pliegos_caidos_scraper.py'
       - 'runtime/bac_buscar_avanzado.py'
+      - 'runtime/bac_presupuesto_oficial.py'
+      - 'runtime/fx_bcra.py'
       - '.github/workflows/refresh-bac-aperturas.yml'
   schedule:
     # Mismo horario que refresh-official-data.yml (11:00-16:00 UTC = 08:00-13:00 ART,
@@ -57,6 +59,10 @@ jobs:
       - name: Scrape BAC pliegos caídos/dejados sin efecto (tecnología, en vivo)
         run: python runtime/bac_pliegos_caidos_scraper.py
 
+      - name: Presupuesto oficial de las licitaciones abiertas (detalle de BAC, con caché)
+        # Sólo visita procesos nuevos (o Publicados cada 7 días); corta solo tras 3 fallas seguidas.
+        run: python runtime/bac_presupuesto_oficial.py
+
       - name: Validate mandatory outputs
         run: |
           test -s data/bac_aperturas.json
@@ -75,7 +81,7 @@ jobs:
         run: |
           git config user.name 'caba-dashboard[bot]'
           git config user.email 'caba-dashboard@users.noreply.github.com'
-          git add data/bac_aperturas.json data/bac_pliegos_caidos.json
+          git add data/bac_aperturas.json data/bac_pliegos_caidos.json data/bac_presupuestos.json data/fx_usd_ars.json
           if git diff --cached --quiet; then
             echo 'No aperturas/pliegos caídos data changes.'
           else
@@ -86,7 +92,11 @@ jobs:
             # gana la versión recién scrapeada por esta corrida.
             if ! git rebase origin/master; then
               git checkout --theirs data/bac_aperturas.json data/bac_pliegos_caidos.json
-              git add data/bac_aperturas.json data/bac_pliegos_caidos.json
+              # bac_presupuestos.json: la caché de esta corrida parte del archivo previo, así que la
+              # contiene. fx_usd_ars.json: sólo agrega cotizaciones. Pueden no estar en conflicto.
+              git checkout --theirs data/bac_presupuestos.json 2>/dev/null || true
+              git checkout --theirs data/fx_usd_ars.json 2>/dev/null || true
+              git add data/bac_aperturas.json data/bac_pliegos_caidos.json data/bac_presupuestos.json data/fx_usd_ars.json
               GIT_EDITOR=true git rebase --continue
             fi
             git push
