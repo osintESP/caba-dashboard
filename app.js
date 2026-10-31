@@ -240,12 +240,14 @@ function renderHoy(){
 // no duplicar el markup en cada .html (no hay build step que lo haga).
 // Aviso de versión: recuadro sutil (celeste) en todas las páginas, con el detalle desplegable.
 // Reemplaza al aviso amarillo de "Nuevo" para no apilar dos carteles. Actualizar en cada versión.
-const VERSION_NOTE={label:'Versión 2 · 31/10/2026',summary:'Dashboard reorganizado en secciones y con todas las licitaciones de tecnología abiertas de BAC.',changes:[
+const VERSION_NOTE={label:'Versión 2 · 31/10/2026',summary:'Dashboard reorganizado en secciones, con todas las licitaciones de tecnología abiertas de BAC y los montos en pesos y dólares.',changes:[
   '<strong>Secciones:</strong> el dashboard ya no es una sola página larga. Cada sección (Hoy, Licitaciones, Señales para revisar, Normativa de sistemas, Panorama, Explorar) es una página propia con su dirección, y se puede compartir el link a cualquiera.',
   '<strong>Más rápido:</strong> cada página descarga sólo los datos que usa. Hoy pasó de ~26 MB a ~0,4 MB; sólo Explorar baja el histórico completo de normas y procesos.',
   '<strong>Licitaciones abiertas:</strong> ahora se ven <a href="licitaciones.html">todas las de tecnología</a> publicadas en Buenos Aires Compras, con cuenta regresiva a la apertura, en vez de las 12 de la home de BAC (que muchas veces no incluían ninguna de tecnología).',
   '<strong>Señales para revisar:</strong> <a href="senales.html">agrupadas en una sola página</a>, plegables y con su recuento. Las listas que antes se cortaban (pliegos caídos, impacto normativo) ahora muestran "N de M" y tienen "Cargar más".',
   '<strong>Hoy:</strong> portada con los números del día; cada tarjeta lleva a su sección.',
+  '<strong>Montos en pesos y en dólares:</strong> las adjudicaciones en USD ya no se descartan: se convierten a pesos a la cotización oficial del BCRA del día de cada adjudicación, conservando el monto original. Con eso el total adjudicado en tecnología pasó de ~$ 8.766 M a ~$ 21.546 M, la contratación directa/limitada bajó de 68 % a 33 % del monto, y la Agencia de Sistemas de Información (que adjudica casi todo en dólares) ahora aparece en las señales. <a href="panorama.html">Ver Panorama</a>',
+  '<strong>Presupuesto oficial de cada licitación abierta:</strong> se lee del pliego en BAC y se muestra en pesos y su equivalente en dólares, con duración y puesto frente a las demás del mismo tipo (por ejemplo, "1º de 17 licitaciones públicas abiertas, 26× la mediana"). Los presupuestos que se apartan mucho del resto aparecen en <a href="senales.html#senal-presupuesto">Señales para revisar</a>; un monto alto no indica sobreprecio.',
 ]};
 function renderShell(){
   const el=$('shell');if(!el)return;
