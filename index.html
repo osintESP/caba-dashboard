@@ -7,122 +7,38 @@
   <title>Curador CABA — Intelligence</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
-  <header class="topbar">
-    <div><div class="eyebrow">INTELIGENCIA PÚBLICA · CABA</div><h1>Curador CABA Intelligence</h1><p>Observatorio ejecutivo del Boletín Oficial, contrataciones y actividad tecnológica de la Ciudad.</p></div>
-    <div class="status-wrap">
-      <span id="data-status" class="status status-loading">Cargando datos</span>
-      <span id="dashboard-sync-at" class="muted"></span>
-    </div>
-  </header>
+<body data-page="hoy">
+  <div id="shell"></div>
   <main class="container">
-    <section id="feature-notice" class="notice" data-until="2026-11-08" hidden><strong>Nuevo (31/10/2026):</strong> el radar de BAC ahora muestra <strong>todas</strong> las licitaciones de tecnología abiertas, no sólo las 12 de la home de Buenos Aires Compras. <a href="#bac-licitaciones-abiertas">Ver licitaciones abiertas ↓</a></section>
-    <section id="sync-notice" class="notice"><strong>Dashboard v1 mejorada.</strong> La capa pública consume únicamente datasets sanitizados derivados de fuentes oficiales GCBA.</section>
-
-    <nav class="tabs" role="tablist" aria-label="Secciones del dashboard">
-      <button type="button" role="tab" id="tab-hoy" aria-controls="hoy" aria-selected="true" tabindex="0">Hoy</button>
-      <button type="button" role="tab" id="tab-licitaciones" aria-controls="licitaciones" aria-selected="false" tabindex="-1">Licitaciones <span id="tabcount-licitaciones" class="tab-count"></span></button>
-      <button type="button" role="tab" id="tab-senales" aria-controls="senales" aria-selected="false" tabindex="-1">Señales para revisar</button>
-      <button type="button" role="tab" id="tab-normativa" aria-controls="normativa" aria-selected="false" tabindex="-1">Normativa de sistemas <span id="tabcount-normativa" class="tab-count"></span></button>
-      <button type="button" role="tab" id="tab-panorama" aria-controls="panorama" aria-selected="false" tabindex="-1">Panorama</button>
-      <button type="button" role="tab" id="tab-explorar" aria-controls="explorar" aria-selected="false" tabindex="-1">Explorar</button>
-    </nav>
-
-    <section id="hoy" class="tabpanel" role="tabpanel" aria-labelledby="tab-hoy" tabindex="-1">
-      <section class="hero-grid">
-        <article class="metric-card featured"><span class="metric-label">Último Boletín publicado</span><strong id="metric-bulletin">—</strong><span id="metric-bulletin-date" class="metric-foot">—</span></article>
-        <article class="metric-card"><span class="metric-label">Normas acumuladas</span><strong id="metric-norms">—</strong><span class="metric-foot">dataset histórico</span></article>
-        <article class="metric-card"><span class="metric-label">Contrataciones</span><strong id="metric-procurements">—</strong><span class="metric-foot">clasificación depurada</span></article>
-        <article class="metric-card"><span class="metric-label">Ediciones</span><strong id="metric-editions">—</strong><span id="data-generated-at" class="metric-foot">histórico disponible</span></article>
-      </section>
-      <div class="subhead">Para revisar</div>
-      <section class="hero-grid summary-grid">
-        <a class="metric-card link-card" href="#bac-licitaciones-abiertas"><span class="metric-label">Licitaciones de tecnología abiertas</span><strong id="hoy-abiertas">—</strong><span id="hoy-abiertas-foot" class="metric-foot">admiten ofertas en BAC</span></a>
-        <a class="metric-card link-card" href="#aperturas-en-apertura-list"><span class="metric-label">En apertura, pendientes de evaluación</span><strong id="hoy-en-apertura">—</strong><span class="metric-foot">abrieron en el último año</span></a>
-        <a class="metric-card link-card" href="#senal-pliegos-caidos"><span class="metric-label">Pliegos caídos (tecnología)</span><strong id="hoy-pliegos">—</strong><span class="metric-foot">Desierto o Dejado Sin Efecto</span></a>
-        <a class="metric-card link-card" href="#senal-recurrente"><span class="metric-label">Proveedor recurrente por directa</span><strong id="hoy-recurrente">—</strong><span class="metric-foot">patrones vigentes confirmados</span></a>
-        <a class="metric-card link-card" href="#senal-concentracion"><span class="metric-label">Organismos con concentración alta</span><strong id="hoy-concentracion">—</strong><span class="metric-foot">&ge;60% del monto en un proveedor</span></a>
-        <a class="metric-card link-card" href="#senal-redeterminaciones"><span class="metric-label">Redeterminaciones reiteradas</span><strong id="hoy-redeterminaciones">—</strong><span class="metric-foot">3 o más sobre la misma orden</span></a>
-        <a class="metric-card link-card" href="#normative-impact-panel"><span class="metric-label">Normas de unidades de sistemas</span><strong id="hoy-normativa">—</strong><span class="metric-foot">Jefatura de Gabinete</span></a>
-      </section>
-      <section class="panel">
-        <div class="panel-head"><div><span class="eyebrow">NOVEDADES</span><h2>Qué se agregó</h2></div></div>
-        <div class="record-list">
-          <article class="record"><div><h3 class="record-title">Todas las licitaciones de tecnología abiertas <span id="novedad-abiertas-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/10/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">El radar de BAC dejaba ver sólo las 12 aperturas que muestra la home de Buenos Aires Compras, de todos los rubros, y muchas veces ninguna era de tecnología. Ahora recorre la Búsqueda avanzada completa: todos los procesos en estado Publicado (admiten ofertas), con cuenta regresiva a la apertura, y los que ya abrieron y esperan evaluación. Cuenta como tecnología lo que BAC clasifica en el rubro Informática o lo que coincide por palabra clave; se controla que lo traído coincida con el total que informa BAC.</p></div><a class="record-action" href="#bac-licitaciones-abiertas">Ver detalle →</a></article>
-          <article class="record"><div><h3 class="record-title">Pliegos caídos o fracasados (tecnología) <span id="novedad-failed-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">Señal en el panel "Buenos Aires Compras" que detecta pliegos de tecnología (rubro "Informática") declarados Desierto o Dejado Sin Efecto — scrapeada en vivo del sitio transaccional de BAC, no del export masivo trimestral (que puede tener meses de atraso). No implica irregularidad, pero suele forzar una re-licitación y trabar la operación del área usuaria.</p></div><a class="record-action" href="#bac-failed-tenders">Ver detalle →</a></article>
-          <article class="record"><div><h3 class="record-title">Impacto normativo en sistemas <span id="novedad-normative-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Nueva sección "Impacto normativo en sistemas" que cruza automáticamente las normas de Jefatura de Gabinete de Ministros dictadas por unidades de sistemas/transformación digital de la Ciudad (Secretaría de Innovación y Transformación Digital, Agencia de Sistemas de Información y direcciones asociadas), como disparador de revisión de posibles cambios en circuitos digitales (GDE, ciberseguridad, interoperabilidad).</p></div><a class="record-action" href="#normative-impact-panel">Ver detalle →</a></article>
-          <article class="record"><div><h3 class="record-title">Redeterminaciones de precio reiteradas <span id="novedad-price-redetermination-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Dentro de "Impacto normativo en sistemas": detecta disposiciones de unidades de sistemas que aprueban una actualización de precios de Orden de Compra con 3 o más redeterminaciones acumuladas (el propio texto del Boletín declara el ordinal, ej. "Novena Actualización de Precios"). No implica irregularidad — redeterminar es un mecanismo contractual legítimo — pero varias seguidas de la misma orden amerita revisar el contrato.</p></div><a class="record-action" href="#normative-impact-panel">Ver detalle →</a></article>
-          <article class="record"><div><h3 class="record-title">Proveedor recurrente por contratación directa <span id="novedad-recurring-vendor-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">01/09/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">Identifica organismo+proveedor con adjudicaciones directas repetidas (según <code>bac_anual.csv</code>) y chequea en vivo, en la Búsqueda avanzada del sitio transaccional de BAC, si el patrón siguió más allá de lo que cubre el export masivo — confirmando la identidad del proveedor antes de marcarlo. No implica irregularidad; es un disparador para revisar si un contrato se está renovando informalmente por vía directa en vez de re-licitar.</p></div><a class="record-action" href="#bac-recurring-vendor-watch">Ver detalle →</a></article>
-        </div>
-      </section>
+    <section id="sync-notice" class="notice"><strong>Estado de los datos.</strong> La capa pública consume únicamente datasets sanitizados derivados de fuentes oficiales GCBA.</section>
+    <section class="hero-grid">
+      <article class="metric-card featured"><span class="metric-label">Último Boletín publicado</span><strong id="metric-bulletin">—</strong><span id="metric-bulletin-date" class="metric-foot">—</span></article>
+      <article class="metric-card"><span class="metric-label">Normas acumuladas</span><strong id="metric-norms">—</strong><span class="metric-foot">dataset histórico</span></article>
+      <article class="metric-card"><span class="metric-label">Contrataciones</span><strong id="metric-procurements">—</strong><span class="metric-foot">clasificación depurada</span></article>
+      <article class="metric-card"><span class="metric-label">Ediciones</span><strong id="metric-editions">—</strong><span id="data-generated-at" class="metric-foot">histórico disponible</span></article>
     </section>
-
-    <section id="licitaciones" class="tabpanel" role="tabpanel" aria-labelledby="tab-licitaciones" tabindex="-1" hidden>
-      <section id="bac-licitaciones-abiertas" class="two-col">
-        <article class="panel">
-          <div class="panel-head"><div><span class="eyebrow">BAC EN VIVO</span><h2>Licitaciones de tecnología abiertas</h2></div><span id="aperturas-status" class="badge">pendiente</span></div>
-          <div id="aperturas-sync" class="muted" style="margin:-8px 0 14px"></div>
-          <div id="aperturas-abiertas-list" class="record-list"></div>
-        </article>
-        <article class="panel">
-          <div class="panel-head"><div><span class="eyebrow">BAC EN VIVO</span><h2>En apertura, pendientes de evaluación</h2></div></div>
-          <div id="aperturas-en-apertura-list" class="record-list"></div>
-        </article>
-      </section>
+    <div class="subhead">Para revisar</div>
+    <section class="hero-grid summary-grid">
+      <a class="metric-card link-card" href="licitaciones.html#bac-licitaciones-abiertas"><span class="metric-label">Licitaciones de tecnología abiertas</span><strong id="hoy-abiertas">—</strong><span id="hoy-abiertas-foot" class="metric-foot">admiten ofertas en BAC</span></a>
+      <a class="metric-card link-card" href="licitaciones.html#aperturas-en-apertura-list"><span class="metric-label">En apertura, pendientes de evaluación</span><strong id="hoy-en-apertura">—</strong><span class="metric-foot">abrieron en el último año</span></a>
+      <a class="metric-card link-card" href="senales.html#senal-pliegos-caidos"><span class="metric-label">Pliegos caídos (tecnología)</span><strong id="hoy-pliegos">—</strong><span class="metric-foot">Desierto o Dejado Sin Efecto</span></a>
+      <a class="metric-card link-card" href="senales.html#senal-recurrente"><span class="metric-label">Proveedor recurrente por directa</span><strong id="hoy-recurrente">—</strong><span class="metric-foot">patrones vigentes confirmados</span></a>
+      <a class="metric-card link-card" href="senales.html#senal-concentracion"><span class="metric-label">Organismos con concentración alta</span><strong id="hoy-concentracion">—</strong><span class="metric-foot">&ge;60% del monto en un proveedor</span></a>
+      <a class="metric-card link-card" href="senales.html#senal-redeterminaciones"><span class="metric-label">Redeterminaciones reiteradas</span><strong id="hoy-redeterminaciones">—</strong><span class="metric-foot">3 o más sobre la misma orden</span></a>
+      <a class="metric-card link-card" href="normativa.html"><span class="metric-label">Normas de unidades de sistemas</span><strong id="hoy-normativa">—</strong><span class="metric-foot">Jefatura de Gabinete</span></a>
     </section>
-
-    <section id="senales" class="tabpanel" role="tabpanel" aria-labelledby="tab-senales" tabindex="-1" hidden>
-      <div class="notice signals-note">Estas señales son <strong>disparadores de revisión</strong>, no prueba de irregularidad: cada una tiene explicaciones operativas legítimas posibles. Los umbrales son arbitrarios y están documentados como tales.</div>
-      <details class="panel fold" id="senal-concentracion"><summary><span class="fold-title">Concentración de proveedor por organismo (mayor a menor monto)</span> <span id="count-concentracion" class="badge badge-count">—</span></summary>
-        <div id="bac-concentration" class="ranking"></div>
-      </details>
-      <details class="panel fold" id="senal-fraccionamiento"><summary><span class="fold-title">Posible fraccionamiento (adjudicaciones directas repetidas)</span> <span id="count-fraccionamiento" class="badge badge-count">—</span></summary>
-        <div id="bac-fractionation" class="ranking"></div>
-      </details>
-      <details class="panel fold" id="senal-multiorganismo"><summary><span class="fold-title">Proveedor recurrente en múltiples organismos (mayor a menor monto)</span> <span id="count-multiorganismo" class="badge badge-count">—</span></summary>
-        <div id="bac-repeat-winner" class="ranking"></div>
-      </details>
-      <details class="panel fold" id="senal-recurrente"><summary><span class="fold-title">Proveedor recurrente por contratación directa — patrón vigente</span> <span id="count-recurrente" class="badge badge-count">—</span></summary>
-        <div id="bac-recurring-vendor-watch" class="record-list"></div>
-      </details>
-      <details class="panel fold" id="senal-pliegos-caidos"><summary><span class="fold-title">Pliegos caídos o fracasados (tecnología)</span> <span id="count-pliegos" class="badge badge-count">—</span></summary>
-        <div id="bac-failed-tenders" class="record-list"></div><button id="pliegos-load-more" class="button ghost" type="button" style="display:none">Cargar más</button>
-      </details>
-      <details class="panel fold" id="senal-redeterminaciones"><summary><span class="fold-title">Redeterminaciones de precio reiteradas (Orden de Compra)</span> <span id="count-redeterminaciones" class="badge badge-count">—</span></summary>
-        <div id="price-redetermination-list" class="record-list"></div>
-      </details>
-    </section>
-
-    <section id="normativa" class="tabpanel" role="tabpanel" aria-labelledby="tab-normativa" tabindex="-1" hidden>
-      <section id="normative-impact-panel" class="panel"><div class="panel-head"><div><span class="eyebrow">NORMATIVA</span><h2>Impacto normativo en sistemas</h2></div><span id="normative-impact-status" class="badge">pendiente</span></div><div id="normative-impact-summary" class="empty">Esperando sincronización.</div><div class="subhead">Normas detectadas <span id="normative-impact-count" class="muted"></span></div><div id="normative-impact-list" class="record-list"></div><button id="impact-load-more" class="button ghost" type="button" style="display:none">Cargar más</button><p class="muted">Las redeterminaciones de precio reiteradas están en <a href="#senal-redeterminaciones">Señales para revisar</a>.</p></section>
-    </section>
-
-    <section id="panorama" class="tabpanel" role="tabpanel" aria-labelledby="tab-panorama" tabindex="-1" hidden>
-      <section class="panel">
-        <div class="panel-head"><div><span class="eyebrow">OBSERVATORIO TECNOLÓGICO</span><h2>Tecnología y ciberseguridad</h2></div><span id="intel-status" class="badge">pendiente</span></div>
-        <div class="hero-grid intel-grid">
-          <article class="metric-card"><span class="metric-label">Tecnología</span><strong id="metric-tech">—</strong><span class="metric-foot">procesos detectados</span></article>
-          <article class="metric-card"><span class="metric-label">Ciberseguridad</span><strong id="metric-cyber">—</strong><span class="metric-foot">procesos detectados</span></article>
-        </div>
-        <div id="intel-tags" class="bar-list"></div>
-      </section>
-      <section class="panel">
-        <div class="panel-head"><div><span class="eyebrow">BUENOS AIRES COMPRAS</span><h2>Enriquecimiento contractual oficial</h2></div><span id="bac-status" class="badge">pendiente</span></div>
-        <div id="bac-summary" class="empty">Esperando sincronización del catálogo oficial BAC.</div>
-        <div class="subhead">Top proveedores por monto adjudicado en tecnología</div>
-        <div id="vendor-ranking" class="ranking"></div>
-        <p class="muted">Las señales derivadas de este catálogo (concentración, fraccionamiento, proveedor en varios organismos) están en <a href="#senales">Señales para revisar</a>.</p>
-      </section>
-    </section>
-
-    <section id="explorar" class="tabpanel" role="tabpanel" aria-labelledby="tab-explorar" tabindex="-1" hidden>
-      <section class="panel filters-panel"><div class="panel-head"><div><span class="eyebrow">EXPLORADOR</span><h2>Filtrar actividad</h2></div><button id="clear-filters" class="button ghost" type="button">Limpiar filtros</button></div><div class="filters-grid"><label>Buscar<input id="filter-search" type="search" placeholder="Ciberseguridad, Línea F, Salud…" /></label><label>Organismo<select id="filter-org"><option value="">Todos</option></select></label><label>Tipo<select id="filter-type"><option value="">Todos</option></select></label><label>Categoría contratación<select id="filter-category"><option value="">Todas</option></select></label></div></section>
-      <section class="two-col"><article class="panel"><div class="panel-head"><div><span class="eyebrow">CONTRATACIONES</span><h2>Distribución por categoría</h2></div><span id="procurement-total" class="badge">—</span></div><div id="category-bars" class="bar-list"></div></article><article class="panel"><div class="panel-head"><div><span class="eyebrow">ORGANISMOS</span><h2>Mayor actividad</h2></div></div><div id="org-ranking" class="ranking"></div></article></section>
-      <section class="panel"><div class="panel-head"><div><span class="eyebrow">CONTRATACIONES</span><h2>Procesos</h2></div><span id="proc-result-count" class="badge">—</span></div><div id="procurement-list" class="record-list"></div><button id="procs-load-more" class="button ghost" type="button" style="display:none">Cargar más</button></section>
-      <section class="panel"><div class="panel-head"><div><span class="eyebrow">NORMATIVA</span><h2>Normas</h2></div><span id="norm-result-count" class="badge">—</span></div><div id="norm-list" class="record-list"></div><button id="norms-load-more" class="button ghost" type="button" style="display:none">Cargar más</button></section>
+    <section class="panel">
+      <div class="panel-head"><div><span class="eyebrow">NOVEDADES</span><h2>Qué se agregó</h2></div></div>
+      <div class="record-list">
+        <article class="record"><div><h3 class="record-title">Todas las licitaciones de tecnología abiertas <span id="novedad-abiertas-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/10/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">El radar de BAC dejaba ver sólo las 12 aperturas que muestra la home de Buenos Aires Compras, de todos los rubros, y muchas veces ninguna era de tecnología. Ahora recorre la Búsqueda avanzada completa: todos los procesos en estado Publicado (admiten ofertas), con cuenta regresiva a la apertura, y los que ya abrieron y esperan evaluación. Cuenta como tecnología lo que BAC clasifica en el rubro Informática o lo que coincide por palabra clave; se controla que lo traído coincida con el total que informa BAC.</p></div><a class="record-action" href="licitaciones.html#bac-licitaciones-abiertas">Ver detalle →</a></article>
+        <article class="record"><div><h3 class="record-title">Pliegos caídos o fracasados (tecnología) <span id="novedad-failed-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">Señal en el panel "Buenos Aires Compras" que detecta pliegos de tecnología (rubro "Informática") declarados Desierto o Dejado Sin Efecto — scrapeada en vivo del sitio transaccional de BAC, no del export masivo trimestral (que puede tener meses de atraso). No implica irregularidad, pero suele forzar una re-licitación y trabar la operación del área usuaria.</p></div><a class="record-action" href="senales.html#bac-failed-tenders">Ver detalle →</a></article>
+        <article class="record"><div><h3 class="record-title">Impacto normativo en sistemas <span id="novedad-normative-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Nueva sección "Impacto normativo en sistemas" que cruza automáticamente las normas de Jefatura de Gabinete de Ministros dictadas por unidades de sistemas/transformación digital de la Ciudad (Secretaría de Innovación y Transformación Digital, Agencia de Sistemas de Información y direcciones asociadas), como disparador de revisión de posibles cambios en circuitos digitales (GDE, ciberseguridad, interoperabilidad).</p></div><a class="record-action" href="normativa.html">Ver detalle →</a></article>
+        <article class="record"><div><h3 class="record-title">Redeterminaciones de precio reiteradas <span id="novedad-price-redetermination-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Dentro de "Impacto normativo en sistemas": detecta disposiciones de unidades de sistemas que aprueban una actualización de precios de Orden de Compra con 3 o más redeterminaciones acumuladas (el propio texto del Boletín declara el ordinal, ej. "Novena Actualización de Precios"). No implica irregularidad — redeterminar es un mecanismo contractual legítimo — pero varias seguidas de la misma orden amerita revisar el contrato.</p></div><a class="record-action" href="normativa.html">Ver detalle →</a></article>
+        <article class="record"><div><h3 class="record-title">Proveedor recurrente por contratación directa <span id="novedad-recurring-vendor-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">01/09/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">Identifica organismo+proveedor con adjudicaciones directas repetidas (según <code>bac_anual.csv</code>) y chequea en vivo, en la Búsqueda avanzada del sitio transaccional de BAC, si el patrón siguió más allá de lo que cubre el export masivo — confirmando la identidad del proveedor antes de marcarlo. No implica irregularidad; es un disparador para revisar si un contrato se está renovando informalmente por vía directa en vez de re-licitar.</p></div><a class="record-action" href="senales.html#bac-recurring-vendor-watch">Ver detalle →</a></article>
+      </div>
     </section>
   </main>
-  <footer class="footer"><span>Curador CABA Intelligence · v1 mejorada</span><span>Fuentes: Boletín Oficial CABA + BA Data/BAC · Gobierno de la Ciudad Autónoma de Buenos Aires</span></footer>
+  <footer class="footer"><span>Curador CABA Intelligence · v2</span><span>Fuentes: Boletín Oficial CABA + BA Data/BAC · Gobierno de la Ciudad Autónoma de Buenos Aires</span></footer>
   <script src="./app.js" defer></script>
 </body>
 </html>
