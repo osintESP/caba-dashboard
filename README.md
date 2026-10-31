@@ -1,6 +1,6 @@
-# Curador CABA Intelligence
+# Curador CABA · Compras de Tecnología
 
-Observatorio ejecutivo del Boletín Oficial de la Ciudad Autónoma de Buenos Aires: normas, contrataciones públicas y un panel de "inteligencia" tecnológica/ciberseguridad derivado de esas contrataciones.
+Licitaciones abiertas, montos y señales para revisar en las contrataciones de tecnología de la Ciudad Autónoma de Buenos Aires, cruzando el Boletín Oficial y Buenos Aires Compras (BAC). Las señales son disparadores de revisión, no prueba de irregularidad. (Antes "Curador CABA Intelligence".)
 
 Es un dashboard **100% estático** (sin backend propio): un pipeline en Python recolecta y clasifica los datos, los publica como JSON dentro del mismo repo, y un frontend en HTML/JS los consume vía `fetch`. Todo el ciclo — scraping, clasificación, commit y deploy — corre solo, en GitHub Actions.
 
