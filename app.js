@@ -11,7 +11,7 @@ async function fetchOptional(path){try{return await fetchJson(path)}catch(e){con
 // ~18MB: antes cada visita bajaba ~26MB aunque se mirara sólo el resumen). La página se
 // identifica por <body data-page>. Para agregar una sección: sumarla acá y crear su .html.
 const PAGES={
-  hoy:{file:'index.html',label:'Hoy',data:['stats','editions','sync','aperturas','pliegosCaidos','recurringVendorWatch','bac','normativeImpact'],render:['metrics','syncNotice','hoy','novedades']},
+  hoy:{file:'index.html',label:'Hoy',data:['stats','editions','sync','aperturas','presupuestos','pliegosCaidos','recurringVendorWatch','bac','normativeImpact'],render:['paraRevisar','metrics','syncNotice','hoy','novedades']},
   licitaciones:{file:'licitaciones.html',label:'Licitaciones',data:['sync','aperturas','presupuestos'],render:['aperturas']},
   senales:{file:'senales.html',label:'Señales para revisar',data:['sync','presupuestos','bac','recurringVendorWatch','pliegosCaidos','normativeImpact'],render:['presupuestos','bac','recurringVendorWatch','pliegosCaidos','normativeImpact']},
   normativa:{file:'normativa.html',label:'Normativa de sistemas',data:['sync','normativeImpact'],render:['normativeImpact']},
@@ -151,7 +151,7 @@ function fmtMoneyShort(v,prefix){if(v>=1e7)return `${prefix} ${fmt.format(Math.r
 const fmtUsd={format:v=>fmtMoneyShort(v,'US$')},fmtArsCompact={format:v=>fmtMoneyShort(v,'$')};
 // Presupuesto oficial (detalle de BAC, ver bac_presupuesto_oficial.py). El puesto se muestra siempre como contexto; la
 // etiqueta "entre los más altos" sólo si supera el umbral documentado. Nunca se habla de sobreprecio.
-function presupuestoHtml(numero){const b=state.presupuestos?.procesos?.[numero];if(!b||b.monto==null)return'';const monto=b.moneda==='USD'?fmtUsd.format(b.monto):fmtArsCompact.format(b.monto);const dur=b.duracion_meses?` · ${b.duracion_meses>=1?`${fmt.format(b.duracion_meses)} meses`:'menos de 1 mes'}`:'';const usd=b.moneda!=='USD'&&b.monto_usd?` (≈ ${fmtUsd.format(b.monto_usd)})`:'';const puesto=b.rank&&b.n>1?` · ${b.rank}º de ${b.n} ${b.grupo_comparacion==='Licitaciones públicas'?'licitaciones públicas':'contrataciones del mismo tipo'} abiertas${b.ratio_mediana>=2?`, ${fmt.format(Math.round(b.ratio_mediana))}× la mediana`:''}`:'';const flag=b.flag?' <span class="badge audit-flag" title="Supera el umbral documentado frente a procesos del mismo tipo. No indica sobreprecio: puede reflejar alcance o un contrato plurianual.">Presupuesto entre los más altos</span>':'';return `<p class="record-summary">Presupuesto oficial: <strong>${esc(monto)}</strong>${esc(usd)}${esc(dur)}${esc(puesto)}${flag}</p>`}
+function presupuestoHtml(numero){const b=state.presupuestos?.procesos?.[numero];if(!b||b.monto==null)return'';const monto=b.moneda==='USD'?fmtUsd.format(b.monto):fmtArsCompact.format(b.monto);const dur=b.duracion_meses?` · ${b.duracion_meses>=1?`${fmt.format(b.duracion_meses)} meses`:'menos de 1 mes'}`:'';const usd=b.moneda!=='USD'&&b.monto_usd?` (≈ ${fmtUsd.format(b.monto_usd)})`:'';const puesto=b.rank&&b.n>1?` · ${b.rank}º de ${b.n} ${b.grupo_comparacion==='Licitaciones públicas'?'licitaciones públicas':'contrataciones del mismo tipo'} abiertas${b.ratio_mediana>=2?`, ${fmt.format(Math.round(b.ratio_mediana))}× la mediana`:''}`:'';const flag=b.flag?' <span class="badge audit-flag" title="Supera el umbral documentado frente a procesos del mismo tipo. No indica sobreprecio: puede reflejar alcance o un contrato plurianual.">Presupuesto entre los más altos</span>':b.destacado_contexto?' <span class="badge audit-flag" title="Entre los 3 mayores de su grupo y muy por encima de la mediana. Describe una posición, no indica sobreprecio.">Para revisar</span>':'';return `<p class="record-summary">Presupuesto oficial: <strong>${esc(monto)}</strong>${esc(usd)}${esc(dur)}${esc(puesto)}${flag}</p>`}
 function presupuestoRecordHtml(numero){const b=state.presupuestos.procesos[numero];const pills=[b.organismo,b.tipo_proceso,numero].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);return `<article class="record"><div><h3 class="record-title">${esc(b.nombre_proceso||numero)}</h3><div class="record-meta">${pills.join('')}</div>${presupuestoHtml(numero)}</div></article>`}
 function renderPresupuestos(){
   const el=$('presupuesto-list'),data=state.presupuestos;if(!el)return;
@@ -163,7 +163,51 @@ function renderPresupuestos(){
   const intro=`<div class="bac-note">${esc(data.note||'')}</div>`;
   el.innerHTML=intro+(flagged.length?flagged.map(presupuestoRecordHtml).join(''):`<div class="empty">Hoy ninguna licitación de tecnología abierta supera el umbral (z ≥ ${esc(String(t.outlier_z??2))} con al menos ${esc(String(t.outlier_min_peers??15))} procesos comparables). Como contexto, las de mayor presupuesto entre las licitaciones públicas abiertas:</div>${top.map(presupuestoRecordHtml).join('')}`);
 }
-function aperturaRecordHtml(a){const pills=[a.organismo,a.tipo_proceso,a.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const src=a.tech_source==='palabra_clave'?'<span class="meta-pill category" title="No está en el rubro Informática de BAC; se detectó por palabra clave en el nombre">por palabra clave</span>':'<span class="meta-pill category">rubro Informática</span>';const fecha=a.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):'—';return `<article class="record"><div><h3 class="record-title">${esc(a.nombre_proceso||a.numero_proceso||'Proceso sin nombre')} <span class="badge badge-count">${esc(aperturaWhen(a))}</span></h3><div class="record-meta">${pills.join('')}${src}</div><p class="record-summary">Apertura: ${esc(fecha)} ART</p>${presupuestoHtml(a.numero_proceso)}</div></article>`}
+// ---- Issue #14: "Para revisar hoy" + "Qué mirar en este pliego" ----
+// Dos niveles separados: "Nuevo" es un hecho neutro (el evento es de los últimos 7 días); "para
+// revisar" exige una señal. Etiquetas descriptivas (posición, no calificación), siempre con monto
+// anual y duración; azul para "nuevo", ámbar para la señal; nada rojo ni "alerta".
+const NUEVO_DIAS=7;
+function ddmmyyyyToIso(s){const m=/^(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(s||'');return m?`${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}T12:00:00-03:00`:null}
+// Montos que vienen como texto del detalle de BAC: "ARS 229000000,00" o "$ 165.440.000,00".
+function parseMontoTexto(t){const d=String(t||'').replace(/[^\d,]/g,'');const n=parseFloat(d.replace(',','.'));return Number.isFinite(n)?n:null}
+function esNuevo(iso){return !!iso&&dayDiff(iso)>=-NUEVO_DIAS&&dayDiff(iso)<=0}
+const QUE_MIRAR={
+  presupuesto:['Alcance del objeto vs. renglones catalogados: ¿lo que se pide coincide con cómo está cargado?','Duración: ¿el monto se explica por un contrato plurianual? Compará el monto anual.','Cantidad de ofertas y oferentes en la apertura.','Precios por renglón frente a referencias o contrataciones similares.','Requisitos que restrinjan la competencia: visita obligatoria, autorización del fabricante, adjudicación a un único oferente.'],
+  recurrente:['¿El contrato se está renovando por vía directa en vez de volver a licitar?','Justificación de la contratación directa (urgencia, exclusividad, especialidad).','Montos acumulados con el mismo proveedor en el organismo.','¿Hubo una licitación previa que cayó (desierta o sin efecto) para el mismo objeto?'],
+};
+function queMirarHtml(numero,tipo){return `<details class="que-mirar"><summary>Qué mirar en este ${tipo==='recurrente'?'caso':'pliego'}</summary><ul>${QUE_MIRAR[tipo].map(t=>`<li>${esc(t)}</li>`).join('')}</ul><div class="que-mirar-actions"><button type="button" class="button ghost" data-copy="${attr(numero)}">Copiar N.º ${esc(numero)}</button> <a href="https://www.buenosairescompras.gob.ar/" target="_blank" rel="noopener">Buscar en Buenos Aires Compras ↗</a><span class="muted"> (BAC no permite enlazar directo al proceso)</span></div></details>`}
+function presupuestoEtiqueta(b){return b.flag?'Presupuesto entre los más altos':`${b.rank}º de ${b.n} ${b.grupo_comparacion==='Licitaciones públicas'?'licitaciones públicas':'del mismo tipo'} · ${fmt.format(Math.round(b.ratio_mediana))}× la mediana`}
+function paraRevisarItems(){
+  const items=[],procs=state.presupuestos?.procesos||{},rows=state.aperturas?.licitaciones_abiertas||[];
+  for(const[numero,b]of Object.entries(procs)){
+    if(!(b.flag||b.destacado_contexto))continue;
+    const row=rows.find(r=>r.numero_proceso===numero);
+    const cuando=row?aperturaWhen(row):'';
+    const monto=b.moneda==='USD'?fmtUsd.format(b.monto):fmtArsCompact.format(b.monto);
+    const anual=b.monto_usd_anual&&b.duracion_meses>12?` (≈ ${fmtUsd.format(b.monto_usd_anual)}/año)`:'';
+    items.push({fecha:b.fecha_publicacion?`${b.fecha_publicacion}T12:00:00-03:00`:null,numero,tipo:'presupuesto',titulo:b.nombre_proceso||numero,
+      senal:presupuestoEtiqueta(b),meta:[b.organismo,b.tipo_proceso,numero,cuando].filter(Boolean),
+      detalle:`Presupuesto oficial ${monto}${b.monto_usd&&b.moneda!=='USD'?` (≈ ${fmtUsd.format(b.monto_usd)})`:''}${b.duracion_meses?` · ${fmt.format(b.duracion_meses)} meses`:''}${anual}`,href:'licitaciones.html#bac-licitaciones-abiertas'});
+  }
+  for(const c of state.recurringVendorWatch?.candidates||[]){
+    const a=c.confirmed_recent_award;if(!a)continue;
+    items.push({fecha:ddmmyyyyToIso(a.fecha_perfeccionamiento),numero:a.numero_proceso,tipo:'recurrente',titulo:`${c.vendor} volvió a ganar por contratación directa`,
+      senal:`${c.known_awards_count+1}ª adjudicación directa en el organismo`,meta:[c.organismo,a.numero_proceso,a.fecha_perfeccionamiento?`perfeccionada ${a.fecha_perfeccionamiento}`:''].filter(Boolean),
+      detalle:`${a.nombre_proceso||''}${parseMontoTexto(a.monto)?` · ${/USD|U\$S/i.test(a.monto)?fmtUsd.format(parseMontoTexto(a.monto)):fmtArsCompact.format(parseMontoTexto(a.monto))}`:''}`,href:'senales.html#senal-recurrente'});
+  }
+  return items.map(i=>({...i,nuevo:esNuevo(i.fecha)})).sort((x,y)=>(y.nuevo-x.nuevo)||String(y.fecha||'').localeCompare(String(x.fecha||'')));
+}
+function renderParaRevisar(){
+  const el=$('para-revisar-list');if(!el)return;
+  const items=paraRevisarItems(),nuevos=items.filter(i=>i.nuevo).length,MAX=5;
+  setText('para-revisar-count',items.length?`${fmt.format(items.length)}${nuevos?` · ${fmt.format(nuevos)} nuevo${nuevos===1?'':'s'}`:''}`:'0');
+  el.innerHTML=items.length?items.slice(0,MAX).map(i=>`<li class="revisar-item"><div class="revisar-head"><a class="revisar-title" href="${attr(i.href)}">${esc(i.titulo)}</a>${i.nuevo?'<span class="badge nuevo">Nuevo</span>':''}<span class="badge audit-flag">${esc(i.senal)}</span></div><div class="record-meta">${i.meta.map(m=>`<span class="meta-pill">${esc(m)}</span>`).join('')}</div><p class="record-summary">${esc(i.detalle)}</p>${queMirarHtml(i.numero,i.tipo)}</li>`).join('')+(items.length>MAX?`<li><a href="senales.html">Ver las ${fmt.format(items.length)} en Señales →</a></li>`:''):'<li class="empty">Hoy no hay pliegos ni patrones que superen los criterios de revisión.</li>';
+  const semana=Object.values(state.presupuestos?.procesos||{}).filter(b=>b.fecha_publicacion&&esNuevo(`${b.fecha_publicacion}T12:00:00-03:00`)).length;
+  const sl=$('semana-publicadas');if(sl)sl.textContent=semana?`${fmt.format(semana)} licitaciones de tecnología publicadas en los últimos 7 días →`:'';
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const v=b.dataset.copy;const done=()=>{const t=b.textContent;b.textContent='Copiado ✓';setTimeout(()=>{b.textContent=t},1500)};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(v).then(done,()=>{window.prompt('Copiá el número de proceso:',v)});else window.prompt('Copiá el número de proceso:',v)});
+function aperturaRecordHtml(a){const pills=[a.organismo,a.tipo_proceso,a.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const src=a.tech_source==='palabra_clave'?'<span class="meta-pill category" title="No está en el rubro Informática de BAC; se detectó por palabra clave en el nombre">por palabra clave</span>':'<span class="meta-pill category">rubro Informática</span>';const fecha=a.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):'—';return `<article class="record"><div><h3 class="record-title">${esc(a.nombre_proceso||a.numero_proceso||'Proceso sin nombre')} <span class="badge badge-count">${esc(aperturaWhen(a))}</span></h3><div class="record-meta">${pills.join('')}${src}</div><p class="record-summary">Apertura: ${esc(fecha)} ART</p>${presupuestoHtml(a.numero_proceso)}${(state.presupuestos?.procesos?.[a.numero_proceso]?.flag||state.presupuestos?.procesos?.[a.numero_proceso]?.destacado_contexto)?queMirarHtml(a.numero_proceso,'presupuesto'):''}</div></article>`}
 function renderAperturas(){
   const data=state.aperturas,statusEl=$('aperturas-status'),abiertasEl=$('aperturas-abiertas-list'),enAperturaEl=$('aperturas-en-apertura-list'),syncEl=$('aperturas-sync'),countEl=$('novedad-abiertas-count');
   const rows=data?.licitaciones_abiertas;
@@ -247,6 +291,7 @@ const VERSION_NOTE={label:'Versión 2 · 31/10/2026',summary:'Dashboard reorgani
   '<strong>Señales para revisar:</strong> <a href="senales.html">agrupadas en una sola página</a>, plegables y con su recuento. Las listas que antes se cortaban (pliegos caídos, impacto normativo) ahora muestran "N de M" y tienen "Cargar más".',
   '<strong>Hoy:</strong> portada con los números del día; cada tarjeta lleva a su sección.',
   '<strong>Montos en pesos y en dólares:</strong> las adjudicaciones en USD ya no se descartan: se convierten a pesos a la cotización oficial del BCRA del día de cada adjudicación, conservando el monto original. Con eso el total adjudicado en tecnología pasó de ~$ 8.766 M a ~$ 21.546 M, la contratación directa/limitada bajó de 68 % a 33 % del monto, y la Agencia de Sistemas de Información (que adjudica casi todo en dólares) ahora aparece en las señales. <a href="panorama.html">Ver Panorama</a>',
+  '<strong>Para revisar hoy:</strong> arriba de todo en <a href="index.html#para-revisar">Hoy</a>, los pliegos y patrones que merecen una mirada (presupuestos muy por encima del resto de su tipo, proveedores que vuelven a ganar por contratación directa), marcando los nuevos de la semana. Cada uno trae una guía "Qué mirar" para empezar el análisis.',
   '<strong>Presupuesto oficial de cada licitación abierta:</strong> se lee del pliego en BAC y se muestra en pesos y su equivalente en dólares, con duración y puesto frente a las demás del mismo tipo (por ejemplo, "1º de 17 licitaciones públicas abiertas, 26× la mediana"). Los presupuestos que se apartan mucho del resto aparecen en <a href="senales.html#senal-presupuesto">Señales para revisar</a>; un monto alto no indica sobreprecio.',
 ]};
 function renderShell(){
@@ -262,7 +307,7 @@ function redirectLegacyHash(){const id=decodeURIComponent(location.hash.slice(1)
 // Dentro de una página: abrir el <details> que contiene el ancla y llevarla a la vista.
 function revealHash(){const id=decodeURIComponent(location.hash.slice(1));const target=id&&$(id);if(!target)return;for(let d=target.closest('details');d;d=d.parentElement?.closest('details'))d.open=true;requestAnimationFrame(()=>target.scrollIntoView({block:'start'}))}
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-const RENDERERS={presupuestos:renderPresupuestos,metrics:renderMetrics,syncNotice:renderSyncNotice,hoy:renderHoy,novedades:renderNovedades,aperturas:renderAperturas,bac:()=>renderBAC(state.bac,state.bacSyncState),recurringVendorWatch:renderRecurringVendorWatch,pliegosCaidos:renderPliegosCaidos,normativeImpact:renderNormativeImpact,intelligence:renderIntelligence,bars:renderBars,orgRanking:renderOrgRanking,lists:renderLists};
+const RENDERERS={paraRevisar:renderParaRevisar,presupuestos:renderPresupuestos,metrics:renderMetrics,syncNotice:renderSyncNotice,hoy:renderHoy,novedades:renderNovedades,aperturas:renderAperturas,bac:()=>renderBAC(state.bac,state.bacSyncState),recurringVendorWatch:renderRecurringVendorWatch,pliegosCaidos:renderPliegosCaidos,normativeImpact:renderNormativeImpact,intelligence:renderIntelligence,bars:renderBars,orgRanking:renderOrgRanking,lists:renderLists};
 function renderAll(){safeRender('headerSync',renderHeaderSync);for(const k of PAGES[PAGE].render)safeRender(k,RENDERERS[k])}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function on(id,ev,fn){const el=$(id);if(el)el.addEventListener(ev,fn)}

@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-31T22:06:33+00:00",
+  "collected_at": "2026-10-31T22:26:45+00:00",
   "status": "ok",
   "source": "https://www.buenosairescompras.gob.ar/ (detalle de cada proceso: \"Monto y duración del contrato\")",
   "fx_source": "BCRA — API Estadísticas Cambiarias, cotización oficial del dólar estadounidense (USD)",
   "thresholds": {
     "outlier_z": 2.0,
     "outlier_min_peers": 15,
+    "contexto_max_rank": 3,
+    "contexto_min_peers": 10,
+    "contexto_min_ratio_mediana": 5.0,
     "en_apertura_stale_days": 365
   },
   "note": "Presupuesto oficial (monto estimado del pliego, no un precio adjudicado) de las licitaciones de tecnología abiertas, comparado en USD contra las demás del mismo tipo (licitaciones públicas entre sí; contrataciones menores y directas entre sí) en escala logarítmica (z robusto con mediana/MAD). \"Entre los más altos\" = z >= 2.0 con al menos 15 procesos comparables; umbral arbitrario. Un monto alto no indica sobreprecio: puede reflejar alcance o un contrato plurianual. Es un disparador para revisar alcance vs. renglones, cantidad de ofertas y precios por renglón.",
@@ -33,6 +36,7 @@
       "ratio_siguiente": 4.45,
       "ratio_mediana": 0.27,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "8618-3561-CME26": {
@@ -53,6 +57,7 @@
       "ratio_siguiente": 1.38,
       "ratio_mediana": 1.0,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Contrataciones menores, directas y otras"
     },
     "2051-1480-LPU26": {
@@ -73,6 +78,7 @@
       "ratio_siguiente": 1.23,
       "ratio_mediana": 7.08,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "8618-1479-LPU26": {
@@ -93,6 +99,7 @@
       "ratio_siguiente": 1.4,
       "ratio_mediana": 0.96,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "8618-1626-LPU26": {
@@ -113,6 +120,7 @@
       "ratio_siguiente": 2.16,
       "ratio_mediana": 2.16,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "7192-3775-CME26": {
@@ -133,6 +141,7 @@
       "ratio_siguiente": 1.71,
       "ratio_mediana": 0.72,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Contrataciones menores, directas y otras"
     },
     "8056-1688-LPU26": {
@@ -153,6 +162,7 @@
       "ratio_siguiente": 1.51,
       "ratio_mediana": 0.52,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "2630-1582-LPU26": {
@@ -173,6 +183,7 @@
       "ratio_siguiente": 2.01,
       "ratio_mediana": 21.79,
       "flag": false,
+      "destacado_contexto": true,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "8056-1507-LPU26": {
@@ -193,6 +204,7 @@
       "ratio_siguiente": 1.23,
       "ratio_mediana": 2.66,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "8056-1510-LPU26": {
@@ -213,6 +225,7 @@
       "ratio_siguiente": 2.17,
       "ratio_mediana": 5.77,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "3125-1112-LPU26": {
@@ -233,6 +246,7 @@
       "ratio_siguiente": 1.04,
       "ratio_mediana": 7.34,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "2051-1196-LPU26": {
@@ -253,6 +267,7 @@
       "ratio_siguiente": 1.06,
       "ratio_mediana": 0.28,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "2051-1258-LPU26": {
@@ -273,6 +288,7 @@
       "ratio_siguiente": 1.22,
       "ratio_mediana": 0.34,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "8618-1229-LPU26": {
@@ -293,6 +309,7 @@
       "ratio_siguiente": 1.47,
       "ratio_mediana": 10.83,
       "flag": false,
+      "destacado_contexto": true,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "7162-3345-CME26": {
@@ -313,6 +330,7 @@
       "ratio_siguiente": 3.51,
       "ratio_mediana": 6.14,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Contrataciones menores, directas y otras"
     },
     "8618-1345-LPU26": {
@@ -333,6 +351,7 @@
       "ratio_siguiente": 1.14,
       "ratio_mediana": 0.59,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "2051-1611-LPU26": {
@@ -353,6 +372,7 @@
       "ratio_siguiente": 1.16,
       "ratio_mediana": 0.69,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "426-3745-CME26": {
@@ -373,6 +393,7 @@
       "ratio_siguiente": null,
       "ratio_mediana": 0.42,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Contrataciones menores, directas y otras"
     },
     "8618-1509-LPU26": {
@@ -393,6 +414,7 @@
       "ratio_siguiente": null,
       "ratio_mediana": 0.06,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "2630-1459-LPU26": {
@@ -413,6 +435,7 @@
       "ratio_siguiente": 1.17,
       "ratio_mediana": 25.56,
       "flag": false,
+      "destacado_contexto": true,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "3202-1279-LPU26": {
@@ -433,6 +456,7 @@
       "ratio_siguiente": 1.04,
       "ratio_mediana": 1.0,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Licitaciones públicas"
     },
     "512-1234-CDI26": {
@@ -453,6 +477,7 @@
       "ratio_siguiente": 1.75,
       "ratio_mediana": 1.75,
       "flag": false,
+      "destacado_contexto": false,
       "grupo_comparacion": "Contrataciones menores, directas y otras"
     }
   },

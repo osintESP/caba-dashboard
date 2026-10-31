@@ -76,6 +76,15 @@ class ScoreTest(unittest.TestCase):
         self.assertFalse(few['grande']['flag'])  # menos de OUTLIER_MIN_PEERS: sólo puesto
         self.assertEqual(few['grande']['rank'], 1)
 
+    def test_context_level_top3_far_from_median_with_enough_peers(self):
+        base = {f'p{i}': 100_000 for i in range(9)}
+        s = bpo.score({**base, 'a': 2_600_000, 'b': 2_200_000, 'c': 300_000})
+        self.assertTrue(s['a']['destacado_contexto'])
+        self.assertTrue(s['b']['destacado_contexto'])
+        self.assertFalse(s['c']['destacado_contexto'])  # 3º pero sólo 3× la mediana
+        small = bpo.score({'a': 2_600_000, 'b': 100_000, 'c': 100_000})
+        self.assertFalse(small['a']['destacado_contexto'])  # grupo de menos de 10
+
     def test_big_but_not_outlier_in_log_scale(self):
         # Montos dispersos en varios órdenes de magnitud: el mayor no necesariamente es atípico.
         vals = {f'p{i}': 10 ** (4 + i * 0.25) for i in range(16)}
