@@ -94,6 +94,19 @@ class BacFxTest(unittest.TestCase):
         self.assertEqual(len(dhc.check_bac_fx({'status': 'ok', 'summary': {}})), 1)
 
 
+class PresupuestosTest(unittest.TestCase):
+    def test_complete_passes(self):
+        self.assertEqual(dhc.check_presupuestos({'procesos_vigentes': 2, 'procesos_con_monto': 2, 'errores': {}}), [])
+
+    def test_missing_amounts_flagged_unless_pending(self):
+        d = {'procesos_vigentes': 2, 'procesos_con_monto': 1, 'pendientes': 0, 'procesos': {'A': {'monto_usd': 1}, 'B': {}}}
+        self.assertEqual(len(dhc.check_presupuestos(d)), 1)
+        self.assertEqual(dhc.check_presupuestos({**d, 'pendientes': 1}), [])
+
+    def test_errors_flagged(self):
+        self.assertEqual(len(dhc.check_presupuestos({'errores': {'_corte': 'x'}})), 1)
+
+
 class BacCoverageTest(unittest.TestCase):
     NOW = datetime(2026, 10, 23, tzinfo=timezone.utc)
 

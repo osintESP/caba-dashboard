@@ -102,6 +102,21 @@ def check_aperturas(data, now):
     return issues
 
 
+def check_presupuestos(data):
+    if data is None:
+        return ['bac_presupuestos.json no existe.']
+    issues = []
+    errores = {k: v for k, v in (data.get('errores') or {}).items()}
+    if errores:
+        issues.append(f'bac_presupuestos.json: {len(errores)} errores al leer el detalle en BAC: {list(errores)[:5]}.')
+    sin_monto = (data.get('procesos_vigentes') or 0) - (data.get('procesos_con_monto') or 0)
+    if sin_monto and not data.get('pendientes'):
+        faltan = [k for k, p in (data.get('procesos') or {}).items() if not p.get('monto_usd')]
+        issues.append(f'bac_presupuestos.json: {sin_monto} licitaciones vigentes sin presupuesto (¿cambió el '
+                      f'bloque "Monto y duración del contrato" o falta la cotización?): {faltan[:5]}.')
+    return issues
+
+
 def check_status(name, data, ok_states=('ok',)):
     if data is None:
         return [f'{name} no existe.']
@@ -143,6 +158,7 @@ def run_checks(now=None):
         'Boletín Oficial': check_editions(read('editions.json')),
         'BAC pliegos caídos': check_pliegos_caidos(read('bac_pliegos_caidos.json')),
         'BAC aperturas': check_aperturas(read('bac_aperturas.json'), now),
+        'BAC presupuestos': check_presupuestos(read('bac_presupuestos.json')),
         'BAC proveedor recurrente': check_status('bac_recurring_vendor_watch.json',
                                                  read('bac_recurring_vendor_watch.json')),
         'BAC catálogo': (check_status('bac_catalog.json', read('bac_catalog.json'))
