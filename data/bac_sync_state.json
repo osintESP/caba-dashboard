@@ -3,8 +3,9 @@
   "last_modified": "Tue, 15 Sep 2026 17:46:21 GMT",
   "content_length": "132947508",
   "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-economia-y-finanzas/buenos-aires-compras/bac_anual.csv",
-  "checked_at": "2026-10-31T12:19:35+00:00",
-  "downloaded_at": "2026-09-16T10:57:26+00:00",
-  "status": "unchanged",
-  "collector_version": 10
+  "checked_at": "2026-10-31T21:49:06+00:00",
+  "downloaded_at": "2026-10-31T21:49:06+00:00",
+  "status": "ok",
+  "collector_version": 12,
+  "catalog_api_error": "API de catálogo no disponible (JSONDecodeError); se usó la URL conocida del CSV"
 }
