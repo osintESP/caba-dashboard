@@ -47,6 +47,13 @@ EN_APERTURA_STALE_DAYS = 365
 # - OUTLIER_Z: z robusto en log10(USD). 2,0 ≈ el 2-3% superior si fuera normal en log.
 OUTLIER_MIN_PEERS = 15
 OUTLIER_Z = 2.0
+# Nivel "contexto" (issue #14, agente ux-specialist): no califica el monto, describe una posición
+# ("1º de 17 · 26× la mediana") para destacar en "Para revisar hoy" los presupuestos que se apartan
+# mucho aunque no lleguen a z >= OUTLIER_Z. Arbitrario y documentado como el resto. Grupos con menos
+# de CONTEXT_MIN_PEERS procesos quedan fuera (en contrataciones menores, 5 procesos, era ruido).
+CONTEXT_MAX_RANK = 3
+CONTEXT_MIN_PEERS = 10
+CONTEXT_MIN_RATIO = 5.0
 
 MONTO_RE = re.compile(r'Monto y duraci[oó]n del contrato\s+Monto\s+(?P<monto>[^\n]+)', re.I)
 MONEDA_RE = re.compile(r'Monto y duraci[oó]n del contrato.*?\bMoneda\s+(?P<moneda>[A-Z]{3})\b', re.I | re.S)
@@ -196,6 +203,8 @@ def score(items):
             'ratio_siguiente': round(vals[k] / nxt, 2) if nxt else None,
             'ratio_mediana': round(vals[k] / med_usd, 2) if med_usd else None,
             'flag': bool(z is not None and n >= OUTLIER_MIN_PEERS and z >= OUTLIER_Z),
+            'destacado_contexto': bool(i + 1 <= CONTEXT_MAX_RANK and n >= CONTEXT_MIN_PEERS and med_usd
+                                       and vals[k] / med_usd >= CONTEXT_MIN_RATIO),
         }
     return out
 
@@ -263,6 +272,8 @@ def main():
         'source': f'{SITE}/ (detalle de cada proceso: "Monto y duración del contrato")',
         'fx_source': fx_bcra.SOURCE,
         'thresholds': {'outlier_z': OUTLIER_Z, 'outlier_min_peers': OUTLIER_MIN_PEERS,
+                       'contexto_max_rank': CONTEXT_MAX_RANK, 'contexto_min_peers': CONTEXT_MIN_PEERS,
+                       'contexto_min_ratio_mediana': CONTEXT_MIN_RATIO,
                        'en_apertura_stale_days': EN_APERTURA_STALE_DAYS},
         'note': ('Presupuesto oficial (monto estimado del pliego, no un precio adjudicado) de las '
                  'licitaciones de tecnología abiertas, comparado en USD contra las demás del mismo tipo '
