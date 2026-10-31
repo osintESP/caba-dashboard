@@ -690,26 +690,43 @@ class DedupeCsvRowsTest(unittest.TestCase):
         deduped = bcc.dedupe_csv_rows(rows)
         self.assertEqual(len(deduped), 1)
 
-    def test_multiple_real_items_under_one_award_are_not_merged(self):
-        # Caso real: mismo award/renglón nominal, pero 2 ítems reales distintos
-        # (item_id difiere), cada uno con sus propias filas de comprador/proveedor/
-        # ente contratante -> deben quedar como 2 grupos, no colapsar a 1.
+    def test_item_variants_repeating_the_award_amount_collapse_to_one(self):
+        # Antes este caso real se tomaba como "2 ítems reales distintos". Verificado el
+        # 31/10/2026 contra el CSV completo: 101-0066-LPU26 renglón 16 tiene variantes -0/-1/-2
+        # con cantidades 4,23/4,25/5,55 y el MISMO monto 104.025.600 = 48 (cantidad total del
+        # renglón) x 2.167.200: es el valor de la adjudicación repetido en cada entrega parcial.
         rows = [
             _bac_row('101-0066-LPU26-16-0', '101-0066-LPU26', '03.01.009.0001.1-0',
                      '104025600.0', 'supplier', 'Proveedor Y'),
             _bac_row('101-0066-LPU26-16-1', '101-0066-LPU26', '03.01.009.0001.1-0',
                      '104025600.0', 'procuringEntity', 'Organismo X'),
-            _bac_row('101-0066-LPU26-16-2', '101-0066-LPU26', '03.01.009.0001.1-0',
-                     '104025600.0', 'buyer', 'Organismo X'),
             _bac_row('101-0066-LPU26-16-3', '101-0066-LPU26', '03.01.009.0001.1-1',
                      '104025600.0', 'supplier', 'Proveedor Y'),
-            _bac_row('101-0066-LPU26-16-4', '101-0066-LPU26', '03.01.009.0001.1-1',
-                     '104025600.0', 'procuringEntity', 'Organismo X'),
-            _bac_row('101-0066-LPU26-16-5', '101-0066-LPU26', '03.01.009.0001.1-1',
+            _bac_row('101-0066-LPU26-16-4', '101-0066-LPU26', '03.01.009.0001.1-2',
                      '104025600.0', 'buyer', 'Organismo X'),
         ]
         deduped = bcc.dedupe_csv_rows(rows)
-        self.assertEqual(len(deduped), 2)
+        self.assertEqual(len(deduped), 1)
+
+    def test_sate911_variants_counted_once(self):
+        # 3202-2041-LPU25 (SATE911): 6.005,76M repetido en 3 variantes del renglón 1.
+        rows = [_bac_row(f'3202-2041-LPU25-1-{i}', '3202-2041-LPU25', f'13.02.004.0001.4-{v}',
+                         '6005760000.0', 'supplier', 'SOFLEX SA') for i, v in ((0, 2), (3, 1), (6, 0))]
+        self.assertEqual(len(bcc.dedupe_csv_rows(rows)), 1)
+
+    def test_item_variants_with_different_amounts_are_kept(self):
+        rows = [
+            _bac_row('900-0001-LPU26-1-0', '900-0001-LPU26', '13.02.004.0001.4-0', '1000.0', 'supplier', 'A'),
+            _bac_row('900-0001-LPU26-1-1', '900-0001-LPU26', '13.02.004.0001.4-1', '2500.0', 'supplier', 'A'),
+        ]
+        self.assertEqual(len(bcc.dedupe_csv_rows(rows)), 2)
+
+    def test_same_item_in_different_renglones_is_kept(self):
+        rows = [
+            _bac_row('900-0001-LPU26-1-0', '900-0001-LPU26', '13.02.004.0001.4-0', '1000.0', 'supplier', 'A'),
+            _bac_row('900-0001-LPU26-2-0', '900-0001-LPU26', '13.02.004.0001.4-0', '1000.0', 'supplier', 'A'),
+        ]
+        self.assertEqual(len(bcc.dedupe_csv_rows(rows)), 2)
 
     def test_framework_agreement_many_eligible_buyers_collapses_to_one(self):
         # Caso real: convenio marco con ~250 organismos habilitados listados como

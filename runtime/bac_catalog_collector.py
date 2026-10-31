@@ -24,7 +24,7 @@ ACTIVE_STATUSES = (None, '', 'active')
 # build_audit_signals): la fuente (bac_anual.csv) sólo cambia cada 2-3 meses, así que sin esto
 # un fix al collector queda "mudo" -unchanged() sigue devolviendo True por ETag- hasta que la
 # fuente externa decida re-publicar, en vez de aplicarse en la próxima corrida.
-COLLECTOR_VERSION = 13
+COLLECTOR_VERSION = 14
 
 # El campo 'id' de cada fila de bac_anual.csv arranca con el número de proceso de BAC propio
 # (ej. "416-1192-LPU26-16-0" -> proceso "416-1192-LPU26", resto = renglón/parte, ver
@@ -201,19 +201,27 @@ def dedupe_csv_rows(rows):
     # conocidas. Este dedup es una mejora validada sobre no deduplicar nada (que es 100%
     # incorrecto, no una aproximación con error conocido), no una reconciliación perfecta.
     #
-    # NO tocar el sufijo -N de awards/0/items/0/id: se evaluó normalizarlo (agrupar variantes
-    # del mismo renglón como si fueran ítems distintos), pero test_bac_catalog_collector.py
-    # ya documenta un caso real verificado donde item_id distinto SÍ es un ítem real distinto
-    # dentro del mismo renglón, mismo monto y proveedor (test_multiple_real_items_under_one_
-    # award_are_not_merged) — no hay forma de distinguir ese caso real de un posible duplicado
-    # de flattening sin volver a la fuente (pliego), así que se preserva el comportamiento
-    # original en vez de arriesgar un undercount silencioso.
+    # Sufijo -N de awards/0/items/0/id (corregido el 31/10/2026): las variantes "-0", "-1", "-2"
+    # del mismo código de ítem dentro de un renglón NO son ítems distintos con su propio monto.
+    # awards/0/value/amount es el valor de la ADJUDICACIÓN del renglón, y BAC lo repite en cada
+    # variante (entregas o solicitudes parciales de una orden de compra abierta, cada una con su
+    # propia cantidad). Verificado contra el CSV real: en 429 grupos el monto repetido es
+    # exactamente cantidad total del renglón x precio unitario (ej. SATE911 3202-2041-LPU25:
+    # 4.800 x $1.251.200 = $6.005,76M repetido en 3 variantes con cantidades 26,66/200/200; y el
+    # mismo caso 101-0066-LPU26 que antes se tomaba como "ítems reales distintos": 48 x $2.167.200
+    # repetido en variantes de 4,23/4,25/5,55 unidades). Contarlas por separado triplicaba montos:
+    # tecnología daba ARS 46.879M en vez de ~26.020M. Por eso la clave usa el código de ítem SIN
+    # el sufijo y el monto: mismo renglón + mismo ítem + mismo monto = la misma adjudicación.
+    # Montos distintos entre variantes se siguen contando por separado (adjudicaciones distintas).
     seen = {}
     for idx, row in enumerate(rows):
         rid = row.get('id') or ''
         parts = rid.split('-')
         n_prefix = '-'.join(parts[:-1]) if len(parts) > 1 else rid
-        key = (n_prefix or f'__row_{idx}__', row.get('awards/0/items/0/id'))
+        item = row.get('awards/0/items/0/id')
+        item_base = re.sub(r'-\d+$', '', item) if item else item
+        amount = _to_float(row.get('awards/0/value/amount'))
+        key = (n_prefix or f'__row_{idx}__', item_base, round(amount, 2) if amount is not None else None)
         if key not in seen:
             seen[key] = row
     return list(seen.values())
