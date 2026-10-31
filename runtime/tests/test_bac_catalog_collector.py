@@ -792,6 +792,30 @@ class MarkStaleTest(unittest.TestCase):
         self.assertEqual(created['status'], 'resource_not_found')
 
 
+class TechCatalogTest(unittest.TestCase):
+    # Issue #15: el catálogo de BAC detecta tecnología que las palabras clave no ven.
+    def t(self, title, code=None):
+        return {'title': title, 'items': [{'classification': {'id': code}}]}
+
+    def test_catalog_only(self):
+        # Caso real 2630-0747-CDI26: "Sist." no matchea ninguna regla, el catálogo sí.
+        tender = self.t('Serv inst, implem e integración de Legajo Penitenciario, Sist. Mesa Única de Ayuda y SIRHU', '13.01.011.0001.1')
+        self.assertEqual(bcc.tech_source(tender), 'catalogo')
+        self.assertTrue(bcc.classify_technology(tender))
+
+    def test_both_and_keyword_only(self):
+        self.assertEqual(bcc.tech_source(self.t('Licencias de software', '13.02.004.0001.3')), 'palabra_clave+catalogo')
+        self.assertEqual(bcc.tech_source(self.t('Licencias de software')), 'palabra_clave')
+
+    def test_excluded_and_unrelated_codes(self):
+        self.assertIsNone(bcc.tech_source(self.t('Hemoterapia - insumos', '13.01.003.0005.1')))  # tóner/insumos
+        self.assertIsNone(bcc.tech_source(self.t('SIST. P/ESTAB. TRIPLANAR DE COSTILLA', '22.01.001.0001.1')))
+
+    def test_csv_row_carries_catalog_code(self):
+        rel = bcc.csv_row_to_release({'id': '2630-0747-CDI26-1-0', 'tender/title': 'x', 'tender/items/0/classification/id': '13.01.011.0001.1'})
+        self.assertEqual(bcc.catalog_code(rel['tender']), '13.01.011.0001.1')
+
+
 class ResolveSourceTest(unittest.TestCase):
     # 31/10/2026: la API de CKAN empezó a responder un desafío JS anti-bots (HTML) en vez de JSON.
     def test_api_blocked_falls_back_to_known_csv_url(self):
