@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-AR');
 const fmtCurrency=new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
 const PAGE_SIZE=25;
-let normsPage=1,procPage=1;
+let normsPage=1,procPage=1,pliegosPage=1,impactPage=1;
 const dtf=new Intl.DateTimeFormat('es-AR',{timeZone:'America/Argentina/Buenos_Aires',dateStyle:'short',timeStyle:'medium'});
 async function fetchJson(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.json()}
 async function fetchOptional(path){try{return await fetchJson(path)}catch(e){console.warn(`optional dataset unavailable: ${path}`,e);return null}}
@@ -32,7 +32,10 @@ function pliegoCaidoRecordHtml(p){
 function renderPliegosCaidos(){
   const data=state.pliegosCaidos,el=$('bac-failed-tenders'),countEl=$('novedad-failed-count');
   const items=data?.pliegos||[];
-  if(el)el.innerHTML=items.length?items.slice(0,15).map(pliegoCaidoRecordHtml).join(''):'<div class="empty">Sin pliegos caídos detectados.</div>';
+  const shown=items.slice(0,pliegosPage*PAGE_SIZE);
+  if(el)el.innerHTML=items.length?shown.map(pliegoCaidoRecordHtml).join(''):'<div class="empty">Sin pliegos caídos detectados.</div>';
+  setLoadMore('pliegos-load-more',shown.length,items.length);
+  setText('count-pliegos',items.length>shown.length?`${fmt.format(shown.length)} de ${fmt.format(items.length)}`:fmt.format(items.length));
   if(countEl)countEl.textContent=`${fmt.format(items.length)} detectado${items.length===1?'':'s'}`;
 }
 function recurringVendorRecordHtml(c){
@@ -47,6 +50,7 @@ function renderRecurringVendorWatch(){
   const items=(data?.candidates||[]).filter(c=>c.confirmed_recent_award);
   if(el)el.innerHTML=items.length?items.map(recurringVendorRecordHtml).join(''):'<div class="empty">Sin patrones confirmados por ahora.</div>';
   if(countEl)countEl.textContent=`${fmt.format(items.length)} confirmado${items.length===1?'':'s'}`;
+  setText('count-recurrente',fmt.format(items.length));
 }
 function renderBAC(data,syncState){
   const statusEl=$('bac-status'),summaryEl=$('bac-summary'),rankingEl=$('vendor-ranking'),concEl=$('bac-concentration'),fracEl=$('bac-fractionation'),repeatEl=$('bac-repeat-winner');
@@ -81,6 +85,9 @@ function renderBAC(data,syncState){
     });
     renderRankRows(concEl,rows);
   }
+  setText('count-concentracion',highConc===concentration.length?`${fmt.format(highConc)} con ≥60%`:`${fmt.format(concentration.length)} organismos · ${fmt.format(highConc)} con ≥60%`);
+  setText('count-fraccionamiento',fmt.format((audit.possible_fractionation?.awards||[]).length));
+  setText('count-multiorganismo',fmt.format((audit.repeat_winner_across_organismos?.vendors||[]).length));
   if(fracEl){
     const flags=audit.possible_fractionation?.awards||[];
     const rows=flags.map(f=>[`${f.organismo} · ${f.vendor}`,fmtCurrency.format(f.total_amount_ars||0),` <span class="badge audit-flag">${f.awards_count} adjudicaciones en ${f.window_days}d</span>`]);
@@ -154,7 +161,11 @@ function renderNormativeImpact(){
   const bySigla=Object.entries(s.by_sigla||{}).map(([k,v])=>`${k}: ${v}`).join(' · ');
   if(summaryEl)summaryEl.innerHTML=`<div>${fmt.format(s.total_flagged||0)} normas de unidades de sistemas/transformación digital detectadas (${esc(bySigla||'—')})</div>${data.note?`<div class="bac-note">${esc(data.note)}</div>`:''}${data.price_redeterminations?.note?`<div class="bac-note">${esc(data.price_redeterminations.note)}</div>`:''}`;
   if(priceEl)priceEl.innerHTML=priceFlags.length?priceFlags.map(priceRedeterminationRecordHtml).join(''):'<div class="empty">Sin redeterminaciones reiteradas detectadas.</div>';
-  if(listEl)listEl.innerHTML=norms.length?norms.slice(0,25).map(normativeImpactRecordHtml).join(''):'<div class="empty">Sin normas detectadas.</div>';
+  const shown=norms.slice(0,impactPage*PAGE_SIZE);
+  if(listEl)listEl.innerHTML=norms.length?shown.map(normativeImpactRecordHtml).join(''):'<div class="empty">Sin normas detectadas.</div>';
+  setLoadMore('impact-load-more',shown.length,norms.length);
+  setText('normative-impact-count',norms.length?`(${fmt.format(shown.length)} de ${fmt.format(norms.length)})`:'');
+  setText('count-redeterminaciones',fmt.format(priceFlags.length));
   const normativeCountEl=$('novedad-normative-count');
   if(normativeCountEl)normativeCountEl.textContent=`${fmt.format(norms.length)} detectada${norms.length===1?'':'s'}`;
   const priceCountEl=$('novedad-price-redetermination-count');
@@ -176,15 +187,53 @@ function renderLists(){
   $('norms-load-more').style.display=nr.length>nshow.length?'':'none';
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
+function setText(id,v){const el=$(id);if(el)el.textContent=v}
+function setLoadMore(id,shown,total){const el=$(id);if(el)el.style.display=total>shown?'':'none'}
+// Solapa "Hoy": resumen de recuentos que enlaza a cada sección. Se calcula de state, no del DOM.
+function renderHoy(){
+  const rows=state.aperturas?.licitaciones_abiertas;
+  if(Array.isArray(rows)){const pub=rows.filter(a=>a.estado_buscado==='Publicado'),enAp=rows.filter(a=>a.estado_buscado==='En Apertura'&&!(a.fecha_apertura&&dayDiff(a.fecha_apertura)<-EN_APERTURA_STALE_DAYS));setText('hoy-abiertas',fmt.format(pub.length));setText('hoy-en-apertura',fmt.format(enAp.length));setText('tabcount-licitaciones',fmt.format(pub.length));const next=pub.find(a=>a.fecha_apertura&&dayDiff(a.fecha_apertura)>=0);if(next)setText('hoy-abiertas-foot',`próxima: ${aperturaWhen(next).toLowerCase()}`)}
+  if(state.pliegosCaidos)setText('hoy-pliegos',fmt.format((state.pliegosCaidos.pliegos||[]).length));
+  if(state.recurringVendorWatch)setText('hoy-recurrente',fmt.format((state.recurringVendorWatch.candidates||[]).filter(c=>c.confirmed_recent_award).length));
+  if(state.bac)setText('hoy-concentracion',fmt.format((state.bac.audit_signals?.vendor_concentration_by_organismo||[]).filter(c=>c.high_concentration).length));
+  if(state.normativeImpact){setText('hoy-redeterminaciones',fmt.format((state.normativeImpact.price_redeterminations?.flags||[]).length));const n=(state.normativeImpact.norms||[]).length;setText('hoy-normativa',fmt.format(n));setText('tabcount-normativa',fmt.format(n))}
+}
+// Solapas (patrón WAI-ARIA Tabs). Cada solapa es un <section role=tabpanel> con id = hash
+// (#hoy, #licitaciones, ...). Cualquier ancla dentro de una solapa (#bac-failed-tenders,
+// #normative-impact-panel, ...) se resuelve buscando su tabpanel con closest(): activa esa
+// solapa, abre el <details> que la contenga y hace scroll. Así los links de Novedades y del
+// aviso siguen funcionando sin una tabla de mapeo, y un ancla nueva funciona sola.
+const tabs=()=>[...document.querySelectorAll('[role=tab]')];
+function activateTab(panelId,{focusTab=false}={}){for(const t of tabs()){const on=t.getAttribute('aria-controls')===panelId;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;const p=$(t.getAttribute('aria-controls'));if(p)p.hidden=!on;if(on&&focusTab)t.focus()}}
+function navigateTo(hash,{scroll=true}={}){
+  const target=hash&&hash.length>1?$(decodeURIComponent(hash.slice(1))):null;const panel=target?.closest('[role=tabpanel]');
+  if(!panel){activateTab('hoy');return}
+  activateTab(panel.id);
+  for(let d=target.closest('details');d;d=d.parentElement?.closest('details'))d.open=true;
+  if(!scroll)return;
+  if(target===panel){document.querySelector('.tabs')?.scrollIntoView({block:'start'});return}
+  requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
+}
+function bindTabs(){
+  for(const t of tabs())t.addEventListener('click',()=>{const id=t.getAttribute('aria-controls');history.pushState(null,'',`#${id}`);activateTab(id)});
+  document.querySelector('.tabs')?.addEventListener('keydown',e=>{const list=tabs(),i=list.indexOf(document.activeElement);if(i<0)return;const next={ArrowRight:(i+1)%list.length,ArrowLeft:(i-1+list.length)%list.length,Home:0,End:list.length-1}[e.key];if(next===undefined)return;e.preventDefault();const id=list[next].getAttribute('aria-controls');history.replaceState(null,'',`#${id}`);activateTab(id,{focusTab:true})});
+  // Links internos: se manejan acá para que funcionen aunque el hash no cambie (segundo click al mismo link).
+  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey)return;const h=a.getAttribute('href');if(h.length<2||!$(h.slice(1)))return;e.preventDefault();history.pushState(null,'',h);navigateTo(h)});
+  window.addEventListener('popstate',()=>navigateTo(location.hash,{scroll:false}));
+  window.addEventListener('hashchange',()=>navigateTo(location.hash));
+}
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-function renderAll(){safeRender('featureNotice',renderFeatureNotice);safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac,state.bacSyncState));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
+function renderAll(){safeRender('featureNotice',renderFeatureNotice);safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac,state.bacSyncState));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists);safeRender('hoy',renderHoy)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
   $('clear-filters').addEventListener('click',()=>{$('filter-search').value='';$('filter-org').value='';$('filter-type').value='';$('filter-category').value='';resetPagingAndRenderAll()});
   $('norms-load-more').addEventListener('click',()=>{normsPage++;renderLists()});
   $('procs-load-more').addEventListener('click',()=>{procPage++;renderLists()});
+  $('pliegos-load-more').addEventListener('click',()=>{pliegosPage++;renderPliegosCaidos()});
+  $('impact-load-more').addEventListener('click',()=>{impactPage++;renderNormativeImpact()});
 }
 function esc(v=''){return String(v).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]))}
 function attr(v=''){return esc(v).replace(/'/g,'&#39;')}
-(async()=>{try{await loadData();populateFilters();bind();renderAll()}catch(e){console.error(e);$('data-status').textContent='Datos no disponibles';$('data-status').className='status status-error';$('dashboard-sync-at').textContent=e.message}})();
+bindTabs();navigateTo(location.hash,{scroll:false});
+(async()=>{try{await loadData();populateFilters();bind();renderAll();if(location.hash)navigateTo(location.hash)}catch(e){console.error(e);$('data-status').textContent='Datos no disponibles';$('data-status').className='status status-error';$('dashboard-sync-at').textContent=e.message}})();
