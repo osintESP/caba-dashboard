@@ -18,6 +18,23 @@ from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
 DATA = BASE / 'data'
+VERIFIED = BASE / 'runtime' / 'montos_verificados.json'
+
+# Controles de integridad de montos (31/10/2026). Existen por dos errores que pasaron con
+# status 'ok': las adjudicaciones en USD se descartaban en silencio, y el dedupe contaba 3 veces
+# la misma adjudicación (SATE911 en $19.254M en vez de $6.624M). Ningún chequeo comparaba el
+# monto contra un cálculo independiente.
+# - RECONCILIATION_TOLERANCE: amount_ars no puede superar en más de esto al monto reconstruido
+#   (cantidad del renglón x precio unitario, una vez por renglón). Por debajo no se marca: una
+#   adjudicación parcial es legítima.
+# - DOMINANT_TENDER_SHARE: un solo proceso que pesa más que esto del total de tecnología mueve
+#   todas las métricas; tiene que estar verificado a mano en runtime/montos_verificados.json.
+# - MIN_RECONCILABLE_SHARE: si muy pocos procesos se pueden reconciliar, el control quedó ciego
+#   (¿cambiaron las columnas del CSV?).
+RECONCILIATION_TOLERANCE = 0.05
+DOMINANT_TENDER_SHARE = 0.25
+MIN_RECONCILABLE_SHARE = 0.8
+VERIFIED_TOLERANCE = 0.01
 
 # Ventana de ediciones recientes donde un número de Boletín faltante cuenta como hueco. No se
 # mira todo el histórico: el backfill dejó huecos viejos conocidos que no son una regresión.
@@ -152,6 +169,65 @@ def check_bac_fx(catalog):
     return []
 
 
+def check_bac_reconciliation(catalog):
+    if not catalog or catalog.get('status') not in ('ok', 'unchanged'):
+        return []
+    index = catalog.get('tender_index') or {}
+    if not index:
+        return []
+    issues = []
+    rec = {k: t for k, t in index.items() if t.get('monto_reconstruido_ars')}
+    if len(rec) < MIN_RECONCILABLE_SHARE * len(index):
+        issues.append(f'bac_catalog.json: sólo {len(rec)} de {len(index)} procesos de tecnología se pueden '
+                      'reconciliar (cantidad x precio unitario); el control de montos quedó ciego.')
+    over = sorted(((t['amount_ars'] / t['monto_reconstruido_ars'], k) for k, t in rec.items()
+                   if t['amount_ars'] > t['monto_reconstruido_ars'] * (1 + RECONCILIATION_TOLERANCE)), reverse=True)
+    if over:
+        detalle = ', '.join(f'{k} ({r:.1f}x)' for r, k in over[:5])
+        issues.append(f'bac_catalog.json: {len(over)} procesos con monto mayor al reconstruido por renglón '
+                      f'(cantidad x precio unitario): {detalle}. Probable conteo duplicado de adjudicaciones.')
+    return issues
+
+
+def _verified():
+    try:
+        return json.loads(VERIFIED.read_text(encoding='utf-8')).get('procesos') or []
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+
+def check_bac_verified_amounts(catalog, verified=None):
+    if not catalog or catalog.get('status') not in ('ok', 'unchanged'):
+        return []
+    index = catalog.get('tender_index') or {}
+    issues = []
+    for v in (verified if verified is not None else _verified()):
+        t = index.get(v['numero_proceso'])
+        if t is None:
+            continue  # fuera de la ventana de cobertura del CSV; no es un error
+        for campo, esperado in (('amount_ars', v.get('monto_ars')), ('amount_usd', v.get('monto_usd'))):
+            if esperado is None:
+                continue
+            real = t.get(campo) or 0
+            if abs(real - esperado) > esperado * VERIFIED_TOLERANCE:
+                issues.append(f'bac_catalog.json: {v["numero_proceso"]} {campo}={real:,.0f}, el monto verificado es '
+                              f'{esperado:,.0f} (runtime/montos_verificados.json). Regresión en el cálculo de montos.')
+    return issues
+
+
+def check_bac_dominant_tenders(catalog, verified=None):
+    if not catalog or catalog.get('status') not in ('ok', 'unchanged'):
+        return []
+    total = ((catalog.get('summary') or {}).get('tech_awarded_ars')) or 0
+    if not total:
+        return []
+    ok = {v['numero_proceso'] for v in (verified if verified is not None else _verified())}
+    dom = [(t['amount_ars'] / total, k) for k, t in (catalog.get('tender_index') or {}).items()
+           if t.get('amount_ars', 0) > total * DOMINANT_TENDER_SHARE and k not in ok]
+    return [f'bac_catalog.json: {k} pesa {share:.0%} del total de tecnología y no está verificado; recalcular su '
+            'monto desde la fuente y agregarlo a runtime/montos_verificados.json.' for share, k in sorted(dom, reverse=True)]
+
+
 def run_checks(now=None):
     now = now or datetime.now(timezone.utc)
     return {
@@ -163,7 +239,10 @@ def run_checks(now=None):
                                                  read('bac_recurring_vendor_watch.json')),
         'BAC catálogo': (check_status('bac_catalog.json', read('bac_catalog.json'))
                          + check_bac_coverage(read('bac_catalog.json'), now)
-                         + check_bac_fx(read('bac_catalog.json'))),
+                         + check_bac_fx(read('bac_catalog.json'))
+                         + check_bac_reconciliation(read('bac_catalog.json'))
+                         + check_bac_verified_amounts(read('bac_catalog.json'))
+                         + check_bac_dominant_tenders(read('bac_catalog.json'))),
     }
 
 

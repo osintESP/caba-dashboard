@@ -36,6 +36,14 @@ python -m http.server 8000
 
 There is no linter, no bundler, no frontend `package.json` — `app.js`/`index.html`/`styles.css` are hand-written and deliberately terse (single-line functions), served as-is.
 
+## Amount integrity (mandatory)
+
+Two calculation errors reached the published dashboard on 2026-10-31 with every status `ok` (USD awards silently dropped; SATE911 counted 3× via item variants). Since then:
+- **Never publish a change that moves amounts without reconciling it.** Any change to collectors, dedupe, currency conversion, classification, or a regenerated `data/bac_catalog.json` must be reviewed with the `data-integrity-reviewer` agent before merge, and the PR must include an "Impacto en montos" section (the PR template asks for it; CI fails without it when the impact report flags > 10% movement).
+- **Tests must encode verified values, not assumptions.** If a test asserts how real data should be grouped or summed, cite the source recomputation in the test comment.
+- `data_health_check.py` enforces: per-process reconciliation (`amount_ars` ≤ `monto_reconstruido_ars` × 1.05, reconstructed once per renglón from quantity × unit price, independently of the dedupe key), regressions against `runtime/montos_verificados.json` (1% tolerance), and that any process > 25% of the tech total is in that verified registry. Add entries there only after recomputing from the source.
+- CI (`.github/workflows/ci.yml`) runs tests + health check + `runtime/impact_report.py` on every PR to master.
+
 ## Architecture
 
 **The pipeline is "git as database."** Every `runtime/*.py` script reads the current `data/*.json`, merges or regenerates in memory, and writes the whole file back — there's no incremental delta storage. Six GitHub Actions workflows write to `data/` and all share `concurrency.group: caba-dashboard-refresh` so they queue instead of racing each other's push to `master`:
