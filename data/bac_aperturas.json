@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-10-31T21:30:25+00:00",
+  "collected_at": "2026-10-31T22:05:52+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
