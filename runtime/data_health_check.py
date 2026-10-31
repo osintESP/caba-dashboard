@@ -122,6 +122,21 @@ def check_bac_coverage(catalog, now):
     return []
 
 
+def check_bac_fx(catalog):
+    # Antes las adjudicaciones en USD se descartaban en silencio (bac_catalog_collector.py,
+    # corregido el 31/10/2026). Si vuelve a haber montos sin convertir, se reporta.
+    fx = ((catalog or {}).get('summary') or {}).get('fx')
+    if catalog is None or catalog.get('status') not in ('ok', 'unchanged'):
+        return []
+    if fx is None:
+        return ['bac_catalog.json: falta summary.fx (¿collector anterior a la conversión de USD?).']
+    excluded = {k: v for k, v in (fx.get('excluded_awards_by_currency') or {}).items() if v}
+    if excluded:
+        return [f'bac_catalog.json: adjudicaciones excluidas por no poder convertirse a ARS: {excluded} '
+                '(¿falló la API del BCRA o falta la cotización de esas fechas?).']
+    return []
+
+
 def run_checks(now=None):
     now = now or datetime.now(timezone.utc)
     return {
@@ -131,7 +146,8 @@ def run_checks(now=None):
         'BAC proveedor recurrente': check_status('bac_recurring_vendor_watch.json',
                                                  read('bac_recurring_vendor_watch.json')),
         'BAC catálogo': (check_status('bac_catalog.json', read('bac_catalog.json'))
-                         + check_bac_coverage(read('bac_catalog.json'), now)),
+                         + check_bac_coverage(read('bac_catalog.json'), now)
+                         + check_bac_fx(read('bac_catalog.json'))),
     }
 
 
