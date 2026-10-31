@@ -16,11 +16,13 @@
     </div>
   </header>
   <main class="container">
+    <section id="feature-notice" class="notice" data-until="2026-11-08" hidden><strong>Nuevo (31/10/2026):</strong> el radar de BAC ahora muestra <strong>todas</strong> las licitaciones de tecnología abiertas, no sólo las 12 de la home de Buenos Aires Compras. <a href="#bac-licitaciones-abiertas">Ver licitaciones abiertas ↓</a></section>
     <section id="sync-notice" class="notice"><strong>Dashboard v1 mejorada.</strong> La capa pública consume únicamente datasets sanitizados derivados de fuentes oficiales GCBA.</section>
 
     <section class="panel">
       <div class="panel-head"><div><span class="eyebrow">NOVEDADES</span><h2>Qué se agregó</h2></div></div>
       <div class="record-list">
+        <article class="record"><div><h3 class="record-title">Todas las licitaciones de tecnología abiertas <span id="novedad-abiertas-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/10/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">El radar de BAC dejaba ver sólo las 12 aperturas que muestra la home de Buenos Aires Compras, de todos los rubros, y muchas veces ninguna era de tecnología. Ahora recorre la Búsqueda avanzada completa: todos los procesos en estado Publicado (admiten ofertas), con cuenta regresiva a la apertura, y los que ya abrieron y esperan evaluación. Cuenta como tecnología lo que BAC clasifica en el rubro Informática o lo que coincide por palabra clave; se controla que lo traído coincida con el total que informa BAC.</p></div><a class="record-action" href="#bac-licitaciones-abiertas">Ver detalle ↓</a></article>
         <article class="record"><div><h3 class="record-title">Pliegos caídos o fracasados (tecnología) <span id="novedad-failed-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Buenos Aires Compras</span></div><p class="record-summary">Señal en el panel "Buenos Aires Compras" que detecta pliegos de tecnología (rubro "Informática") declarados Desierto o Dejado Sin Efecto — scrapeada en vivo del sitio transaccional de BAC, no del export masivo trimestral (que puede tener meses de atraso). No implica irregularidad, pero suele forzar una re-licitación y trabar la operación del área usuaria.</p></div><a class="record-action" href="#bac-failed-tenders">Ver detalle ↓</a></article>
         <article class="record"><div><h3 class="record-title">Impacto normativo en sistemas <span id="novedad-normative-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Nueva sección "Impacto normativo en sistemas" que cruza automáticamente las normas de Jefatura de Gabinete de Ministros dictadas por unidades de sistemas/transformación digital de la Ciudad (Secretaría de Innovación y Transformación Digital, Agencia de Sistemas de Información y direcciones asociadas), como disparador de revisión de posibles cambios en circuitos digitales (GDE, ciberseguridad, interoperabilidad).</p></div><a class="record-action" href="#normative-impact-panel">Ver detalle ↓</a></article>
         <article class="record"><div><h3 class="record-title">Redeterminaciones de precio reiteradas <span id="novedad-price-redetermination-count" class="badge audit-flag badge-count"></span></h3><div class="record-meta"><span class="meta-pill">31/08/2026</span><span class="meta-pill">Normativa</span></div><p class="record-summary">Dentro de "Impacto normativo en sistemas": detecta disposiciones de unidades de sistemas que aprueban una actualización de precios de Orden de Compra con 3 o más redeterminaciones acumuladas (el propio texto del Boletín declara el ordinal, ej. "Novena Actualización de Precios"). No implica irregularidad — redeterminar es un mecanismo contractual legítimo — pero varias seguidas de la misma orden amerita revisar el contrato.</p></div><a class="record-action" href="#normative-impact-panel">Ver detalle ↓</a></article>
@@ -63,14 +65,15 @@
       <div id="bac-recurring-vendor-watch" class="record-list"></div>
     </section>
 
-    <section class="two-col">
+    <section id="bac-licitaciones-abiertas" class="two-col">
       <article class="panel">
-        <div class="panel-head"><div><span class="eyebrow">BAC EN VIVO</span><h2>Aperturas de tecnología recientes (30 días)</h2></div><span id="aperturas-status" class="badge">pendiente</span></div>
-        <div id="aperturas-recientes-list" class="record-list"></div>
+        <div class="panel-head"><div><span class="eyebrow">BAC EN VIVO</span><h2>Licitaciones de tecnología abiertas</h2></div><span id="aperturas-status" class="badge">pendiente</span></div>
+        <div id="aperturas-sync" class="muted" style="margin:-8px 0 14px"></div>
+        <div id="aperturas-abiertas-list" class="record-list"></div>
       </article>
       <article class="panel">
-        <div class="panel-head"><div><span class="eyebrow">BAC EN VIVO</span><h2>Aperturas de tecnología próximas</h2></div><span id="aperturas-sync" class="muted"></span></div>
-        <div id="aperturas-proximas-list" class="record-list"></div>
+        <div class="panel-head"><div><span class="eyebrow">BAC EN VIVO</span><h2>En apertura, pendientes de evaluación</h2></div></div>
+        <div id="aperturas-en-apertura-list" class="record-list"></div>
       </article>
     </section>
 

@@ -26,6 +26,9 @@ RECENT_EDITIONS_WINDOW = 30
 # probablemente dejó de regenerarse y las señales de auditoría que dependen de ella envejecen.
 BAC_COVERAGE_MAX_AGE_DAYS = 150
 NUMERO_PROCESO_RE = re.compile(r'^\d+-\d+-[A-Z]+\d+$')
+# Un proceso puede seguir "Publicado" unas horas/días después de su fecha de apertura hasta que
+# BAC registra el acto; más allá de esto es una fila vieja o una fecha mal parseada.
+APERTURA_PUBLICADO_MAX_PASADO_DIAS = 7
 
 
 def read(name):
@@ -72,6 +75,33 @@ def check_pliegos_caidos(data):
     return issues
 
 
+def check_aperturas(data, now):
+    if data is None:
+        return ['bac_aperturas.json no existe.']
+    issues = check_status('bac_aperturas.json', data)
+    if data.get('schema_version', 1) < 2:
+        # Hasta que corra el scraper nuevo (BuscarAvanzado) el archivo puede ser el viejo de la home.
+        return issues + ['bac_aperturas.json: schema_version 1 (bloques de la home); falta correr el scraper nuevo.']
+    rows = data.get('licitaciones_abiertas') or []
+    malformed = [r.get('numero_proceso') for r in rows
+                 if not NUMERO_PROCESO_RE.match(r.get('numero_proceso') or '') or not r.get('fecha_apertura')]
+    if malformed:
+        issues.append(f'bac_aperturas.json: {len(malformed)} filas sin número de proceso válido o sin fecha: {malformed[:5]}.')
+    ids = [r.get('numero_proceso') for r in rows]
+    if len(ids) != len(set(ids)):
+        issues.append(f'bac_aperturas.json: {len(ids) - len(set(ids))} procesos duplicados.')
+    obtenidos = data.get('obtenidos') or {}
+    for key, total in (data.get('totales_reportados_por_bac') or {}).items():
+        if total is not None and obtenidos.get(key) != total:
+            issues.append(f'bac_aperturas.json: "{key}" trajo {obtenidos.get(key)} filas, BAC reporta {total}.')
+    vencidas = [r['numero_proceso'] for r in rows if r.get('estado_buscado') == 'Publicado' and r.get('fecha_apertura')
+                and (now - datetime.fromisoformat(r['fecha_apertura'])).days > APERTURA_PUBLICADO_MAX_PASADO_DIAS]
+    if vencidas:
+        issues.append(f'bac_aperturas.json: {len(vencidas)} procesos "Publicado" con apertura hace más de '
+                      f'{APERTURA_PUBLICADO_MAX_PASADO_DIAS} días: {vencidas[:5]}.')
+    return issues
+
+
 def check_status(name, data, ok_states=('ok',)):
     if data is None:
         return [f'{name} no existe.']
@@ -97,7 +127,7 @@ def run_checks(now=None):
     return {
         'Boletín Oficial': check_editions(read('editions.json')),
         'BAC pliegos caídos': check_pliegos_caidos(read('bac_pliegos_caidos.json')),
-        'BAC aperturas': check_status('bac_aperturas.json', read('bac_aperturas.json')),
+        'BAC aperturas': check_aperturas(read('bac_aperturas.json'), now),
         'BAC proveedor recurrente': check_status('bac_recurring_vendor_watch.json',
                                                  read('bac_recurring_vendor_watch.json')),
         'BAC catálogo': (check_status('bac_catalog.json', read('bac_catalog.json'))

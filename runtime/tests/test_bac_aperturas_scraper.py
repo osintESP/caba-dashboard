@@ -57,20 +57,54 @@ class ParseRowTest(unittest.TestCase):
         self.assertNotIn('unidad_ejecutora_raw', row)
         self.assertNotIn('fecha_apertura_raw', row)
 
-    def test_non_technology_purchase_is_flagged_false(self):
-        # El dashboard audita contrataciones de TECNOLOGÍA, no todas las compras de la
-        # Ciudad — la mayoría de las aperturas reales son insumos médicos/obra/etc.
-        cells = ['420-0998-CDI26', 'ADQUISICIÓN DE CATETER DOBLE J', 'Contratación Directa',
-                 '25/08/2026 10:30 Hrs.', 'En Apertura', '420 - HTAL. RICARDO GUTIERREZ']
-        row = bas.parse_row(cells)
-        self.assertFalse(row['is_technology'])
 
-    def test_technology_purchase_is_flagged_true(self):
-        cells = ['2624-0843-CDI26', 'Adquisición de licencias de software y notebooks',
-                 'Contratación Directa', '25/08/2026 11:00 Hrs.', 'En Apertura',
-                 '2624 - INSTITUTO DE ESTADISTICAS Y CENSOS']
-        row = bas.parse_row(cells)
-        self.assertTrue(row['is_technology'])
+def raw(numero, nombre, estado='Publicado', fecha='2026-11-03T13:00:00-03:00'):
+    return {'numero_proceso': numero, 'nombre_proceso': nombre, 'tipo_proceso': 'Licitación Pública',
+            'estado': estado, 'unidad_ejecutora_codigo': '8056', 'organismo': 'AGENCIA SISTEMAS DE INFORMACION',
+            'fecha_apertura': fecha}
+
+
+class BuildLicitacionesTest(unittest.TestCase):
+    def scraped(self, publicados, rubro_pub, en_apertura):
+        return {'Publicado': (publicados, len(publicados)),
+                'Publicado|Informática': (rubro_pub, len(rubro_pub)),
+                'En Apertura|Informática': (en_apertura, len(en_apertura))}
+
+    def test_combines_rubro_and_keyword_and_drops_non_tech(self):
+        # Casos reales del 31/10/2026: Tenable-One está en Informática pero el nombre no
+        # dispara palabra clave; Jira sólo por palabra clave; un insumo médico no es tecnología.
+        tenable = raw('8056-1507-LPU26', 'Renovación de solución de Gestión e Inspección Continua de Vulnerabilidades (Tenable-One)')
+        jira = raw('8056-1688-LPU26', 'Suscripción de Licencias JIRA Software On Cloud (Versión Premium)')
+        cateter = raw('420-0998-CDI26', 'ADQUISICIÓN DE CATETER DOBLE J')
+        out = bas.build_licitaciones(self.scraped([tenable, jira, cateter], [tenable], []))
+        by_id = {r['numero_proceso']: r for r in out}
+        self.assertEqual(set(by_id), {'8056-1507-LPU26', '8056-1688-LPU26'})
+        self.assertEqual(by_id['8056-1688-LPU26']['tech_source'], 'palabra_clave')
+        self.assertIn(by_id['8056-1507-LPU26']['tech_source'], ('rubro', 'rubro+palabra_clave'))
+        self.assertTrue(all(r['is_technology'] for r in out))
+
+    def test_rubro_row_missing_from_general_search_is_kept(self):
+        # Publicado entre la búsqueda general y la de Informática.
+        nuevo = raw('2051-9999-LPU26', 'Servicio de mesa de ayuda')
+        out = bas.build_licitaciones(self.scraped([], [nuevo], []))
+        self.assertEqual([r['numero_proceso'] for r in out], ['2051-9999-LPU26'])
+        self.assertEqual(out[0]['estado_buscado'], 'Publicado')
+
+    def test_no_duplicates_and_publicado_first_sorted_by_date(self):
+        a = raw('1-1-LPU26', 'Licencias de software', fecha='2026-11-12T13:00:00-03:00')
+        b = raw('1-2-LPU26', 'Licencias de software', fecha='2026-11-03T13:00:00-03:00')
+        viejo = raw('1-3-LPU26', 'Mantenimiento de portales', estado='En Apertura', fecha='2026-09-10T13:00:00-03:00')
+        out = bas.build_licitaciones(self.scraped([a, b], [a, b], [viejo, a]))
+        self.assertEqual([r['numero_proceso'] for r in out], ['1-2-LPU26', '1-1-LPU26', '1-3-LPU26'])
+        self.assertEqual(out[-1]['estado_buscado'], 'En Apertura')
+
+
+class TechSourceTest(unittest.TestCase):
+    def test_values(self):
+        self.assertEqual(bas.tech_source(True, True), 'rubro+palabra_clave')
+        self.assertEqual(bas.tech_source(True, False), 'rubro')
+        self.assertEqual(bas.tech_source(False, True), 'palabra_clave')
+        self.assertIsNone(bas.tech_source(False, False))
 
 
 if __name__ == '__main__':

@@ -1,34 +1,46 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, re, sys
+import json, sys
 from datetime import datetime, timezone
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bac_catalog_collector import classify_technology  # noqa: E402 — mismo clasificador que bac_catalog.json, no duplicar reglas
+# Re-exportados (split_unidad_ejecutora/parse_fecha_apertura) por compatibilidad de imports/tests.
+from bac_buscar_avanzado import SITE, UA, split_unidad_ejecutora, parse_fecha_apertura, parse_row, search  # noqa: E402,F401
 
 BASE = Path(__file__).resolve().parent.parent
 OUT = BASE / 'data' / 'bac_aperturas.json'
-SITE = 'https://www.buenosairescompras.gob.ar'
-UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-      '(KHTML, like Gecko) Chrome/120.0 Safari/537.36')
+SCHEMA_VERSION = 2
+RUBRO = 'Informática'
 
-# El sitio transaccional de BAC (no el portal de datos abiertos) es ASP.NET WebForms con
-# sesión/token anti-CSRF. Pegarle directo a la URL de listado -incluso con un navegador
-# headless real- redirige a Default.aspx (confirmado). Sólo funciona navegando "como
-# usuario real": cargar la home y CLICKEAR el link real de cada listado, para que el
-# postback/ViewState se genere con el estado de sesión correcto. requests puro replicando
-# un HAR capturado del navegador ya se probó y se descartó (ver README, limitaciones
-# conocidas) — esto es lo único que funcionó.
-PAGES = (
-    ('aperturas_recientes', 'ListarAperturaUltimos30Dias'),
-    ('aperturas_proximas', 'ListarAperturaProxima'),
+# Por qué la Búsqueda avanzada y no los bloques de la home ("Aperturas próximas" / "últimos 30
+# días", schema_version 1): esos bloques muestran como máximo 12 filas de TODOS los rubros, y
+# el 31/10/2026 ninguna de las 12 "próximas" era de tecnología, mientras BuscarAvanzado.aspx
+# devolvía 10 pliegos de Informática en estado Publicado y 22 En Apertura. Acá se recorre el
+# universo completo y se compara contra el total que informa BAC.
+#
+# Tres búsquedas (clave = estado|rubro, así queda en totales_reportados_por_bac):
+#  - Publicado, todos los rubros: todo lo que hoy admite ofertas (~180). Da el total como
+#    contexto y permite detectar tecnología cargada en OTRO rubro por palabra clave.
+#  - Publicado + Informática: para marcar las que BAC clasifica como Informática. La grilla no
+#    muestra el rubro, así que sólo se sabe filtrando del lado del servidor.
+#  - En Apertura + Informática: ya abrieron y esperan evaluación. Sólo Informática por decisión
+#    de alcance (todos los rubros son ~750 filas, sin uso en un dashboard de tecnología).
+#
+# is_technology = rubro Informática O classify_technology. Ninguno alcanza solo: medido el
+# 31/10/2026, la palabra clave reconoce 3 de 179 publicados y el rubro deja afuera, por
+# ejemplo, licencias Jira o firewalls F5. tech_source dice por cuál entró, para poder revisar.
+SEARCHES = (
+    ('Publicado', None),
+    ('Publicado', RUBRO),
+    ('En Apertura', RUBRO),
 )
 
-ROW_KEYS = ('numero_proceso', 'nombre_proceso', 'tipo_proceso', 'fecha_apertura_raw', 'estado', 'unidad_ejecutora_raw')
-UNIDAD_RE = re.compile(r'^\s*(\d+)\s*-\s*(.+?)\s*$')
-FECHA_RE = re.compile(r'(\d{2})/(\d{2})/(\d{4})\s+(\d{2}):(\d{2})')
+
+def search_key(estado, rubro):
+    return f'{estado}|{rubro}' if rubro else estado
 
 
 def now():
@@ -43,48 +55,49 @@ def write(p, obj):
     p.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
-def split_unidad_ejecutora(raw):
-    # BAC muestra "9625 - DIRECCIÓN GENERAL MUSEO DE ARTE MODERO..." — el código numérico
-    # es el mismo esquema que usa bac_anual.csv (tender/procuringEntity/id), separado acá
-    # del nombre para que sea comparable/cruzable sin parsear el string de nuevo aguas abajo.
-    m = UNIDAD_RE.match(raw or '')
-    if not m:
-        return None, (raw or '').strip() or None
-    return m.group(1), m.group(2)
+def tech_source(in_rubro, by_keyword):
+    if in_rubro and by_keyword:
+        return 'rubro+palabra_clave'
+    if in_rubro:
+        return 'rubro'
+    if by_keyword:
+        return 'palabra_clave'
+    return None
 
 
-def parse_fecha_apertura(raw):
-    m = FECHA_RE.search(raw or '')
-    if not m:
-        return None
-    d, mo, y, h, mi = m.groups()
-    return f'{y}-{mo}-{d}T{h}:{mi}:00-03:00'
+def tag(row, estado_buscado, in_rubro):
+    source = tech_source(in_rubro, classify_technology({'title': row.get('nombre_proceso')}))
+    return {'estado_buscado': estado_buscado, **row, 'is_technology': source is not None, 'tech_source': source}
 
 
-def parse_row(cells):
-    row = dict(zip(ROW_KEYS, [c.strip() for c in cells]))
-    codigo, organismo = split_unidad_ejecutora(row.pop('unidad_ejecutora_raw', None))
-    fecha_raw = row.pop('fecha_apertura_raw', None)
-    row['unidad_ejecutora_codigo'] = codigo
-    row['organismo'] = organismo
-    row['fecha_apertura'] = parse_fecha_apertura(fecha_raw)
-    # El objeto del dashboard es auditar contrataciones de TECNOLOGÍA, no todas las compras
-    # de la Ciudad (la mayoría de las aperturas son insumos médicos, obra, etc.). Se guarda
-    # el flag acá en vez de descartar la fila, para no perder el conteo total como contexto
-    # (mismo criterio que bac_catalog_collector.py con is_tech); el frontend filtra sobre esto.
-    row['is_technology'] = classify_technology({'title': row.get('nombre_proceso')})
-    return row
+def build_licitaciones(scraped):
+    """scraped: {search_key: (rows, total)} -> lista de procesos de tecnología, sin duplicados."""
+    publicados = scraped.get(search_key('Publicado', None), ([], None))[0]
+    rubro_pub = scraped.get(search_key('Publicado', RUBRO), ([], None))[0]
+    en_apertura = scraped.get(search_key('En Apertura', RUBRO), ([], None))[0]
 
-
-def scrape_page(page, link_href_fragment):
-    with page.expect_navigation(timeout=30000):
-        page.click(f'a[href*="{link_href_fragment}"]')
-    page.wait_for_selector('table tbody', timeout=15000)
-    raw_rows = page.eval_on_selector_all(
-        'table tbody tr',
-        "rows => rows.map(r => Array.from(r.querySelectorAll('td')).map(td => td.innerText.trim()))",
-    )
-    return [parse_row(cells) for cells in raw_rows if len(cells) >= len(ROW_KEYS)]
+    rubro_ids = {r['numero_proceso'] for r in rubro_pub}
+    seen = set()
+    out = []
+    for row in publicados:
+        tagged = tag(row, 'Publicado', row['numero_proceso'] in rubro_ids)
+        if tagged['is_technology'] and tagged['numero_proceso'] not in seen:
+            seen.add(tagged['numero_proceso'])
+            out.append(tagged)
+    # Un pliego puede publicarse entre la búsqueda general y la de Informática: si BAC lo marca
+    # como Informática pero no apareció en la general, igual se incluye.
+    for row in rubro_pub:
+        if row['numero_proceso'] not in seen:
+            seen.add(row['numero_proceso'])
+            out.append(tag(row, 'Publicado', True))
+    for row in en_apertura:
+        if row['numero_proceso'] not in seen:
+            seen.add(row['numero_proceso'])
+            out.append(tag(row, 'En Apertura', True))
+    # Publicado: la apertura más cercana primero. En Apertura: la más vieja primero (lo que más
+    # tiempo lleva sin pasar a evaluación queda arriba).
+    out.sort(key=lambda r: (r['estado_buscado'] != 'Publicado', r.get('fecha_apertura') or '9999'))
+    return out
 
 
 def scrape_all():
@@ -93,9 +106,8 @@ def scrape_all():
         browser = p.chromium.launch(headless=True)
         try:
             page = browser.new_page(user_agent=UA)
-            for key, fragment in PAGES:
-                page.goto(f'{SITE}/Default.aspx', timeout=30000, wait_until='networkidle')
-                result[key] = scrape_page(page, fragment)
+            for estado, rubro in SEARCHES:
+                result[search_key(estado, rubro)] = search(page, estado, rubro)
         finally:
             browser.close()
     return result
@@ -109,30 +121,43 @@ def main():
         # se conserva y sólo se actualiza el status -no se pisa con listas vacías-, para
         # que una falla puntual del sitio transaccional no borre la última foto conocida.
         existing = read(OUT)
-        if existing:
+        if existing and existing.get('schema_version') == SCHEMA_VERSION:
             existing['status'] = 'error'
             existing['last_check_status_at'] = now()
             existing['last_error'] = repr(e)
             write(OUT, existing)
         else:
             write(OUT, {
-                'schema_version': 1, 'collected_at': now(), 'source': f'{SITE}/',
-                'status': 'error', 'last_error': repr(e),
-                'aperturas_recientes': [], 'aperturas_proximas': [],
+                'schema_version': SCHEMA_VERSION, 'collected_at': now(), 'source': f'{SITE}/BuscarAvanzado.aspx',
+                'status': 'error', 'last_error': repr(e), 'rubro_filtro': RUBRO,
+                'totales_reportados_por_bac': {}, 'obtenidos': {}, 'licitaciones_abiertas': [],
             })
         print(json.dumps({'status': 'error', 'error': repr(e)}, ensure_ascii=False))
         return
 
+    totales = {k: total for k, (_, total) in scraped.items()}
+    obtenidos = {k: len(rows) for k, (rows, _) in scraped.items()}
+    # 'incompleto' (no 'error'): lo traído es válido pero no es todo lo que BAC reporta.
+    completo = all(totales[k] is None or obtenidos[k] >= totales[k] for k in totales)
+    licitaciones = build_licitaciones(scraped)
     out = {
-        'schema_version': 1, 'collected_at': now(), 'source': f'{SITE}/', 'status': 'ok',
-        **scraped,
+        'schema_version': SCHEMA_VERSION,
+        'collected_at': now(),
+        'source': f'{SITE}/BuscarAvanzado.aspx',
+        'rubro_filtro': RUBRO,
+        'note': ('Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la '
+                 'Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y '
+                 'En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un '
+                 'proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si '
+                 'su nombre coincide con las reglas de classify_technology (ver tech_source).'),
+        'status': 'ok' if completo else 'incompleto',
+        'totales_reportados_por_bac': totales,
+        'obtenidos': obtenidos,
+        'licitaciones_abiertas': licitaciones,
     }
     write(OUT, out)
-    print(json.dumps({
-        'status': 'ok',
-        'aperturas_recientes': len(out.get('aperturas_recientes', [])),
-        'aperturas_proximas': len(out.get('aperturas_proximas', [])),
-    }, ensure_ascii=False))
+    print(json.dumps({'status': out['status'], 'licitaciones_abiertas': len(licitaciones),
+                      'obtenidos': obtenidos, 'totales_reportados_por_bac': totales}, ensure_ascii=False))
 
 
 if __name__ == '__main__':

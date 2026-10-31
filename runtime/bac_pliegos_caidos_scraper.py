@@ -1,25 +1,18 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, re, sys
+import json, sys
 from datetime import datetime, timezone
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-# split_unidad_ejecutora/parse_fecha_apertura son funciones puras de parseo de texto -
-# reusarlas, no duplicarlas (mismo formato de columna que devuelve BAC en ambos listados).
-from bac_aperturas_scraper import split_unidad_ejecutora, parse_fecha_apertura  # noqa: E402
+# Navegación, paginación y parseo de la Búsqueda avanzada viven en bac_buscar_avanzado.py,
+# compartidos con bac_aperturas_scraper.py y bac_recurring_vendor_watch.py -no duplicarlos acá-.
+from bac_buscar_avanzado import SITE, UA, ROW_KEYS, parse_row, search  # noqa: E402,F401
 
 BASE = Path(__file__).resolve().parent.parent
 OUT = BASE / 'data' / 'bac_pliegos_caidos.json'
-SITE = 'https://www.buenosairescompras.gob.ar'
-UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-      '(KHTML, like Gecko) Chrome/120.0 Safari/537.36')
 
-# Mismo sitio transaccional y misma restricción de navegación que bac_aperturas_scraper.py
-# (ASP.NET WebForms con ViewState de sesión: goto() directo a BuscarAvanzado.aspx no sirve,
-# hay que clickear como un usuario real desde Default.aspx).
-#
 # Por qué este scraper existe además de bac_catalog_collector.py: bac_anual.csv (y los otros
 # 7 archivos del mismo dataset masivo — tender.csv, award.csv, contracts.csv, etc.) comparten
 # el mismo Last-Modified (verificado vía HEAD contra el CDN), congelado desde el 1° de junio
@@ -32,13 +25,6 @@ UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
 # nunca se llama en este archivo, se confía en el filtro server-side)-.
 ESTADOS = ('Desierto', 'Dejado Sin Efecto')
 RUBRO = 'Informática'
-# Tope de seguridad, no de negocio: el universo real NO es chico -"Dejado Sin Efecto" +
-# Informática dio 537 resultados (54 páginas de 10) el 23/10/2026-. El tope anterior (20) y un
-# paginador que no seguía el link "..." truncaban silenciosamente en 100 filas; ahora se
-# compara contra el total que reporta BAC (ver read_reported_total) para detectar truncado.
-MAX_PAGES = 100
-
-ROW_KEYS = ('numero_proceso', 'nombre_proceso', 'tipo_proceso', 'fecha_apertura_raw', 'estado', 'unidad_ejecutora_raw')
 
 
 def now():
@@ -53,70 +39,6 @@ def write(p, obj):
     p.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
-def parse_row(cells):
-    row = dict(zip(ROW_KEYS, [c.strip() for c in cells]))
-    codigo, organismo = split_unidad_ejecutora(row.pop('unidad_ejecutora_raw', None))
-    fecha_raw = row.pop('fecha_apertura_raw', None)
-    row['unidad_ejecutora_codigo'] = codigo
-    row['organismo'] = organismo
-    row['fecha_apertura'] = parse_fecha_apertura(fecha_raw)
-    return row
-
-
-def read_grid_rows(page):
-    # tr.pagination-gv es la fila del paginador, que contiene una tabla anidada con su propio
-    # <tr> de números de página -por eso se toman sólo los <tr> HIJOS DIRECTOS de la grilla:
-    # con un selector descendiente ese <tr> anidado se colaba como fila de datos ("1","2",...).
-    return page.eval_on_selector_all(
-        '#ctl00_CPH1_GridListaPliegos > tbody > tr:not(.pagination-gv)',
-        "rows => rows.map(r => Array.from(r.querySelectorAll('td')).map(td => td.innerText.trim()))",
-    )
-
-
-def click_next_page(page, current_page):
-    # DevExpress renderiza la página actual como <span>, las demás como <a> con
-    # __doPostBack(...,'Page$N') -se busca el link por el argumento 'Page$N' del href, NO por
-    # su texto: el paginador muestra de a 10 números y el salto a la página 11 es un link
-    # "..." (href 'Page$11'), así que buscar por texto "11" cortaba siempre en la página 10.
-    target = current_page + 1
-    links = page.locator(f'#ctl00_CPH1_GridListaPliegos tr.pagination-gv a[href*="\'Page${target}\'"]')
-    if links.count() == 0:
-        return False
-    links.first.click()
-    # Esperar a que el paginador marque la página nueva como actual en vez de un sleep fijo:
-    # leer la grilla antes de que termine el postback duplicaría la página anterior.
-    page.wait_for_selector(f'#ctl00_CPH1_GridListaPliegos tr.pagination-gv span:text-is("{target}")',
-                           timeout=30000)
-    return True
-
-
-def read_reported_total(page):
-    # BAC muestra "Se han encontrado (N) resultados para su búsqueda" -se guarda para poder
-    # verificar que la paginación trajo todo, en vez de confiar en que el tope alcanza.
-    match = re.search(r'Se han encontrado \((\d+)\)', page.inner_text('body'))
-    return int(match.group(1)) if match else None
-
-
-def scrape_estado(page, estado):
-    page.select_option('#ctl00_CPH1_ddlEstadoProceso', label=estado)
-    page.select_option('#ctl00_CPH1_ddlRubro', label=RUBRO)
-    page.click('#ctl00_CPH1_btnListarPliegoAvanzado')
-    page.wait_for_selector('#ctl00_CPH1_GridListaPliegos', timeout=15000)
-    page.wait_for_timeout(1500)
-
-    reported_total = read_reported_total(page)
-    rows = []
-    current_page = 1
-    while True:
-        raw_rows = read_grid_rows(page)
-        data_rows = [r for r in raw_rows if r and r[0] != 'Número proceso' and len(r) >= len(ROW_KEYS)]
-        rows.extend(parse_row(cells) for cells in data_rows)
-        if current_page >= MAX_PAGES or not click_next_page(page, current_page):
-            break
-        current_page += 1
-    return rows, reported_total
-
-
 def scrape_all():
     result = {}
     with sync_playwright() as p:
@@ -124,11 +46,7 @@ def scrape_all():
         try:
             page = browser.new_page(user_agent=UA)
             for estado in ESTADOS:
-                page.goto(f'{SITE}/Default.aspx', timeout=30000, wait_until='networkidle')
-                with page.expect_navigation(timeout=30000):
-                    page.click('a[href*="BuscarAvanzado"]')
-                page.wait_for_selector('#ctl00_CPH1_ddlEstadoProceso', timeout=15000)
-                result[estado] = scrape_estado(page, estado)
+                result[estado] = search(page, estado, RUBRO)
         finally:
             browser.close()
     return result

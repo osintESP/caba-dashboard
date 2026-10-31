@@ -115,25 +115,35 @@ function renderOrgRanking(){const counts={};for(const x of filteredNorms()){cons
   const rows=[...top,...flagged].map(([name,value])=>[name,value,orgAuditBadge(name,idx)]);renderRankRows($('org-ranking'),rows)}
 function safeHref(u){return typeof u==='string'&&/^https?:\/\//i.test(u)?u:null}
 function recordHtml(n,proc,tenderId){const pills=[n.organismo,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);if(proc&&n.categoria)pills.unshift(`<span class="meta-pill category">${esc(n.categoria.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';const badge=tenderAuditBadge(tenderId===undefined?n.bac_tender_id:tenderId);return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}${badge}</h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}
-function aperturaRecordHtml(a){const pills=[a.organismo,a.tipo_proceso,a.estado,a.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const fecha=a.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):'—';return `<article class="record"><div><h3 class="record-title">${esc(a.nombre_proceso||a.numero_proceso||'Proceso sin nombre')}</h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Apertura: ${esc(fecha)} ART</p></div></article>`}
+const artDay=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Argentina/Buenos_Aires'});
+function dayDiff(iso){return Math.round((Date.parse(artDay.format(new Date(iso)))-Date.parse(artDay.format(new Date())))/864e5)}
+// "En Apertura" con apertura de hace más de un año: BAC tiene procesos trabados en ese estado desde 2014. No se listan como abiertos.
+const EN_APERTURA_STALE_DAYS=365;
+function plural(n,s){return `${fmt.format(n)} ${s}${n===1?'':'s'}`}
+function aperturaWhen(a){if(!a.fecha_apertura)return 'Sin fecha de apertura';const d=dayDiff(a.fecha_apertura);if(a.estado_buscado==='En Apertura')return d>=0?'Abre hoy':`Abrió hace ${plural(-d,'día')}`;if(d<0)return `Apertura hace ${plural(-d,'día')} (BAC todavía no actualizó el estado)`;return d===0?'Abre hoy':d===1?'Abre mañana':`Faltan ${plural(d,'día')}`}
+function aperturaRecordHtml(a){const pills=[a.organismo,a.tipo_proceso,a.numero_proceso].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const src=a.tech_source==='palabra_clave'?'<span class="meta-pill category" title="No está en el rubro Informática de BAC; se detectó por palabra clave en el nombre">por palabra clave</span>':'<span class="meta-pill category">rubro Informática</span>';const fecha=a.fecha_apertura?dtf.format(new Date(a.fecha_apertura)):'—';return `<article class="record"><div><h3 class="record-title">${esc(a.nombre_proceso||a.numero_proceso||'Proceso sin nombre')} <span class="badge badge-count">${esc(aperturaWhen(a))}</span></h3><div class="record-meta">${pills.join('')}${src}</div><p class="record-summary">Apertura: ${esc(fecha)} ART</p></div></article>`}
 function renderAperturas(){
-  const data=state.aperturas,statusEl=$('aperturas-status'),recEl=$('aperturas-recientes-list'),proxEl=$('aperturas-proximas-list'),syncEl=$('aperturas-sync');
-  if(!data){
+  const data=state.aperturas,statusEl=$('aperturas-status'),abiertasEl=$('aperturas-abiertas-list'),enAperturaEl=$('aperturas-en-apertura-list'),syncEl=$('aperturas-sync'),countEl=$('novedad-abiertas-count');
+  const rows=data?.licitaciones_abiertas;
+  if(!data||!Array.isArray(rows)){
+    // Sin datos o con el formato viejo (bloques de la home, schema_version 1) hasta que corra el scraper nuevo.
     if(statusEl)statusEl.textContent='sin sincronizar';
-    if(recEl)recEl.innerHTML='<div class="empty">Radar de aperturas en tiempo real todavía no fue publicado.</div>';
-    if(proxEl)proxEl.innerHTML='<div class="empty">Radar de aperturas en tiempo real todavía no fue publicado.</div>';
+    for(const el of [abiertasEl,enAperturaEl])if(el)el.innerHTML='<div class="empty">Radar de licitaciones abiertas todavía no fue publicado.</div>';
     return;
   }
-  if(statusEl)statusEl.textContent=data.status==='ok'?'activo':'error';
-  const recientesAll=data.aperturas_recientes||[],proximasAll=data.aperturas_proximas||[];
-  // El dashboard audita contrataciones de TECNOLOGÍA, no toda la actividad de BAC — se
-  // filtra acá (mismo criterio que audit_signals en bac_catalog.json), mostrando el total
-  // sin filtrar sólo como contexto de cobertura, no como listado.
-  const recientes=recientesAll.filter(a=>a.is_technology),proximas=proximasAll.filter(a=>a.is_technology);
-  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART · ${recientesAll.length+proximasAll.length} aperturas totales, ${recientes.length+proximas.length} de tecnología`:'';
-  if(recEl)recEl.innerHTML=recientes.length?recientes.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas de tecnología en los últimos 30 días.</div>';
-  if(proxEl)proxEl.innerHTML=proximas.length?proximas.map(a=>aperturaRecordHtml(a)).join(''):'<div class="empty">Sin aperturas próximas de tecnología publicadas.</div>';
+  if(statusEl)statusEl.textContent=data.status==='ok'?'activo':data.status==='incompleto'?'incompleto':'error';
+  const publicados=rows.filter(a=>a.estado_buscado==='Publicado');
+  const enApertura=rows.filter(a=>a.estado_buscado==='En Apertura');
+  const stale=enApertura.filter(a=>a.fecha_apertura&&dayDiff(a.fecha_apertura)<-EN_APERTURA_STALE_DAYS);
+  const recientes=enApertura.filter(a=>!stale.includes(a)).sort((x,y)=>(y.fecha_apertura||'').localeCompare(x.fecha_apertura||''));
+  const totalPublicados=data.totales_reportados_por_bac?.Publicado;
+  if(syncEl)syncEl.textContent=data.collected_at?`Actualizado ${dtf.format(new Date(data.collected_at))} ART · ${totalPublicados!=null?`${fmt.format(totalPublicados)} procesos abiertos en BAC, `:''}${fmt.format(publicados.length)} de tecnología`:'';
+  if(countEl)countEl.textContent=`${fmt.format(publicados.length)} abierta${publicados.length===1?'':'s'}`;
+  if(abiertasEl)abiertasEl.innerHTML=publicados.length?publicados.map(aperturaRecordHtml).join(''):'<div class="empty">Sin licitaciones de tecnología abiertas en este momento.</div>';
+  const staleHtml=stale.length?`<details class="related-acts"><summary>${plural(stale.length,'proceso')} con apertura de hace más de un año que siguen "En Apertura" en BAC (registro probablemente no cerrado; no se cuentan como abiertos)</summary>${stale.map(aperturaRecordHtml).join('')}</details>`:'';
+  if(enAperturaEl)enAperturaEl.innerHTML=(recientes.length?recientes.map(aperturaRecordHtml).join(''):'<div class="empty">Sin procesos de tecnología en apertura.</div>')+staleHtml;
 }
+function renderFeatureNotice(){const el=$('feature-notice');if(el&&el.dataset.until)el.hidden=Date.now()>=Date.parse(`${el.dataset.until}T00:00:00-03:00`)}
 function normativeImpactRecordHtml(n){const pills=[n.sigla_unidad,n.tipo,`Boletín ${n.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const topicPills=(n.topics||[]).map(t=>`<span class="meta-pill category">${esc(t.replaceAll('_',' '))}</span>`);const href=safeHref(n.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(n.nombre||`Norma ${n.id_norma}`)}</h3><div class="record-meta">${topicPills.join('')}${pills.join('')}</div><p class="record-summary">${esc(n.sumario||'Sin sumario disponible.')}</p></div>${link}</article>`}
 function priceRedeterminationRecordHtml(f){const pills=[f.sigla_unidad,`Orden de Compra ${f.orden_de_compra}`,`Boletín ${f.numero_boletin}`].filter(Boolean).map(v=>`<span class="meta-pill">${esc(String(v))}</span>`);const href=safeHref(f.url_norma);const link=href?`<a class="record-action" href="${attr(href)}" target="_blank" rel="noopener">Documento oficial ↗</a>`:'';return `<article class="record"><div><h3 class="record-title">${esc(f.nombre||'Disposición')} <span class="badge audit-flag">${esc(f.ordinal_word)} actualización</span></h3><div class="record-meta">${pills.join('')}</div><p class="record-summary">Redeterminación N.º ${f.ordinal} sobre la misma Orden de Compra.</p></div>${link}</article>`}
 function renderNormativeImpact(){
@@ -167,7 +177,7 @@ function renderLists(){
   $('procs-load-more').style.display=prGroups.length>gshow.length?'':'none';
 }
 function safeRender(label,fn){try{fn()}catch(e){console.error(`render failed: ${label}`,e)}}
-function renderAll(){safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac,state.bacSyncState));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
+function renderAll(){safeRender('featureNotice',renderFeatureNotice);safeRender('metrics',renderMetrics);safeRender('intelligence',renderIntelligence);safeRender('bac',()=>renderBAC(state.bac,state.bacSyncState));safeRender('pliegosCaidos',renderPliegosCaidos);safeRender('recurringVendorWatch',renderRecurringVendorWatch);safeRender('aperturas',renderAperturas);safeRender('normativeImpact',renderNormativeImpact);safeRender('syncNotice',renderSyncNotice);safeRender('bars',renderBars);safeRender('orgRanking',renderOrgRanking);safeRender('lists',renderLists)}
 function resetPagingAndRenderAll(){normsPage=1;procPage=1;renderAll()}
 function bind(){
   ['filter-search','filter-org','filter-type','filter-category'].forEach(id=>$(id).addEventListener(id==='filter-search'?'input':'change',resetPagingAndRenderAll));
