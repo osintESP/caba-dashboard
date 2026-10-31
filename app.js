@@ -116,7 +116,7 @@ function renderBAC(data,syncState){
     renderRankRows(repeatEl,rows);
   }
 }
-function renderSyncNotice(){const el=$('sync-notice');if(!el)return;if(!state.sync){el.innerHTML='<strong>Dashboard v1 mejorada.</strong> Datos base operativos. Pendiente: registro de sincronización.';return}const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';el.innerHTML=`<strong>Dashboard v1 mejorada.</strong> Datos sincronizados.${bulletin}`}
+function renderSyncNotice(){const el=$('sync-notice');if(!el)return;if(!state.sync){el.innerHTML='<strong>Estado de los datos.</strong> Datos base operativos. Pendiente: registro de sincronización.';return}const bulletin=state.sync.latest_bulletin?` Boletín N.º ${esc(state.sync.latest_bulletin)} sincronizado.`:'';el.innerHTML=`<strong>Estado de los datos.</strong> Datos sincronizados.${bulletin}`}
 function renderBars(){const rowsSource=filteredProcurements();const seen=new Set(),uniqueRows=[];for(const x of rowsSource){const pid=x.proceso_id||x.id_norma;if(seen.has(pid))continue;seen.add(pid);uniqueRows.push(x)}const counts={};for(const x of uniqueRows)counts[x.categoria||'otros']=(counts[x.categoria||'otros']||0)+1;const rows=Object.entries(counts).sort((a,b)=>b[1]-a[1]),max=rows[0]?.[1]||1;$('procurement-total').textContent=fmt.format(uniqueRows.length);$('category-bars').innerHTML=rows.length?rows.map(([k,v])=>`<div class="bar-row"><div class="bar-label">${esc(k.replaceAll('_',' '))}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(4,v/max*100)}%"></div></div><div class="bar-value">${v}</div></div>`).join(''):'<div class="empty">Sin resultados.</div>'}
 function bacOrgIndex(){const list=state.bac?.audit_signals?.vendor_concentration_by_organismo||[];const idx=new Map();for(const c of list)idx.set(normalizeOrgName(c.organismo),c);return idx}
 function orgAuditBadge(organismo,idx){const c=idx.get(normalizeOrgName(organismo));if(!c)return'';const label=c.high_concentration?`⚠ BAC: ${c.top_vendor_share_pct}% concentrado en "${c.top_vendor}"`:`BAC: ${c.top_vendor_share_pct}% en "${c.top_vendor}"`;return` <span class="badge audit-flag" title="${attr(label)}">⚠ BAC</span>`}
@@ -217,10 +217,18 @@ function renderHoy(){
 }
 // Encabezado + navegación compartidos por todas las páginas: se arman acá, desde PAGES, para
 // no duplicar el markup en cada .html (no hay build step que lo haga).
-const FEATURE_NOTICE={until:'2026-11-08',html:'<strong>Nuevo (31/10/2026):</strong> el radar de BAC ahora muestra <strong>todas</strong> las licitaciones de tecnología abiertas, no sólo las 12 de la home de Buenos Aires Compras. <a href="licitaciones.html">Ver licitaciones abiertas →</a>'};
+// Aviso de versión: recuadro sutil (celeste) en todas las páginas, con el detalle desplegable.
+// Reemplaza al aviso amarillo de "Nuevo" para no apilar dos carteles. Actualizar en cada versión.
+const VERSION_NOTE={label:'Versión 2 · 31/10/2026',summary:'Dashboard reorganizado en secciones y con todas las licitaciones de tecnología abiertas de BAC.',changes:[
+  '<strong>Secciones:</strong> el dashboard ya no es una sola página larga. Cada sección (Hoy, Licitaciones, Señales para revisar, Normativa de sistemas, Panorama, Explorar) es una página propia con su dirección, y se puede compartir el link a cualquiera.',
+  '<strong>Más rápido:</strong> cada página descarga sólo los datos que usa. Hoy pasó de ~26 MB a ~0,4 MB; sólo Explorar baja el histórico completo de normas y procesos.',
+  '<strong>Licitaciones abiertas:</strong> ahora se ven <a href="licitaciones.html">todas las de tecnología</a> publicadas en Buenos Aires Compras, con cuenta regresiva a la apertura, en vez de las 12 de la home de BAC (que muchas veces no incluían ninguna de tecnología).',
+  '<strong>Señales para revisar:</strong> <a href="senales.html">agrupadas en una sola página</a>, plegables y con su recuento. Las listas que antes se cortaban (pliegos caídos, impacto normativo) ahora muestran "N de M" y tienen "Cargar más".',
+  '<strong>Hoy:</strong> portada con los números del día; cada tarjeta lleva a su sección.',
+]};
 function renderShell(){
   const el=$('shell');if(!el)return;
-  const notice=Date.now()<Date.parse(`${FEATURE_NOTICE.until}T00:00:00-03:00`)?`<section class="notice">${FEATURE_NOTICE.html}</section>`:'';
+  const notice=`<details class="version-note"><summary><span class="version-tag">${esc(VERSION_NOTE.label)}</span> ${esc(VERSION_NOTE.summary)} <span class="version-more">Ver cambios</span></summary><ul>${VERSION_NOTE.changes.map(c=>`<li>${c}</li>`).join('')}</ul></details>`;
   const nav=Object.entries(PAGES).map(([k,p])=>`<a href="${p.file}"${k===PAGE?' aria-current="page"':''}>${esc(p.label)}<span id="navcount-${k}" class="tab-count"></span></a>`).join('');
   el.outerHTML=`<header class="topbar"><div><div class="eyebrow">INTELIGENCIA PÚBLICA · CABA</div><h1><a class="home-link" href="index.html">Curador CABA Intelligence</a></h1><p>Observatorio ejecutivo del Boletín Oficial, contrataciones y actividad tecnológica de la Ciudad.</p></div><div class="status-wrap"><span id="data-status" class="status status-loading">Cargando datos</span><span id="dashboard-sync-at" class="muted"></span></div></header>${notice?`<div class="container shell-notices">${notice}</div>`:''}<nav class="tabs" aria-label="Secciones del dashboard"><div class="tabs-inner">${nav}</div></nav>`;
 }
