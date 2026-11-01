@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-31T21:28:49+00:00",
+  "collected_at": "2026-11-01T15:20:00+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "candidate_source": "bac_catalog.json audit_signals.recurring_direct_pairs",
   "coverage_date_to_used_as_cutoff": "2026-08-31T15:45:00-03:00",
@@ -47,6 +47,13 @@
       "vendor": "Facundo Adrian Ortiz Guerreiro",
       "known_awards_count": 2,
       "known_date_to": "2026-04-29",
+      "confirmed_recent_award": null
+    },
+    {
+      "organismo": "DIRECCION GENERAL PROMOCION DEL LIBRO, BIBILIOTECAS Y LA CULTURA",
+      "vendor": "Waldo QUIROGA NICOLÁS",
+      "known_awards_count": 2,
+      "known_date_to": "2026-07-15",
       "confirmed_recent_award": null
     }
   ]
