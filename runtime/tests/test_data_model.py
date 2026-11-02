@@ -125,6 +125,19 @@ class CategoryTest(unittest.TestCase):
         n = {'nombre': 'Licitación', 'sumario': 'Actualización del Sistema de Liquidación de Haberes'}
         self.assertEqual(data_model.category(n), 'tecnologia')
 
+    def test_accented_and_masculine_forms_match(self):
+        # Falsos negativos reales en data/procurements.json (02/11/2026): sumarios textuales
+        # del Boletín. "tecnológica" (ó) no matcheaba 'tecnolog' ni "Informáticos" 'informática'.
+        casos = {
+            '1459/SSPCAP/26': ('otros', 'Llama a Licitación Pública N° 2630-1459-LPU26 para la contratación de un servicio integral para una solución tecnológica inteligente de seguridad.'),
+            '20/SSPCAP/26': ('obra_infraestructura', 'Aprueba pliegos y llama a Licitación Pública N° 2630-1582-LPU26 para la contratación de una solución integral de una infraestructura tecnológica'),
+            '10/UOA/26': ('otros', 'Adquisición de Equipamiento Informático para el MPT'),
+            '12/DGACSA/26': ('salud', 'Llama a Licitación Pública Nacional BID N°12/26 para la Adquisición de Insumos Informáticos.'),
+        }
+        for pid, (antes, sumario) in casos.items():
+            with self.subTest(pid=pid, antes=antes):
+                self.assertEqual(data_model.category({'nombre': 'Resolución', 'sumario': sumario}), 'tecnologia')
+
     def test_tecnolog_stem_still_matches_without_right_boundary(self):
         # El fix sólo exige borde a la izquierda: 'tecnolog' debe seguir matcheando
         # 'tecnología' (raíz + sufijo, sin borde de palabra a la derecha).

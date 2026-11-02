@@ -6,6 +6,12 @@ Sale con código 2 si alguna métrica clave se mueve más que IMPACT_THRESHOLD: 
 exige entonces que el PR explique el cambio en una sección "Impacto en montos". Existe porque
 dos errores de cálculo (USD descartados, adjudicaciones contadas 3 veces) cambiaron los totales
 del dashboard más de un 50% sin que nadie tuviera que justificar el movimiento.
+
+Sale con código 3 si la base no tiene `summary` (archivo vacío, ilegible o el `{}` que deja el
+workflow cuando `git show` de la base falla): sin base, todas las métricas dan "—" y el informe
+pasaba en verde sin haber comparado nada -mismo tipo de falso 'ok' que esta herramienta existe
+para evitar-. Visto el 02/11/2026 en la revisión semanal: con un clon superficial la revisión
+base no existía y el informe dijo "Sin cambios en montos".
 """
 from __future__ import annotations
 import json, sys
@@ -77,8 +83,19 @@ def report(base, head):
     return '\n'.join(lines), bool(flagged)
 
 
+def base_missing(base):
+    return not isinstance((base or {}).get('summary'), dict)
+
+
 def main():
-    text, flagged = report(load(sys.argv[1]), load(sys.argv[2]))
+    base, head = load(sys.argv[1]), load(sys.argv[2])
+    if base_missing(base):
+        print('## Impacto en montos (data/bac_catalog.json)\n\n**No se pudo comparar:** la base '
+              f'({sys.argv[1]}) está vacía, no es JSON válido o no tiene `summary`. Sin base, el informe '
+              'no puede detectar movimientos de montos; revisá que la revisión base exista (p. ej. un '
+              'clon superficial o un `git show` fallido).')
+        sys.exit(3)
+    text, flagged = report(base, head)
     print(text)
     sys.exit(2 if flagged else 0)
 
