@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-10-31T22:32:41+00:00",
+  "collected_at": "2026-11-02T20:50:06+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 179,
-    "Publicado|Informática": 10,
-    "En Apertura|Informática": 22
+    "Publicado": 168,
+    "Publicado|Informática": 11,
+    "En Apertura|Informática": 20
   },
   "obtenidos": {
-    "Publicado": 179,
-    "Publicado|Informática": 10,
-    "En Apertura|Informática": 22
+    "Publicado": 168,
+    "Publicado|Informática": 11,
+    "En Apertura|Informática": 20
   },
   "licitaciones_abiertas": [
     {
@@ -73,6 +73,18 @@
       "unidad_ejecutora_codigo": "8618",
       "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
       "fecha_apertura": "2026-11-05T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "418-3910-CME26",
+      "nombre_proceso": "CARDIOLOGIA - ADQ. PAPEL P/ECG, PAPEL TERMOSENSIBLE P/ ELECTROCARDIOGRAFO Y OTROS",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "418",
+      "organismo": "HTAL. JUAN A. FERNANDEZ",
+      "fecha_apertura": "2026-11-06T07:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -318,18 +330,6 @@
     },
     {
       "estado_buscado": "En Apertura",
-      "numero_proceso": "8618-1345-LPU26",
-      "nombre_proceso": "Renovación licenciamiento y contratación de soporte técnico equipos FortiMail y FortiSandbox",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-10-23T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
       "numero_proceso": "2051-1611-LPU26",
       "nombre_proceso": "Adq. y evolución de solución de analítica avanzada de datos con agentes de IA.",
       "tipo_proceso": "Licitación Pública",
@@ -385,18 +385,6 @@
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-10-30T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
-      "numero_proceso": "512-1234-CDI26",
-      "nombre_proceso": "Sistema de Gestión Académica DGEART",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "512",
-      "organismo": "DIR. GRAL DE ENSENANZA ARTISTICA",
-      "fecha_apertura": "2026-10-30T15:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     }
