@@ -1,57 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-02T20:50:06+00:00",
+  "collected_at": "2026-11-03T18:29:47+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 168,
-    "Publicado|Informática": 11,
-    "En Apertura|Informática": 20
+    "Publicado": 164,
+    "Publicado|Informática": 8,
+    "En Apertura|Informática": 21
   },
   "obtenidos": {
-    "Publicado": 168,
-    "Publicado|Informática": 11,
-    "En Apertura|Informática": 20
+    "Publicado": 164,
+    "Publicado|Informática": 8,
+    "En Apertura|Informática": 21
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8618-1512-LPU26",
-      "nombre_proceso": "Suscripción a Plataforma Integral de Comunicación, Operaciones, Cultura y Gestión de Personal",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-03T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8618-3561-CME26",
-      "nombre_proceso": "Contratación de un enlace de transmisión de datos para el edificio Carlos Pellegrini de la AGIP",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-03T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "2051-1480-LPU26",
-      "nombre_proceso": "Serv. de desarrollo, soporte y mantenimiento, correctivo, adaptativo, predictivo y evolutivos SADE",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "2051",
-      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
-      "fecha_apertura": "2026-11-03T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "8618-1479-LPU26",
@@ -318,18 +282,6 @@
     },
     {
       "estado_buscado": "En Apertura",
-      "numero_proceso": "7162-3345-CME26",
-      "nombre_proceso": "SERVICIO DE DISEÑO, DESARROLLO, IMPLEMENTACIÓN Y SOPORTE DE UNA PLATAFORMA WEB",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "7162",
-      "organismo": "MINISTERIO DE ESPACIO PUBLICO E HIGIENE URBANA",
-      "fecha_apertura": "2026-10-23T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
       "numero_proceso": "2051-1611-LPU26",
       "nombre_proceso": "Adq. y evolución de solución de analítica avanzada de datos con agentes de IA.",
       "tipo_proceso": "Licitación Pública",
@@ -385,6 +337,30 @@
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-10-30T13:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8618-1512-LPU26",
+      "nombre_proceso": "Suscripción a Plataforma Integral de Comunicación, Operaciones, Cultura y Gestión de Personal",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-11-03T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "2051-1480-LPU26",
+      "nombre_proceso": "Serv. de desarrollo, soporte y mantenimiento, correctivo, adaptativo, predictivo y evolutivos SADE",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-11-03T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     }
