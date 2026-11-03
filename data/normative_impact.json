@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 183,
+    "total_flagged": 184,
     "by_sigla": {
       "ASINF": 78,
-      "DGTALINF": 43,
+      "DGTALINF": 44,
       "DGISIS": 25,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1013820,
+      "numero_boletin": 7487,
+      "fecha_publicacion": "03/11/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1573/DGTALINF/26",
+      "sumario": "Aervicio de mantenimiento del sistema de almacenamiento Hitachi",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5391422"
+    },
     {
       "id_norma": 1013352,
       "numero_boletin": 7485,
