@@ -11,22 +11,34 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 184,
+    "total_flagged": 192,
     "by_sigla": {
-      "ASINF": 78,
-      "DGTALINF": 44,
-      "DGISIS": 25,
+      "ASINF": 82,
+      "DGTALINF": 46,
+      "DGISIS": 27,
       "DGIASINF": 19,
       "SECITD": 17,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "plataforma_o_sistema": 14,
-      "redeterminacion_precios": 12
+      "redeterminacion_precios": 14,
+      "plataforma_o_sistema": 14
     },
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1013824,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Resolución N° 245/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Luis Gastón Mardones",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393745"
+    },
     {
       "id_norma": 1013820,
       "numero_boletin": 7487,
@@ -38,6 +50,94 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5391422"
+    },
+    {
+      "id_norma": 1013816,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Disposición N° 131/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1417-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393865"
+    },
+    {
+      "id_norma": 1013779,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Disposición N° 130/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1573-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393864"
+    },
+    {
+      "id_norma": 1013763,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Resolución N° 244/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Mariano Ezequiel Moreno Ruiz",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393744"
+    },
+    {
+      "id_norma": 1013762,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Resolución N° 243/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Cecilia Florencia Lacoste",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393743"
+    },
+    {
+      "id_norma": 1013752,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Resolución N° 242/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Milene Agustina Tedesco",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393742"
+    },
+    {
+      "id_norma": 1013549,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Disposición N° 42/DGISIS/26",
+      "sumario": "Aprueba la actualización de precios de la Orden de Compra N° 8056-0097-OCA26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393863"
+    },
+    {
+      "id_norma": 1013547,
+      "numero_boletin": 7488,
+      "fecha_publicacion": "04/11/2026",
+      "nombre": "Disposición N° 41/DGISIS/26",
+      "sumario": "Aprueba la actualización de precios de la Orden de Compra N° 8056-0311-OCA25",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5393862"
     },
     {
       "id_norma": 1013352,
