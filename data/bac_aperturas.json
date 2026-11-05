@@ -1,45 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-04T18:43:34+00:00",
+  "collected_at": "2026-11-05T18:50:18+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 169,
-    "Publicado|Informática": 10,
-    "En Apertura|Informática": 20
+    "Publicado": 175,
+    "Publicado|Informática": 9,
+    "En Apertura|Informática": 21
   },
   "obtenidos": {
-    "Publicado": 169,
-    "Publicado|Informática": 10,
-    "En Apertura|Informática": 20
+    "Publicado": 175,
+    "Publicado|Informática": 9,
+    "En Apertura|Informática": 21
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8618-1479-LPU26",
-      "nombre_proceso": "Renovación del Servicio de Mantenimiento de Procesador IBM Z16.-",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-05T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8618-1626-LPU26",
-      "nombre_proceso": "Plataforma Omnicanal de Gestión de atenciones y Servicio de Envíos Masivos",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-05T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "418-3910-CME26",
@@ -49,18 +25,6 @@
       "unidad_ejecutora_codigo": "418",
       "organismo": "HTAL. JUAN A. FERNANDEZ",
       "fecha_apertura": "2026-11-06T07:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "7192-3775-CME26",
-      "nombre_proceso": "Adquisición de Licencias Logic Pro // EX-2026-41999000-GCABA-DGITE",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "7192",
-      "organismo": "MINISTERIO DE EDUCACION",
-      "fecha_apertura": "2026-11-06T10:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -102,6 +66,18 @@
     },
     {
       "estado_buscado": "Publicado",
+      "numero_proceso": "7192-3775-CME26",
+      "nombre_proceso": "Adquisición de Licencias Logic Pro // EX-2026-41999000-GCABA-DGITE",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2026-11-13T10:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
       "numero_proceso": "8056-1507-LPU26",
       "nombre_proceso": "Renovación de solución de Gestión e Inspección Continua de Vulnerabilidades (Tenable-One)",
       "tipo_proceso": "Licitación Pública",
@@ -133,6 +109,18 @@
       "unidad_ejecutora_codigo": "8056",
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "fecha_apertura": "2026-11-19T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "3125-1671-LPU26",
+      "nombre_proceso": "Gestion de Video Sistema Trambus",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "3125",
+      "organismo": "Ministerio de Movilidad e Infraestructura",
+      "fecha_apertura": "2026-11-27T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -306,18 +294,6 @@
     },
     {
       "estado_buscado": "En Apertura",
-      "numero_proceso": "426-3745-CME26",
-      "nombre_proceso": "VIDEO IMPRESORA - OBSTETRICIA",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "426",
-      "organismo": "HTAL. PARMENIO PIÑERO",
-      "fecha_apertura": "2026-10-29T09:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
       "numero_proceso": "8618-1509-LPU26",
       "nombre_proceso": "Servicio de soporte técnico y mantenimiento para equipamiento de la AGIP",
       "tipo_proceso": "Licitación Pública",
@@ -373,6 +349,30 @@
       "unidad_ejecutora_codigo": "2051",
       "organismo": "JEFATURA DE GABINETE DE MINISTROS",
       "fecha_apertura": "2026-11-03T13:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8618-1479-LPU26",
+      "nombre_proceso": "Renovación del Servicio de Mantenimiento de Procesador IBM Z16.-",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-11-05T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8618-1626-LPU26",
+      "nombre_proceso": "Plataforma Omnicanal de Gestión de atenciones y Servicio de Envíos Masivos",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-11-05T12:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     }
