@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 192,
+    "total_flagged": 196,
     "by_sigla": {
       "ASINF": 82,
-      "DGTALINF": 46,
+      "DGTALINF": 50,
       "DGISIS": 27,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -27,6 +27,54 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1014869,
+      "numero_boletin": 7489,
+      "fecha_publicacion": "05/11/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1668/DGTALINF/26",
+      "sumario": "Ampliación de capacidades de almacenamiento Hitachi para ser instalado en los Centros de Datos de la Agencia de Sistemas de Información",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396823"
+    },
+    {
+      "id_norma": 1014858,
+      "numero_boletin": 7489,
+      "fecha_publicacion": "05/11/2026",
+      "nombre": "Licitación Pública / Segundo Llamado  N° 1752/DGTALINF/26",
+      "sumario": "Renovación del Servicio de Mantenimiento integral para los equipos y software IBM",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396824"
+    },
+    {
+      "id_norma": 1014745,
+      "numero_boletin": 7489,
+      "fecha_publicacion": "05/11/2026",
+      "nombre": "Disposición N° 133/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1668-LPU26 para la Ampliación de capacidades de almacenamiento Hitachi para ser instalado en los Centros de Datos",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396606"
+    },
+    {
+      "id_norma": 1014223,
+      "numero_boletin": 7489,
+      "fecha_publicacion": "05/11/2026",
+      "nombre": "Disposición N° 132/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1520-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396605"
+    },
     {
       "id_norma": 1013824,
       "numero_boletin": 7488,

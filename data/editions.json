@@ -963,5 +963,20 @@
     "last_collected_at": "2026-11-04T21:32:32+00:00",
     "total_normas": 410,
     "schema_source": 2
+  },
+  {
+    "numero_boletin": 7489,
+    "fecha_publicacion": "05/11/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5397084",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5397085"
+      }
+    ],
+    "first_collected_at": "2026-11-05T18:38:33+00:00",
+    "last_collected_at": "2026-11-05T18:38:33+00:00",
+    "total_normas": 396,
+    "schema_source": 2
   }
 ]
