@@ -1,33 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-05T18:50:18+00:00",
+  "collected_at": "2026-11-06T18:06:18+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 175,
-    "Publicado|Informática": 9,
-    "En Apertura|Informática": 21
+    "Publicado": 147,
+    "Publicado|Informática": 10,
+    "En Apertura|Informática": 19
   },
   "obtenidos": {
-    "Publicado": 175,
-    "Publicado|Informática": 9,
-    "En Apertura|Informática": 21
+    "Publicado": 147,
+    "Publicado|Informática": 10,
+    "En Apertura|Informática": 19
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "418-3910-CME26",
-      "nombre_proceso": "CARDIOLOGIA - ADQ. PAPEL P/ECG, PAPEL TERMOSENSIBLE P/ ELECTROCARDIOGRAFO Y OTROS",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "418",
-      "organismo": "HTAL. JUAN A. FERNANDEZ",
-      "fecha_apertura": "2026-11-06T07:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "8056-1688-LPU26",
@@ -102,6 +90,18 @@
     },
     {
       "estado_buscado": "Publicado",
+      "numero_proceso": "8618-1670-LPU26",
+      "nombre_proceso": "Servicio de soporte y desarrollo de software Front-End GIT",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-11-18T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro+palabra_clave"
+    },
+    {
+      "estado_buscado": "Publicado",
       "numero_proceso": "8056-1668-LPU26",
       "nombre_proceso": "Ampliación de capacidades de almacenamiento Hitachi para ser instalados en los centros de datos ASI",
       "tipo_proceso": "Licitación Pública",
@@ -109,6 +109,18 @@
       "unidad_ejecutora_codigo": "8056",
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "fecha_apertura": "2026-11-19T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "3202-1063-CDI26",
+      "nombre_proceso": "Complementación de los dispositivos de control electrónicos",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "3202",
+      "organismo": "Ministerio de Seguridad",
+      "fecha_apertura": "2026-11-19T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -246,18 +258,6 @@
     },
     {
       "estado_buscado": "En Apertura",
-      "numero_proceso": "3125-1112-LPU26",
-      "nombre_proceso": "Servicio de Mantenimiento Integral para Flota Automotor",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "3125",
-      "organismo": "Ministerio de Movilidad e Infraestructura",
-      "fecha_apertura": "2026-08-27T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
       "numero_proceso": "2051-1196-LPU26",
       "nombre_proceso": "Mantenimiento y soporte de las plataformas y Portales de Datos Abiertos de CABA",
       "tipo_proceso": "Licitación Pública",
@@ -325,18 +325,6 @@
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-10-30T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
-      "numero_proceso": "8618-1512-LPU26",
-      "nombre_proceso": "Suscripción a Plataforma Integral de Comunicación, Operaciones, Cultura y Gestión de Personal",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-03T12:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
