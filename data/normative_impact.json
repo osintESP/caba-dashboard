@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 196,
+    "total_flagged": 203,
     "by_sigla": {
-      "ASINF": 82,
-      "DGTALINF": 50,
+      "ASINF": 86,
+      "DGTALINF": 53,
       "DGISIS": 27,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -28,28 +28,64 @@
   },
   "norms": [
     {
+      "id_norma": 1015095,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1417/DGTALINF/26",
+      "sumario": "Suscripción de soluciones de inteligencia artificial",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5399120"
+    },
+    {
+      "id_norma": 1015087,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1520/DGTALINF/26",
+      "sumario": "Mantenimiento integral del equipamiento HPE",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5399121"
+    },
+    {
       "id_norma": 1014869,
-      "numero_boletin": 7489,
-      "fecha_publicacion": "05/11/2026",
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
       "nombre": "Licitación Pública / Llamado  N° 1668/DGTALINF/26",
       "sumario": "Ampliación de capacidades de almacenamiento Hitachi para ser instalado en los Centros de Datos de la Agencia de Sistemas de Información",
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGTALINF",
       "topics": [],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396823"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5399119"
     },
     {
       "id_norma": 1014858,
-      "numero_boletin": 7489,
-      "fecha_publicacion": "05/11/2026",
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
       "nombre": "Licitación Pública / Segundo Llamado  N° 1752/DGTALINF/26",
       "sumario": "Renovación del Servicio de Mantenimiento integral para los equipos y software IBM",
       "tipo": "Licitación Pública",
       "sigla_unidad": "DGTALINF",
       "topics": [],
       "price_redetermination": null,
-      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396824"
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5399122"
+    },
+    {
+      "id_norma": 1014746,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Disposición N° 134/DGTALINF/26",
+      "sumario": "Declara desierta la Licitación Pública N° 8056-1614-LPU26 revalida pliegos y llama Licitación Pública N° 8056-1752-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5398929"
     },
     {
       "id_norma": 1014745,
@@ -62,6 +98,54 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5396606"
+    },
+    {
+      "id_norma": 1014722,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Resolución N° 249/ASINF/26",
+      "sumario": "Autoriza la contratación de personal",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5398816"
+    },
+    {
+      "id_norma": 1014719,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Resolución N° 248/ASINF/26",
+      "sumario": "Cesa y ratifica a responsables de la administración y rendición de los fondos otorgados en concepto de Caja Chica Común y Gastos de Movilidad",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5398815"
+    },
+    {
+      "id_norma": 1014717,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Resolución N° 247/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Joaquín Roberto Martínez Tullio",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5398814"
+    },
+    {
+      "id_norma": 1014716,
+      "numero_boletin": 7490,
+      "fecha_publicacion": "06/11/2026",
+      "nombre": "Resolución N° 246/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Julieta Carolina Vonlanthen",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5398813"
     },
     {
       "id_norma": 1014223,
