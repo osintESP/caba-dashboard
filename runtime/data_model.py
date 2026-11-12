@@ -56,6 +56,14 @@ def category(n):
  # Htal. Municipal de Oncología, 1274/HMOMC/26 -equipamiento médico, no tecnología-) matcheaba
  # por ser 'digital' un prefijo literal de 'digitalizador'.
  if re.search(r'\bdigital\b',t): return 'tecnologia'
+ # 'tecnolog'/'informática' de arriba no cubren las formas con tilde en otra sílaba ni el
+ # masculino/plural: "tecnológica" es tecnol-ó-g (no 'tecnolog') e "informáticos" no contiene
+ # 'informática'. Falsos negativos reales (revisión semanal 02/11/2026): 1459/SSPCAP/26 =
+ # 2630-1459-LPU26 "solución tecnológica inteligente de seguridad" quedaba 'otros' y
+ # 20/SSPCAP/26 = 2630-1582-LPU26 "infraestructura tecnológica" quedaba 'obra_infraestructura'
+ # -los dos presupuestos más altos de las licitaciones tech abiertas en BAC-, y 10/UOA/26
+ # "Equipamiento Informático" quedaba 'otros'.
+ if re.search(r'\btecnol[oó]g|\binform[aá]tic',t): return 'tecnologia'
  if _has(t,TECH_NETWORK): return 'tecnologia'
  if _has(t,('obra','constru','reparaci','mantenimiento edilicio','pavimento','edificio','infraestructura','instalación eléctrica','instalacion electrica')): return 'obra_infraestructura'
  if _has(t,('medic','hospital','salud','insumo','nitrógeno','nitrogeno','reactivo','prótesis','protesis','equipamiento médico','equipamiento medico')): return 'salud'

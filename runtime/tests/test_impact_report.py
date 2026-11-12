@@ -1,4 +1,7 @@
+import json
+import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -29,6 +32,20 @@ class ImpactReportTest(unittest.TestCase):
     def test_small_change_not_flagged(self):
         _, flagged = ir.report(cat(1e9, 1e8, 1), cat(1.05e9, 1.04e8, 1))
         self.assertFalse(flagged)
+
+    def test_empty_base_is_not_a_silent_pass(self):
+        # CI escribe '{}' si `git show` de la base falla; antes el informe salía 0 sin comparar nada.
+        self.assertTrue(ir.base_missing({}))
+        self.assertTrue(ir.base_missing(None))
+        self.assertFalse(ir.base_missing(cat(1e9, 1e8, 1)))
+        script = Path(__file__).resolve().parent.parent / 'impact_report.py'
+        with tempfile.TemporaryDirectory() as d:
+            base, head = Path(d) / 'base.json', Path(d) / 'head.json'
+            base.write_text('{}', encoding='utf-8')
+            head.write_text(json.dumps(cat(1e9, 1e8, 1)), encoding='utf-8')
+            r = subprocess.run([sys.executable, str(script), str(base), str(head)], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 3)
+        self.assertIn('No se pudo comparar', r.stdout)
 
 
 if __name__ == '__main__':
