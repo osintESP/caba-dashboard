@@ -1,33 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-12T18:59:54+00:00",
+  "collected_at": "2026-11-13T18:36:16+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 147,
+    "Publicado": 158,
     "Publicado|Informática": 9,
-    "En Apertura|Informática": 22
+    "En Apertura|Informática": 23
   },
   "obtenidos": {
-    "Publicado": 147,
+    "Publicado": 158,
     "Publicado|Informática": 9,
-    "En Apertura|Informática": 22
+    "En Apertura|Informática": 23
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "7192-3775-CME26",
-      "nombre_proceso": "Adquisición de Licencias Logic Pro // EX-2026-41999000-GCABA-DGITE",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "7192",
-      "organismo": "MINISTERIO DE EDUCACION",
-      "fecha_apertura": "2026-11-13T10:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "500-3899-CME26",
@@ -97,6 +85,18 @@
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-11-19T13:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "8056-1778-LPU26",
+      "nombre_proceso": "Servicio de mantenimiento y actualización en sitio para el sistema de telefonía del SAME",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2026-11-27T11:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -387,6 +387,18 @@
       "fecha_apertura": "2026-11-12T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro+palabra_clave"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "7192-3775-CME26",
+      "nombre_proceso": "Adquisición de Licencias Logic Pro // EX-2026-41999000-GCABA-DGITE",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2026-11-13T10:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
     }
   ]
 }
