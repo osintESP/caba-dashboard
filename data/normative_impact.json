@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 203,
+    "total_flagged": 204,
     "by_sigla": {
       "ASINF": 86,
-      "DGTALINF": 53,
+      "DGTALINF": 54,
       "DGISIS": 27,
       "DGIASINF": 19,
       "SECITD": 17,
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1015304,
+      "numero_boletin": 7492,
+      "fecha_publicacion": "13/11/2026",
+      "nombre": "Disposición N° 135/DGTALINF/26",
+      "sumario": "Reconoce suplemento por tareas nocturnas del mes de octubre de 2026",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5403468"
+    },
     {
       "id_norma": 1015095,
       "numero_boletin": 7490,
