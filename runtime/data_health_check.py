@@ -53,6 +53,17 @@ def read(name):
     return json.loads(p.read_text(encoding='utf-8')) if p.exists() else None
 
 
+def missing_ranges(missing):
+    """Agrupa números faltantes en rangos contiguos [(inicio, fin), ...]."""
+    ranges = []
+    for n in sorted(missing):
+        if ranges and n == ranges[-1][1] + 1:
+            ranges[-1] = (ranges[-1][0], n)
+        else:
+            ranges.append((n, n))
+    return ranges
+
+
 def check_editions(editions):
     issues = []
     nums = sorted({int(e['numero_boletin']) for e in editions or [] if e.get('numero_boletin')})
@@ -60,8 +71,14 @@ def check_editions(editions):
     if recent:
         missing = sorted(set(range(recent[0], recent[-1] + 1)) - set(recent))
         if missing:
+            # Un hueco reciente está siempre en el medio del histórico, y backfill-boletin.yml con
+            # 'end' vacío sólo cubre ediciones *anteriores* a la más antigua capturada: correrlo con
+            # los valores por defecto no rellena este hueco (gasta horas re-bajando 7275..). Por eso
+            # el mensaje da los inputs exactos por rango.
+            runs = '; '.join(f'start={a} end={b}' for a, b in missing_ranges(missing))
             issues.append(f'editions.json: faltan Boletines entre las últimas {RECENT_EDITIONS_WINDOW} '
-                          f'ediciones: {", ".join(map(str, missing))} (re-correr backfill-boletin.yml).')
+                          f'ediciones: {", ".join(map(str, missing))} (correr backfill-boletin.yml con '
+                          f'{runs} — con los valores por defecto no se rellena).')
     empty = [e['numero_boletin'] for e in editions or [] if e.get('numero_boletin') in recent and not e.get('total_normas')]
     if empty:
         issues.append(f'editions.json: ediciones recientes con 0 normas: {", ".join(map(str, empty))}.')

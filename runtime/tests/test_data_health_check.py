@@ -18,6 +18,19 @@ class EditionsTest(unittest.TestCase):
         self.assertEqual(len(issues), 1)
         self.assertIn('7457', issues[0])
 
+    def test_gap_message_gives_exact_backfill_inputs(self):
+        # Caso real (issue #25, 03-09/11/2026): editions.json tenía 7423..7490 sin la 7486, y el
+        # aviso decía sólo 're-correr backfill-boletin.yml'. Con 'end' vacío ese workflow usa
+        # min(existentes)-1 = 7422 como fin (backfill_boletin.compute_end), así que nunca la cubría.
+        eds = [{'numero_boletin': n, 'total_normas': 10} for n in range(7423, 7491) if n != 7486]
+        issues = dhc.check_editions(eds)
+        self.assertEqual(len(issues), 1)
+        self.assertIn('start=7486 end=7486', issues[0])
+
+    def test_missing_ranges_groups_contiguous_numbers(self):
+        self.assertEqual(dhc.missing_ranges([7490, 7486, 7487, 7488]), [(7486, 7488), (7490, 7490)])
+        self.assertEqual(dhc.missing_ranges([]), [])
+
     def test_ignores_gaps_older_than_window(self):
         eds = [{'numero_boletin': 7000, 'total_normas': 10}]
         eds += [{'numero_boletin': n, 'total_normas': 10}

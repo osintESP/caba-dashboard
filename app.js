@@ -86,8 +86,9 @@ function renderBAC(data,syncState){
     ${s.fx?.usd_awards_converted?`<div class="bac-note">Incluye ${fmt.format(s.fx.usd_awards_converted)} adjudicaciones en dólares (USD ${fmt.format(Math.round(s.fx.usd_amount||0))}, de los cuales USD ${fmt.format(Math.round(s.fx.usd_tech_amount||0))} en tecnología) convertidas a pesos a la cotización oficial del BCRA del día de cada adjudicación.</div>`:''}
     ${Object.keys(s.fx?.excluded_awards_by_currency||{}).length?`<div class="bac-note">Atención: ${esc(Object.entries(s.fx.excluded_awards_by_currency).map(([k,v])=>`${v} adjudicaciones en ${k}`).join(', '))} quedaron fuera de los totales por falta de cotización.</div>`:''}
     <div>Contratación directa/limitada en tecnología: ${audit.direct_or_limited_share_pct||0}% del monto</div>
-    <div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} procesos, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
-    ${nco.note?`<div class="bac-note">${esc(nco.note)}</div>`:''}
+    ${competitiveFieldInformative()?`<div>Licitaciones públicas sin competencia real (tecnología): ${fmt.format(nco.count||0)} adjudicaciones, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
+    ${nco.note?`<div class="bac-note">${esc(nco.note)}</div>`:''}`:`<div>Licitaciones públicas en tecnología: ${fmt.format(nco.count||0)} adjudicaciones, ${fmtCurrency.format(nco.amount_ars||0)} (${nco.share_pct_of_tech||0}% del monto en tecnología)</div>
+    <div class="bac-note">BAC marca "sin competencia" (competitive=false) en todos los procesos de tecnología del período, incluidas las licitaciones públicas, así que ese campo no permite distinguir competencia real y no se usa como señal.</div>`}
     <div>Organismos con alta concentración de proveedor (&ge;60% en un solo vendor): ${fmt.format(highConc)}</div>
     ${audit.possible_fractionation?.note?`<div class="bac-note">${esc(audit.possible_fractionation.note)}</div>`:''}
     ${audit.repeat_winner_across_organismos?.note?`<div class="bac-note">${esc(audit.repeat_winner_across_organismos.note)}</div>`:''}
@@ -128,7 +129,10 @@ function orgAuditBadge(organismo,idx){const c=idx.get(normalizeOrgName(organismo
 // proceso, acotado a tecnología. Cobertura parcial -no todo sumario cita ese ID-, así que la
 // ausencia de badge no implica ausencia de cruce en BAC, sólo que no se pudo confirmar acá.
 function bacTenderIndex(){return state.bac?.tender_index||{}}
-function tenderAuditBadge(tenderId){const t=tenderId&&bacTenderIndex()[tenderId];if(!t)return'';const method=({direct:'directa',limited:'limitada',open:'pública'})[t.method]||t.method||'método desconocido';const comp=t.competitive===false?', sin competencia real':'';const label=`BAC ${tenderId}: ${fmtCurrency.format(t.amount_ars||0)}${t.amount_usd?` (incluye USD ${fmt.format(Math.round(t.amount_usd))} convertidos)`:''} adjudicados a ${t.suppliers.join(', ')||'proveedor sin identificar'} (contratación ${method}${comp})`;return` <span class="badge audit-flag" title="${attr(label)}">⚠ BAC expediente</span>`}
+// competitive=false sólo dice algo si BAC lo pone en true en algún proceso: en el catálogo vigente
+// (cobertura 02/01-31/08/2026) los 82 procesos de tecnología —32 públicos y 50 directos— traen false.
+function competitiveFieldInformative(){return Object.values(bacTenderIndex()).some(t=>t.competitive===true)}
+function tenderAuditBadge(tenderId){const t=tenderId&&bacTenderIndex()[tenderId];if(!t)return'';const method=({direct:'directa',limited:'limitada',open:'pública'})[t.method]||t.method||'método desconocido';const comp=t.competitive===false&&competitiveFieldInformative()?', sin competencia real':'';const label=`BAC ${tenderId}: ${fmtCurrency.format(t.amount_ars||0)}${t.amount_usd?` (incluye USD ${fmt.format(Math.round(t.amount_usd))} convertidos)`:''} adjudicados a ${t.suppliers.join(', ')||'proveedor sin identificar'} (contratación ${method}${comp})`;return` <span class="badge audit-flag" title="${attr(label)}">⚠ BAC expediente</span>`}
 function renderOrgRanking(){const counts={};for(const x of filteredNorms()){const k=x.organismo||'Sin organismo';counts[k]=(counts[k]||0)+1}const idx=bacOrgIndex();const sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]);const top=sorted.slice(0,8);const topNames=new Set(top.map(([name])=>name));
   // No cortar el top-8 (por cantidad de normas del Boletín) antes de mirar los hallazgos de BAC:
   // un organismo con alta concentración de proveedor puede publicar pocas normas y quedar afuera
