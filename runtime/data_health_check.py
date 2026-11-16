@@ -13,7 +13,7 @@ Sale con código 1 si hay algún problema e imprime un reporte en Markdown por s
 """
 from __future__ import annotations
 import json, re, sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
@@ -42,6 +42,12 @@ RECENT_EDITIONS_WINDOW = 30
 # bac_anual.csv se publica con ~2-3 meses de atraso (ver README); más allá de esto la fuente
 # probablemente dejó de regenerarse y las señales de auditoría que dependen de ella envejecen.
 BAC_COVERAGE_MAX_AGE_DAYS = 150
+# Días hábiles (lun-vie) que la última edición del Boletín puede quedar sin avanzar mientras el
+# collector sigue corriendo. Caso real: 7490 (06/11/2026) siguió siendo la última hasta que llegó
+# la 7491 (12/11/2026) -tres días hábiles con corridas diarias y todo en 'ok'-. El chequeo de
+# huecos no lo ve porque la numeración siguió siendo consecutiva. Es 3 y no 2 para no saltar con
+# dos feriados seguidos (Carnaval lun+mar, Semana Santa jue+vie); arbitrario, no derivado.
+BOLETIN_STALE_BUSINESS_DAYS = 3
 NUMERO_PROCESO_RE = re.compile(r'^\d+-\d+-[A-Z]+\d+$')
 # Un proceso puede seguir "Publicado" unas horas/días después de su fecha de apertura hasta que
 # BAC registra el acto; más allá de esto es una fila vieja o una fecha mal parseada.
@@ -66,6 +72,40 @@ def check_editions(editions):
     if empty:
         issues.append(f'editions.json: ediciones recientes con 0 normas: {", ".join(map(str, empty))}.')
     return issues
+
+
+def _business_days_between(start, end):
+    """Días lun-vie en (start, end], ambos fechas."""
+    days, d = 0, start
+    while d < end:
+        d += timedelta(days=1)
+        days += d.weekday() < 5
+    return days
+
+
+def check_boletin_advancing(editions):
+    """La última edición no puede quedar quieta varios días hábiles mientras el collector corre.
+
+    Mide contra la última corrida del collector (max last_collected_at), no contra "ahora": si el
+    collector directamente no corrió, eso lo detecta check-data-freshness.yml."""
+    eds = [e for e in editions or [] if e.get('numero_boletin') and e.get('fecha_publicacion')]
+    seen = [e['last_collected_at'] for e in editions or [] if e.get('last_collected_at')]
+    if not eds or not seen:
+        return []
+    latest = max(eds, key=lambda e: int(e['numero_boletin']))
+    try:
+        published = datetime.strptime(latest['fecha_publicacion'], '%d/%m/%Y').date()
+    except ValueError:
+        return [f'editions.json: fecha_publicacion ilegible en la edición {latest["numero_boletin"]}: '
+                f'{latest["fecha_publicacion"]!r}.']
+    last_run = max(datetime.fromisoformat(x) for x in seen).date()
+    stale = _business_days_between(published, last_run)
+    if stale >= BOLETIN_STALE_BUSINESS_DAYS:
+        return [f'editions.json: la última edición sigue siendo la {latest["numero_boletin"]} '
+                f'({latest["fecha_publicacion"]}) tras {stale} días hábiles con el collector corriendo '
+                f'(última corrida {last_run.isoformat()}). Verificar si el Boletín publicó: si publicó, '
+                f'el collector no está viendo las ediciones nuevas.']
+    return []
 
 
 def check_pliegos_caidos(data):
@@ -231,7 +271,7 @@ def check_bac_dominant_tenders(catalog, verified=None):
 def run_checks(now=None):
     now = now or datetime.now(timezone.utc)
     return {
-        'Boletín Oficial': check_editions(read('editions.json')),
+        'Boletín Oficial': check_editions(read('editions.json')) + check_boletin_advancing(read('editions.json')),
         'BAC pliegos caídos': check_pliegos_caidos(read('bac_pliegos_caidos.json')),
         'BAC aperturas': check_aperturas(read('bac_aperturas.json'), now),
         'BAC presupuestos': check_presupuestos(read('bac_presupuestos.json')),
