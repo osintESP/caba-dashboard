@@ -11,13 +11,13 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 204,
+    "total_flagged": 209,
     "by_sigla": {
       "ASINF": 86,
-      "DGTALINF": 54,
+      "DGTALINF": 58,
       "DGISIS": 27,
       "DGIASINF": 19,
-      "SECITD": 17,
+      "SECITD": 18,
       "DGGEDOC": 1
     },
     "by_topic": {
@@ -27,6 +27,66 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1016221,
+      "numero_boletin": 7493,
+      "fecha_publicacion": "16/11/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 991/SECITD/26",
+      "sumario": "Servicio de Mantenimiento Correctivo, Preventivo,\r\nEvolutivo y Actualización de Estándares Tecnológicos del Módulo de Gestión de Participantes del GCBA",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "SECITD",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405919"
+    },
+    {
+      "id_norma": 1016178,
+      "numero_boletin": 7493,
+      "fecha_publicacion": "16/11/2026",
+      "nombre": "Licitación Pública / Llamado  N° 1778/DGTALINF/26",
+      "sumario": "Servicio de mantenimiento y actualización en sitio para el sistema de telefonía del SAME",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405918"
+    },
+    {
+      "id_norma": 1016149,
+      "numero_boletin": 7493,
+      "fecha_publicacion": "16/11/2026",
+      "nombre": "Disposición N° 138/DGTALINF/26",
+      "sumario": "Aprueba pliegos y llama a Licitación Pública N° 8056-1778-LPU26 para el Servicio de mantenimiento y actualización en sitio para el sistema de telefonía del SAME",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405742"
+    },
+    {
+      "id_norma": 1015917,
+      "numero_boletin": 7493,
+      "fecha_publicacion": "16/11/2026",
+      "nombre": "Disposición N° 137/DGTALINF/26",
+      "sumario": "Amplía la Orden Compra N° 8056-17595-OC26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405741"
+    },
+    {
+      "id_norma": 1015916,
+      "numero_boletin": 7493,
+      "fecha_publicacion": "16/11/2026",
+      "nombre": "Disposición N° 136/DGTALINF/26",
+      "sumario": "Aprueba y adjudica la Contratación Directa por Exclusividad N° 8056-1106-CDI26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405740"
+    },
     {
       "id_norma": 1015304,
       "numero_boletin": 7492,
