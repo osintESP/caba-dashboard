@@ -11,22 +11,36 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 209,
+    "total_flagged": 213,
     "by_sigla": {
-      "ASINF": 86,
+      "ASINF": 88,
       "DGTALINF": 58,
-      "DGISIS": 27,
+      "DGISIS": 29,
       "DGIASINF": 19,
       "SECITD": 18,
       "DGGEDOC": 1
     },
     "by_topic": {
-      "redeterminacion_precios": 14,
-      "plataforma_o_sistema": 14
+      "plataforma_o_sistema": 15,
+      "redeterminacion_precios": 14
     },
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1016237,
+      "numero_boletin": 7494,
+      "fecha_publicacion": "17/11/2026",
+      "nombre": "Licitación Pública / Adjudicación  N° 1581/DGISIS/26",
+      "sumario": "Servicios de mantenimiento correctivo y evolutivo para la Plataforma Salesforce",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "plataforma_o_sistema"
+      ],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5408655"
+    },
     {
       "id_norma": 1016221,
       "numero_boletin": 7493,
@@ -64,6 +78,18 @@
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405742"
     },
     {
+      "id_norma": 1015986,
+      "numero_boletin": 7494,
+      "fecha_publicacion": "17/11/2026",
+      "nombre": "Disposición N° 43/DGISIS/26",
+      "sumario": "Aprueba y adjudica la Licitación Pública N° 8056-1581-LPU26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5408548"
+    },
+    {
       "id_norma": 1015917,
       "numero_boletin": 7493,
       "fecha_publicacion": "16/11/2026",
@@ -86,6 +112,30 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5405740"
+    },
+    {
+      "id_norma": 1015826,
+      "numero_boletin": 7494,
+      "fecha_publicacion": "17/11/2026",
+      "nombre": "Resolución N° 252/ASINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5408454"
+    },
+    {
+      "id_norma": 1015822,
+      "numero_boletin": 7494,
+      "fecha_publicacion": "17/11/2026",
+      "nombre": "Resolución N° 251/ASINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5408453"
     },
     {
       "id_norma": 1015304,
