@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-16T21:07:22+00:00",
+  "collected_at": "2026-11-17T19:56:10+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 159,
-    "Publicado|Informática": 9,
+    "Publicado": 154,
+    "Publicado|Informática": 10,
     "En Apertura|Informática": 21
   },
   "obtenidos": {
-    "Publicado": 159,
-    "Publicado|Informática": 9,
+    "Publicado": 154,
+    "Publicado|Informática": 10,
     "En Apertura|Informática": 21
   },
   "licitaciones_abiertas": [
@@ -54,18 +54,6 @@
     },
     {
       "estado_buscado": "Publicado",
-      "numero_proceso": "8618-1670-LPU26",
-      "nombre_proceso": "Servicio de soporte y desarrollo de software Front-End GIT",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-18T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro+palabra_clave"
-    },
-    {
-      "estado_buscado": "Publicado",
       "numero_proceso": "8056-1668-LPU26",
       "nombre_proceso": "Ampliación de capacidades de almacenamiento Hitachi para ser instalados en los centros de datos ASI",
       "tipo_proceso": "Licitación Pública",
@@ -87,6 +75,18 @@
       "fecha_apertura": "2026-11-19T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "8618-1670-LPU26",
+      "nombre_proceso": "Servicio de soporte y desarrollo de software Front-End GIT",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-11-24T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro+palabra_clave"
     },
     {
       "estado_buscado": "Publicado",
@@ -121,6 +121,18 @@
       "unidad_ejecutora_codigo": "9611",
       "organismo": "VICEJEFATURA DE GOBIERNO",
       "fecha_apertura": "2026-11-30T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "8056-1735-LPU26",
+      "nombre_proceso": "Renovación de la Suscripción y Soporte Técnico de un Servicio de Monitorización y Remediación",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2026-12-02T11:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
