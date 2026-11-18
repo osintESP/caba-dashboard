@@ -1,57 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-17T19:56:10+00:00",
+  "collected_at": "2026-11-18T19:27:40+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 154,
-    "Publicado|Informática": 10,
-    "En Apertura|Informática": 21
+    "Publicado": 164,
+    "Publicado|Informática": 9,
+    "En Apertura|Informática": 22
   },
   "obtenidos": {
-    "Publicado": 154,
-    "Publicado|Informática": 10,
-    "En Apertura|Informática": 21
+    "Publicado": 164,
+    "Publicado|Informática": 9,
+    "En Apertura|Informática": 22
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "500-3899-CME26",
-      "nombre_proceso": "Servicio de provisión de plataforma para la gestión de contenidos digitales.-",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "500",
-      "organismo": "MINISTERIO DE CULTURA",
-      "fecha_apertura": "2026-11-18T10:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8056-1507-LPU26",
-      "nombre_proceso": "Renovación de solución de Gestión e Inspección Continua de Vulnerabilidades (Tenable-One)",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-11-18T11:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8056-1510-LPU26",
-      "nombre_proceso": "Adquisición de Infraestructura de Firewall de Aplicaciones Web F5 y Balanceadores de carga",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-11-18T11:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro+palabra_clave"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "8056-1668-LPU26",
@@ -90,6 +54,18 @@
     },
     {
       "estado_buscado": "Publicado",
+      "numero_proceso": "541-3931-CME26",
+      "nombre_proceso": "REPARACION DEL CONTROL DE ILUMINACION DE SALA - SISTEMA DIMMER DMX",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "541",
+      "organismo": "ENTE AUTARQUICO TEATRO COLON",
+      "fecha_apertura": "2026-11-25T14:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
       "numero_proceso": "8056-1778-LPU26",
       "nombre_proceso": "Servicio de mantenimiento y actualización en sitio para el sistema de telefonía del SAME",
       "tipo_proceso": "Licitación Pública",
@@ -123,6 +99,18 @@
       "fecha_apertura": "2026-11-30T12:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "8056-1576-LPU26",
+      "nombre_proceso": "Soporte téc p/ la solución de prevención de intrusiones y protección de perímetro para Datacenter",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2026-12-01T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro+palabra_clave"
     },
     {
       "estado_buscado": "Publicado",
@@ -282,18 +270,6 @@
     },
     {
       "estado_buscado": "En Apertura",
-      "numero_proceso": "2051-1611-LPU26",
-      "nombre_proceso": "Adq. y evolución de solución de analítica avanzada de datos con agentes de IA.",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "2051",
-      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
-      "fecha_apertura": "2026-10-23T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
       "numero_proceso": "8618-1509-LPU26",
       "nombre_proceso": "Servicio de soporte técnico y mantenimiento para equipamiento de la AGIP",
       "tipo_proceso": "Licitación Pública",
@@ -325,18 +301,6 @@
       "unidad_ejecutora_codigo": "2051",
       "organismo": "JEFATURA DE GABINETE DE MINISTROS",
       "fecha_apertura": "2026-11-03T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
-      "numero_proceso": "8618-1479-LPU26",
-      "nombre_proceso": "Renovación del Servicio de Mantenimiento de Procesador IBM Z16.-",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-05T12:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -387,6 +351,42 @@
       "fecha_apertura": "2026-11-13T10:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "500-3899-CME26",
+      "nombre_proceso": "Servicio de provisión de plataforma para la gestión de contenidos digitales.-",
+      "tipo_proceso": "Contratación Menor",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "500",
+      "organismo": "MINISTERIO DE CULTURA",
+      "fecha_apertura": "2026-11-18T10:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8056-1507-LPU26",
+      "nombre_proceso": "Renovación de solución de Gestión e Inspección Continua de Vulnerabilidades (Tenable-One)",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2026-11-18T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8056-1510-LPU26",
+      "nombre_proceso": "Adquisición de Infraestructura de Firewall de Aplicaciones Web F5 y Balanceadores de carga",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2026-11-18T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro+palabra_clave"
     }
   ]
 }
