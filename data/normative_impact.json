@@ -11,14 +11,14 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 213,
+    "total_flagged": 217,
     "by_sigla": {
-      "ASINF": 88,
+      "ASINF": 91,
       "DGTALINF": 58,
       "DGISIS": 29,
       "DGIASINF": 19,
       "SECITD": 18,
-      "DGGEDOC": 1
+      "DGGEDOC": 2
     },
     "by_topic": {
       "plataforma_o_sistema": 15,
@@ -27,6 +27,54 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1017273,
+      "numero_boletin": 7497,
+      "fecha_publicacion": "19/11/2026",
+      "nombre": "Disposición N° 6/DGGEDOC/26",
+      "sumario": "Rectifica el monto consignado en la Disposición N° 4-DGGEDOC/26 y autoriza el procedimiento de Prórroga N° 2051-0497-PRO26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGGEDOC",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5413690"
+    },
+    {
+      "id_norma": 1016958,
+      "numero_boletin": 7497,
+      "fecha_publicacion": "19/11/2026",
+      "nombre": "Resolución N° 255/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Federico Ignacio Merlicco",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5413538"
+    },
+    {
+      "id_norma": 1016949,
+      "numero_boletin": 7497,
+      "fecha_publicacion": "19/11/2026",
+      "nombre": "Resolución N° 254/ASINF/26",
+      "sumario": "Aprueba modificación presupuestaria",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5413537"
+    },
+    {
+      "id_norma": 1016798,
+      "numero_boletin": 7497,
+      "fecha_publicacion": "19/11/2026",
+      "nombre": "Resolución N° 253/ASINF/26",
+      "sumario": "Designa como Gerente Operativo de la Gerencia Operativa de Implementaciones a Mariano Ezequiel Moreno Ruiz",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5413536"
+    },
     {
       "id_norma": 1016237,
       "numero_boletin": 7494,
