@@ -11,9 +11,9 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 217,
+    "total_flagged": 220,
     "by_sigla": {
-      "ASINF": 91,
+      "ASINF": 94,
       "DGTALINF": 58,
       "DGISIS": 29,
       "DGIASINF": 19,
@@ -38,6 +38,42 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5413690"
+    },
+    {
+      "id_norma": 1017009,
+      "numero_boletin": 7498,
+      "fecha_publicacion": "20/11/2026",
+      "nombre": "Resolución N° 258/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Gastón Damián Belio",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5415551"
+    },
+    {
+      "id_norma": 1017008,
+      "numero_boletin": 7498,
+      "fecha_publicacion": "20/11/2026",
+      "nombre": "Resolución N° 257/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Juan Manuel Sirito",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5415550"
+    },
+    {
+      "id_norma": 1016995,
+      "numero_boletin": 7498,
+      "fecha_publicacion": "20/11/2026",
+      "nombre": "Resolución N° 256/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Melina Danila Roldán",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5415549"
     },
     {
       "id_norma": 1016958,
