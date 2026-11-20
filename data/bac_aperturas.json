@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-19T19:31:53+00:00",
+  "collected_at": "2026-11-20T19:10:22+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 145,
-    "Publicado|Informática": 8,
-    "En Apertura|Informática": 22
+    "Publicado": 136,
+    "Publicado|Informática": 9,
+    "En Apertura|Informática": 20
   },
   "obtenidos": {
-    "Publicado": 145,
-    "Publicado|Informática": 8,
-    "En Apertura|Informática": 22
+    "Publicado": 136,
+    "Publicado|Informática": 9,
+    "En Apertura|Informática": 20
   },
   "licitaciones_abiertas": [
     {
@@ -109,6 +109,18 @@
       "unidad_ejecutora_codigo": "8056",
       "organismo": "AGENCIA SISTEMAS DE INFORMACION",
       "fecha_apertura": "2026-12-02T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "Publicado",
+      "numero_proceso": "2051-1793-LPU26",
+      "nombre_proceso": "SERVICIO PÚBLICO DE HIGIENE URBANA",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "Publicado",
+      "unidad_ejecutora_codigo": "2051",
+      "organismo": "JEFATURA DE GABINETE DE MINISTROS",
+      "fecha_apertura": "2026-12-18T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     },
@@ -327,30 +339,6 @@
       "fecha_apertura": "2026-11-18T10:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
-      "numero_proceso": "8056-1507-LPU26",
-      "nombre_proceso": "Renovación de solución de Gestión e Inspección Continua de Vulnerabilidades (Tenable-One)",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-11-18T11:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
-      "numero_proceso": "8056-1510-LPU26",
-      "nombre_proceso": "Adquisición de Infraestructura de Firewall de Aplicaciones Web F5 y Balanceadores de carga",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-11-18T11:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro+palabra_clave"
     },
     {
       "estado_buscado": "En Apertura",

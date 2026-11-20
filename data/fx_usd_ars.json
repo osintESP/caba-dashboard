@@ -1,9 +1,9 @@
 {
  "source": "BCRA — API Estadísticas Cambiarias, cotización oficial del dólar estadounidense (USD)",
  "api": "https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD",
- "updated_at": "2026-11-19T19:33:03+00:00",
+ "updated_at": "2026-11-20T19:11:48+00:00",
  "covered_from": "2025-12-23",
- "covered_to": "2026-11-18",
+ "covered_to": "2026-11-19",
  "rates": {
   "2025-12-23": 1451.0,
   "2025-12-26": 1452.5,
@@ -223,6 +223,7 @@
   "2026-11-16": 1551.0,
   "2026-11-17": 1552.0,
   "2026-11-18": 1559.5,
-  "2026-11-19": 1565.0
+  "2026-11-19": 1565.0,
+  "2026-11-20": 1580.0
  }
 }
