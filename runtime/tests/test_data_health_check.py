@@ -25,6 +25,39 @@ class EditionsTest(unittest.TestCase):
         self.assertEqual(dhc.check_editions(eds), [])
 
 
+class BoletinAdvancingTest(unittest.TestCase):
+    # Caso real (data/editions.json en master, commits 888b9ad y 69c793d del 11/11/2026): la 7490
+    # tiene fecha_publicacion 06/11/2026 y last_collected_at 2026-11-11T22:18:50; la siguiente,
+    # 7491, recién llegó con fecha 12/11/2026. En 206 commits de editions.json éste es el único
+    # momento en que el chequeo salta.
+    def eds(self, last_collected_at):
+        return [{'numero_boletin': 7489, 'fecha_publicacion': '05/11/2026',
+                 'last_collected_at': '2026-11-05T21:36:02+00:00'},
+                {'numero_boletin': 7490, 'fecha_publicacion': '06/11/2026',
+                 'last_collected_at': last_collected_at}]
+
+    def test_real_stall_flagged_after_three_business_days(self):
+        issues = dhc.check_boletin_advancing(self.eds('2026-11-11T22:18:50+00:00'))
+        self.assertEqual(len(issues), 1)
+        self.assertIn('7490', issues[0])
+        self.assertIn('3 días hábiles', issues[0])
+
+    def test_two_business_days_not_flagged(self):
+        # 10/11 (martes): lun+mar sin edición, como Carnaval o dos feriados seguidos.
+        self.assertEqual(dhc.check_boletin_advancing(self.eds('2026-11-10T21:27:14+00:00')), [])
+
+    def test_weekend_does_not_count(self):
+        self.assertEqual(dhc.check_boletin_advancing(self.eds('2026-11-08T23:00:00+00:00')), [])
+
+    def test_unparseable_date_reported(self):
+        eds = [{'numero_boletin': 7490, 'fecha_publicacion': '2026-11-06',
+                'last_collected_at': '2026-11-06T20:00:00+00:00'}]
+        self.assertIn('ilegible', dhc.check_boletin_advancing(eds)[0])
+
+    def test_empty_passes(self):
+        self.assertEqual(dhc.check_boletin_advancing([]), [])
+
+
 class PliegosCaidosTest(unittest.TestCase):
     def test_clean_dataset_passes(self):
         data = {'status': 'ok', 'totales_reportados_por_bac': {'Desierto': 2},
