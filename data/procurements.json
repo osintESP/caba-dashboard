@@ -93516,7 +93516,7 @@
     "proceso_id": "49/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-03T18:21:05+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -95212,7 +95212,7 @@
     "proceso_id": "70/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-04T18:33:12+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -96732,7 +96732,7 @@
     "proceso_id": "41323498/DGCOYP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-05T18:38:33+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -103404,7 +103404,7 @@
     "proceso_id": "1709/HGADS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -104380,7 +104380,7 @@
     "proceso_id": "552/DGACSA/26",
     "bac_tender_id": "401-1313-CDI25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -104716,7 +104716,7 @@
     "proceso_id": "1737/HMOMC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -104732,7 +104732,7 @@
     "proceso_id": "151/HRRMF/26",
     "bac_tender_id": "419-1683-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -104988,7 +104988,7 @@
     "proceso_id": "152/HRRMF/26",
     "bac_tender_id": "419-3810-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -105212,7 +105212,7 @@
     "proceso_id": "629/DGAHGNRG/26",
     "bac_tender_id": "420-3699-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -105228,7 +105228,7 @@
     "proceso_id": "3699/HGNRG/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -105436,7 +105436,7 @@
     "proceso_id": "49652058/DGCEME/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-18T19:19:43+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -105708,7 +105708,7 @@
     "proceso_id": "1762/SECD/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-18T19:19:43+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -105740,7 +105740,7 @@
     "proceso_id": "68/OBSBA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -105980,7 +105980,7 @@
     "proceso_id": "48/DGCYC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-18T19:19:43+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106188,7 +106188,7 @@
     "proceso_id": "1767/MEPHUGC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-18T19:19:43+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106204,7 +106204,7 @@
     "proceso_id": "1702/HGAVS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106444,7 +106444,7 @@
     "proceso_id": "1672/DGTALSECGVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106460,7 +106460,7 @@
     "proceso_id": "94/DGTALMMI/25",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-18T19:19:43+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106508,7 +106508,7 @@
     "proceso_id": "1611/DGGDA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-18T19:19:43+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106524,7 +106524,7 @@
     "proceso_id": "1628/IZLP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106540,7 +106540,7 @@
     "proceso_id": "593/DGAHGAJAF/26",
     "bac_tender_id": "418-3574-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106556,7 +106556,7 @@
     "proceso_id": "604/DGAHGAJAF/26",
     "bac_tender_id": "418-1250-CDI26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106572,7 +106572,7 @@
     "proceso_id": "609/DGAHGAJAF/26",
     "bac_tender_id": "418-3557-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106588,7 +106588,7 @@
     "proceso_id": "624/DGAHGAJAF/26",
     "bac_tender_id": "418-1327-CDI26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106604,7 +106604,7 @@
     "proceso_id": "238/HGAP/26",
     "bac_tender_id": "425-4043-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106620,7 +106620,7 @@
     "proceso_id": "250/HGNPE/26",
     "bac_tender_id": "417-4029-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106636,7 +106636,7 @@
     "proceso_id": "251/HGNPE/26",
     "bac_tender_id": "417-4002-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106652,7 +106652,7 @@
     "proceso_id": "32/HRR/26",
     "bac_tender_id": "432-3435-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106668,7 +106668,7 @@
     "proceso_id": "34/HRR/26",
     "bac_tender_id": "432-3334-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106684,7 +106684,7 @@
     "proceso_id": "451/DGPARE/26",
     "bac_tender_id": "7192-1738-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106732,7 +106732,7 @@
     "proceso_id": "9384/IVC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106748,7 +106748,7 @@
     "proceso_id": "50/IZLP/26",
     "bac_tender_id": "445-1575-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106764,7 +106764,7 @@
     "proceso_id": "1575/IZLP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106780,7 +106780,7 @@
     "proceso_id": "3921/IZLP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106796,7 +106796,7 @@
     "proceso_id": "3921/IZLP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106812,7 +106812,7 @@
     "proceso_id": "49/IZLP/26",
     "bac_tender_id": "445-1645-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106828,7 +106828,7 @@
     "proceso_id": "1645/IZLP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106844,7 +106844,7 @@
     "proceso_id": "48/IZLP/26",
     "bac_tender_id": "445-3921-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106876,7 +106876,7 @@
     "proceso_id": "229/DGAHGAT/26",
     "bac_tender_id": "438-3398-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106908,7 +106908,7 @@
     "proceso_id": "282/DGRYGIEG/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106924,7 +106924,7 @@
     "proceso_id": "219/DGAHGATA/26",
     "bac_tender_id": "410-3723-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106940,7 +106940,7 @@
     "proceso_id": "255/IRPS/26",
     "bac_tender_id": "446-1821-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -106972,7 +106972,7 @@
     "proceso_id": "1758/HIJCTG/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107004,7 +107004,7 @@
     "proceso_id": "220/DGAHGATA/26",
     "bac_tender_id": "410-1306-CDI26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107052,7 +107052,7 @@
     "proceso_id": "230/DGAHGAT/26",
     "bac_tender_id": "438-3154-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107068,7 +107068,7 @@
     "proceso_id": "228/DGAHGAT/26",
     "bac_tender_id": "438-3366-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107084,7 +107084,7 @@
     "proceso_id": "105/HOPL/26",
     "bac_tender_id": "421-3990-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107116,7 +107116,7 @@
     "proceso_id": "3990/HOPL/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107132,7 +107132,7 @@
     "proceso_id": "474/HGAPP/26",
     "bac_tender_id": "426-3191-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107164,7 +107164,7 @@
     "proceso_id": "1576/DGSEI/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107180,7 +107180,7 @@
     "proceso_id": "271/HBR/26",
     "bac_tender_id": "431-3414-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107196,7 +107196,7 @@
     "proceso_id": "276/HBR/26",
     "bac_tender_id": "431-3786-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107212,7 +107212,7 @@
     "proceso_id": "277/HBR/26",
     "bac_tender_id": "431-3980-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107228,7 +107228,7 @@
     "proceso_id": "272/HBR/26",
     "bac_tender_id": "431-1681-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107244,7 +107244,7 @@
     "proceso_id": "393/HGACA/26",
     "bac_tender_id": "412-4063-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107260,7 +107260,7 @@
     "proceso_id": "4063/HGACA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107276,7 +107276,7 @@
     "proceso_id": "142/AGIP/26",
     "bac_tender_id": "8618-1742-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107292,7 +107292,7 @@
     "proceso_id": "1681/HBR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107308,7 +107308,7 @@
     "proceso_id": "1808/HGAVS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107340,7 +107340,7 @@
     "proceso_id": "98/DGGIDT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107372,7 +107372,7 @@
     "proceso_id": "69/OBSBA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107388,7 +107388,7 @@
     "proceso_id": "1017194",
     "bac_tender_id": "2405-0176-LPU25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107404,7 +107404,7 @@
     "proceso_id": "19/LCBA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-19T19:26:51+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107420,7 +107420,7 @@
     "proceso_id": "1017198",
     "bac_tender_id": "4800-1602-LPU25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107452,7 +107452,7 @@
     "proceso_id": "1017201",
     "bac_tender_id": "4800-1602-LPU25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107468,7 +107468,7 @@
     "proceso_id": "559/DGACSA/26",
     "bac_tender_id": "401-1105-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107516,7 +107516,7 @@
     "proceso_id": "556/DGACSA/26",
     "bac_tender_id": "401-1344-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107532,7 +107532,7 @@
     "proceso_id": "1017211",
     "bac_tender_id": "4800-1602-LPU25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107564,7 +107564,7 @@
     "proceso_id": "273/HBR/26",
     "bac_tender_id": "431-3984-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107580,7 +107580,7 @@
     "proceso_id": "274/HBR/26",
     "bac_tender_id": "431-1627-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107612,7 +107612,7 @@
     "proceso_id": "275/HBR/26",
     "bac_tender_id": "431-1673-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107628,7 +107628,7 @@
     "proceso_id": "278/HBR/26",
     "bac_tender_id": "431-1674-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107644,7 +107644,7 @@
     "proceso_id": "1732/DGPARE/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107660,7 +107660,7 @@
     "proceso_id": "3951/HGADS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107692,7 +107692,7 @@
     "proceso_id": "5065/MHFGC/26",
     "bac_tender_id": "623-1197-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107708,7 +107708,7 @@
     "proceso_id": "49/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107756,7 +107756,7 @@
     "proceso_id": "1627/HBR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107772,7 +107772,7 @@
     "proceso_id": "1673/HBR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107788,7 +107788,7 @@
     "proceso_id": "1674/HBR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107804,7 +107804,7 @@
     "proceso_id": "236/HGAP/26",
     "bac_tender_id": "425-4037-CME26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107820,7 +107820,7 @@
     "proceso_id": "1551/HNBM/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107836,7 +107836,7 @@
     "proceso_id": "538/SGCA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107852,7 +107852,7 @@
     "proceso_id": "256/AGT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107868,7 +107868,7 @@
     "proceso_id": "1655/HMO/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107884,7 +107884,7 @@
     "proceso_id": "709/SA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107900,7 +107900,7 @@
     "proceso_id": "37579822/DGCOYP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107916,7 +107916,7 @@
     "proceso_id": "58/DGCYC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107932,7 +107932,7 @@
     "proceso_id": "832/SAGYP/26",
     "bac_tender_id": "2-0023-LPU25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107948,7 +107948,7 @@
     "proceso_id": "215/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107964,7 +107964,7 @@
     "proceso_id": "1308/HBU/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107980,7 +107980,7 @@
     "proceso_id": "3637/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -107996,7 +107996,7 @@
     "proceso_id": "3597/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108012,7 +108012,7 @@
     "proceso_id": "1366/HBR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108028,7 +108028,7 @@
     "proceso_id": "3827/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108044,7 +108044,7 @@
     "proceso_id": "1376/HO/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108060,7 +108060,7 @@
     "proceso_id": "20/SGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108076,7 +108076,7 @@
     "proceso_id": "27/SGA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108092,7 +108092,7 @@
     "proceso_id": "1197/DGCYC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108108,7 +108108,7 @@
     "proceso_id": "10/DGADMIN/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108124,7 +108124,7 @@
     "proceso_id": "3781/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108140,7 +108140,7 @@
     "proceso_id": "453/DGPARE/26",
     "bac_tender_id": "7192-1186-CDI26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108156,7 +108156,7 @@
     "proceso_id": "1186/DGPARE/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108172,7 +108172,7 @@
     "proceso_id": "3774/TPRPS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108188,7 +108188,7 @@
     "proceso_id": "3648/HGAT/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108204,7 +108204,7 @@
     "proceso_id": "1509/AGIP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108220,7 +108220,7 @@
     "proceso_id": "1322/HBU/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108236,7 +108236,7 @@
     "proceso_id": "115/IDECBA/26",
     "bac_tender_id": "2624-1209-CDI26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108252,7 +108252,7 @@
     "proceso_id": "1727/HGAJAF/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108268,7 +108268,7 @@
     "proceso_id": "1479/AGIP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108284,7 +108284,7 @@
     "proceso_id": "1835/HMIRS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108300,7 +108300,7 @@
     "proceso_id": "1584/HBR/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108316,7 +108316,7 @@
     "proceso_id": "1730/HGAZ/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108332,7 +108332,7 @@
     "proceso_id": "20/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108348,7 +108348,7 @@
     "proceso_id": "14/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108364,7 +108364,7 @@
     "proceso_id": "77/OAF/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108380,7 +108380,7 @@
     "proceso_id": "40/CMCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108396,7 +108396,7 @@
     "proceso_id": "21/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108412,7 +108412,7 @@
     "proceso_id": "1586/HGAIP/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108428,7 +108428,7 @@
     "proceso_id": "410/AGC/26",
     "bac_tender_id": "3181-1376-CDI26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108444,7 +108444,7 @@
     "proceso_id": "10/DGPARE/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108460,7 +108460,7 @@
     "proceso_id": "840/SAGYP/26",
     "bac_tender_id": "2-0026-LPU25",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108476,7 +108476,7 @@
     "proceso_id": "16/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108492,7 +108492,7 @@
     "proceso_id": "3875/HGATA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108508,7 +108508,7 @@
     "proceso_id": "1041/DPCABA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108524,7 +108524,7 @@
     "proceso_id": "1378/HBU/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108540,7 +108540,7 @@
     "proceso_id": "1729/HIFJM/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108556,7 +108556,7 @@
     "proceso_id": "1124/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108572,7 +108572,7 @@
     "proceso_id": "29/DGACSA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108588,7 +108588,7 @@
     "proceso_id": "1692/DGTALAVJG/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108604,7 +108604,7 @@
     "proceso_id": "12/GCYCCBAS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108620,7 +108620,7 @@
     "proceso_id": "1/CBAS/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108636,7 +108636,7 @@
     "proceso_id": "1376/AGC/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108652,7 +108652,7 @@
     "proceso_id": "1541/LOTBA/26",
     "bac_tender_id": "1-0014-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108668,7 +108668,7 @@
     "proceso_id": "14/LOTBA/26",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108684,7 +108684,7 @@
     "proceso_id": "1041/DPCABA/23",
     "bac_tender_id": null,
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108700,7 +108700,7 @@
     "proceso_id": "1793/SECH/26",
     "bac_tender_id": "2051-1793-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108716,7 +108716,7 @@
     "proceso_id": "561/MJGGC/26",
     "bac_tender_id": "2051-1793-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   },
   {
@@ -108732,7 +108732,7 @@
     "proceso_id": "91/SECH/26",
     "bac_tender_id": "2051-1793-LPU26",
     "first_seen_at": "2026-11-20T19:01:55+00:00",
-    "last_seen_at": "2026-11-20T22:22:58+00:00",
+    "last_seen_at": "2026-11-23T22:30:59+00:00",
     "estado": "detectada"
   }
 ]
