@@ -134,6 +134,25 @@ def check_presupuestos(data):
     return issues
 
 
+def check_presupuesto_flags_rubro_only(presupuestos, aperturas):
+    """Una bandera "presupuesto entre los más altos" sobre un proceso que es tecnología sólo porque
+    BAC lo devuelve en el rubro Informática (ninguna palabra clave del objeto lo confirma) pide
+    verificación humana antes de quedar como la señal destacada del sitio. Caso real (20/11/2026):
+    2051-1793-LPU26 "SERVICIO PÚBLICO DE HIGIENE URBANA" (ARS 12,37 billones, 120 meses) quedó como
+    la única bandera, z 5,91, 16.480x la mediana, con tech_source 'rubro'; el Boletín 7498
+    clasifica sus tres actos (1017550-1017552) como 'otros'. Además, es el proceso número 15 del
+    grupo: sin él quedan 14, por debajo de outlier_min_peers. No decide si es tecnología: avisa."""
+    if not presupuestos or not aperturas:
+        return []
+    fuente = {r.get('numero_proceso'): r.get('tech_source') for r in aperturas.get('licitaciones_abiertas') or []}
+    sospechosas = [k for k, p in (presupuestos.get('procesos') or {}).items()
+                   if p.get('flag') and fuente.get(k) == 'rubro']
+    if not sospechosas:
+        return []
+    return [f'bac_presupuestos.json: bandera de presupuesto alto sobre procesos que son tecnología sólo por el rubro '
+            f'BAC, sin palabra clave en el objeto: {sospechosas[:5]}. Verificar a mano que sean tecnología: '
+            'además de mostrarse destacados, entran al grupo de comparación de los demás.']
+
 def check_status(name, data, ok_states=('ok',)):
     if data is None:
         return [f'{name} no existe.']
@@ -234,7 +253,9 @@ def run_checks(now=None):
         'Boletín Oficial': check_editions(read('editions.json')),
         'BAC pliegos caídos': check_pliegos_caidos(read('bac_pliegos_caidos.json')),
         'BAC aperturas': check_aperturas(read('bac_aperturas.json'), now),
-        'BAC presupuestos': check_presupuestos(read('bac_presupuestos.json')),
+        'BAC presupuestos': (check_presupuestos(read('bac_presupuestos.json'))
+                             + check_presupuesto_flags_rubro_only(read('bac_presupuestos.json'),
+                                                                  read('bac_aperturas.json'))),
         'BAC proveedor recurrente': check_status('bac_recurring_vendor_watch.json',
                                                  read('bac_recurring_vendor_watch.json')),
         'BAC catálogo': (check_status('bac_catalog.json', read('bac_catalog.json'))

@@ -159,5 +159,32 @@ class BacCoverageTest(unittest.TestCase):
         self.assertEqual(len(dhc.check_bac_coverage(catalog, self.NOW)), 1)
 
 
+class PresupuestoFlagRubroOnlyTest(unittest.TestCase):
+    # Valores reales de data/bac_presupuestos.json y data/bac_aperturas.json (commit 0145c20,
+    # 20/11/2026). El Boletín 7498 clasifica los actos 1017550-1017552 de 2051-1793-LPU26 como 'otros'.
+    APERTURAS = {'licitaciones_abiertas': [
+        {'numero_proceso': '2051-1793-LPU26', 'nombre_proceso': 'SERVICIO PÚBLICO DE HIGIENE URBANA',
+         'tech_source': 'rubro'},
+        {'numero_proceso': '8618-1742-LPU26', 'tech_source': 'rubro'},
+        {'numero_proceso': '2630-1582-LPU26', 'tech_source': 'rubro+palabra_clave'},
+    ]}
+
+    def test_flag_on_rubro_only_process_is_reported(self):
+        pres = {'procesos': {'2051-1793-LPU26': {'flag': True, 'z': 5.91, 'n': 15},
+                             '8618-1742-LPU26': {'flag': False}}}
+        issues = dhc.check_presupuesto_flags_rubro_only(pres, self.APERTURAS)
+        self.assertEqual(len(issues), 1)
+        self.assertIn('2051-1793-LPU26', issues[0])
+        self.assertNotIn('8618-1742-LPU26', issues[0])
+
+    def test_flag_confirmed_by_keyword_passes(self):
+        pres = {'procesos': {'2630-1582-LPU26': {'flag': True}, '8618-1742-LPU26': {'flag': False}}}
+        self.assertEqual(dhc.check_presupuesto_flags_rubro_only(pres, self.APERTURAS), [])
+
+    def test_missing_files_pass(self):
+        self.assertEqual(dhc.check_presupuesto_flags_rubro_only(None, self.APERTURAS), [])
+        self.assertEqual(dhc.check_presupuesto_flags_rubro_only({'procesos': {}}, None), [])
+
+
 if __name__ == '__main__':
     unittest.main()
