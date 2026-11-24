@@ -11,11 +11,11 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 220,
+    "total_flagged": 226,
     "by_sigla": {
-      "ASINF": 94,
+      "ASINF": 99,
       "DGTALINF": 58,
-      "DGISIS": 29,
+      "DGISIS": 30,
       "DGIASINF": 19,
       "SECITD": 18,
       "DGGEDOC": 2
@@ -28,6 +28,42 @@
   },
   "norms": [
     {
+      "id_norma": 1017612,
+      "numero_boletin": 7499,
+      "fecha_publicacion": "24/11/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1593/DGISIS/26",
+      "sumario": "Soporte técnico especializado y mantenimiento evolutivo y correctivo de Microsoft Dynamics del GCABA",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGISIS",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5418023"
+    },
+    {
+      "id_norma": 1017275,
+      "numero_boletin": 7499,
+      "fecha_publicacion": "24/11/2026",
+      "nombre": "Resolución N° 264/ASINF/26",
+      "sumario": "Acepta la renuncia como Gerente Operativo de la Gerencia Operativa Infraestructura presentada por Leonardo Gabriel Merello",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5417800"
+    },
+    {
+      "id_norma": 1017274,
+      "numero_boletin": 7499,
+      "fecha_publicacion": "24/11/2026",
+      "nombre": "Resolución N° 263/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Luis Gastón Mardones",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5417799"
+    },
+    {
       "id_norma": 1017273,
       "numero_boletin": 7497,
       "fecha_publicacion": "19/11/2026",
@@ -38,6 +74,42 @@
       "topics": [],
       "price_redetermination": null,
       "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5413690"
+    },
+    {
+      "id_norma": 1017272,
+      "numero_boletin": 7499,
+      "fecha_publicacion": "24/11/2026",
+      "nombre": "Resolución N° 262/ASINF/26",
+      "sumario": "Designa en la Planta de Perfiles de Sistemas a Judith Melnik",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5417798"
+    },
+    {
+      "id_norma": 1017270,
+      "numero_boletin": 7499,
+      "fecha_publicacion": "24/11/2026",
+      "nombre": "Resolución N° 261/ASINF/26",
+      "sumario": "Aprueba la implementación y utilización de la herramienta de Mesa de Ayuda como canal institucional para la gestión de incidentes, consultas y requerimientos vinculados a los servicios tecnológicos",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5417797"
+    },
+    {
+      "id_norma": 1017236,
+      "numero_boletin": 7499,
+      "fecha_publicacion": "24/11/2026",
+      "nombre": "Resolución N° 259/ASINF/26",
+      "sumario": "Acepta la renuncia presentada por Maite Vivian Darreche",
+      "tipo": "Resolución",
+      "sigla_unidad": "ASINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5417796"
     },
     {
       "id_norma": 1017009,

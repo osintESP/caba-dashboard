@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-24T02:36:52+00:00",
-  "latest_bulletin": 7498,
-  "editions": 74,
-  "norms": 23099,
-  "procurement_acts": 6796,
-  "procurements": 5578,
+  "generated_at": "2026-11-24T21:04:23+00:00",
+  "latest_bulletin": 7499,
+  "editions": 75,
+  "norms": 23363,
+  "procurement_acts": 6863,
+  "procurements": 5615,
   "procurement_categories": {
     "alimentos": 5,
-    "obra_infraestructura": 289,
-    "otros": 1365,
-    "salud": 3687,
+    "obra_infraestructura": 291,
+    "otros": 1372,
+    "salud": 3715,
     "tecnologia": 232
   }
 }

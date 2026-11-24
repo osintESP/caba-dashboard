@@ -1098,5 +1098,20 @@
     "last_collected_at": "2026-11-24T02:36:48+00:00",
     "total_normas": 428,
     "schema_source": 2
+  },
+  {
+    "numero_boletin": 7499,
+    "fecha_publicacion": "24/11/2026",
+    "url_boletin": "http://api-restboletinoficial.buenosaires.gob.ar/download/5418295",
+    "separata": [
+      {
+        "nombre": null,
+        "url": "http://api-restboletinoficial.buenosaires.gob.ar/download/5418296"
+      }
+    ],
+    "first_collected_at": "2026-11-24T21:04:21+00:00",
+    "last_collected_at": "2026-11-24T21:04:21+00:00",
+    "total_normas": 332,
+    "schema_source": 2
   }
 ]
