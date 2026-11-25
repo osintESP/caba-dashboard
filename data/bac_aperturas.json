@@ -1,45 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-24T21:22:53+00:00",
+  "collected_at": "2026-11-25T20:31:42+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 122,
-    "Publicado|Informática": 10,
+    "Publicado": 116,
+    "Publicado|Informática": 8,
     "En Apertura|Informática": 21
   },
   "obtenidos": {
-    "Publicado": 122,
-    "Publicado|Informática": 10,
+    "Publicado": 116,
+    "Publicado|Informática": 8,
     "En Apertura|Informática": 21
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8618-1742-LPU26",
-      "nombre_proceso": "Renovación Licencias, Soporte y mantenimiento de productos SUSE Linux para System Z",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-25T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "541-3931-CME26",
-      "nombre_proceso": "REPARACION DEL CONTROL DE ILUMINACION DE SALA - SISTEMA DIMMER DMX",
-      "tipo_proceso": "Contratación Menor",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "541",
-      "organismo": "ENTE AUTARQUICO TEATRO COLON",
-      "fecha_apertura": "2026-11-25T14:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "8056-1778-LPU26",
