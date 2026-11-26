@@ -11,10 +11,10 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 229,
+    "total_flagged": 230,
     "by_sigla": {
       "ASINF": 101,
-      "DGTALINF": 59,
+      "DGTALINF": 60,
       "DGISIS": 30,
       "DGIASINF": 19,
       "SECITD": 18,
@@ -27,6 +27,18 @@
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1018119,
+      "numero_boletin": 7502,
+      "fecha_publicacion": "26/11/2026",
+      "nombre": "Licitación Pública / Preadjudicación  N° 1752/DGTALINF/26",
+      "sumario": "Preadjudica la Licitación Pública N° 8056-1752-LPU26 para la Renovación del Servicio de Mantenimiento integral para los equipos y software IBM.",
+      "tipo": "Licitación Pública",
+      "sigla_unidad": "DGTALINF",
+      "topics": [],
+      "price_redetermination": null,
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5423101"
+    },
     {
       "id_norma": 1017721,
       "numero_boletin": 7501,
