@@ -1,69 +1,21 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-26T20:16:06+00:00",
+  "collected_at": "2026-11-27T20:03:38+00:00",
   "source": "https://www.buenosairescompras.gob.ar/BuscarAvanzado.aspx",
   "rubro_filtro": "Informática",
   "note": "Procesos de tecnología abiertos en Buenos Aires Compras, scrapeados en vivo de la Búsqueda avanzada del sitio transaccional: estado Publicado (admiten ofertas) y En Apertura (abrieron, pendientes de evaluación; sólo rubro Informática). Un proceso cuenta como tecnología si BAC lo clasifica en el rubro Informática o si su nombre coincide con las reglas de classify_technology (ver tech_source).",
   "status": "ok",
   "totales_reportados_por_bac": {
-    "Publicado": 107,
-    "Publicado|Informática": 9,
-    "En Apertura|Informática": 20
+    "Publicado": 99,
+    "Publicado|Informática": 5,
+    "En Apertura|Informática": 23
   },
   "obtenidos": {
-    "Publicado": 107,
-    "Publicado|Informática": 9,
-    "En Apertura|Informática": 20
+    "Publicado": 99,
+    "Publicado|Informática": 5,
+    "En Apertura|Informática": 23
   },
   "licitaciones_abiertas": [
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8056-1778-LPU26",
-      "nombre_proceso": "Servicio de mantenimiento y actualización en sitio para el sistema de telefonía del SAME",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-11-27T11:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "7192-1372-CDI26",
-      "nombre_proceso": "Convenio CIN - EX-2026-39796026- GCABA-SSTEDU",
-      "tipo_proceso": "Contratación Directa",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "7192",
-      "organismo": "MINISTERIO DE EDUCACION",
-      "fecha_apertura": "2026-11-27T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "8618-1646-LPU26",
-      "nombre_proceso": "Soporte y Mantenimiento Anual Preventivo y Correctivo de licencias Qlik Sense.",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "8618",
-      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
-      "fecha_apertura": "2026-11-27T12:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "Publicado",
-      "numero_proceso": "3125-1671-LPU26",
-      "nombre_proceso": "Gestion de Video Sistema Trambus",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "Publicado",
-      "unidad_ejecutora_codigo": "3125",
-      "organismo": "Ministerio de Movilidad e Infraestructura",
-      "fecha_apertura": "2026-11-27T13:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
     {
       "estado_buscado": "Publicado",
       "numero_proceso": "9611-1731-LPU26",
@@ -342,18 +294,6 @@
     },
     {
       "estado_buscado": "En Apertura",
-      "numero_proceso": "8056-1668-LPU26",
-      "nombre_proceso": "Ampliación de capacidades de almacenamiento Hitachi para ser instalados en los centros de datos ASI",
-      "tipo_proceso": "Licitación Pública",
-      "estado": "En Apertura",
-      "unidad_ejecutora_codigo": "8056",
-      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
-      "fecha_apertura": "2026-11-19T11:00:00-03:00",
-      "is_technology": true,
-      "tech_source": "rubro"
-    },
-    {
-      "estado_buscado": "En Apertura",
       "numero_proceso": "3202-1063-CDI26",
       "nombre_proceso": "Complementación de los dispositivos de control electrónicos",
       "tipo_proceso": "Contratación Directa",
@@ -361,6 +301,54 @@
       "unidad_ejecutora_codigo": "3202",
       "organismo": "Ministerio de Seguridad",
       "fecha_apertura": "2026-11-19T13:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8056-1778-LPU26",
+      "nombre_proceso": "Servicio de mantenimiento y actualización en sitio para el sistema de telefonía del SAME",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8056",
+      "organismo": "AGENCIA SISTEMAS DE INFORMACION",
+      "fecha_apertura": "2026-11-27T11:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "7192-1372-CDI26",
+      "nombre_proceso": "Convenio CIN - EX-2026-39796026- GCABA-SSTEDU",
+      "tipo_proceso": "Contratación Directa",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "7192",
+      "organismo": "MINISTERIO DE EDUCACION",
+      "fecha_apertura": "2026-11-27T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "8618-1646-LPU26",
+      "nombre_proceso": "Soporte y Mantenimiento Anual Preventivo y Correctivo de licencias Qlik Sense.",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "8618",
+      "organismo": "ADMINIST. GUBERNAMENTAL DE INGRESOS PUBLICOS",
+      "fecha_apertura": "2026-11-27T12:00:00-03:00",
+      "is_technology": true,
+      "tech_source": "rubro"
+    },
+    {
+      "estado_buscado": "En Apertura",
+      "numero_proceso": "3125-1671-LPU26",
+      "nombre_proceso": "Gestion de Video Sistema Trambus",
+      "tipo_proceso": "Licitación Pública",
+      "estado": "En Apertura",
+      "unidad_ejecutora_codigo": "3125",
+      "organismo": "Ministerio de Movilidad e Infraestructura",
+      "fecha_apertura": "2026-11-27T13:00:00-03:00",
       "is_technology": true,
       "tech_source": "rubro"
     }
