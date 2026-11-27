@@ -11,22 +11,40 @@
     "SECITD"
   ],
   "summary": {
-    "total_flagged": 230,
+    "total_flagged": 231,
     "by_sigla": {
       "ASINF": 101,
       "DGTALINF": 60,
-      "DGISIS": 30,
+      "DGISIS": 31,
       "DGIASINF": 19,
       "SECITD": 18,
       "DGGEDOC": 2
     },
     "by_topic": {
-      "plataforma_o_sistema": 15,
-      "redeterminacion_precios": 14
+      "redeterminacion_precios": 15,
+      "plataforma_o_sistema": 15
     },
     "price_redeterminations_flagged": 5
   },
   "norms": [
+    {
+      "id_norma": 1018125,
+      "numero_boletin": 7503,
+      "fecha_publicacion": "27/11/2026",
+      "nombre": "Disposición N° 44/DGISIS/26",
+      "sumario": "Aprueba la Primera Actualización de Precios de la Orden de Compra N° 8056-0290-OCA26",
+      "tipo": "Disposición",
+      "sigla_unidad": "DGISIS",
+      "topics": [
+        "redeterminacion_precios"
+      ],
+      "price_redetermination": {
+        "orden_de_compra": "8056-0290-OCA26",
+        "ordinal": 1,
+        "ordinal_word": "Primera"
+      },
+      "url_norma": "http://api-restboletinoficial.buenosaires.gob.ar/download/5425322"
+    },
     {
       "id_norma": 1018119,
       "numero_boletin": 7502,
